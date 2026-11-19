@@ -7,7 +7,8 @@
  */
 import type { V3 } from "../lib/camera3d";
 
-export const CBD_Z = -2000; // glass-tower district (shots 1-2), far from the sacred city
+export const CBD_Z = -2000; // Makkah tower district (shots 1-2), far from the sacred city
+export const MADINAH_Z = -3600; // Madinah tower district (shot 3)
 
 export const TB = {
   // cards
@@ -56,13 +57,22 @@ export type Palette = {
 
 export const PALETTES: Record<string, Palette> = {
   mist: {
-    sky: "linear-gradient(180deg, #CFF5EA 0%, #8ADCC6 28%, #3DAE91 62%, #1E8B72 100%)",
-    towerFillTop: "rgba(226,255,247,0.20)",
-    towerFillBottom: "rgba(16,120,96,0.30)",
-    lineAlpha: 0.9,
-    bloom: 0.75,
-    cloud: 0.85,
+    sky: "linear-gradient(180deg, #8ED8C3 0%, #4AAE92 32%, #1F8169 68%, #0F5E4C 100%)",
+    towerFillTop: "rgba(226,255,247,0.14)",
+    towerFillBottom: "rgba(8,80,64,0.38)",
+    lineAlpha: 1,
+    bloom: 0.85,
+    cloud: 0.5,
     textShadow: "0 2px 14px rgba(3,46,40,0.55), 0 0 2px rgba(3,46,40,0.4)",
+  },
+  teal: {
+    sky: "linear-gradient(180deg, #3AA88B 0%, #1E7F67 38%, #0F5A49 72%, #0A4538 100%)",
+    towerFillTop: "rgba(200,255,240,0.10)",
+    towerFillBottom: "rgba(3,40,32,0.45)",
+    lineAlpha: 1,
+    bloom: 0.95,
+    cloud: 0.22,
+    textShadow: "0 2px 14px rgba(3,46,40,0.6), 0 0 2px rgba(3,46,40,0.45)",
   },
   night: {
     sky: "linear-gradient(180deg, #01110D 0%, #032E28 45%, #075B43 85%, #0B6E55 100%)",
@@ -143,11 +153,11 @@ export const SHOTS: Shot[] = [
     id: "glide",
     from: TB.cut2,
     to: TB.cut3,
-    palette: "bright",
+    palette: "teal",
     cbd: true,
-    pos: { x: [[TB.cut2, -14], [TB.cut3, 10]], y: [[TB.cut2, 36], [TB.cut3, 58]], z: [[TB.cut2, CBD_Z - 300], [TB.cut3, CBD_Z - 150]] },
+    pos: { x: [[TB.cut2, -16], [TB.cut3, 12]], y: [[TB.cut2, 20], [TB.cut3, 30]], z: [[TB.cut2, MADINAH_Z - 110], [TB.cut3, MADINAH_Z + 20]] },
     yaw: [[TB.cut2, 0.1], [TB.cut3, -0.08]],
-    pitch: [[TB.cut2, 0.16], [TB.cut3, 0.1]],
+    pitch: [[TB.cut2, 0.13], [TB.cut3, 0.09]],
     fov: 50,
     cy: 0.5,
   },

@@ -9,7 +9,7 @@ import { COLORS, VIDEO } from "../config/theme";
 import { FPS, T } from "../config/timeline";
 import { CAMERA } from "../config/camera";
 import { getCity } from "../geometry/buildings";
-import { getCBD } from "../geometry/cbd";
+import { getHolyCity } from "../geometry/holycity";
 import { smoothstep } from "../lib/anim";
 import type { V3 } from "../lib/camera3d";
 import { Bloom, projectPoly, WireBatch } from "../lib/wire";
@@ -64,20 +64,21 @@ export const BRIWorld: React.FC = () => {
     actx.clearRect(0, 0, W, H);
 
     if (shot.cbd) {
-      // ---- glass towers: translucent faces, then curtain-wall lines
-      const towers = getCBD()
+      // ---- Makkah / Madinah towers: translucent faces, then holographic wireframe
+      const towers = getHolyCity()
         .map((tw) => ({ tw, d: Math.hypot(tw.x - cam.pos[0], tw.z - cam.pos[2]) }))
+        .filter(({ d }) => d < 1100)
         .sort((p, q) => q.d - p.d);
-      const fogNear = 220;
-      const fogFar = 900;
+      const fogNear = 260;
+      const fogFar = 1000;
       for (const { tw, d } of towers) {
         const fade = 1 - smoothstep(fogNear, fogFar, d);
         if (fade <= 0.02) continue;
-        for (const f of tw.faces) {
-          const c: V3 = [(f.pts[0][0] + f.pts[2][0]) / 2, (f.pts[0][1] + f.pts[2][1]) / 2, (f.pts[0][2] + f.pts[2][2]) / 2];
+        for (const fc of tw.faces) {
+          const c: V3 = [(fc.pts[0][0] + fc.pts[2][0]) / 2, (fc.pts[0][1] + fc.pts[2][1]) / 2, (fc.pts[0][2] + fc.pts[2][2]) / 2];
           const v = [cam.pos[0] - c[0], cam.pos[1] - c[1], cam.pos[2] - c[2]];
-          if (f.n[0] * v[0] + f.n[1] * v[1] + f.n[2] * v[2] <= 0) continue;
-          const sp = projectPoly(cam, f.pts);
+          if (fc.n[0] * v[0] + fc.n[1] * v[1] + fc.n[2] * v[2] <= 0) continue;
+          const sp = projectPoly(cam, fc.pts);
           if (!sp) continue;
           const ys = sp.map((p) => p.y);
           const g = ctx.createLinearGradient(0, Math.min(...ys), 0, Math.max(...ys));
@@ -93,13 +94,67 @@ export const BRIWorld: React.FC = () => {
       }
       ctx.globalAlpha = 1;
       const lb = new WireBatch(cam, { fogNear, fogFar, depthWidth: true });
-      const scanY = (t * 26) % 340;
+      const scanY = (t * 22) % 620 - 20; // slow blueprint scan plane
       for (const { tw } of towers) {
-        for (const s of tw.segs) {
-          const my = (s.a[1] + s.b[1]) / 2;
-          const scan = Math.exp(-(((my - scanY) / 6) ** 2));
-          const alpha = s.k === "edge" ? 0.85 : s.k === "spire" ? 0.9 : s.k === "floor" ? 0.2 + 0.6 * scan : 0.16 + 0.3 * scan;
-          lb.line(s.a, s.b, s.k === "edge" || s.k === "spire" ? COLORS.cyan : COLORS.neonEmerald, alpha * pal.lineAlpha, s.k === "edge" ? 1.3 : 1);
+        // wireframe lights up from the ground, tower by tower
+        const front = (t - tw.lightAt) * 120;
+        const contour = ((t * 34 + tw.x * 0.7 + tw.z * 0.3) % (tw.h + 80)) - 40; // light travelling up the contours
+        const edgeCol = tw.tint ? COLORS.neonEmerald : COLORS.cyan;
+        for (const sg of tw.segs) {
+          const my = (sg.a[1] + sg.b[1]) / 2;
+          const lit = my < front ? 1 : 0.14;
+          const fr = Math.exp(-(((my - front) / 6) ** 2)) * 1.6;
+          const scan = Math.exp(-(((my - scanY) / 7) ** 2));
+          const cont = Math.exp(-(((my - contour) / 5) ** 2));
+          let style: string = COLORS.neonEmerald;
+          let a = 0.2;
+          let w = 1;
+          switch (sg.k) {
+            case "edge":
+              style = cont > 0.4 ? COLORS.white : edgeCol;
+              a = 0.8 + 0.8 * cont;
+              w = 1.3;
+              break;
+            case "spire":
+              style = COLORS.cyan;
+              a = 0.9;
+              break;
+            case "floor":
+              a = 0.14 + 0.55 * scan;
+              break;
+            case "mull":
+              a = 0.12 + 0.3 * scan + 0.4 * cont;
+              break;
+            case "minaret":
+            case "arch":
+            case "dome":
+              style = sg.k === "dome" ? COLORS.cyan : COLORS.neonEmerald;
+              a = 0.8 + 0.6 * cont;
+              w = 1.2;
+              break;
+            case "minaretMesh":
+            case "archMesh":
+            case "domeMesh":
+            case "umbrellaMesh":
+              a = 0.22 + 0.4 * scan;
+              break;
+            case "umbrella":
+              style = COLORS.white;
+              a = 0.55;
+              break;
+            case "gold":
+              style = COLORS.gold;
+              a = 0.95;
+              w = 1.4;
+              break;
+          }
+          lb.line(sg.a, sg.b, fr > 0.2 ? COLORS.white : style, Math.min(1.4, a * lit + fr * 0.6) * pal.lineAlpha, w);
+        }
+        // soft window light pulses
+        for (const wn of tw.windows) {
+          if (wn.p[1] > front) continue;
+          const pulse = Math.pow(Math.max(0, Math.sin(Math.PI * 2 * (t / 4.6 + wn.ph * 9))), 5);
+          lb.dot(wn.p, 1.6, wn.gold ? COLORS.goldLight : COLORS.cyan, 0.15 + 0.7 * pulse);
         }
       }
       lb.flush(actx);
