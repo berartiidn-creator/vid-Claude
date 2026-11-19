@@ -86,9 +86,9 @@ def card(t, crop, w, label, angle):
     return c, sh
 
 
-c1, s1 = card(24.5, (40, 380, 1040, 1300), 290, "Skill Digital", 6)
-c2, s2 = card(16.0, (60, 380, 1060, 1300), 290, "Tahfidz Qur'an", -7)
-for c, s, (px, py) in [(c2, s2, (34, 846)), (c1, s1, (W - c1.width - 30, 840))]:
+c1, s1 = card(200 / 60, (0, 330, 1080, 1330), 290, "Lab Komputer", 6)
+c2, s2 = card(20 / 60, (0, 175, 1080, 1290), 290, "Tahfidz Qur'an", -7)
+for c, s, (px, py) in [(c2, s2, (34, 790)), (c1, s1, (W - c1.width - 30, 840))]:
     cv.alpha_composite(s, (px + 8, py + 16))
     cv.alpha_composite(c, (px, py))
 
