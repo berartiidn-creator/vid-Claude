@@ -209,3 +209,27 @@ Timing lives in `src/keyvisual/config.ts`:
 
 Audio: `public/audio/keyvisual_ambient.wav`, an original procedurally generated pad (shimmer at 6 s).
 Set `KV.audio.enabled = false` in `src/keyvisual/config.ts` for a silent render.
+
+---
+
+# BRI-style cut (60 s)
+
+Composition `AlBahjahBumperBRIStyle` re-creates the pacing and look of the BRI reference bumper in the
+Al-Bahjah emerald palette: bright misty glass-tower city, a different camera shot per text card cut with
+light flashes, decode/glitch sans typography, neon ribbon bundles, ring arcs, HUD streaks and a cloud whiteout.
+Same backsound, logo, wording and timing accents as the 60 s cut.
+
+**Ending (41.26-60 s):** the client's "Background Loop" key visual, cleaned of its typography by
+`scripts/build_kv_final_layers.py` (`public/assets/kvfinal/`), kept alive with the key-visual loop layers
+(scanning light, ribbon wave, particles). BRI-style build: skyline lines drawn in from both sides, then the new
+title artwork `IMG_2140` (`public/assets/title/manasik-umroh-title-oneline.png`), logo, the original plaque frame
+with the new tagline (Poppins italic) and the gold swoosh; long hold with golden sweep (47.3 s) and accents.
+
+```bash
+python3 scripts/build_cloud_textures.py     # cloud layers
+python3 scripts/build_kv_final_layers.py    # plate / plaque / swoosh / layout for the ending
+npm run render:bri-preview                  # 960x540 preview
+npm run render:bri                          # 1080p master -> out/ALBAHJAH_MANASIK_UMROH_BUMPER_60S_BRISTYLE.mp4
+```
+
+Shots, timings, palettes, ribbons and flashes: `src/bri/config.ts`. SFX: `src/bri/sound.ts`.

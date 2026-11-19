@@ -15,8 +15,7 @@ const [W, H] = data.size;
 
 type Field = { x0: number; y0: number; w: number; h: number; wt: Float32Array; s: Float32Array; nx: Float32Array; ny: Float32Array; amp: number };
 
-let srcPixels: Uint8ClampedArray | null = null;
-let fields: Field[] | null = null;
+const cache = new Map<string, { pixels: Uint8ClampedArray; fields: Field[] }>();
 
 const buildField = (line: number[][], radius: number, amp: number): Field => {
   const xs = line.map((p) => p[0]);
@@ -69,14 +68,14 @@ const buildField = (line: number[][], radius: number, amp: number): Field => {
   return { x0, y0, w, h, wt, s, nx, ny, amp };
 };
 
-export const KVBackground: React.FC = () => {
+export const KVBackground: React.FC<{ src?: string }> = ({ src = KV_BASE }) => {
   const frame = useCurrentFrame();
   const ref = useRef<HTMLCanvasElement>(null);
-  const [ready, setReady] = useState(srcPixels !== null);
-  const [handle] = useState(() => (srcPixels ? null : delayRender("Loading key visual pixels")));
+  const [ready, setReady] = useState(cache.has(src));
+  const [handle] = useState(() => (cache.has(src) ? null : delayRender("Loading key visual pixels")));
 
   useEffect(() => {
-    if (srcPixels) return;
+    if (cache.has(src)) return;
     const img = new Image();
     img.onload = () => {
       const c = document.createElement("canvas");
@@ -84,19 +83,24 @@ export const KVBackground: React.FC = () => {
       c.height = H;
       const g = c.getContext("2d")!;
       g.drawImage(img, 0, 0, W, H);
-      srcPixels = g.getImageData(0, 0, W, H).data;
-      fields = [
-        buildField(data.ribbons.tr.line, data.ribbons.tr.radius, data.ribbons.tr.amp),
-        buildField(data.ribbons.bl.line, data.ribbons.bl.radius, data.ribbons.bl.amp),
-      ];
+      cache.set(src, {
+        pixels: g.getImageData(0, 0, W, H).data,
+        fields: [
+          buildField(data.ribbons.tr.line, data.ribbons.tr.radius, data.ribbons.tr.amp),
+          buildField(data.ribbons.bl.line, data.ribbons.bl.radius, data.ribbons.bl.amp),
+        ],
+      });
       setReady(true);
       if (handle !== null) continueRender(handle);
     };
-    img.src = KV_BASE;
-  }, [handle]);
+    img.src = src;
+  }, [handle, src]);
 
   useLayoutEffect(() => {
-    if (!ready || !srcPixels || !fields || !ref.current) return;
+    const entry = cache.get(src);
+    if (!ready || !entry || !ref.current) return;
+    const srcPixels = entry.pixels;
+    const fields = entry.fields;
     const ctx = ref.current.getContext("2d")!;
     const t = frame / FPS;
     const full = new ImageData(new Uint8ClampedArray(srcPixels), W, H);
@@ -105,7 +109,7 @@ export const KVBackground: React.FC = () => {
     const omega = (Math.PI * 2) / 4.6;
     fields.forEach((fl, fi) => {
       const out = full.data;
-      const src = srcPixels!;
+      const sp = srcPixels;
       const lam = fi === 0 ? 300 : 360;
       const ph = fi * 1.9;
       for (let yy = 0; yy < fl.h; yy++) {
@@ -131,15 +135,15 @@ export const KVBackground: React.FC = () => {
           const i11 = i01 + 4;
           const o = ((fl.y0 + yy) * W + fl.x0 + xx) * 4;
           for (let c = 0; c < 3; c++) {
-            const top = src[i00 + c] * (1 - fx) + src[i10 + c] * fx;
-            const bot = src[i01 + c] * (1 - fx) + src[i11 + c] * fx;
+            const top = sp[i00 + c] * (1 - fx) + sp[i10 + c] * fx;
+            const bot = sp[i01 + c] * (1 - fx) + sp[i11 + c] * fx;
             out[o + c] = top * (1 - fy) + bot * fy;
           }
         }
       }
     });
     ctx.putImageData(full, 0, 0);
-  }, [frame, ready]);
+  }, [frame, ready, src]);
 
   return <canvas ref={ref} width={W} height={H} style={{ position: "absolute", inset: 0 }} />;
 };

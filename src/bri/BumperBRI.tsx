@@ -13,7 +13,7 @@ import { BrightHorizon, Clouds, Flashes, HudLines } from "./Atmosphere";
 import { NeonRibbons, RingArcs } from "./NeonRibbons";
 import { AllahCard, HatiCard, LogoCard, PresentCard, RasulCard } from "./BRICards";
 import { BRITitle } from "./BRITitle";
-import { BatikPattern, BRIFinal } from "./BRIFinal";
+import { KVFinal } from "./KVFinal";
 import { TB } from "./config";
 import { BRI_SOUND_CUES } from "./sound";
 
@@ -27,7 +27,7 @@ export const BumperBRI: React.FC = () => {
   return (
     <AbsoluteFill style={{ backgroundColor: "#0B4D3F", overflow: "hidden" }}>
       <BRIWorld />
-      <BatikPattern />
+      <KVFinal />
       <BrightHorizon />
       <Clouds />
       <HudLines />
@@ -40,7 +40,6 @@ export const BumperBRI: React.FC = () => {
       {between(TB.allahIn - 0.1, TB.allahOut + 0.8) && <AllahCard />}
       {between(TB.rasulIn - 0.1, TB.rasulOut + 0.8) && <RasulCard />}
       {between(TB.manasikIn - 0.1, TB.titleOut + 0.8) && <BRITitle layout="stacked" manasikIn={TB.manasikIn} umrohIn={TB.umrohIn} swooshIn={TB.swooshIn} out={TB.titleOut} />}
-      <BRIFinal />
 
       <Flashes />
       {MUSIC_BED.enabled && (
