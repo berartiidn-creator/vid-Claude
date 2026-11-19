@@ -23,6 +23,9 @@ ap.add_argument("--dur", type=float, default=0)
 ap.add_argument("--crf", type=int, default=18)
 ap.add_argument("--fps", type=int, default=30)
 ap.add_argument("--preset", default="medium")
+ap.add_argument("--cover", default="")
+ap.add_argument("--cover-frames", type=int, default=24)
+ap.add_argument("--xfade", type=int, default=6)
 A = ap.parse_args()
 
 lm.OPK, lm.BODY_T = 11, 0.3
@@ -82,10 +85,29 @@ enc = ["ffmpeg", "-v", "error", "-y", "-f", "rawvideo", "-pix_fmt", "rgb24",
        "-s", f"{W}x{H}", "-r", str(A.fps), "-i", "-"]
 enc += (["-ss", str(A.start)] if A.start else []) + ["-i", SRC] + (["-t", str(A.dur)] if A.dur else [])
 vf = f"scale={A.scale}:-2:flags=lanczos," if A.scale else ""
-enc += ["-map", "0:v", "-map", "1:a?", "-vf", vf + "format=yuv420p",
+CF = A.cover_frames if A.cover else 0
+af = ["-af", f"adelay={int(CF * 1000 / A.fps)}:all=1"] if CF else []
+enc += ["-map", "0:v", "-map", "1:a?", "-vf", vf + "format=yuv420p"] + af + [
         "-c:v", "libx264", "-preset", A.preset, "-crf", str(A.crf),
         "-c:a", "aac", "-b:a", "192k", "-shortest", "-movflags", "+faststart", A.out]
 p_out = subprocess.Popen(enc, stdin=subprocess.PIPE)
+
+COVER = None
+if A.cover:
+    COVER = np.array(cv2.cvtColor(cv2.imread(A.cover), cv2.COLOR_BGR2RGB))
+    for _ in range(CF):
+        p_out.stdin.write(COVER.tobytes())
+
+
+def cover_blend(f, k):
+    """frame k of the cover->video transition: cover zooms in and fades out"""
+    p = (k + 1) / (A.xfade + 1)
+    e = p * p * (3 - 2 * p)
+    sc = 1.0 + 0.08 * e
+    M = cv2.getRotationMatrix2D((W / 2, H * 0.42), 0, sc)
+    cz = cv2.warpAffine(COVER, M, (W, H), flags=cv2.INTER_LINEAR, borderMode=cv2.BORDER_REFLECT)
+    return (cz.astype(np.float32) * (1 - e) + f.astype(np.float32) * e).astype(np.uint8)
+
 
 vis = 1.0
 n = 0
@@ -111,6 +133,9 @@ while True:
     if vis > 0:
         a = hdr_a * vis
         f[:HB] = (f[:HB].astype(np.float32) * (1 - a) + hdr_rgb * a).astype(np.uint8)
+
+    if COVER is not None and n < A.xfade:
+        f = cover_blend(f, n)
 
     log.append("%d %.2f %d %d %.2f" % (n, match, top_y, pill, vis))
     p_out.stdin.write(f.tobytes())
