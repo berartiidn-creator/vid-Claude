@@ -36,12 +36,16 @@ def F(name, px):
 
 
 # ---------- hero ----------
-hero = grab(2 / 30, False)
+hero = grab(628 / 30, False)
+plate = grab(622 / 30, False)
+_m = np.zeros((H, W), np.float32); _m[1030:1240, 40:780] = 1
+_m = cv2.GaussianBlur(_m, (0, 0), 8)[..., None]
+hero = Image.fromarray((np.array(hero) * (1 - _m) + np.array(plate) * _m).astype(np.uint8))
 # push in a little on the face
-z = 1.12
+z = 1.45
 hw, hh = int(W / z), int(H / z)
-x0 = 570 - hw // 2 + 20
-y0 = 210
+x0 = 545 - hw // 2
+y0 = 250
 hero = hero.crop((x0, y0, x0 + hw, y0 + hh)).resize((W, H), Image.LANCZOS)
 hero = ImageEnhance.Contrast(hero).enhance(1.06)
 hero = ImageEnhance.Color(hero).enhance(1.08)
