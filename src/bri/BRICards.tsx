@@ -12,7 +12,7 @@ import { clamp01, EASE } from "../lib/anim";
 import { LOGO_ASPECT, LOGO_SRC } from "../components/typography/LogoReveal";
 import { TextSweep } from "../components/typography/GoldenLightSweep";
 import { GoldRule } from "../components/typography/Ornament";
-import { TB } from "./config";
+import { BEAT, BEAT0, TB } from "./config";
 
 const GOLD_FILL = "linear-gradient(180deg, #FFF4CF 0%, #F0D488 38%, #D6B34A 62%, #B08A2C 100%)";
 const SOFT_SHADOW = "drop-shadow(0 2px 10px rgba(1,20,16,0.55))";
@@ -67,6 +67,16 @@ export const PresentCard: React.FC = () => {
   );
 };
 
+/** Soft gold glow behind the key word, breathing once every two bars. */
+const Breath: React.FC<{ start: number; out: number }> = ({ start, out }) => {
+  const frame = useCurrentFrame();
+  const t = frame / FPS;
+  const on = EASE.inOut(clamp01((t - start - 0.6) / 1.2)) * (1 - EASE.inOut(clamp01((t - out) / 0.7)));
+  if (on <= 0.01) return null;
+  const b = 0.6 + 0.4 * Math.sin((Math.PI * 2 * (t - BEAT0)) / (8 * BEAT));
+  return <div style={{ position: "absolute", left: "50%", top: "50%", width: 640, height: 220, transform: "translate(-50%, -50%)", background: `radial-gradient(ellipse at center, rgba(214,179,74,${0.24 * on * b}) 0%, rgba(214,179,74,${0.08 * on * b}) 45%, transparent 72%)`, filter: "blur(8px)", pointerEvents: "none" }} />;
+};
+
 const TwoLine: React.FC<{ cx: number; top: number; l1: string; l2: string; start: number; out: number; big?: number; salawat?: boolean }> = ({ cx, top, l1, l2, start, out, big = 104, salawat }) => {
   const keyStyle: React.CSSProperties = { fontFamily: FONTS.title, fontWeight: 600, fontSize: big, letterSpacing: "0.06em", lineHeight: 1.05, whiteSpace: "nowrap" };
   return (
@@ -75,10 +85,11 @@ const TwoLine: React.FC<{ cx: number; top: number; l1: string; l2: string; start
         <Elegant start={start} out={out} dur={1.1}>
           <span style={{ fontFamily: FONTS.sans, fontWeight: 500, fontSize: 25, letterSpacing: "0.42em", paddingLeft: "0.42em", color: "rgba(244,255,251,0.94)", filter: SOFT_SHADOW }}>{l1}</span>
         </Elegant>
-        <div style={{ display: "flex", alignItems: "center", marginTop: 10 }}>
+        <div style={{ position: "relative", display: "flex", alignItems: "center", marginTop: 10 }}>
+          <Breath start={start} out={out} />
           <Elegant start={start + 0.45} out={out + 0.05} dur={1.3} style={{ position: "relative", filter: "drop-shadow(0 3px 12px rgba(1,20,16,0.6)) drop-shadow(0 0 18px rgba(214,179,74,0.25))" }}>
             <span style={{ ...keyStyle, color: "transparent", backgroundImage: GOLD_FILL, WebkitBackgroundClip: "text", backgroundClip: "text", display: "inline-block" }}>{l2}</span>
-            <TextSweep text={l2} style={keyStyle} start={start + 2.0} duration={1.4} intensity={0.7} />
+            <TextSweep text={l2} style={keyStyle} start={start + 4 * BEAT} duration={4 * BEAT} intensity={0.9} />
           </Elegant>
           {salawat && (
             <Elegant start={start + 1.2} out={out + 0.1} dur={0.9}>

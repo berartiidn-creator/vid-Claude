@@ -10,6 +10,12 @@ import type { V3 } from "../lib/camera3d";
 export const CBD_Z = -2000; // Makkah tower district (shots 1-2), far from the sacred city
 export const MADINAH_Z = -3600; // Madinah tower district (shot 3)
 
+/** Backsound tempo grid: ~111 BPM, beat 0 on the first drop (20.85 s). */
+export const BPM = 111;
+export const BEAT = 60 / BPM;
+export const BEAT0 = 20.85;
+export const beatAt = (n: number) => BEAT0 + n * BEAT;
+
 export const TB = {
   // cards
   logoIn: 0.6,
@@ -17,18 +23,18 @@ export const TB = {
   cut1: 4.85,
   presentIn: 6.0,
   presentOut: 9.9,
-  cut2: 10.95,
-  hatiIn: 12.0,
-  hatiOut: 18.15,
-  cut3: 18.8,
-  landmarksBuild: 18.9,
+  cut2: 11.12,
+  hatiIn: 12.201,
+  hatiOut: 18.147,
+  cut3: 18.688,
+  landmarksBuild: 18.788,
   drop: 20.85,
-  allahIn: 21.3,
-  allahOut: 26.3,
-  cut5: 26.95,
-  rasulIn: 27.4,
-  rasulOut: 32.4,
-  cut6: 33.0,
+  allahIn: 21.391,
+  allahOut: 26.255,
+  cut5: 26.796,
+  rasulIn: 27.336,
+  rasulOut: 32.201,
+  cut6: 32.742,
   manasikIn: 35.45,
   umrohIn: 36.2,
   swooshIn: 37.0,
@@ -37,10 +43,10 @@ export const TB = {
   finalStart: 41.26,
   kvLineDraw: 41.3,
   kvTitleIn: 42.95,
-  kvLogoIn: 41.75,
-  kvTaglineIn: 42.7,
-  kvSwooshIn: 43.5,
-  goldenSweep: 47.3,
+  kvLogoIn: 41.931,
+  kvTaglineIn: 43.012,
+  kvSwooshIn: 43.553,
+  goldenSweep: 47.336,
   finalAccent: 53.76,
   end: 60,
 };
@@ -250,12 +256,13 @@ export const PLATE_SHOTS: PlateShot[] = [
 ];
 
 /** Flying "selendang" (light fabric) passes in the earlier shots. */
-export const SELENDANG: { at: number; preset: "riseL" | "riseR" | "across" | "low" }[] = [
+export const SELENDANG: { at: number; preset: "riseL" | "riseR" | "across" | "low" | "wipe"; dur?: number; body?: number }[] = [
+  // ambient passes (slow, ~2.6 bars)
   { at: 1.4, preset: "riseL" },
-  { at: 6.8, preset: "across" },
-  { at: 12.8, preset: "riseR" },
+  { at: 13.6, preset: "riseR" },
   { at: 22.4, preset: "low" },
-  { at: 28.6, preset: "riseL" },
-  { at: 35.0, preset: "across" },
   { at: 49.6, preset: "riseR" },
+  { at: 55.0, preset: "across" },
+  // fabric wipes carrying each cut: 3 beats long, densest exactly on the cut
+  ...[TB.cut1, TB.cut2, TB.cut3, TB.cut5, TB.cut6].map((c) => ({ at: c - 1.5 * BEAT, preset: "wipe" as const, dur: 3 * BEAT, body: 0.5 })),
 ];

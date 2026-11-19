@@ -18,7 +18,8 @@ import { KVParticles } from "../keyvisual/KVParticles";
 import { LOGO_ASPECT, LOGO_SRC } from "../components/typography/LogoReveal";
 import { ImageSweep, TextSweep } from "../components/typography/GoldenLightSweep";
 import { Glint } from "../components/typography/Ornament";
-import { PLATE_SHOTS, type PlateShot, TB } from "./config";
+import { BEAT, PLATE_SHOTS, type PlateShot, TB } from "./config";
+import { GodRays } from "./Details";
 
 const PLATE = staticFile("assets/kvfinal/kv-plate.png");
 const PLAQUE = staticFile("assets/kvfinal/kv-plaque.png");
@@ -88,7 +89,7 @@ const SPARKS: [number, number][] = [
 ];
 
 /** Metallic shine on the title glyphs: a gold-tinted band with a white-hot core (normal blend, so it reads on white letters). */
-const GlyphShine: React.FC<{ start: number; duration: number }> = ({ start, duration }) => {
+const GlyphShine: React.FC<{ start: number; duration: number; src?: string; intensity?: number }> = ({ start, duration, src = TITLE, intensity = 1 }) => {
   const frame = useCurrentFrame();
   const t = frame / FPS;
   const p = clamp01((t - start) / duration);
@@ -100,11 +101,11 @@ const GlyphShine: React.FC<{ start: number; duration: number }> = ({ start, dura
       style={{
         position: "absolute",
         inset: 0,
-        WebkitMaskImage: `url(${TITLE})`,
+        WebkitMaskImage: `url(${src})`,
         WebkitMaskSize: "100% 100%",
-        maskImage: `url(${TITLE})`,
+        maskImage: `url(${src})`,
         maskSize: "100% 100%",
-        opacity: env,
+        opacity: env * intensity,
         background: `linear-gradient(108deg, transparent ${pos - 16}%, rgba(196,150,52,0.75) ${pos - 8}%, rgba(255,226,150,0.95) ${pos - 3}%, rgba(255,255,248,1) ${pos}%, rgba(255,226,150,0.95) ${pos + 3}%, rgba(196,150,52,0.75) ${pos + 8}%, transparent ${pos + 16}%)`,
       }}
     />
@@ -140,10 +141,10 @@ const TitleFlare: React.FC<{ x0: number; x1: number; y: number; start: number; d
   );
 };
 
-type TitleProps = { box?: number[]; start?: number; out?: number; sweepAt?: number; accentAt?: number; shines?: number[] };
+type TitleProps = { box?: number[]; start?: number; out?: number; sweepAt?: number; accentAt?: number; shines?: number[]; reflectUntil?: number };
 
 /** New MANASIK UMROH artwork (IMG_2140): light line, slice-glitch in, optional glitch out. */
-export const KVTitle: React.FC<TitleProps> = ({ box = kvf.title, start = TB.kvTitleIn, out, sweepAt = TB.goldenSweep, accentAt = TB.finalAccent, shines = [] }) => {
+export const KVTitle: React.FC<TitleProps> = ({ box = kvf.title, start = TB.kvTitleIn, out, sweepAt = TB.goldenSweep, accentAt = TB.finalAccent, shines = [], reflectUntil }) => {
   const frame = useCurrentFrame();
   const t = frame / FPS;
   const [x, y, w, h] = box;
@@ -160,6 +161,12 @@ export const KVTitle: React.FC<TitleProps> = ({ box = kvf.title, start = TB.kvTi
     <AbsoluteFill style={{ pointerEvents: "none" }}>
       {line > 0.01 && (
         <div style={{ position: "absolute", left: x + w / 2 - (w / 2) * line, width: w * line, top: y + h * 0.62 - 1.5, height: 3, opacity: line, background: `linear-gradient(90deg, transparent, ${COLORS.gold} 20%, #FFF6D8 50%, ${COLORS.gold} 80%, transparent)`, boxShadow: `0 0 18px ${rgba(COLORS.gold, 0.9)}` }} />
+      )}
+      {reflectUntil !== undefined && t < reflectUntil && (
+        /* glassy floor reflection under the title (fades before the tagline arrives) */
+        <div style={{ position: "absolute", left: x, top: y + h * 0.9 + h * 0.55, width: w, height: h, opacity: 0.22 * rev * (1 - smoothstep(reflectUntil - 0.8, reflectUntil, t)), transform: "scaleY(-0.55)", transformOrigin: "50% 0%", filter: "blur(1.2px)", WebkitMaskImage: "linear-gradient(to top, rgba(0,0,0,0.9), transparent 70%)", maskImage: "linear-gradient(to top, rgba(0,0,0,0.9), transparent 70%)" }}>
+          <Img src={TITLE} style={{ width: "100%", height: "100%", display: "block" }} />
+        </div>
       )}
       <div style={{ position: "absolute", left: x, top: y, width: w, height: h, opacity: rev * (1 - outP), WebkitMaskImage: mask, maskImage: mask, filter: "drop-shadow(0 3px 6px rgba(0,0,0,0.28))" }}>
         <Img src={TITLE} style={{ width: "100%", height: "100%", display: "block" }} />
@@ -195,7 +202,8 @@ const Logo: React.FC = () => {
   return (
     <div style={{ position: "absolute", left: cx - w / 2, top: y0, width: w, height: h, opacity: inP, filter: `blur(${(1 - inP) * 4}px)` }}>
       <Img src={LOGO_SRC} style={{ width: "100%", height: "100%" }} />
-      <ImageSweep src={LOGO_SRC} start={TB.goldenSweep + 0.25} duration={1.2} intensity={0.6} />
+      <GlyphShine src={LOGO_SRC} start={TB.kvLogoIn + 1.2} duration={1.4} intensity={0.55} />
+      <GlyphShine src={LOGO_SRC} start={TB.goldenSweep + 0.3} duration={1.4} intensity={0.5} />
     </div>
   );
 };
@@ -259,6 +267,8 @@ const PlateShotView: React.FC<{ shot: PlateShot }> = ({ shot }) => {
         <Sequence from={f(shot.seqFrom)} layout="none">
           <LoopScene intro={shot.intro ?? false} />
         </Sequence>
+        {shot.id === "kaaba" && <GodRays cx={265} cy={540} intensity={smoothstep(TB.allahIn - 0.2, TB.allahIn + 4 * BEAT, t) * (1 - smoothstep(TB.allahOut, TB.cut5, t))} />}
+        {shot.id === "dome" && <GodRays cx={1705} cy={545} color="200,255,236" intensity={smoothstep(TB.rasulIn - 0.2, TB.rasulIn + 4 * BEAT, t) * (1 - smoothstep(TB.rasulOut, TB.cut6, t))} />}
       </AbsoluteFill>
     </AbsoluteFill>
   );

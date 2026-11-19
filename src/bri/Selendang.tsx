@@ -13,6 +13,8 @@ import { SELENDANG } from "./config";
 
 type P = [number, number];
 const PRESETS: Record<string, { pts: [P, P, P, P]; width: number }> = {
+  // full-frame fabric wipe used to carry the cuts (densest over the frame centre at mid-pass)
+  wipe: { pts: [[-700, 1450], [300, 1150], [1500, 50], [2700, -350]], width: 360 },
   riseL: { pts: [[-260, 1000], [520, 980], [760, 330], [2200, 120]], width: 92 },
   riseR: { pts: [[2180, 1000], [1400, 980], [1160, 330], [-280, 120]], width: 92 },
   across: { pts: [[-300, 380], [600, 120], [1250, 700], [2250, 300]], width: 80 },
@@ -35,7 +37,8 @@ export const Selendang: React.FC = () => {
   const ref = useRef<HTMLCanvasElement>(null);
   const glowRef = useRef<HTMLCanvasElement | null>(null);
   const t = frame / FPS;
-  const active = SELENDANG.filter((s) => t >= s.at && t < s.at + DUR);
+  const durOf = (s: { dur?: number }) => s.dur ?? DUR;
+  const active = SELENDANG.filter((s) => t >= s.at && t < s.at + durOf(s));
 
   useLayoutEffect(() => {
     const cv = ref.current;
@@ -50,9 +53,10 @@ export const Selendang: React.FC = () => {
     ctx.globalCompositeOperation = "lighter";
     for (const pass of active) {
       const pr = PRESETS[pass.preset];
-      const p = clamp01((t - pass.at) / DUR);
+      const D = durOf(pass);
+      const p = clamp01((t - pass.at) / D);
       const head = EASE.inOut(p) * 1.45;
-      const tail = head - 0.75;
+      const tail = head - (pass.preset === "wipe" ? 1.1 : 0.75);
       const env = Math.sin(Math.PI * p);
       const lt = t - pass.at;
       // centreline + normals
@@ -93,7 +97,7 @@ export const Selendang: React.FC = () => {
           gb.addColorStop(0.9, "rgba(214,179,74,0.55)");
           gb.addColorStop(1, "rgba(255,240,200,0.6)");
           ctx.fillStyle = gb;
-          ctx.globalAlpha = 0.22 * env;
+          ctx.globalAlpha = (pass.body ?? 0.22) * env;
           ctx.fill();
         }
       }
@@ -139,7 +143,7 @@ export const Selendang: React.FC = () => {
         if (u < 0 || u > 1) continue;
         const i = Math.round(u * SAMPLES);
         const v = (hash(j * 11) - 0.5) * 2.6;
-        const drift = (lt - hash(j * 3) * DUR) * 12;
+        const drift = (lt - hash(j * 3) * D) * 12;
         const x = C[i][0] + Nrm[i][0] * v * pr.width + drift * 0.4;
         const y = C[i][1] + Nrm[i][1] * v * pr.width - drift * 0.6;
         const tw = 0.5 + 0.5 * Math.sin(lt * 3.5 + j);
