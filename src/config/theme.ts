@@ -26,6 +26,7 @@ export const rgba = (hex: string, a: number): string => {
 
 export const FONTS = {
   title: "Cinzel",
+  decorative: "Cinzel Decorative",
   serif: "Cormorant Garamond",
   sans: "Montserrat",
   arabic: "Amiri",

@@ -57,7 +57,7 @@ export const PresentCard: React.FC = () => {
           <GoldRule width={150} progress={rules} dir="left" />
         </div>
         <Elegant start={TB.presentIn} out={TB.presentOut} dur={1.3}>
-          <span style={{ fontFamily: FONTS.title, fontWeight: 500, fontSize: 46, letterSpacing: "0.5em", paddingLeft: "0.5em", color: "#F4FFFB", filter: SOFT_SHADOW }}>MEMPERSEMBAHKAN</span>
+          <span style={{ fontFamily: FONTS.sans, fontWeight: 500, fontSize: 34, letterSpacing: "0.42em", paddingLeft: "0.42em", color: "rgba(244,255,251,0.96)", filter: SOFT_SHADOW }}>MEMPERSEMBAHKAN</span>
         </Elegant>
         <div style={{ opacity: rules }}>
           <GoldRule width={150} progress={rules} dir="right" />
@@ -78,7 +78,7 @@ const Breath: React.FC<{ start: number; out: number }> = ({ start, out }) => {
 };
 
 const TwoLine: React.FC<{ cx: number; top: number; l1: string; l2: string; start: number; out: number; big?: number; salawat?: boolean }> = ({ cx, top, l1, l2, start, out, big = 104, salawat }) => {
-  const keyStyle: React.CSSProperties = { fontFamily: FONTS.title, fontWeight: 600, fontSize: big, letterSpacing: "0.06em", lineHeight: 1.05, whiteSpace: "nowrap" };
+  const keyStyle: React.CSSProperties = { fontFamily: FONTS.decorative, fontWeight: 700, fontSize: big, letterSpacing: "0.04em", lineHeight: 1.1, whiteSpace: "nowrap" };
   return (
     <AbsoluteFill style={{ pointerEvents: "none" }}>
       <div style={{ position: "absolute", left: cx - 900, width: 1800, top, display: "flex", flexDirection: "column", alignItems: "center" }}>
