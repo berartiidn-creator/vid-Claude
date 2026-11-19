@@ -46,7 +46,7 @@ export const LogoCard: React.FC = () => {
 
 const Block: React.FC<{ cx: number; top: number; zoomFrom: number; children: React.ReactNode }> = ({ cx, top, zoomFrom, children }) => {
   const frame = useCurrentFrame();
-  const z = 1 + 0.035 * clamp01((frame / FPS - zoomFrom) / 5);
+  const z = 1 + 0 * clamp01((frame / FPS - zoomFrom) / 5);
   return (
     <div style={{ position: "absolute", left: cx - 900, width: 1800, top, display: "flex", flexDirection: "column", alignItems: "center", transform: `scale(${z})`, transformOrigin: `900px 60px` }}>
       {children}

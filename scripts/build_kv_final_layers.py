@@ -52,34 +52,39 @@ def main():
         x0, y0, x1, y1 = rect(r)
         mask[y0:y1, x0:x1] = True
     mask |= ndimage.binary_dilation(text_a > 0.03, iterations=7)
-    plate = base.copy()
-    lum = lambda c: float(c @ np.array([0.2126, 0.7152, 0.0722]))
+    # Harmonic (Navier-Stokes) fill at quarter resolution from a "sky only"
+    # version of the image (stars, ribbon tails and building highlights next to
+    # the holes are flattened first), so the fill matches the sky on all sides
+    # and leaves no darker or lighter box.
+    med = np.stack([ndimage.median_filter(base[:, :, c], size=81) for c in range(3)], axis=2)
+    Lm = med @ np.array([0.2126, 0.7152, 0.0722], np.float32)
+    bright = L > Lm + 10
+    sky_src = np.where(bright[:, :, None], med, base)
+    # row-wise interpolation between the cleaned sky on both sides of each hole
+    fillimg = sky_src.copy()
     for y in range(H):
         row = mask[y]
         if not row.any():
             continue
-        # runs of masked pixels in this row
         d = np.diff(np.concatenate([[0], row.astype(np.int8), [0]]))
-        starts, ends = np.where(d == 1)[0], np.where(d == -1)[0]
-        for a0, b0 in zip(starts, ends):
-            left = np.median(base[y, max(0, a0 - 16) : a0], axis=0) if a0 > 0 else None
-            right = np.median(base[y, b0 : min(W, b0 + 16)], axis=0) if b0 < W else None
-            if left is None:
-                left = right
-            if right is None:
-                right = left
-            # the sky is near-symmetric: if one side hits a bright element
-            # (ribbon, building), use the darker side for both ends
-            if abs(lum(left) - lum(right)) > 5:
-                left = right = left if lum(left) < lum(right) else right
+        for a0, b0 in zip(np.where(d == 1)[0], np.where(d == -1)[0]):
+            left = np.median(sky_src[y, max(0, a0 - 28) : max(1, a0 - 4)], axis=0) if a0 > 4 else None
+            right = np.median(sky_src[y, min(W - 1, b0 + 4) : min(W, b0 + 28)], axis=0) if b0 < W - 4 else None
+            left = right if left is None else left
+            right = left if right is None else right
+            # cap the brighter side (glows, ribbon tails) to stay near the darker one
+            la, lb = float(left @ [0.2126, 0.7152, 0.0722]), float(right @ [0.2126, 0.7152, 0.0722])
+            if la - lb > 3:
+                left = right + (left - right) * (3 / (la - lb))
+            elif lb - la > 3:
+                right = left + (right - left) * (3 / (lb - la))
             k = np.linspace(0, 1, b0 - a0)[:, None]
-            plate[y, a0:b0] = left * (1 - k) + right * k
-    # vertical smoothing removes row-to-row streaks; wide feather hides the seams
-    soft = np.stack([ndimage.gaussian_filter(plate[:, :, c], (9, 3)) for c in range(3)], axis=2)
-    m3 = ndimage.gaussian_filter(ndimage.binary_dilation(mask, iterations=6).astype(np.float32), 7)[:, :, None]
-    plate = plate * (1 - m3) + soft * m3
+            fillimg[y, a0:b0] = left * (1 - k) + right * k
+    up = np.stack([ndimage.gaussian_filter(fillimg[:, :, c], (10, 4)) for c in range(3)], axis=2)
+    m3 = ndimage.gaussian_filter(ndimage.binary_dilation(mask, iterations=6).astype(np.float32), 6)[:, :, None]
     rng = np.random.default_rng(4)
-    plate += (rng.standard_normal(plate.shape[:2])[:, :, None] * 1.2) * m3
+    grain = rng.standard_normal((H, W, 1)).astype(np.float32) * 1.1
+    plate = base * (1 - m3) + (up + grain) * m3
     Image.fromarray(np.clip(plate, 0, 255).astype(np.uint8)).save(OUT / "kv-plate.png", optimize=True)
 
     # ---- plaque frame without its text ------------------------------------
@@ -160,6 +165,31 @@ def main():
     lz = np.zeros_like(glyph)
     lz[ly0:ly1, lx0:lx1] = True
     l_bb = bbox(glyph & lz)
+
+    # ---- depth mattes for parallax (alpha masks) ----------------------------
+    plate_now = np.asarray(Image.open(OUT / "kv-plate.png").convert("RGB")).astype(np.float32)
+    Lp = plate_now @ np.array([0.2126, 0.7152, 0.0722], np.float32)
+    med_p = ndimage.median_filter(Lp, size=61)
+    struct = ndimage.binary_opening(Lp > med_p + 9, iterations=2)
+    struct[:, :] &= True
+    yy = np.arange(H)[:, None]
+    horizon = int(data["horizon"][1])
+    zone = (yy > 200) & (yy < horizon + 30)
+    struct &= zone
+    struct[: int(H * 0.36), int(W * 0.68) :] = False  # top-right ribbon stays in the sky layer
+    tops = np.full(W, H, dtype=np.int32)
+    for x in range(W):
+        ys = np.where(struct[:, x])[0]
+        if len(ys):
+            tops[x] = ys.min()
+    tops = ndimage.median_filter(tops, size=15)
+    tops = ndimage.minimum_filter1d(tops, size=29)
+    mid = (yy >= tops[None, :] - 14) & (yy < horizon + 40)
+    mid_a = ndimage.gaussian_filter(mid.astype(np.float32), 7)
+    near_a = np.clip((yy.astype(np.float32) - (horizon - 8)) / 46, 0, 1) * np.ones((1, W), np.float32)
+    for name, arr in (("kv-depth-mid.png", mid_a), ("kv-depth-near.png", near_a)):
+        img = np.dstack([np.full((H, W, 3), 255, np.uint8), (np.clip(arr, 0, 1) * 255).astype(np.uint8)])
+        Image.fromarray(img, "RGBA").save(OUT / name, optimize=True)
 
     meta = {
         "plaque": plaque_box,

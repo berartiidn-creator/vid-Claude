@@ -245,11 +245,11 @@ export const PLATE_SHOTS: PlateShot[] = [
 
 /** Flying "selendang" (light fabric) passes in the earlier shots. */
 export const SELENDANG: { at: number; preset: "riseL" | "riseR" | "across" | "low" }[] = [
-  { at: 2.0, preset: "riseL" },
-  { at: 7.4, preset: "across" },
-  { at: 14.0, preset: "riseR" },
-  { at: 23.2, preset: "low" },
-  { at: 29.6, preset: "riseL" },
-  { at: 36.4, preset: "across" },
-  { at: 50.4, preset: "riseR" },
+  { at: 1.4, preset: "riseL" },
+  { at: 6.8, preset: "across" },
+  { at: 12.8, preset: "riseR" },
+  { at: 22.4, preset: "low" },
+  { at: 28.6, preset: "riseL" },
+  { at: 35.0, preset: "across" },
+  { at: 49.6, preset: "riseR" },
 ];

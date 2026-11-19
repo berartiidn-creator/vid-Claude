@@ -18,7 +18,7 @@ const PRESETS: Record<string, { pts: [P, P, P, P]; width: number }> = {
   across: { pts: [[-300, 380], [600, 120], [1250, 700], [2250, 300]], width: 80 },
   low: { pts: [[-300, 900], [500, 760], [1300, 1060], [2250, 820]], width: 100 },
 };
-const DUR = 3.4;
+const DUR = 5.6;
 const STRANDS = 34;
 const SAMPLES = 90;
 
@@ -66,7 +66,7 @@ export const Selendang: React.FC = () => {
         const dx = b[0] - c0[0];
         const dy = b[1] - c0[1];
         const l = Math.hypot(dx, dy) || 1;
-        const wave = 26 * Math.sin(Math.PI * 2 * (u * 1.6 - lt * 0.45));
+        const wave = 22 * Math.sin(Math.PI * 2 * (u * 1.4 - lt * 0.22));
         C.push([a[0] - (dy / l) * wave, a[1] + (dx / l) * wave]);
         Nrm.push([-dy / l, dx / l]);
       }
@@ -77,7 +77,7 @@ export const Selendang: React.FC = () => {
         for (let i = 0; i <= SAMPLES; i++) {
           const u = i / SAMPLES;
           if (u < tail || u > head) continue;
-          const twist = Math.cos(Math.PI * 2 * (u * 1.25 - lt * 0.22) + 0.6);
+          const twist = Math.cos(Math.PI * 2 * (u * 1.1 - lt * 0.12) + 0.6);
           const w = pr.width * (0.35 + 0.65 * Math.sin(Math.PI * clamp01((u - tail) / 0.75)));
           top.push([C[i][0] + Nrm[i][0] * w * twist, C[i][1] + Nrm[i][1] * w * twist]);
           bot.push([C[i][0] - Nrm[i][0] * w * twist, C[i][1] - Nrm[i][1] * w * twist]);
@@ -108,7 +108,7 @@ export const Selendang: React.FC = () => {
             started = false;
             continue;
           }
-          const twist = Math.cos(Math.PI * 2 * (u * 1.25 - lt * 0.22) + 0.6);
+          const twist = Math.cos(Math.PI * 2 * (u * 1.1 - lt * 0.12) + 0.6);
           const w = pr.width * (0.35 + 0.65 * Math.sin(Math.PI * clamp01((u - tail) / 0.75)));
           const off = v * w * twist;
           const x = C[i][0] + Nrm[i][0] * off;
@@ -139,10 +139,10 @@ export const Selendang: React.FC = () => {
         if (u < 0 || u > 1) continue;
         const i = Math.round(u * SAMPLES);
         const v = (hash(j * 11) - 0.5) * 2.6;
-        const drift = (lt - hash(j * 3) * DUR) * 22;
+        const drift = (lt - hash(j * 3) * DUR) * 12;
         const x = C[i][0] + Nrm[i][0] * v * pr.width + drift * 0.4;
         const y = C[i][1] + Nrm[i][1] * v * pr.width - drift * 0.6;
-        const tw = 0.5 + 0.5 * Math.sin(lt * 7 + j);
+        const tw = 0.5 + 0.5 * Math.sin(lt * 3.5 + j);
         const sz = 1.2 + hash(j * 5) * 2.8;
         ctx.globalAlpha = tw * env * 0.9;
         ctx.fillStyle = hash(j * 17) < 0.75 ? "#F6DC8A" : "#BFFFF0";

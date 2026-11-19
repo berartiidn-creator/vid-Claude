@@ -106,7 +106,7 @@ export const KVBackground: React.FC<{ src?: string }> = ({ src = KV_BASE }) => {
     const full = new ImageData(new Uint8ClampedArray(srcPixels), W, H);
     const [ra, rb] = KV.timeline.ribbonsFull;
     const ampK = 0.45 + 0.55 * smoothstep(ra, rb, t);
-    const omega = (Math.PI * 2) / 4.6;
+    const omega = (Math.PI * 2) / 6.8;
     fields.forEach((fl, fi) => {
       const out = full.data;
       const sp = srcPixels;

@@ -50,7 +50,7 @@ export const KVLightLayers: React.FC = () => {
   const wakeDim = wake < 1 ? `linear-gradient(to top, #fff 0%, #fff ${front}%, ${unlit} ${front + 9}%, ${unlit} 100%)` : null;
 
   // 2. Periodic blueprint scans after the wake
-  const scanCycle = 3.8;
+  const scanCycle = 6.5; // slow blueprint scan
   const scanP = t > tl.cityWake[1] ? ((t - tl.cityWake[1]) / scanCycle) % 1 : -1;
 
   // 4. Ka'bah scans
@@ -136,6 +136,26 @@ export const KVLightLayers: React.FC = () => {
       {wake > 0 && wake < 1 && <Masked mask={M("kv-lines-arch")} background={band(front, 7, COLORS.cyan, 0.95)} />}
       {scanP >= 0 && <Masked mask={M("kv-lines-city")} background={band(-10 + 125 * EASE.inOut(scanP), 8, COLORS.neonEmerald, 0.55)} opacity={peak} />}
       <Masked mask={M("kv-lines-city")} background={rgba(COLORS.neonEmerald, 1)} opacity={(peak - 1) * 0.7} />
+
+      {/* wireframe colour slowly drifting between emerald and cyan */}
+      <Masked
+        mask={M("kv-lines-arch")}
+        background={`repeating-linear-gradient(100deg, ${rgba(COLORS.neonEmerald, 1)} ${(t * 34) % 1040 - 1040}px, ${rgba(COLORS.cyan, 1)} ${(t * 34) % 1040 - 520}px, ${rgba(COLORS.neonEmerald, 1)} ${(t * 34) % 1040}px)`}
+        opacity={0.2 * smoothstep(tl.cityWake[1] - 0.6, tl.cityWake[1] + 1.2, t)}
+        filter={undefined}
+      />
+
+      {/* holographic light travelling up along the building contours */}
+      {t > tl.cityWake[1] &&
+        [0, 1, 2].map((i) => {
+          const ph = (((t - tl.cityWake[1]) / 7.5 + i / 3) % 1 + 1) % 1;
+          return <Masked key={`c${i}`} mask={M("kv-lines-city")} background={band(-8 + 116 * ph, 2.4, COLORS.cyan, 0.95)} opacity={0.6 * peak} />;
+        })}
+      {t > tl.minaretsRise[1] &&
+        [0, 1].map((i) => {
+          const ph = (((t - tl.minaretsRise[1]) / 6.2 + i / 2) % 1 + 1) % 1;
+          return <Masked key={`m${i}`} mask={M("kv-lines-minarets")} background={band(-8 + 116 * ph, 2.2, COLORS.goldLight, 0.9)} opacity={0.5 * peak} />;
+        })}
 
       {/* Ka'bah holographic scanning */}
       <Masked mask={M("kv-lines-kaaba")} background={rgba(COLORS.cyan, 1)} opacity={kaabaAmb} />

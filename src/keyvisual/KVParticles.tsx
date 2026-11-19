@@ -78,8 +78,8 @@ export const KVParticles: React.FC = () => {
     const frontY = H * (1 - (-0.08 + 1.2 * wake));
     for (const [x, y, ph] of data.windows) {
       if (y < frontY) continue;
-      const p = Math.pow(Math.max(0, Math.sin(Math.PI * 2 * (t / 3.6 + ph * 7.3))), 8);
-      draw(ph < 0.15 ? S.gold : S.cyan, x, y, 14, (0.12 + 0.75 * p) * peak);
+      const p = Math.pow(Math.max(0, Math.sin(Math.PI * 2 * (t / 5.2 + ph * 7.3))), 6);
+      draw(ph < 0.15 ? S.gold : S.cyan, x, y, 13, (0.1 + 0.55 * p) * peak);
     }
 
     // Grid intersection cyan pulses (occasional)
@@ -149,7 +149,7 @@ export const KVParticles: React.FC = () => {
 
     // Gold particles riding the ribbons + travelling sheen
     const ampK = 0.45 + 0.55 * smoothstep(tl.ribbonsFull[0], tl.ribbonsFull[1], t);
-    const omega = (Math.PI * 2) / 4.6;
+    const omega = (Math.PI * 2) / 6.8;
     (["tr", "bl"] as const).forEach((key, fi) => {
       const rb = data.ribbons[key];
       const lam = fi === 0 ? 300 : 360;

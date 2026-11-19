@@ -180,8 +180,8 @@ def main():
         "domeRadius": sx(DOME["r"]),
         "minarets": [[sx(a), sy(b), sx(c), sy(d)] for a, b, c, d in MINARETS],
         "ribbons": {
-            "tr": {"line": [[sx(x), sy(y)] for x, y in RIBBON_TR], "box": [sx(1140), sy(20), W, sy(330)], "radius": sx(75), "amp": 7},
-            "bl": {"line": [[sx(x), sy(y)] for x, y in RIBBON_BL], "box": [0, sy(705), sx(800), H], "radius": sx(95), "amp": 8},
+            "tr": {"line": [[sx(x), sy(y)] for x, y in RIBBON_TR], "box": [sx(1140), sy(20), W, sy(330)], "radius": sx(75), "amp": 9},
+            "bl": {"line": [[sx(x), sy(y)] for x, y in RIBBON_BL], "box": [0, sy(705), sx(800), H], "radius": sx(95), "amp": 10},
         },
         "textRects": {k: [sx(a), sy(b), sx(c), sy(d)] for k, (a, b, c, d) in TEXT_RECTS.items()},
     }
