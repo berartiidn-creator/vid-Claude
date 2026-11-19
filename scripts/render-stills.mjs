@@ -12,7 +12,7 @@ const frames = args.length
 mkdirSync("out/stills", { recursive: true });
 const browserExecutable = process.env.REMOTION_BROWSER || "/opt/pw-browsers/chromium_headless_shell-1243/chrome-headless-shell-linux64/chrome-headless-shell";
 const serveUrl = await bundle({ entryPoint: path.resolve("src/index.ts") });
-const composition = await selectComposition({ serveUrl, id: "AlBahjahBumper", browserExecutable });
+const composition = await selectComposition({ serveUrl, id: process.env.COMP || "AlBahjahBumper", browserExecutable });
 for (const frame of frames) {
   const output = `out/stills/f${String(frame).padStart(4, "0")}.jpg`;
   await renderStill({ serveUrl, composition, frame, output, scale, imageFormat: "jpeg", jpegQuality: 88, chromiumOptions: { gl: "swangle" }, browserExecutable });

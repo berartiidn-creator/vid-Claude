@@ -161,3 +161,39 @@ python3 scripts/generate_audio.py       # needs numpy
 ## Reference material
 
 The storyboard is in `public/assets/reference/storyboard.png`. The client's reference videos (`Manasik Futuristik.mp4`, `Bumper BRI.mp4`) were reviewed for style but are not included in the repository because of their size.
+
+---
+
+# Animated key visual (10 s)
+
+A second composition, `AlBahjahKeyVisual10s`, animates the supplied key visual
+(`public/assets/keyvisual/keyvisual-original.png`) into a 10-second, 1920x1080, 30 fps motion graphic.
+The image itself is the plate: nothing is redrawn or regenerated.
+
+**Output:** `renders/ALBAHJAH_MANASIK_UMROH_KEYVISUAL_10S.mp4` (300 frames, exactly 10.000 s, H.264 yuv420p BT.709, AAC)
+
+```bash
+python3 scripts/build_keyvisual_assets.py   # masks + layers from the image (numpy, pillow, scipy)
+npm run render:keyvisual                     # -> out/
+npm run finalize:keyvisual                   # broadcast yuv420p, exact 10 s -> renders/
+```
+
+How it preserves the design:
+
+- **Typography lock:** logo, MANASIK UMROH, tagline plaque and gold swoosh are cut from the image into one static layer (`kv-text.png`). It is never scaled, moved or warped. The camera push-in (1.6%) applies only to the background beneath it. The only effect on the text is a golden light sweep restricted to glyph pixels (`kv-glyph-mask.png`).
+- **Light, not shape:** building blueprint scans, Ka'bah scanning, Green Dome pulse, minarets lighting up, floor reflections and Mega Mendung tracing are moving lights masked by line structures extracted from the image (`kv-lines-*.png`). Shapes stay exactly as drawn; only their illumination changes.
+- **Ribbons (selendang):** a smooth wave displacement is applied to the original pixels around each ribbon's centreline, so they flow like fabric, with gold particles riding along them.
+- **Particles and grid pulses:** drawn on a canvas layer between the background and the typography.
+
+Timing lives in `src/keyvisual/config.ts`:
+
+| Time | Action |
+|---|---|
+| 0-2 s | City wakes: lines light up bottom to top, particles start flowing |
+| 2-4 s | Ka'bah and Green Dome holographic scanning, minarets light up, horizon rises |
+| 4-6 s | Ribbons reach full motion, Mega Mendung light tracing, more particles |
+| 6-8 s | Golden sweep over title, logo and tagline; architecture at peak light |
+| 8-10 s | Ambient hold |
+
+Audio: `public/audio/keyvisual_ambient.wav`, an original procedurally generated pad (shimmer at 6 s).
+Set `KV.audio.enabled = false` in `src/keyvisual/config.ts` for a silent render.

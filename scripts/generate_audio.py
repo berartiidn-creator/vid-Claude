@@ -255,6 +255,28 @@ def sfx():
     write(d / "34_ambient_sustain.wav", reverb(fft_filter(x, hi=2500), 3.0, 0.45)[:, : len(tt)])
 
 
+def keyvisual_ambient():
+    """10 s bed for the animated key visual: airy pad, soft swell, shimmer at 6 s."""
+    dur = 10.0
+    tt = t_axis(dur)
+    pad = sum(soft_voice(NOTE(n), tt, 5, 0.3) * (1.2 if i == 0 else 0.8) for i, n in enumerate((41, 53, 57, 60, 64, 67)))
+    pad = fft_filter(pad * (0.8 + 0.2 * np.sin(2 * np.pi * tt / 5)), hi=1700)
+    swell = fft_filter(rng.standard_normal(len(tt)), lo=200, hi=3000) * 0.05 * np.clip(tt / 4, 0, 1)
+    sub = np.sin(2 * np.pi * 43.65 * tt) * 0.25 * np.clip(tt / 2, 0, 1)
+    shimmer = bells(tt, [NOTE(n) for n in (84, 88, 91, 96, 100)], [6.0, 6.12, 6.25, 6.4, 6.6], 1.4, 0.16)
+    motif = bells(tt, [NOTE(n) for n in (72, 76, 79)], [2.0, 2.6, 4.2], 1.8, 0.1)
+    mono = pad * 0.5 + swell + sub
+    st = reverb(mono, 2.5, 0.25)[:, : len(tt)] + reverb(shimmer + motif, 2.8, 0.5, 8000)[:, : len(tt)]
+    env = np.clip(tt / 1.2, 0, 1) * np.clip((dur - tt) / 1.5, 0, 1)
+    write(OUT / "keyvisual_ambient.wav", st * env, peak_db=-8)
+
+
 if __name__ == "__main__":
-    music_bed()
-    sfx()
+    import sys
+
+    if "--keyvisual" in sys.argv:
+        keyvisual_ambient()
+    else:
+        music_bed()
+        sfx()
+        keyvisual_ambient()
