@@ -6,7 +6,7 @@ Every frame is deterministic: no `Math.random`, no real-time state. The same fra
 
 **Final output:** `renders/ALBAHJAH_MANASIK_UMROH_BUMPER_60S.mp4` (H.264 High, yuv420p BT.709, AAC 48 kHz stereo, 1800 frames, 60.000 s)
 
-Also in `renders/`: a 960x540 preview and a contact sheet. The earlier 40-second version is kept in `renders/archive_40s/`.
+Also in `renders/`: a 960x540 preview and a contact sheet (one frame every 3 s). The earlier 40-second version is kept in `renders/archive_40s/`.
 
 | Scene | Time | Content | Music |
 |---|---|---|---|

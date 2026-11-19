@@ -10,7 +10,7 @@
     "stills": "node scripts/render-stills.mjs",
     "audio": "python3 scripts/generate_audio.py",
     "typecheck": "tsc --noEmit",
-    "finalize": "ffmpeg -y -i out/ALBAHJAH_MANASIK_UMROH_BUMPER_60S.mp4 -vf scale=in_range=full:out_range=tv,format=yuv420p -c:v libx264 -preset slow -crf 16 -profile:v high -color_range tv -colorspace bt709 -color_primaries bt709 -color_trc bt709 -movflags +faststart -c:a copy renders/ALBAHJAH_MANASIK_UMROH_BUMPER_60S.mp4",
+    "finalize": "ffmpeg -y -i out/ALBAHJAH_MANASIK_UMROH_BUMPER_60S.mp4 -vf scale=in_range=full:out_range=tv,format=yuv420p -c:v libx264 -preset slow -crf 16 -profile:v high -color_range tv -colorspace bt709 -color_primaries bt709 -color_trc bt709 -movflags +faststart -c:a aac -b:a 320k -t 60 renders/ALBAHJAH_MANASIK_UMROH_BUMPER_60S.mp4",
     "render:keyvisual": "remotion render src/index.ts AlBahjahKeyVisual10s out/ALBAHJAH_MANASIK_UMROH_KEYVISUAL_10S.mp4 --codec=h264 --crf=14 --audio-codec=aac --audio-bitrate=320k --browser-executable=${REMOTION_BROWSER:-/opt/pw-browsers/chromium_headless_shell-1243/chrome-headless-shell-linux64/chrome-headless-shell}",
     "finalize:keyvisual": "ffmpeg -y -i out/ALBAHJAH_MANASIK_UMROH_KEYVISUAL_10S.mp4 -vf scale=in_range=full:out_range=tv,format=yuv420p -c:v libx264 -preset slow -crf 15 -profile:v high -color_range tv -colorspace bt709 -color_primaries bt709 -color_trc bt709 -movflags +faststart -c:a aac -b:a 320k -t 10 renders/ALBAHJAH_MANASIK_UMROH_KEYVISUAL_10S.mp4",
     "audio:backsound": "bash scripts/edit_backsound.sh"
