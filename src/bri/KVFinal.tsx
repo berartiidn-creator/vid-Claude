@@ -36,7 +36,7 @@ const Masked: React.FC<{ mask: string; background: string; opacity: number }> = 
   );
 
 /** Background loop scene (local clock starts when its Sequence starts). */
-const LoopScene: React.FC<{ intro?: boolean; dim?: number }> = ({ intro = true, dim = 0 }) => {
+const LoopScene: React.FC<{ intro?: boolean }> = ({ intro = true }) => {
   const frame = useCurrentFrame();
   const t = frame / FPS; // local
   const p = EASE.inOut(Math.min(1, t / KV.durationSeconds));
@@ -47,8 +47,6 @@ const LoopScene: React.FC<{ intro?: boolean; dim?: number }> = ({ intro = true, 
   const R = 50 * EASE.inOut(clamp01((t - 0.05) / 1.25));
   const drawBg = `linear-gradient(90deg, #EFFFF9 0%, #EFFFF9 ${R}%, transparent ${R + 4}%, transparent ${96 - R}%, #EFFFF9 ${100 - R}%, #EFFFF9 100%)`;
   const lineOp = intro ? 0.95 * (1 - smoothstep(1.3, 2.2, t)) : 0;
-  const bpShift = (t * 30) % 1200;
-  const bpGrad = `repeating-linear-gradient(105deg, ${rgba(COLORS.neonEmerald, 1)} ${bpShift - 1200}px, ${rgba(COLORS.cyan, 1)} ${bpShift - 600}px, ${rgba(COLORS.neonEmerald, 1)} ${bpShift}px)`;
   // very subtle 3-layer parallax: sky (far), city + landmarks (mid), floor (near)
   const pk = smoothstep(intro ? 2.2 : 0, intro ? 3.4 : 0.01, t);
   const ox = 7 * Math.sin((Math.PI * 2 * t) / 15) * pk;
@@ -66,14 +64,6 @@ const LoopScene: React.FC<{ intro?: boolean; dim?: number }> = ({ intro = true, 
       <AbsoluteFill style={{ filter: exposure < 0.999 ? `brightness(${exposure})` : undefined }}>
         <KVBackground src={PLATE} />
       </AbsoluteFill>
-      {dim > 0.01 && (
-        <>
-          {/* blueprint mode: plate sinks into the dark, wireframe lines stay lit */}
-          <AbsoluteFill style={{ background: "#01120E", opacity: 0.84 * dim }} />
-          <Masked mask={LINES} background={bpGrad} opacity={0.95 * dim} />
-          <Masked mask={FLOOR} background={bpGrad} opacity={0.55 * dim} />
-        </>
-      )}
       <KVLightLayers />
     </AbsoluteFill>
   );
@@ -196,7 +186,7 @@ const PlateShotView: React.FC<{ shot: PlateShot }> = ({ shot }) => {
     <AbsoluteFill style={{ transform: `perspective(2400px) rotateY(${ry}deg) scale(1.06)`, overflow: "hidden" }}>
       <AbsoluteFill style={{ transformOrigin: "0 0", transform: `translate(${dx}px, ${dy}px) scale(${sc})` }}>
         <Sequence from={f(shot.seqFrom)} layout="none">
-          <LoopScene intro={shot.intro ?? false} dim={shot.dim ? keyAt(shot.dim, t, (v) => v) : 0} />
+          <LoopScene intro={shot.intro ?? false} />
         </Sequence>
       </AbsoluteFill>
     </AbsoluteFill>

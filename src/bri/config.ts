@@ -119,7 +119,8 @@ export const SHOTS: Shot[] = [
     id: "misty-ascent",
     from: 0,
     to: TB.cut1,
-    palette: "kv",
+    palette: "mist",
+    cbd: true,
     pos: { x: [[0, 6], [TB.cut1, 3]], y: [[0, 3], [TB.cut1, 18]], z: [[0, CBD_Z - 175], [TB.cut1, CBD_Z - 150]] },
     yaw: [[0, 0.05], [TB.cut1, -0.03]],
     pitch: [[0, 0.4], [TB.cut1, 0.47]],
@@ -130,7 +131,8 @@ export const SHOTS: Shot[] = [
     id: "night-rise",
     from: TB.cut1,
     to: TB.cut2,
-    palette: "kv",
+    palette: "night",
+    cbd: true,
     pos: { x: [[TB.cut1, -12], [TB.cut2, 10]], y: [[TB.cut1, 30], [TB.cut2, 165]], z: [[TB.cut1, CBD_Z - 70], [TB.cut2, CBD_Z - 5]] },
     yaw: [[TB.cut1, -0.28], [TB.cut2, 0.24]],
     pitch: [[TB.cut1, 0.55], [TB.cut2, 0.22]],
@@ -141,7 +143,8 @@ export const SHOTS: Shot[] = [
     id: "glide",
     from: TB.cut2,
     to: TB.cut3,
-    palette: "kv",
+    palette: "bright",
+    cbd: true,
     pos: { x: [[TB.cut2, -14], [TB.cut3, 10]], y: [[TB.cut2, 36], [TB.cut3, 58]], z: [[TB.cut2, CBD_Z - 300], [TB.cut3, CBD_Z - 150]] },
     yaw: [[TB.cut2, 0.1], [TB.cut3, -0.08]],
     pitch: [[TB.cut2, 0.16], [TB.cut3, 0.1]],
@@ -231,15 +234,10 @@ export const FLASHES: { at: number; strength: number }[] = [
  * s = zoom, (fx, fy) = plate point placed at screen (sx, sy), ry = perspective yaw (deg).
  * seqFrom = when the key-visual loop's local clock starts (aligns its scans).
  */
-export type PlateShot = { id: string; from: number; to: number; seqFrom: number; intro?: boolean; dim?: K; s: K; fx: K; fy: K; sx: K; sy: K; ry: K };
+export type PlateShot = { id: string; from: number; to: number; seqFrom: number; intro?: boolean; s: K; fx: K; fy: K; sx: K; sy: K; ry: K };
 
 export const PLATE_SHOTS: PlateShot[] = [
-  // Opening, blueprint mode: transparent wireframe Makkah / Madinah city lighting up step by step
-  { id: "bp-wide", from: 0, to: TB.cut1, seqFrom: 0, dim: [[0, 1], [3.2, 0.82], [TB.cut1, 0.72]], s: [[0, 1.2], [TB.cut1, 1.1]], fx: [[0, 960], [TB.cut1, 960]], fy: [[0, 640], [TB.cut1, 625]], sx: [[0, 960], [TB.cut1, 960]], sy: [[0, 640], [TB.cut1, 620]], ry: [[0, 0], [TB.cut1, 0]] },
-  { id: "bp-makkah", from: TB.cut1, to: TB.cut2, seqFrom: TB.cut1 - 3, dim: [[TB.cut1, 0.74], [TB.cut2, 0.6]], s: [[TB.cut1, 1.95], [TB.cut2, 1.78]], fx: [[TB.cut1, 230], [TB.cut2, 230]], fy: [[TB.cut1, 640], [TB.cut2, 430]], sx: [[TB.cut1, 470], [TB.cut2, 500]], sy: [[TB.cut1, 700], [TB.cut2, 560]], ry: [[TB.cut1, 3], [TB.cut2, 1]] },
-  { id: "bp-madinah", from: TB.cut2, to: TB.cut3, seqFrom: TB.cut2 - 3, dim: [[TB.cut2, 0.62], [TB.cut3, 0.48]], s: [[TB.cut2, 1.8], [TB.cut3, 1.62]], fx: [[TB.cut2, 1560], [TB.cut3, 1720]], fy: [[TB.cut2, 600], [TB.cut3, 580]], sx: [[TB.cut2, 1300], [TB.cut3, 1460]], sy: [[TB.cut2, 640], [TB.cut3, 600]], ry: [[TB.cut2, -3], [TB.cut3, -1]] },
-  // full hologram lights up on the way to the music drop
-  { id: "sacred-build", from: TB.cut3, to: TB.drop, seqFrom: TB.cut3 - 3, dim: [[TB.cut3, 0.5], [TB.drop - 0.3, 0]], s: [[TB.cut3, 1.14], [TB.drop, 1.06]], fx: [[TB.cut3, 960], [TB.drop, 960]], fy: [[TB.cut3, 640], [TB.drop, 630]], sx: [[TB.cut3, 960], [TB.drop, 960]], sy: [[TB.cut3, 600], [TB.drop, 590]], ry: [[TB.cut3, 0], [TB.drop, 0]] },
+  { id: "sacred-build", from: TB.cut3, to: TB.drop, seqFrom: TB.cut3, intro: true, s: [[TB.cut3, 1.14], [TB.drop, 1.06]], fx: [[TB.cut3, 960], [TB.drop, 960]], fy: [[TB.cut3, 640], [TB.drop, 630]], sx: [[TB.cut3, 960], [TB.drop, 960]], sy: [[TB.cut3, 600], [TB.drop, 590]], ry: [[TB.cut3, 0], [TB.drop, 0]] },
   { id: "kaaba", from: TB.drop, to: TB.cut5, seqFrom: TB.drop - 1.9, s: [[TB.drop, 1.62], [TB.cut5, 1.46]], fx: [[TB.drop, 265], [TB.cut5, 265]], fy: [[TB.drop, 683], [TB.cut5, 683]], sx: [[TB.drop, 380], [TB.cut5, 370]], sy: [[TB.drop, 620], [TB.cut5, 640]], ry: [[TB.drop, 3], [TB.cut5, 1]] },
   { id: "dome", from: TB.cut5, to: TB.cut6, seqFrom: TB.cut5 - 2.2, s: [[TB.cut5, 1.62], [TB.cut6, 1.46]], fx: [[TB.cut5, 1705], [TB.cut6, 1705]], fy: [[TB.cut5, 661], [TB.cut6, 661]], sx: [[TB.cut5, 1560], [TB.cut6, 1580]], sy: [[TB.cut5, 600], [TB.cut6, 620]], ry: [[TB.cut5, -3], [TB.cut6, -1]] },
   { id: "title", from: TB.cut6, to: TB.finalStart, seqFrom: TB.cut6 - 2.4, s: [[TB.cut6, 1.38], [TB.finalStart, 1.18]], fx: [[TB.cut6, 960], [TB.finalStart, 960]], fy: [[TB.cut6, 700], [TB.finalStart, 690]], sx: [[TB.cut6, 960], [TB.finalStart, 960]], sy: [[TB.cut6, 740], [TB.finalStart, 720]], ry: [[TB.cut6, 0], [TB.finalStart, 0]] },

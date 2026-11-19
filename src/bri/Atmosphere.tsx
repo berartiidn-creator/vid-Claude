@@ -29,7 +29,7 @@ export const Clouds: React.FC = () => {
     layers.push(<Cloud key={`a${j}`} i={j} x={x} y={y} w={2200} opacity={k * (j % 2 === 0 ? 0.55 : 0.32)} />);
   }
   // shot 2: clouds rushing past as the camera rises
-  if (shot.cbd && shot.id === "night-rise") {
+  if (shot.id === "night-rise") {
     const p = (t - shot.from) / (shot.to - shot.from);
     for (let j = 0; j < 3; j++) {
       const y = 1300 - ((p * 2600 + j * 900) % 2700);
@@ -37,7 +37,7 @@ export const Clouds: React.FC = () => {
     }
   }
   // opening misty pass and whiteout transition
-  const open = 0; // opening now starts from the dark blueprint city
+  const open = 1 - smoothstep(0, 1.6, t);
   const wo = smoothstep(TB.whiteoutStart, TB.whiteoutStart + 1.3, t) * (1 - smoothstep(TB.finalStart - 0.15, TB.finalStart + 1.1, t));
   const big = Math.max(open, wo);
   if (big > 0.01) {

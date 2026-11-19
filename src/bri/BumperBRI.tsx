@@ -6,7 +6,6 @@
 import React from "react";
 import { AbsoluteFill, Html5Audio, interpolate, Sequence, staticFile, useCurrentFrame, useVideoConfig } from "remotion";
 import { FPS, f } from "../config/timeline";
-import { smoothstep } from "../lib/anim";
 import { MUSIC_BED } from "../config/sound";
 import { loadAllFonts } from "../lib/fonts";
 import { BRIWorld } from "./BRIWorld";
@@ -46,7 +45,6 @@ export const BumperBRI: React.FC = () => {
 
       <KVFinalTypography />
       <Flashes />
-      {t < 1.3 && <AbsoluteFill style={{ background: "#010B08", opacity: 1 - smoothstep(0.05, 1.25, t), pointerEvents: "none" }} />}
       {MUSIC_BED.enabled && (
         <Html5Audio
           src={staticFile(MUSIC_BED.file)}
