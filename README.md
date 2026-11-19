@@ -1,20 +1,24 @@
 # AL-BAHJAH MANASIK UMROH - Cinematic Event Bumper
 
-A 40-second, 1920x1080, 30 fps cinematic event opener built with **Remotion + React + TypeScript**.
+A 60-second, 1920x1080, 30 fps cinematic event opener built with **Remotion + React + TypeScript**,
+cut to the client's backsound "bumper opening lighting show".
 Every frame is deterministic: no `Math.random`, no real-time state. The same frame always renders the same pixels.
 
-**Final output:** `renders/ALBAHJAH_MANASIK_UMROH_BUMPER_40S.mp4` (H.264 High, yuv420p BT.709, AAC 48 kHz stereo, 1200 frames, 40.000 s)
+**Final output:** `renders/ALBAHJAH_MANASIK_UMROH_BUMPER_60S.mp4` (H.264 High, yuv420p BT.709, AAC 48 kHz stereo, 1800 frames, 60.000 s)
 
-Also in `renders/`: a 960x540 preview and a contact sheet (one frame every 2.5 s).
+Also in `renders/`: a 960x540 preview and a contact sheet. The earlier 40-second version is kept in `renders/archive_40s/`.
 
-| Scene | Time | Content |
-|---|---|---|
-| 01 Brand | 00:00-00:06 | Horizon spark, grid draws in, skyline rises, logo forms from particles, golden sweep |
-| 02 Present | 00:06-00:10 | Logo dissolves, camera moves into the horizon, `P R E S E N T` with gold rules and pulse |
-| 03 Hati | 00:10-00:16 | Horizon boost, Ka'bah and Masjid Nabawi build as holograms, energy arc, "Sarana Mempersiapkan **Hati**" |
-| 04 Bertamu | 00:16-00:22 | Light streak, arc connects the landmarks, full illumination, "Bertamu kepada / Allah dan Rasulullah ﷺ" |
-| 05 Title | 00:22-00:28 | Golden streak, MANASIK and UMROH revealed through a light-line mask, ornaments glint |
-| 06 Final | 00:28-00:40 | Title scales and rearranges to one line, logo on top, tagline plaque, golden sweep, living hold |
+| Scene | Time | Content | Music |
+|---|---|---|---|
+| 01 Brand | 00:00-00:08.6 | Horizon spark, grid draws in, skyline rises, logo forms from particles, golden sweep | logo lands on the hit at 4.85 |
+| 02 Mempersembahkan | 00:08.6-00:14.6 | Logo dissolves, camera moves into the horizon, `MEMPERSEMBAHKAN` with gold rules and pulse | build-up |
+| 03 Hati | 00:14.6-00:23.8 | Ka'bah and Masjid Nabawi build as holograms, energy arc, "Sarana Mempersiapkan **Hati**" | text on the first drop, 20.85 |
+| 04 Bertamu | 00:23.8-00:34.2 | Two statements: "Bertamu kepada **Allah**" (Ka'bah lit), then "Bertamu kepada **Rasulullah ﷺ**" (Green Dome lit) | phrases on beat accents |
+| 05 Title | 00:34.2-00:41.26 | Golden streak, MANASIK and UMROH revealed through a light-line mask, ornaments glint | MANASIK on 35.45, title settles on the music edit at 39.75 |
+| 06 Final | 00:41.26-01:00 | Title scales and rearranges to one line, logo on top, tagline plaque, golden sweep, living hold | starts on the second drop; closing hit at 53.76 adds a light accent |
+
+Wording used (chosen by the client): `MEMPERSEMBAHKAN`, "Bertamu kepada Allah", "Bertamu kepada Rasulullah ﷺ",
+and the tagline "Umroh Bersama Al-Bahjah, Bernilai Sedekah & Dakwah".
 
 ---
 
@@ -37,8 +41,8 @@ export REMOTION_BROWSER=/path/to/chrome-headless-shell
 
 ```bash
 npm run studio           # interactive preview in Remotion Studio (scrub the timeline)
-npm run render:preview   # quick half-resolution preview -> out/preview_960x540.mp4
-npm run render           # final 1080p render -> out/ALBAHJAH_MANASIK_UMROH_BUMPER_40S.mp4
+npm run render:preview   # quick half-resolution preview -> out/preview_960x540_60s.mp4
+npm run render           # final 1080p render -> out/ALBAHJAH_MANASIK_UMROH_BUMPER_60S.mp4
 npm run finalize         # convert to broadcast-range yuv420p BT.709 -> renders/ (needs ffmpeg)
 npm run stills           # storyboard check stills -> out/stills/
 npm run typecheck
@@ -47,7 +51,7 @@ npm run typecheck
 Verify a render:
 
 ```bash
-ffprobe -v error -count_frames -show_entries stream=codec_name,width,height,r_frame_rate,pix_fmt,nb_read_frames -show_entries format=duration renders/ALBAHJAH_MANASIK_UMROH_BUMPER_40S.mp4
+ffprobe -v error -count_frames -show_entries stream=codec_name,width,height,r_frame_rate,pix_fmt,nb_read_frames -show_entries format=duration renders/ALBAHJAH_MANASIK_UMROH_BUMPER_60S.mp4
 ```
 
 ---
@@ -131,24 +135,31 @@ To swap in a new logo or title, replace `public/assets/logo/albahjah-logo-origin
 
 ### Sound design
 
-No audio was supplied, so `public/audio/` contains **original placeholder sounds** synthesised by `scripts/generate_audio.py`: an evolving pad that follows the scenes, plus one file per cue. No samples or copyrighted music are used.
+**Music:** the client's backsound `public/audio/source/bumper opening lighting show.mp3` (78.9 s) is edited to exactly
+60 s by `scripts/edit_backsound.sh` (`npm run audio:backsound`), output `public/audio/backsound_60s.wav`.
+There is one cut on a downbeat (~111 BPM): music 39.75 s jumps to 59.19 s, exactly 9 bars, with a 40 ms crossfade.
+Before the cut, video time equals music time; after it, video time = music time - 19.44 s.
+If you change the edit, move the beats in `src/config/timeline.ts` accordingly.
 
-| Time | Cue | File |
-|---|---|---|
-| 00:00 | Deep atmospheric intro | `sfx/00_deep_intro.wav` |
-| 00:02 | Digital activation | `sfx/02_digital_activation.wav` |
-| 00:04 | Logo reveal impact | `sfx/04_logo_impact.wav` |
-| 00:07 | Soft cinematic whoosh | `sfx/07_soft_whoosh.wav` |
-| 00:11 | Holographic scanning | `sfx/11_holo_scan.wav` |
-| 00:16 | Rising cinematic ambience | `sfx/16_rising_ambience.wav` |
-| 00:22 | Main transition impact | `sfx/22_main_impact.wav` |
-| 00:24 | Typography reveal impact | `sfx/24_type_impact.wav` |
-| 00:27 | Title stabilise accent | `sfx/27_title_hit.wav` |
-| 00:28 | Final branding impact | `sfx/28_final_impact.wav` |
-| 00:32 | Golden shimmer | `sfx/32_golden_shimmer.wav` |
-| 00:34 | Ambient cinematic sustain | `sfx/34_ambient_sustain.wav` |
+`BUMPER TRANSISI.mp3` is stored next to it in `public/audio/source/` but is not used in this cut.
 
-To use licensed music or SFX, drop files with the same names into `public/audio/` or edit paths, times and volumes in `src/config/sound.ts`, then re-render. Set `enabled: false` to mute a cue, or `MUSIC_BED.enabled = false` for a silent bed.
+**SFX:** light original layers (generated by `scripts/generate_audio.py`, no samples) mixed under the music.
+Edit times, volumes or `enabled` in `src/config/sound.ts`.
+
+| Time | Cue |
+|---|---|
+| 00:00 | Deep atmospheric intro |
+| 00:02.4 | Digital activation (buildings rise) |
+| 00:04.85 | Logo reveal impact |
+| 00:08.8 | Soft cinematic whoosh |
+| 00:15.4 | Holographic scanning |
+| 00:34.4 | Main transition impact |
+| 00:35.45 | Typography reveal impact |
+| 00:39.75 | Title stabilise accent (also covers the music edit) |
+| 00:41.26 | Final branding impact |
+| 00:47.0 | Golden shimmer |
+| 00:50.76 | Ambient cinematic sustain |
+| 00:53.76 | Closing shimmer |
 
 ### Rebuilding generated assets
 
@@ -156,6 +167,7 @@ To use licensed music or SFX, drop files with the same names into `public/audio/
 python3 scripts/build_logo_assets.py    # needs numpy, pillow
 python3 scripts/build_title_assets.py   # needs numpy, pillow, scipy
 python3 scripts/generate_audio.py       # needs numpy
+bash scripts/edit_backsound.sh          # needs ffmpeg
 ```
 
 ## Reference material

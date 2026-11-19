@@ -1,4 +1,4 @@
-/** SCENE 02 - PRESENT (00:06-00:10). */
+/** SCENE 02 - MEMPERSEMBAHKAN (00:08.6-00:14.6). */
 import React from "react";
 import { AbsoluteFill, useCurrentFrame } from "remotion";
 import { COLORS, rgba, TEXT_GLOW, TYPE } from "../config/theme";
@@ -19,18 +19,18 @@ export const Scene02Present: React.FC = () => {
     <AbsoluteFill style={{ alignItems: "center", justifyContent: "flex-start" }}>
       <div style={{ position: "absolute", top: 400, left: 0, right: 0, display: "flex", alignItems: "center", justifyContent: "center", gap: 34 }}>
         <div style={{ opacity: 1 - out }}>
-          <GoldRule width={190} progress={lines} dir="left" />
+          <GoldRule width={170} progress={lines} dir="left" />
         </div>
-        <TypographyReveal text="PRESENT" style={style} start={T.presentIn} stagger={0.07} duration={0.8} order="center" rise={0} blur={14} exitStart={T.presentOut} exitDuration={0.55} />
+        <TypographyReveal text="MEMPERSEMBAHKAN" style={style} start={T.presentIn} stagger={0.045} duration={0.8} order="center" rise={0} blur={14} exitStart={T.presentOut} exitDuration={0.55} />
         <div style={{ opacity: 1 - out }}>
-          <GoldRule width={190} progress={lines} dir="right" />
+          <GoldRule width={170} progress={lines} dir="right" />
         </div>
       </div>
       {/* golden light pulse below */}
       <div
         style={{
           position: "absolute",
-          top: 478,
+          top: 470,
           left: 960 - 170,
           width: 340,
           height: 26,
@@ -42,7 +42,7 @@ export const Scene02Present: React.FC = () => {
       <div
         style={{
           position: "absolute",
-          top: 490,
+          top: 482,
           left: 960 - 120 * pulse,
           width: 240 * pulse,
           height: 1.5,

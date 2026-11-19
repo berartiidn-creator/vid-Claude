@@ -149,6 +149,14 @@ export const MainTitle: React.FC = () => {
       {edgeU > 0 && (
         <div style={{ position: "absolute", left: cx - titleW / 2, width: titleW, top: cy + s * (yU - P0[1]) - 1, height: 2, opacity: edgeU, background: `linear-gradient(90deg, transparent, #FFF3C8 30%, #fff 50%, #FFF3C8 70%, transparent)`, boxShadow: `0 0 16px ${rgba(COLORS.gold, 0.9)}` }} />
       )}
+      {/* final accent glints (closing music hit) - typography does not move */}
+      {rearr >= 1 && (
+        <>
+          <Glint x={m.x + s * 632} y={m.y + s * 14} size={64} intensity={glintI(T.finalAccent + 0.05)} rotate={15} />
+          <Glint x={u.x + s * 1236} y={u.y + s * 358} size={56} intensity={glintI(T.finalAccent + 0.25)} />
+          <Glint x={swPos.x + swS * 1508} y={swPos.y + swS * 664} size={60} intensity={glintI(T.finalAccent + 0.45)} rotate={30} />
+        </>
+      )}
       {/* ornament glints */}
       {rearr < 0.05 && (
         <>

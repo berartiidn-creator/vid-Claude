@@ -8,7 +8,7 @@ const args = process.argv.slice(2);
 const scale = args.length && args[0].includes(".") ? Number(args.shift()) : 0.5;
 const frames = args.length
   ? args.map(Number)
-  : [20, 55, 80, 115, 135, 165, 230, 260, 290, 340, 375, 410, 440, 470, 500, 545, 590, 615, 650, 680, 715, 760, 800, 860, 885, 920, 950, 990, 1050, 1199];
+  : [30, 75, 120, 146, 200, 330, 360, 420, 480, 520, 560, 640, 690, 740, 790, 820, 850, 900, 940, 990, 1010, 1060, 1110, 1150, 1240, 1300, 1350, 1430, 1500, 1613, 1799];
 mkdirSync("out/stills", { recursive: true });
 const browserExecutable = process.env.REMOTION_BROWSER || "/opt/pw-browsers/chromium_headless_shell-1243/chrome-headless-shell-linux64/chrome-headless-shell";
 const serveUrl = await bundle({ entryPoint: path.resolve("src/index.ts") });

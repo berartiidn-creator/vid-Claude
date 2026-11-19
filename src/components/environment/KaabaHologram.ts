@@ -2,7 +2,7 @@
  * KaabaHologram: holographic Ka'bah with dark solid walls, gold hizam band,
  * emerald/cyan contours, scanning plane and rotating mataf rings.
  */
-import { LIGHTING } from "../../config/lighting";
+import { kaabaFocus, LIGHTING } from "../../config/lighting";
 import { COLORS, rgba } from "../../config/theme";
 import { T } from "../../config/timeline";
 import { WORLD } from "../../config/world";
@@ -17,7 +17,7 @@ export const kaabaProgress = (t: number) => EASE.inOut(smoothstep(T.kaabaBuildSt
 
 const illumWave = (t: number, yN: number) => {
   let b = 0;
-  for (const [start, dur] of [[T.outlinesIlluminate, 1.1], [T.landmarksFull, 1.0], [T.fullIllumination, 1.2]] as const) {
+  for (const [start, dur] of [[T.outlinesIlluminate, 1.1], [T.landmarksFull, 1.0], [T.allahIn, 1.0], [T.fullIllumination, 1.2], [T.finalAccent, 1.1]] as const) {
     const w = (t - start) / dur;
     if (w > -0.2 && w < 1.3) b += Math.exp(-((yN - w * 1.2 + 0.1) ** 2) / 0.012);
   }
@@ -29,8 +29,8 @@ export const drawKaabaLines = (batch: WireBatch, cam: Cam, t: number) => {
   if (P <= 0) return;
   const k = getKaaba();
   const H = k.height;
-  const L = keyAt(LIGHTING.landmarks, t);
-  const G = keyAt(LIGHTING.gold, t);
+  const L = keyAt(LIGHTING.landmarks, t) * kaabaFocus(t);
+  const G = keyAt(LIGHTING.gold, t) * (0.85 + 0.15 * kaabaFocus(t));
   const scanPeriod = 3.4;
   const scanY = t > T.kaabaBuildEnd ? (((t - T.kaabaBuildEnd) / scanPeriod) % 1) * (H + 3) - 1.5 : -10;
   // Hide lines that lie only on faces turned away from the camera (solid look).

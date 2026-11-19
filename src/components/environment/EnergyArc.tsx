@@ -92,7 +92,8 @@ export const SkyEnergyArc: React.FC = () => {
     1 +
     0.5 * Math.exp(-(((t - T.arcConnect) / 0.5) ** 2)) +
     0.6 * Math.exp(-(((t - T.goldStreak) / 0.5) ** 2)) +
-    0.4 * Math.exp(-(((t - T.finalSweepStart - 0.6) / 0.7) ** 2));
+    0.4 * Math.exp(-(((t - T.finalSweepStart - 0.6) / 0.7) ** 2)) +
+    0.5 * Math.exp(-(((t - T.finalAccent - 0.2) / 0.6) ** 2));
   const I = (0.75 + 0.1 * Math.sin(t * 1.1)) * pulse * Math.min(1.2, keyAt(LIGHTING.landmarks, t));
   const head = t > T.energyArcStart ? ((t - T.energyArcStart) / 3.2) % 1 : 0;
   return (

@@ -6,7 +6,7 @@ import { FPS, T } from "../../config/timeline";
 import { EASE, prog } from "../../lib/anim";
 import { TextSweep } from "./GoldenLightSweep";
 
-export const TAGLINE = "Umrah Bersama Al-Bahjah, Bernilai Sedekah & Da'wah";
+export const TAGLINE = "Umroh Bersama Al-Bahjah, Bernilai Sedekah & Dakwah";
 
 export const TaglinePlaque: React.FC<{ cx: number; cy: number }> = ({ cx, cy }) => {
   const frame = useCurrentFrame();

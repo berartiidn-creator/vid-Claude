@@ -35,7 +35,7 @@ export const VIDEO = {
   width: 1920,
   height: 1080,
   fps: 30,
-  durationInFrames: 1200,
+  durationInFrames: 1800,
 } as const;
 
 /** Typography presets (px at 1920x1080). */
@@ -43,8 +43,8 @@ export const TYPE = {
   present: {
     fontFamily: FONTS.title,
     fontWeight: 500,
-    fontSize: 58,
-    letterSpacing: "0.62em",
+    fontSize: 50,
+    letterSpacing: "0.42em",
     color: COLORS.white,
   },
   statement: {

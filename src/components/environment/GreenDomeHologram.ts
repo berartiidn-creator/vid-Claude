@@ -2,7 +2,7 @@
  * GreenDomeHologram: Masjid Nabawi with the Green Dome mesh, drum, finial,
  * prayer hall arcade, roof domes, minarets and colonnades.
  */
-import { LIGHTING } from "../../config/lighting";
+import { domeFocus, LIGHTING } from "../../config/lighting";
 import { COLORS } from "../../config/theme";
 import { T } from "../../config/timeline";
 import { WORLD } from "../../config/world";
@@ -23,7 +23,7 @@ const field = (p: V3) => {
 
 const wave = (t: number, f: number) => {
   let b = 0;
-  for (const [start, dur] of [[T.outlinesIlluminate + 0.3, 1.1], [T.landmarksFull + 0.15, 1.0], [T.fullIllumination + 0.15, 1.2]] as const) {
+  for (const [start, dur] of [[T.outlinesIlluminate + 0.3, 1.1], [T.landmarksFull + 0.15, 1.0], [T.rasulIn, 1.0], [T.fullIllumination + 0.15, 1.2], [T.finalAccent + 0.1, 1.1]] as const) {
     const w = (t - start) / dur;
     if (w > -0.2 && w < 1.3) b += Math.exp(-((f - w * 1.1 + 0.05) ** 2) / 0.008);
   }
@@ -34,7 +34,7 @@ export const drawNabawiLines = (batch: WireBatch, _cam: Cam, t: number) => {
   const P = nabawiProgress(t);
   if (P <= 0) return;
   const n = getNabawi();
-  const L = keyAt(LIGHTING.landmarks, t);
+  const L = keyAt(LIGHTING.landmarks, t) * domeFocus(t);
   const G = keyAt(LIGHTING.gold, t);
   const breathe = 0.9 + 0.1 * Math.sin(t * 1.3);
   drawReveal(batch, n.segs, field, P, (s, my) => {
@@ -66,7 +66,7 @@ export const drawNabawiFills = (ctx: CanvasRenderingContext2D, cam: Cam, t: numb
   const P = nabawiProgress(t);
   if (P <= 0.05) return;
   const n = getNabawi();
-  const L = keyAt(LIGHTING.landmarks, t);
+  const L = keyAt(LIGHTING.landmarks, t) * domeFocus(t);
   const a = smoothstep(0.2, 0.8, P) * (mirror ? 0.25 : 1);
   ctx.save();
   // hall walls

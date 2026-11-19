@@ -2,17 +2,18 @@
   "name": "albahjah-manasik-umroh-bumper",
   "version": "1.0.0",
   "private": true,
-  "description": "AL-BAHJAH MANASIK UMROH - 40s cinematic event bumper built with Remotion",
+  "description": "AL-BAHJAH MANASIK UMROH - 60s cinematic event bumper built with Remotion",
   "scripts": {
     "studio": "remotion studio src/index.ts",
-    "render": "remotion render src/index.ts AlBahjahBumper out/ALBAHJAH_MANASIK_UMROH_BUMPER_40S.mp4 --codec=h264 --crf=16 --pixel-format=yuv420p --audio-codec=aac --audio-bitrate=320k --browser-executable=${REMOTION_BROWSER:-/opt/pw-browsers/chromium_headless_shell-1243/chrome-headless-shell-linux64/chrome-headless-shell}",
-    "render:preview": "remotion render src/index.ts AlBahjahBumper out/preview_960x540.mp4 --codec=h264 --scale=0.5 --crf=22 --browser-executable=${REMOTION_BROWSER:-/opt/pw-browsers/chromium_headless_shell-1243/chrome-headless-shell-linux64/chrome-headless-shell}",
+    "render": "remotion render src/index.ts AlBahjahBumper out/ALBAHJAH_MANASIK_UMROH_BUMPER_60S.mp4 --codec=h264 --crf=16 --pixel-format=yuv420p --audio-codec=aac --audio-bitrate=320k --browser-executable=${REMOTION_BROWSER:-/opt/pw-browsers/chromium_headless_shell-1243/chrome-headless-shell-linux64/chrome-headless-shell}",
+    "render:preview": "remotion render src/index.ts AlBahjahBumper out/preview_960x540_60s.mp4 --codec=h264 --scale=0.5 --crf=22 --browser-executable=${REMOTION_BROWSER:-/opt/pw-browsers/chromium_headless_shell-1243/chrome-headless-shell-linux64/chrome-headless-shell}",
     "stills": "node scripts/render-stills.mjs",
     "audio": "python3 scripts/generate_audio.py",
     "typecheck": "tsc --noEmit",
-    "finalize": "ffmpeg -y -i out/ALBAHJAH_MANASIK_UMROH_BUMPER_40S.mp4 -vf scale=in_range=full:out_range=tv,format=yuv420p -c:v libx264 -preset slow -crf 16 -profile:v high -color_range tv -colorspace bt709 -color_primaries bt709 -color_trc bt709 -movflags +faststart -c:a copy renders/ALBAHJAH_MANASIK_UMROH_BUMPER_40S.mp4",
+    "finalize": "ffmpeg -y -i out/ALBAHJAH_MANASIK_UMROH_BUMPER_60S.mp4 -vf scale=in_range=full:out_range=tv,format=yuv420p -c:v libx264 -preset slow -crf 16 -profile:v high -color_range tv -colorspace bt709 -color_primaries bt709 -color_trc bt709 -movflags +faststart -c:a copy renders/ALBAHJAH_MANASIK_UMROH_BUMPER_60S.mp4",
     "render:keyvisual": "remotion render src/index.ts AlBahjahKeyVisual10s out/ALBAHJAH_MANASIK_UMROH_KEYVISUAL_10S.mp4 --codec=h264 --crf=14 --audio-codec=aac --audio-bitrate=320k --browser-executable=${REMOTION_BROWSER:-/opt/pw-browsers/chromium_headless_shell-1243/chrome-headless-shell-linux64/chrome-headless-shell}",
-    "finalize:keyvisual": "ffmpeg -y -i out/ALBAHJAH_MANASIK_UMROH_KEYVISUAL_10S.mp4 -vf scale=in_range=full:out_range=tv,format=yuv420p -c:v libx264 -preset slow -crf 15 -profile:v high -color_range tv -colorspace bt709 -color_primaries bt709 -color_trc bt709 -movflags +faststart -c:a aac -b:a 320k -t 10 renders/ALBAHJAH_MANASIK_UMROH_KEYVISUAL_10S.mp4"
+    "finalize:keyvisual": "ffmpeg -y -i out/ALBAHJAH_MANASIK_UMROH_KEYVISUAL_10S.mp4 -vf scale=in_range=full:out_range=tv,format=yuv420p -c:v libx264 -preset slow -crf 15 -profile:v high -color_range tv -colorspace bt709 -color_primaries bt709 -color_trc bt709 -movflags +faststart -c:a aac -b:a 320k -t 10 renders/ALBAHJAH_MANASIK_UMROH_KEYVISUAL_10S.mp4",
+    "audio:backsound": "bash scripts/edit_backsound.sh"
   },
   "dependencies": {
     "@remotion/bundler": "^4.0.545",

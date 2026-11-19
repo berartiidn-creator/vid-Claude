@@ -1,5 +1,5 @@
 /**
- * AL-BAHJAH MANASIK UMROH - 40s cinematic event bumper.
+ * AL-BAHJAH MANASIK UMROH - 60s cinematic event bumper.
  * One continuous world (persistent layers) + scene typography + transitions.
  */
 import React from "react";
@@ -58,12 +58,14 @@ export const Bumper: React.FC = () => {
       {t >= T.logoTopIn && <Scene06Final />}
 
       {/* ---------- Transitions & light events ---------- */}
-      <LightStreak start={6.15} duration={1.0} y={HORIZON} color={COLORS.cyan} scale={0.7} />
-      <FullScreenSweep start={T.emeraldSweep1} duration={1.15} color={COLORS.neonEmerald} core={COLORS.cyan} strength={0.9} />
+      <LightStreak start={T.logoOutStart + 0.2} duration={1.1} y={HORIZON} color={COLORS.cyan} scale={0.7} />
+      <FullScreenSweep start={T.emeraldSweep1} duration={1.3} color={COLORS.neonEmerald} core={COLORS.cyan} strength={0.9} />
       <LightStreak start={T.streakLR} duration={1.05} y={HORIZON - 4} color={COLORS.neonEmerald} core="#E8FFF8" />
-      <FullScreenSweep start={T.emeraldSweep2} duration={1.3} color={COLORS.neonEmerald} core={COLORS.gold} strength={1.15} />
+      <LightStreak start={T.allahOut + 0.15} duration={0.9} y={400} color={COLORS.gold} core="#FFF8E0" scale={0.6} />
+      <FullScreenSweep start={T.emeraldSweep2} duration={1.4} color={COLORS.neonEmerald} core={COLORS.gold} strength={1.15} />
       <LightStreak start={T.goldStreak} duration={0.95} y={440} color={COLORS.gold} core="#FFF8E0" scale={1.25} />
-      <FullScreenSweep start={T.finalSweepStart} duration={1.6} color={COLORS.gold} core="#FFF4D0" strength={0.55} angle={22} />
+      <FullScreenSweep start={T.finalSweepStart} duration={1.9} color={COLORS.gold} core="#FFF4D0" strength={0.55} angle={22} />
+      <FullScreenSweep start={T.finalAccent - 0.15} duration={1.6} color={COLORS.neonEmerald} core="#FFF4D0" strength={0.3} angle={-16} />
 
       <Vignette />
       <SoundDesign />

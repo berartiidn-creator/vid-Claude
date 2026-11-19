@@ -2,7 +2,7 @@
 import React from "react";
 import { AbsoluteFill, useCurrentFrame } from "remotion";
 import { CAMERA } from "../../config/camera";
-import { LIGHTING } from "../../config/lighting";
+import { domeFocus, kaabaFocus, LIGHTING } from "../../config/lighting";
 import { COLORS, rgba, VIDEO } from "../../config/theme";
 import { FPS, T } from "../../config/timeline";
 import { keyAt, smoothstep } from "../../lib/anim";
@@ -58,7 +58,7 @@ export const VolumetricLight: React.FC = () => {
                 top: 0,
                 width: 140,
                 height: p.y + 20,
-                background: `linear-gradient(to top, ${rgba(i === 0 ? COLORS.gold : COLORS.cyan, 0.22 * pillars)}, ${rgba(COLORS.neonEmerald, 0.06 * pillars)} 55%, transparent)`,
+                background: `linear-gradient(to top, ${rgba(i === 0 ? COLORS.gold : COLORS.cyan, 0.22 * pillars * (i === 0 ? kaabaFocus(t) : domeFocus(t)) ** 2)}, ${rgba(COLORS.neonEmerald, 0.06 * pillars)} 55%, transparent)`,
                 filter: "blur(22px)",
               }}
             />
