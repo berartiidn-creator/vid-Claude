@@ -20,9 +20,9 @@ lm.OPK, lm.BODY_T, lm.CLONE_T = 9, 0.3, 0.8
 R = lm.Remover(WORK + "/tlogo_model.npz", WORK + "/tregress.npz")
 
 
-def grab(t, clean=True):
-    n = int(round(t * 30))
-    raw = subprocess.run(["ffmpeg", "-v", "error", "-i", SRC, "-vf", f"select=eq(n\\,{n})", "-vsync", "0",
+def grab(t, clean=True, src=None, fps=30):
+    n = int(round(t * fps))
+    raw = subprocess.run(["ffmpeg", "-v", "error", "-i", src or SRC, "-vf", f"select=eq(n\\,{n})", "-vsync", "0",
                           "-frames:v", "1", "-f", "rawvideo", "-pix_fmt", "rgb24", "-"],
                          capture_output=True).stdout
     f = np.frombuffer(raw, np.uint8).reshape(H, W, 3).copy()
@@ -66,8 +66,8 @@ vig[..., 3] = (np.clip((xx ** 2 * 0.9 + yv ** 2 * 0.5) - 0.35, 0, 1) * 150).asty
 cv.alpha_composite(Image.fromarray(vig, "RGBA"))
 
 # ---------- polaroid cards (editing + camera) ----------
-def card(t, crop, w, label, angle):
-    im = grab(t).crop(crop)
+def card(t, crop, w, label, angle, src=None, fps=30):
+    im = grab(t, src is None, src, fps).crop(crop)
     h = int(w * im.height / im.width)
     im = im.resize((w, h), Image.LANCZOS)
     b = 12
@@ -82,8 +82,8 @@ def card(t, crop, w, label, angle):
     return c, sh
 
 
-c1, s1 = card(345 / 30, (40, 60, 1080, 1100), 290, "Broadcasting", 6)
-c2, s2 = card(285 / 30, (60, 330, 1030, 1160), 290, "Konten Dakwah", -7)
+c1, s1 = card(512 / 30, (150, 290, 1010, 1060), 290, "Broadcasting", 6)
+c2, s2 = card(1580 / 60, (0, 330, 1080, 1250), 290, "Konten Dakwah", -7, DL + "/RAW/promo.mp4", 60)
 for c, s, (px, py) in [(c2, s2, (34, 846)), (c1, s1, (W - c1.width - 30, 840))]:
     cv.alpha_composite(s, (px + 8, py + 16))
     cv.alpha_composite(c, (px, py))
