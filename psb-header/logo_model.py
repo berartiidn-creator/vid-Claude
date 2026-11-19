@@ -11,6 +11,8 @@ OX, OY, RW, RH = 330, 0, 440, 300
 OPK, HALO_GAIN = 5, 1.0
 CORR_MAX = 8
 BODY_T = 0.5
+CLONE_T = 4.0
+CLONE_MAXERR = 1e9
 
 
 def build(reg_path, save_path):
@@ -118,7 +120,8 @@ class Remover:
                 e *= 0.85  # temporal stickiness
             if best is None or e < best[0]:
                 best = (e, dy, dx)
-        if best is None:
+        self.rejected = best is not None and best[0] > CLONE_MAXERR
+        if best is None or best[0] > CLONE_MAXERR:
             return f, None
         _, dy, dx = best
         src = f[gy0 + dy:gy0 + dy + hh, gx0 + dx:gx0 + dx + ww].copy()
@@ -135,7 +138,8 @@ class Remover:
     def clean(self, f):
         r = f[OY:OY + RH, OX:OX + RW].astype(np.float32)
         hf0 = np.abs(r - cv2.GaussianBlur(r, (0, 0), 4))[self.ring].mean()
-        if hf0 > 4.0:  # textured background -> clone matching texture
+        self.rejected = False
+        if hf0 > CLONE_T:  # textured background -> clone matching texture
             try:
                 c, off = self.clone_fill(f.copy(), self.prev_off)
             except cv2.error:
