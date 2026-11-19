@@ -78,3 +78,29 @@ export const project = (c: Cam, p: V3): { x: number; y: number; d: number } | nu
   if (v[2] < c.near) return null;
   return { x: c.cx + (c.focal * v[0]) / v[2], y: c.cy - (c.focal * v[1]) / v[2], d: v[2] };
 };
+
+/** Generic camera from position + yaw/pitch (radians). cyFrac = horizon lens shift. */
+export const makeCam = (pos: V3, yaw: number, pitch: number, fovDeg: number, cyFrac: number, t: number): Cam => {
+  const forward = new Vector3(Math.sin(yaw) * Math.cos(pitch), Math.sin(pitch), Math.cos(yaw) * Math.cos(pitch)).normalize();
+  const right = new Vector3(Math.cos(yaw), 0, -Math.sin(yaw)).normalize();
+  const up = new Vector3().crossVectors(forward, right).normalize();
+  return {
+    pos,
+    r: [right.x, right.y, right.z],
+    u: [up.x, up.y, up.z],
+    f: [forward.x, forward.y, forward.z],
+    focal: VIDEO.height / 2 / Math.tan(((fovDeg / 2) * Math.PI) / 180),
+    cx: VIDEO.width / 2,
+    cy: VIDEO.height * cyFrac,
+    near: CAMERA.near,
+    t,
+  };
+};
+
+/** yaw/pitch that aim a camera at `pos` toward `target`. */
+export const aim = (pos: V3, target: V3) => {
+  const dx = target[0] - pos[0];
+  const dy = target[1] - pos[1];
+  const dz = target[2] - pos[2];
+  return { yaw: Math.atan2(dx, dz), pitch: Math.atan2(dy, Math.hypot(dx, dz)) };
+};

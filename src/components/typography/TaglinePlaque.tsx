@@ -8,14 +8,14 @@ import { TextSweep } from "./GoldenLightSweep";
 
 export const TAGLINE = "Umroh Bersama Al-Bahjah, Bernilai Sedekah & Dakwah";
 
-export const TaglinePlaque: React.FC<{ cx: number; cy: number }> = ({ cx, cy }) => {
+export const TaglinePlaque: React.FC<{ cx: number; cy: number; start?: number; sweepAt?: number }> = ({ cx, cy, start = T.taglineIn, sweepAt = T.finalSweepStart + 0.55 }) => {
   const frame = useCurrentFrame();
   const t = frame / FPS;
-  const open = prog(frame, T.taglineIn, T.taglineIn + 0.7, EASE.cinematic);
-  const txt = prog(frame, T.taglineIn + 0.3, T.taglineIn + 1.1, EASE.inOut);
+  const open = prog(frame, start, start + 0.7, EASE.cinematic);
+  const txt = prog(frame, start + 0.3, start + 1.1, EASE.inOut);
   if (open <= 0) return null;
   const inset = 50 * (1 - open);
-  const borderGlow = 0.35 + 0.65 * Math.exp(-(((t - T.taglineIn - 0.5) / 0.4) ** 2)) + 0.15 * Math.sin(t * 1.2);
+  const borderGlow = 0.35 + 0.65 * Math.exp(-(((t - start - 0.5) / 0.4) ** 2)) + 0.15 * Math.sin(t * 1.2);
   const textStyle: React.CSSProperties = { ...TYPE.tagline, textShadow: "0 1px 6px rgba(0,0,0,0.6)" };
   return (
     <div
@@ -46,7 +46,7 @@ export const TaglinePlaque: React.FC<{ cx: number; cy: number }> = ({ cx, cy }) 
           }}
         >
           <span style={textStyle}>{TAGLINE}</span>
-          <TextSweep text={TAGLINE} style={textStyle} start={T.finalSweepStart + 0.55} duration={1.0} />
+          <TextSweep text={TAGLINE} style={textStyle} start={sweepAt} duration={1.0} />
         </span>
       </div>
     </div>

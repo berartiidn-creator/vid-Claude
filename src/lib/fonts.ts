@@ -15,6 +15,8 @@ const faces: { family: string; file: string; weight: string; style?: string }[] 
   { family: "Montserrat", file: "montserrat-latin-400-normal.woff2", weight: "400" },
   { family: "Montserrat", file: "montserrat-latin-500-normal.woff2", weight: "500" },
   { family: "Montserrat", file: "montserrat-latin-600-normal.woff2", weight: "600" },
+  { family: "Montserrat", file: "montserrat-latin-700-normal.woff2", weight: "700" },
+  { family: "Montserrat", file: "montserrat-latin-800-normal.woff2", weight: "800" },
   { family: "Amiri", file: "amiri-arabic-400-normal.woff2", weight: "400" },
   { family: "Amiri", file: "amiri-arabic-700-normal.woff2", weight: "700" },
 ];

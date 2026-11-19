@@ -8,7 +8,7 @@ import { COLORS } from "../../config/theme";
 import { FPS, T } from "../../config/timeline";
 import { EASE, prog } from "../../lib/anim";
 
-const CLOUD =
+export const CLOUD =
   "M 60 152 C 22 152 14 116 44 106 C 38 72 82 54 108 74 C 118 36 178 24 198 60 C 218 30 282 34 284 74 C 314 60 354 84 338 114 C 368 118 372 152 344 154 Z";
 const CURL_L = "M 60 152 C 34 154 26 128 44 122 C 58 118 64 136 52 140 C 46 142 42 136 47 132";
 const CURL_R = "M 344 154 C 364 150 366 130 350 126 C 338 124 334 140 344 142 C 349 143 352 138 348 134";
