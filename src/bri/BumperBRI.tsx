@@ -46,7 +46,7 @@ export const BumperBRI: React.FC = () => {
       <FullScreenSweep start={TB.finalStart - 0.2} duration={1.6} color={COLORS.gold} core="#FFF4D0" strength={0.45} angle={20} />
       <KVFinalTypography />
       {/* MANASIK UMROH: one continuous title from its reveal to the last frame */}
-      {t >= TB.manasikIn - 0.5 && <KVTitle start={TB.manasikIn} sweepAt={TB.goldenSweep} accentAt={TB.finalAccent} />}
+      {t >= TB.manasikIn - 0.5 && <KVTitle start={TB.manasikIn} sweepAt={TB.goldenSweep} accentAt={TB.finalAccent} shines={[TB.manasikIn + 1.35, 39.6, TB.goldenSweep]} />}
       <Grade />
       {MUSIC_BED.enabled && (
         <Html5Audio

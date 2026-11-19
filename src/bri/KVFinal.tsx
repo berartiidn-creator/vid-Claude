@@ -82,10 +82,68 @@ const LoopScene: React.FC<{ intro?: boolean }> = ({ intro = true }) => {
   );
 };
 
-type TitleProps = { box?: number[]; start?: number; out?: number; sweepAt?: number; accentAt?: number };
+/** Sparkle points on the title: letter tops and the gold onions (fractions of the title box). */
+const SPARKS: [number, number][] = [
+  [0.05, 0.4], [0.165, 0.08], [0.26, 0.42], [0.37, 0.42], [0.47, 0.4], [0.57, 0.42], [0.7, 0.42], [0.84, 0.07], [0.95, 0.42],
+];
+
+/** Metallic shine on the title glyphs: a gold-tinted band with a white-hot core (normal blend, so it reads on white letters). */
+const GlyphShine: React.FC<{ start: number; duration: number }> = ({ start, duration }) => {
+  const frame = useCurrentFrame();
+  const t = frame / FPS;
+  const p = clamp01((t - start) / duration);
+  if (p <= 0 || p >= 1) return null;
+  const pos = -25 + 150 * EASE.inOut(p);
+  const env = Math.min(1, Math.sin(Math.PI * p) * 1.6);
+  return (
+    <div
+      style={{
+        position: "absolute",
+        inset: 0,
+        WebkitMaskImage: `url(${TITLE})`,
+        WebkitMaskSize: "100% 100%",
+        maskImage: `url(${TITLE})`,
+        maskSize: "100% 100%",
+        opacity: env,
+        background: `linear-gradient(108deg, transparent ${pos - 16}%, rgba(196,150,52,0.75) ${pos - 8}%, rgba(255,226,150,0.95) ${pos - 3}%, rgba(255,255,248,1) ${pos}%, rgba(255,226,150,0.95) ${pos + 3}%, rgba(196,150,52,0.75) ${pos + 8}%, transparent ${pos + 16}%)`,
+      }}
+    />
+  );
+};
+
+/** Anamorphic lens flare travelling across the title with a shine. */
+const TitleFlare: React.FC<{ x0: number; x1: number; y: number; start: number; duration: number }> = ({ x0, x1, y, start, duration }) => {
+  const frame = useCurrentFrame();
+  const t = frame / FPS;
+  const p = clamp01((t - start) / duration);
+  if (p <= 0 || p >= 1) return null;
+  const x = x0 + (x1 - x0) * EASE.inOut(p);
+  const env = Math.sin(Math.PI * p);
+  const ghost = (k: number, r: number, a: number) => {
+    const gx = 960 + (960 - x) * k;
+    const gy = 540 + (540 - y) * k;
+    return <div key={k} style={{ position: "absolute", left: gx - r, top: gy - r, width: r * 2, height: r * 2, borderRadius: "50%", background: `radial-gradient(circle, rgba(255,236,180,${a * env}) 0%, rgba(214,179,74,${a * 0.5 * env}) 45%, transparent 70%)` }} />;
+  };
+  return (
+    <AbsoluteFill style={{ pointerEvents: "none", mixBlendMode: "screen" }}>
+      {/* long anamorphic streak */}
+      <div style={{ position: "absolute", left: x - 1100, width: 2200, top: y - 3, height: 6, filter: "blur(2px)", background: `linear-gradient(90deg, transparent, rgba(255,226,160,${0.45 * env}) 28%, rgba(255,255,248,${1 * env}) 50%, rgba(255,226,160,${0.45 * env}) 72%, transparent)` }} />
+      <div style={{ position: "absolute", left: x - 650, width: 1300, top: y - 24, height: 48, filter: "blur(14px)", background: `linear-gradient(90deg, transparent, rgba(214,179,74,${0.45 * env}) 50%, transparent)` }} />
+      {/* hot core + star cross */}
+      <div style={{ position: "absolute", left: x - 150, top: y - 150, width: 300, height: 300, background: `radial-gradient(circle, rgba(255,255,252,${1 * env}) 0%, rgba(255,240,196,${0.75 * env}) 10%, rgba(214,179,74,${0.3 * env}) 30%, transparent 65%)` }} />
+      <div style={{ position: "absolute", left: x - 2, top: y - 120, width: 4, height: 240, filter: "blur(1.5px)", background: `linear-gradient(180deg, transparent, rgba(255,250,235,${0.8 * env}) 50%, transparent)` }} />
+      {/* subtle ghosts mirrored through the frame centre */}
+      {ghost(0.45, 26, 0.18)}
+      {ghost(0.85, 14, 0.22)}
+      {ghost(1.3, 40, 0.1)}
+    </AbsoluteFill>
+  );
+};
+
+type TitleProps = { box?: number[]; start?: number; out?: number; sweepAt?: number; accentAt?: number; shines?: number[] };
 
 /** New MANASIK UMROH artwork (IMG_2140): light line, slice-glitch in, optional glitch out. */
-export const KVTitle: React.FC<TitleProps> = ({ box = kvf.title, start = TB.kvTitleIn, out, sweepAt = TB.goldenSweep, accentAt = TB.finalAccent }) => {
+export const KVTitle: React.FC<TitleProps> = ({ box = kvf.title, start = TB.kvTitleIn, out, sweepAt = TB.goldenSweep, accentAt = TB.finalAccent, shines = [] }) => {
   const frame = useCurrentFrame();
   const t = frame / FPS;
   const [x, y, w, h] = box;
@@ -106,7 +164,18 @@ export const KVTitle: React.FC<TitleProps> = ({ box = kvf.title, start = TB.kvTi
       <div style={{ position: "absolute", left: x, top: y, width: w, height: h, opacity: rev * (1 - outP), WebkitMaskImage: mask, maskImage: mask, filter: "drop-shadow(0 3px 6px rgba(0,0,0,0.28))" }}>
         <Img src={TITLE} style={{ width: "100%", height: "100%", display: "block" }} />
         <ImageSweep src={TITLE} start={sweepAt} duration={1.4} intensity={0.6} />
+        {shines.map((st, i) => (
+          <GlyphShine key={i} start={st} duration={1.3} />
+        ))}
       </div>
+      {shines.map((st, i) => (
+        <TitleFlare key={`f${i}`} x0={x - 120} x1={x + w + 120} y={y + h * 0.52} start={st} duration={1.25} />
+      ))}
+      {shines.map((st, i) =>
+        SPARKS.map(([fx, fy], j) => (
+          <Glint key={`s${i}-${j}`} x={x + fx * w} y={y + fy * h} size={30 + (j % 3) * 10} intensity={0.9 * Math.exp(-(((t - (st + 0.15 + fx * 1.0 + (j % 2) * 0.12)) / 0.16) ** 2))} rotate={(j * 23) % 45} />
+        )),
+      )}
       {kvf.onions.map(([ox, oy], i) => (
         <Glint key={i} x={x + (ox - kvf.title[0]) * k0} y={y + (oy - kvf.title[1]) * k0 + 6} size={70} intensity={glint(start + 0.9 + i * 0.2) + glint(accentAt + i * 0.2)} rotate={15} />
       ))}
