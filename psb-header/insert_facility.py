@@ -22,7 +22,7 @@ TOTAL = 8
 NEW_IDX = 2
 TITLE = "Ranjang Pribadi"
 WORDS = ["ranjang", "pribadi,"]
-VO_START, VO_SPLIT = 0.12, 0.48   # s into the insert / s into the TTS clip
+VO_START, VO_SPLIT = 0.12, 0.40   # s into the insert / s into the TTS clip
 FD = A.dl + "/fonts/"
 YEL = (251, 203, 10)
 
@@ -181,7 +181,7 @@ def inserted_frame(k):
     act = -1
     if 0 <= vo_t < VO_SPLIT:
         act = 0
-    elif VO_SPLIT <= vo_t < 1.09:
+    elif VO_SPLIT <= vo_t < 1.04:
         act = 1
     f = comp(f, CAPS[act])
     return np.clip(f + 0.5, 0, 255).astype(np.uint8)
