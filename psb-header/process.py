@@ -1,11 +1,18 @@
-"""Remove the old centred header logo and lay the reference-style PSB header on top.
+"""PSB header pass:
+  1. remove the old burned-in centre logo (un-blend its shadow, rebuild the opaque body)
+  2. remove the "PERTANYAAN n" pill on the white question cards
+  3. lay the reference-style PSB header (+ top gradient) on top
 
 usage: process.py DL WORK OUT.mp4 [--scale 540] [--start S --dur D] [--crf N]
 """
 import argparse
 import subprocess
+import sys
 import numpy as np
 import cv2
+
+sys.path.insert(0, __file__.rsplit("/", 1)[0])
+import logo_model as lm  # noqa: E402
 
 ap = argparse.ArgumentParser()
 ap.add_argument("dl"); ap.add_argument("work"); ap.add_argument("out")
@@ -14,54 +21,71 @@ ap.add_argument("--start", type=float, default=0)
 ap.add_argument("--dur", type=float, default=0)
 ap.add_argument("--crf", type=int, default=18)
 ap.add_argument("--fps", type=int, default=30)
+ap.add_argument("--preset", default="medium")
 A = ap.parse_args()
 
+lm.OPK, lm.BODY_T = 11, 0.3
 SRC = A.dl + "/RAW/raw.mp4"
 W, H = 1080, 1920
-OX, OY, RW, RH = 370, 20, 360, 240  # ROI holding the old logo
+R = lm.Remover(A.work + "/logo_model.npz", A.work + "/regress.npz")
 
-# ---- static mask of old logo, built from temporal statistics ----
-roi = np.fromfile(A.dl + "/reg.raw", np.uint8).reshape(-1, RH, RW, 3)
-t = np.arange(len(roi)) / 3
-keep = ~(((t > 1.3) & (t < 4)) | ((t > 17.8) & (t < 20.5)) | ((t > 37.4) & (t < 40)))
-stack = roi[keep].astype(np.float32)
-med = np.median(stack, 0)
-std = stack.std(0).mean(-1)
-core = (std < 18).astype(np.uint8)
-wide = (std < 30).astype(np.uint8)
-# include anti-aliasing + soft drop shadow around the logo
-mask = cv2.dilate(wide, cv2.getStructuringElement(cv2.MORPH_ELLIPSE, (15, 15))) * 255
-feather = cv2.GaussianBlur(cv2.dilate(mask, np.ones((5, 5), np.uint8)).astype(np.float32) / 255, (0, 0), 3)[..., None]
-core_idx = core.astype(bool)
-med_core = med[core_idx]
 
-hdr = cv2.imread(A.work + "/header_full.png", cv2.IMREAD_UNCHANGED)
-hdr_rgb = cv2.cvtColor(hdr[..., :3], cv2.COLOR_BGR2RGB).astype(np.float32)
-hdr_a = hdr[..., 3:].astype(np.float32) / 255.0
-HB = 460  # header + gradient live in the top 460 px
+def load_rgba(p):
+    im = cv2.imread(p, cv2.IMREAD_UNCHANGED)
+    return cv2.cvtColor(im[..., :3], cv2.COLOR_BGR2RGB).astype(np.float32), im[..., 3:].astype(np.float32) / 255
+
+
+HB = 460
+hdr_rgb, hdr_a = load_rgba(A.work + "/header_full.png")
 hdr_rgb, hdr_a = hdr_rgb[:HB], hdr_a[:HB]
 
-dec = ["ffmpeg", "-v", "error"]
-if A.start:
-    dec += ["-ss", str(A.start)]
-dec += ["-i", SRC]
-if A.dur:
-    dec += ["-t", str(A.dur)]
-dec += ["-f", "rawvideo", "-pix_fmt", "rgb24", "-"]
+# pill zone on the question cards
+PX0, PX1, PY0, PY1 = 320, 760, 676, 796
+
+
+PLATE = None
+
+
+def remove_pill(f, settled):
+    global PLATE
+    box = f[PY0:PY1, PX0:PX1]
+    b = box.astype(np.int16)
+    green = (b[..., 1] - b[..., 0] > 25) & (b[..., 1] - b[..., 2] > 8) & (b[..., 1] < 210)
+    if green.sum() < 25:
+        if settled and green.sum() == 0:
+            PLATE = box.astype(np.float32).copy()  # clean card background
+        return False
+    ys, xs = np.nonzero(green)
+    m = np.zeros(green.shape, np.uint8)
+    pad = 6
+    cv2.rectangle(m, (max(xs.min() - pad, 0), max(ys.min() - pad, 0)),
+                  (min(xs.max() + pad, m.shape[1] - 1), min(ys.max() + pad, m.shape[0] - 1)), 255, -1)
+    m = cv2.dilate(m, cv2.getStructuringElement(cv2.MORPH_ELLIPSE, (9, 9)))  # + soft shadow
+    if PLATE is not None:
+        inp = PLATE
+    else:
+        inp = cv2.GaussianBlur(cv2.inpaint(box, m, 15, cv2.INPAINT_TELEA).astype(np.float32), (0, 0), 8)
+    fw = cv2.GaussianBlur(m.astype(np.float32) / 255, (0, 0), 4)[..., None]
+    fw = np.maximum(fw, (m[..., None] > 0) * 1.0)
+    out = box.astype(np.float32) * (1 - fw) + inp * fw
+    f[PY0:PY1, PX0:PX1] = np.clip(out + 0.5, 0, 255).astype(np.uint8)
+    return True
+
+
+dec = ["ffmpeg", "-v", "error"] + (["-ss", str(A.start)] if A.start else []) + ["-i", SRC]
+dec += (["-t", str(A.dur)] if A.dur else []) + ["-f", "rawvideo", "-pix_fmt", "rgb24", "-"]
 p_in = subprocess.Popen(dec, stdout=subprocess.PIPE, bufsize=W * H * 3 * 2)
 
 enc = ["ffmpeg", "-v", "error", "-y", "-f", "rawvideo", "-pix_fmt", "rgb24",
        "-s", f"{W}x{H}", "-r", str(A.fps), "-i", "-"]
-enc += (["-ss", str(A.start)] if A.start else []) + ["-i", SRC]
-if A.dur:
-    enc += ["-t", str(A.dur)]
+enc += (["-ss", str(A.start)] if A.start else []) + ["-i", SRC] + (["-t", str(A.dur)] if A.dur else [])
 vf = f"scale={A.scale}:-2:flags=lanczos," if A.scale else ""
 enc += ["-map", "0:v", "-map", "1:a?", "-vf", vf + "format=yuv420p",
-        "-c:v", "libx264", "-preset", "medium", "-crf", str(A.crf),
+        "-c:v", "libx264", "-preset", A.preset, "-crf", str(A.crf),
         "-c:a", "aac", "-b:a", "192k", "-shortest", "-movflags", "+faststart", A.out]
 p_out = subprocess.Popen(enc, stdin=subprocess.PIPE)
 
-hdr_vis = 1.0
+vis = 1.0
 n = 0
 log = []
 while True:
@@ -70,33 +94,25 @@ while True:
         break
     f = np.frombuffer(buf, np.uint8).reshape(H, W, 3).copy()
 
-    # 1) is the old logo on this frame?  (fraction of logo pixels matching)
-    r = f[OY:OY + RH, OX:OX + RW]
-    diff = np.abs(r[core_idx].astype(np.float32) - med_core).mean(-1)
-    match = float((diff < 28).mean())
+    match = R.present(f)
     if match > 0.4:
-        inp = cv2.inpaint(r, mask, 9, cv2.INPAINT_TELEA).astype(np.float32)
-        inp = cv2.GaussianBlur(inp, (0, 0), 5)
-        out = r.astype(np.float32) * (1 - feather) + inp * feather
-        f[OY:OY + RH, OX:OX + RW] = np.clip(out, 0, 255).astype(np.uint8)
+        R.clean(f)
 
-    # 2) hide header over the white question cards (it would be invisible)
     top_y = f[:400:8, ::8].mean()
-    target = 0.0 if top_y > 205 else 1.0
-    hdr_vis += np.clip(target - hdr_vis, -1 / 6, 1 / 6)  # ~0.2 s fade
+    card = top_y > 205
+    pill = remove_pill(f, top_y > 245) if card else False
 
-    if hdr_vis > 0:
-        top = f[:HB].astype(np.float32)
-        a = hdr_a * hdr_vis
-        f[:HB] = (top * (1 - a) + hdr_rgb * a).astype(np.uint8)
+    # header hidden over the white cards (the card already carries the logo)
+    vis += np.clip((0.0 if card else 1.0) - vis, -1 / 3, 1 / 5)
+    if vis > 0:
+        a = hdr_a * vis
+        f[:HB] = (f[:HB].astype(np.float32) * (1 - a) + hdr_rgb * a).astype(np.uint8)
 
-    log.append((n, round(match, 2), round(top_y), round(hdr_vis, 2)))
+    log.append("%d %.2f %d %d %.2f" % (n, match, top_y, pill, vis))
     p_out.stdin.write(f.tobytes())
     n += 1
 
 p_out.stdin.close()
 p_out.wait()
-with open(A.out + ".log", "w") as fh:
-    for row in log:
-        fh.write("%d %.2f %d %.2f\n" % row)
+open(A.out + ".log", "w").write("\n".join(log))
 print("frames", n)
