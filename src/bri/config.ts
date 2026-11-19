@@ -37,9 +37,9 @@ export const TB = {
   finalStart: 41.26,
   kvLineDraw: 41.3,
   kvTitleIn: 42.95,
-  kvLogoIn: 43.6,
-  kvTaglineIn: 44.1,
-  kvSwooshIn: 44.8,
+  kvLogoIn: 41.75,
+  kvTaglineIn: 42.7,
+  kvSwooshIn: 43.5,
   goldenSweep: 47.3,
   finalAccent: 53.76,
   end: 60,
@@ -57,12 +57,12 @@ export type Palette = {
 
 export const PALETTES: Record<string, Palette> = {
   mist: {
-    sky: "linear-gradient(180deg, #8ED8C3 0%, #4AAE92 32%, #1F8169 68%, #0F5E4C 100%)",
+    sky: "linear-gradient(180deg, #6CC7AE 0%, #33997E 30%, #17705A 64%, #0B4A3C 100%)",
     towerFillTop: "rgba(226,255,247,0.14)",
     towerFillBottom: "rgba(8,80,64,0.38)",
     lineAlpha: 1,
     bloom: 0.85,
-    cloud: 0.5,
+    cloud: 0.34,
     textShadow: "0 2px 14px rgba(3,46,40,0.55), 0 0 2px rgba(3,46,40,0.4)",
   },
   teal: {
@@ -218,24 +218,19 @@ export const shotAt = (t: number) => SHOTS.find((s) => t >= s.from && t < s.to) 
 
 /** Neon ribbon sweeps (start time, preset). */
 export const RIBBONS: { at: number; kind: "laser" | "swirlL" | "swirlR" | "arc" }[] = [
-  { at: 12.7, kind: "laser" },
-  { at: 16.3, kind: "swirlR" },
   { at: 20.9, kind: "swirlL" },
-  { at: 27.1, kind: "swirlR" },
-  { at: 33.2, kind: "swirlL" },
   { at: 47.1, kind: "arc" },
-  { at: 53.7, kind: "swirlL" },
-  { at: 57.2, kind: "swirlR" },
 ];
 
 /** Light flashes on cuts. */
 export const FLASHES: { at: number; strength: number }[] = [
-  { at: TB.cut1, strength: 0.75 },
-  { at: TB.cut2, strength: 0.6 },
-  { at: TB.cut3, strength: 0.45 },
-  { at: TB.drop, strength: 0.9 },
-  { at: TB.cut5, strength: 0.55 },
-  { at: TB.cut6, strength: 0.55 },
+  { at: TB.cut1, strength: 0.4 },
+  { at: TB.cut2, strength: 0.32 },
+  { at: TB.cut3, strength: 0.25 },
+  { at: TB.drop, strength: 0.5 },
+  { at: TB.cut5, strength: 0.3 },
+  { at: TB.cut6, strength: 0.3 },
+  { at: TB.finalStart, strength: 0.35 },
 ];
 
 /**
@@ -244,13 +239,14 @@ export const FLASHES: { at: number; strength: number }[] = [
  * s = zoom, (fx, fy) = plate point placed at screen (sx, sy), ry = perspective yaw (deg).
  * seqFrom = when the key-visual loop's local clock starts (aligns its scans).
  */
-export type PlateShot = { id: string; from: number; to: number; seqFrom: number; intro?: boolean; s: K; fx: K; fy: K; sx: K; sy: K; ry: K };
+export type PlateShot = { id: string; from: number; to: number; seqFrom: number; intro?: boolean; ease?: boolean; s: K; fx: K; fy: K; sx: K; sy: K; ry: K };
 
 export const PLATE_SHOTS: PlateShot[] = [
   { id: "sacred-build", from: TB.cut3, to: TB.drop, seqFrom: TB.cut3, intro: true, s: [[TB.cut3, 1.14], [TB.drop, 1.06]], fx: [[TB.cut3, 960], [TB.drop, 960]], fy: [[TB.cut3, 640], [TB.drop, 630]], sx: [[TB.cut3, 960], [TB.drop, 960]], sy: [[TB.cut3, 600], [TB.drop, 590]], ry: [[TB.cut3, 0], [TB.drop, 0]] },
   { id: "kaaba", from: TB.drop, to: TB.cut5, seqFrom: TB.drop - 1.9, s: [[TB.drop, 1.62], [TB.cut5, 1.46]], fx: [[TB.drop, 265], [TB.cut5, 265]], fy: [[TB.drop, 683], [TB.cut5, 683]], sx: [[TB.drop, 380], [TB.cut5, 370]], sy: [[TB.drop, 620], [TB.cut5, 640]], ry: [[TB.drop, 3], [TB.cut5, 1]] },
   { id: "dome", from: TB.cut5, to: TB.cut6, seqFrom: TB.cut5 - 2.2, s: [[TB.cut5, 1.62], [TB.cut6, 1.46]], fx: [[TB.cut5, 1705], [TB.cut6, 1705]], fy: [[TB.cut5, 661], [TB.cut6, 661]], sx: [[TB.cut5, 1560], [TB.cut6, 1580]], sy: [[TB.cut5, 600], [TB.cut6, 620]], ry: [[TB.cut5, -3], [TB.cut6, -1]] },
-  { id: "title", from: TB.cut6, to: TB.finalStart, seqFrom: TB.cut6 - 2.4, s: [[TB.cut6, 1.38], [TB.finalStart, 1.18]], fx: [[TB.cut6, 960], [TB.finalStart, 960]], fy: [[TB.cut6, 700], [TB.finalStart, 690]], sx: [[TB.cut6, 960], [TB.finalStart, 960]], sy: [[TB.cut6, 740], [TB.finalStart, 720]], ry: [[TB.cut6, 0], [TB.finalStart, 0]] },
+  // title shot flows straight into the final key visual (no cut): ease out to the full frame on the drop
+  { id: "title", from: TB.cut6, to: TB.end + 1, seqFrom: TB.cut6 - 2.4, ease: true, s: [[TB.cut6, 1.36], [TB.finalStart, 1.2], [TB.finalStart + 2.4, 1.012], [TB.end, 1.032]], fx: [[TB.cut6, 960], [TB.end, 960]], fy: [[TB.cut6, 700], [TB.finalStart, 690], [TB.finalStart + 2.4, 540], [TB.end, 540]], sx: [[TB.cut6, 960], [TB.end, 960]], sy: [[TB.cut6, 740], [TB.finalStart, 720], [TB.finalStart + 2.4, 540], [TB.end, 540]], ry: [[TB.cut6, 0], [TB.end, 0]] },
 ];
 
 /** Flying "selendang" (light fabric) passes in the earlier shots. */

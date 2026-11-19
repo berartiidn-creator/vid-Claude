@@ -9,10 +9,13 @@ import { FPS, f } from "../config/timeline";
 import { MUSIC_BED } from "../config/sound";
 import { loadAllFonts } from "../lib/fonts";
 import { BRIWorld } from "./BRIWorld";
-import { BrightHorizon, Clouds, Flashes, HudLines } from "./Atmosphere";
-import { NeonRibbons, RingArcs } from "./NeonRibbons";
+import { BrightHorizon, Clouds, Flashes } from "./Atmosphere";
+import { NeonRibbons } from "./NeonRibbons";
+import { Grade } from "./Grade";
+import { FullScreenSweep } from "../components/fx/FullScreenSweep";
+import { COLORS } from "../config/theme";
 import { AllahCard, HatiCard, LogoCard, PresentCard, RasulCard } from "./BRICards";
-import { KVFinal, KVFinalTypography, KVTitle, PlateShots } from "./KVFinal";
+import { KVFinalTypography, KVTitle, PlateShots } from "./KVFinal";
 import { Selendang } from "./Selendang";
 import { TB } from "./config";
 import { BRI_SOUND_CUES } from "./sound";
@@ -28,11 +31,8 @@ export const BumperBRI: React.FC = () => {
     <AbsoluteFill style={{ backgroundColor: "#032E28", overflow: "hidden" }}>
       <BRIWorld />
       <PlateShots />
-      <KVFinal />
       <BrightHorizon />
       <Clouds />
-      <HudLines />
-      <RingArcs />
       <NeonRibbons />
       <Selendang />
 
@@ -41,10 +41,13 @@ export const BumperBRI: React.FC = () => {
       {between(TB.hatiIn - 0.1, TB.hatiOut + 0.8) && <HatiCard />}
       {between(TB.allahIn - 0.1, TB.allahOut + 0.8) && <AllahCard />}
       {between(TB.rasulIn - 0.1, TB.rasulOut + 0.8) && <RasulCard />}
-      {between(TB.manasikIn - 0.5, TB.titleOut + 0.8) && <KVTitle box={[370, 300, 1180, 187]} start={TB.manasikIn} out={TB.titleOut} sweepAt={TB.swooshIn + 0.4} accentAt={-10} />}
 
-      <KVFinalTypography />
       <Flashes />
+      <FullScreenSweep start={TB.finalStart - 0.2} duration={1.6} color={COLORS.gold} core="#FFF4D0" strength={0.45} angle={20} />
+      <KVFinalTypography />
+      {/* MANASIK UMROH: one continuous title from its reveal to the last frame */}
+      {t >= TB.manasikIn - 0.5 && <KVTitle start={TB.manasikIn} sweepAt={TB.goldenSweep} accentAt={TB.finalAccent} />}
+      <Grade />
       {MUSIC_BED.enabled && (
         <Html5Audio
           src={staticFile(MUSIC_BED.file)}

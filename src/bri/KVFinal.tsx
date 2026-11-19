@@ -121,7 +121,7 @@ const Logo: React.FC = () => {
   const h = y1 - y0;
   const w = h * LOGO_ASPECT;
   const cx = (x0 + x1) / 2;
-  const inP = EASE.out(clamp01((t - TB.kvLogoIn) / 0.8));
+  const inP = EASE.inOut(clamp01((t - TB.kvLogoIn) / 1.2));
   if (inP <= 0) return null;
   return (
     <div style={{ position: "absolute", left: cx - w / 2, top: y0, width: w, height: h, opacity: inP, filter: `blur(${(1 - inP) * 4}px)` }}>
@@ -136,14 +136,14 @@ const Plaque: React.FC = () => {
   const t = frame / FPS;
   const [px0, py0, px1, py1] = kvf.plaque;
   const [ix0, iy0, ix1, iy1] = kvf.plaqueInner;
-  const open = EASE.cinematic(clamp01((t - TB.kvTaglineIn) / 0.7));
+  const open = EASE.inOut(clamp01((t - TB.kvTaglineIn) / 1.1));
   if (open <= 0) return null;
   const txt = EASE.inOut(clamp01((t - TB.kvTaglineIn - 0.35) / 0.8));
   const inset = 50 * (1 - open);
   const style: React.CSSProperties = { fontFamily: "Poppins", fontStyle: "italic", fontWeight: 500, fontSize: 31, color: "#FFFFFF", whiteSpace: "nowrap", textShadow: "0 1px 6px rgba(0,0,0,0.5)" };
   return (
     <>
-      <div style={{ position: "absolute", left: px0, top: py0, width: px1 - px0, height: py1 - py0, clipPath: `inset(-10px ${inset}% -10px ${inset}%)` }}>
+      <div style={{ position: "absolute", left: px0, top: py0, width: px1 - px0, height: py1 - py0, opacity: Math.min(1, open * 1.6), clipPath: `inset(-10px ${inset}% -10px ${inset}%)` }}>
         <Img src={PLAQUE} style={{ width: "100%", height: "100%" }} />
       </div>
       <div style={{ position: "absolute", left: ix0, top: iy0, width: ix1 - ix0, height: iy1 - iy0, display: "flex", alignItems: "center", justifyContent: "center" }}>
@@ -160,7 +160,7 @@ const Swoosh: React.FC = () => {
   const frame = useCurrentFrame();
   const t = frame / FPS;
   const [x0, y0, x1, y1] = kvf.swoosh;
-  const p = EASE.inOut(clamp01((t - TB.kvSwooshIn) / 0.8));
+  const p = EASE.inOut(clamp01((t - TB.kvSwooshIn) / 1.2));
   if (p <= 0) return null;
   return (
     <div style={{ position: "absolute", left: x0, top: y0, width: x1 - x0, height: y1 - y0, WebkitMaskImage: p < 1 ? `linear-gradient(90deg, #000 ${-10 + 115 * p}%, transparent ${-2 + 115 * p}%)` : undefined }}>
@@ -175,15 +175,17 @@ const PlateShotView: React.FC<{ shot: PlateShot }> = ({ shot }) => {
   const frame = useCurrentFrame();
   const t = frame / FPS;
   const lin = (v: number) => v;
-  const sc = keyAt(shot.s, t, lin);
-  const fx = keyAt(shot.fx, t, lin);
-  const fy = keyAt(shot.fy, t, lin);
-  const m = 70;
-  const dx = Math.min(-m, Math.max(1920 + m - sc * 1920, keyAt(shot.sx, t, lin) - sc * fx));
-  const dy = Math.min(-m, Math.max(1080 + m - sc * 1080, keyAt(shot.sy, t, lin) - sc * fy));
+  const ez = shot.ease ? EASE.inOut : lin;
+  const sc = keyAt(shot.s, t, ez);
+  const fx = keyAt(shot.fx, t, ez);
+  const fy = keyAt(shot.fy, t, ez);
+  const hasRy = shot.ry.some((k) => k[1] !== 0);
+  const m = hasRy ? 70 : 0;
+  const dx = Math.min(-m, Math.max(1920 + m - sc * 1920, keyAt(shot.sx, t, ez) - sc * fx));
+  const dy = Math.min(-m, Math.max(1080 + m - sc * 1080, keyAt(shot.sy, t, ez) - sc * fy));
   const ry = keyAt(shot.ry, t, lin);
   return (
-    <AbsoluteFill style={{ transform: `perspective(2400px) rotateY(${ry}deg) scale(1.06)`, overflow: "hidden" }}>
+    <AbsoluteFill style={{ transform: hasRy ? `perspective(2400px) rotateY(${ry}deg) scale(1.06)` : undefined, overflow: "hidden" }}>
       <AbsoluteFill style={{ transformOrigin: "0 0", transform: `translate(${dx}px, ${dy}px) scale(${sc})` }}>
         <Sequence from={f(shot.seqFrom)} layout="none">
           <LoopScene intro={shot.intro ?? false} />
@@ -220,7 +222,6 @@ export const KVFinalTypography: React.FC = () => {
   if (frame / FPS < TB.finalStart - 0.05) return null;
   return (
     <AbsoluteFill>
-      <KVTitle />
       <Logo />
       <Plaque />
       <Swoosh />

@@ -38,7 +38,7 @@ export const Clouds: React.FC = () => {
   }
   // opening misty pass and whiteout transition
   const open = 1 - smoothstep(0, 1.6, t);
-  const wo = smoothstep(TB.whiteoutStart, TB.whiteoutStart + 1.3, t) * (1 - smoothstep(TB.finalStart - 0.15, TB.finalStart + 1.1, t));
+  const wo = 0; // no whiteout: the title flows straight into the final composition
   const big = Math.max(open, wo);
   if (big > 0.01) {
     const grow = t < 5 ? 1 + t * 0.5 : 1 + (t - TB.whiteoutStart) * 0.8;
@@ -68,7 +68,7 @@ export const Flashes: React.FC = () => {
   const acc = t > TB.finalAccent - 0.05 && t < TB.finalAccent + 0.8 ? Math.exp(-Math.max(0, t - TB.finalAccent) / 0.25) * 0.35 : 0;
   a = Math.max(a, acc);
   if (a <= 0.01) return null;
-  return <AbsoluteFill style={{ pointerEvents: "none", mixBlendMode: "screen", background: `radial-gradient(ellipse at 50% 55%, rgba(240,255,250,${a}) 0%, rgba(53,220,200,${a * 0.6}) 60%, rgba(16,185,154,${a * 0.35}) 100%)` }} />;
+  return <AbsoluteFill style={{ pointerEvents: "none", mixBlendMode: "screen", background: `radial-gradient(ellipse 70% 55% at 50% 58%, rgba(255,246,222,${a * 0.8}) 0%, rgba(214,179,74,${a * 0.35}) 40%, rgba(16,185,154,${a * 0.18}) 75%, transparent 100%)` }} />;
 };
 
 export const HudLines: React.FC = () => {

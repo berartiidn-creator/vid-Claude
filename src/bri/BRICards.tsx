@@ -1,90 +1,96 @@
-/** Text cards of the BRI-style cut: clean bold sans, decode in, glitch out. */
+/**
+ * Text cards (premium pass): one typographic system that matches the title
+ * artwork. Kicker = Montserrat 500, small, widely tracked; key word = Cinzel
+ * with a gold gradient fill. Reveal = soft mask opening from the centre plus
+ * fade; exit = fade. Glyphs never change, move or distort.
+ */
 import React from "react";
 import { AbsoluteFill, Img, useCurrentFrame } from "remotion";
 import { FONTS } from "../config/theme";
 import { FPS } from "../config/timeline";
-import { clamp01, EASE, smoothstep } from "../lib/anim";
+import { clamp01, EASE } from "../lib/anim";
 import { LOGO_ASPECT, LOGO_SRC } from "../components/typography/LogoReveal";
-import { DecodeText } from "./DecodeText";
-import { PALETTES, shotAt, TB } from "./config";
+import { TextSweep } from "../components/typography/GoldenLightSweep";
+import { GoldRule } from "../components/typography/Ornament";
+import { TB } from "./config";
 
-const GOLD_TEXT = "#F3DE9A";
+const GOLD_FILL = "linear-gradient(180deg, #FFF4CF 0%, #F0D488 38%, #D6B34A 62%, #B08A2C 100%)";
+const SOFT_SHADOW = "drop-shadow(0 2px 10px rgba(1,20,16,0.55))";
 
-const useShadow = () => {
+/** Mask-open reveal from the centre + fade; fade-out exit. */
+const Elegant: React.FC<{ start: number; out: number; dur?: number; children: React.ReactNode; style?: React.CSSProperties }> = ({ start, out, dur = 1.1, children, style }) => {
   const frame = useCurrentFrame();
-  return PALETTES[shotAt(frame / FPS).palette].textShadow;
+  const t = frame / FPS;
+  const p = EASE.inOut(clamp01((t - start) / dur));
+  const o = EASE.inOut(clamp01((t - out) / 0.7));
+  if (p <= 0 || o >= 1) return null;
+  const half = 3 + 57 * p;
+  const mask = p < 1 ? `linear-gradient(90deg, transparent ${50 - half - 8}%, #000 ${50 - half}%, #000 ${50 + half}%, transparent ${50 + half + 8}%)` : undefined;
+  return <div style={{ display: "inline-block", opacity: Math.min(1, p * 1.4) * (1 - o), WebkitMaskImage: mask, maskImage: mask, ...style }}>{children}</div>;
 };
 
 export const LogoCard: React.FC = () => {
   const frame = useCurrentFrame();
   const t = frame / FPS;
-  const inP = EASE.out(clamp01((t - TB.logoIn) / 0.9));
-  const outP = EASE.in(clamp01((t - TB.logoOut) / 0.6));
+  const inP = EASE.inOut(clamp01((t - TB.logoIn) / 1.3));
+  const outP = EASE.inOut(clamp01((t - TB.logoOut) / 0.7));
   if (inP <= 0 || outP >= 1) return null;
-  const h = 150;
+  const h = 132;
   const w = h * LOGO_ASPECT;
-  const scale = 1.06 - 0.06 * inP + 0.025 * clamp01((t - TB.logoIn) / 4) + 0.1 * outP;
   return (
     <AbsoluteFill style={{ pointerEvents: "none" }}>
-      <div
-        style={{
-          position: "absolute",
-          left: 960 - w / 2,
-          top: 470 - h / 2,
-          width: w,
-          height: h,
-          opacity: inP * (1 - outP),
-          transform: `scale(${scale})`,
-          filter: `blur(${(1 - inP) * 12 + outP * 14}px) drop-shadow(0 2px 14px rgba(3,46,40,0.55))`,
-        }}
-      >
+      <div style={{ position: "absolute", left: 960 - w / 2, top: 470 - h / 2, width: w, height: h, opacity: inP * (1 - outP), filter: `blur(${(1 - inP) * 6}px) ${SOFT_SHADOW}` }}>
         <Img src={LOGO_SRC} style={{ width: "100%", height: "100%" }} />
       </div>
     </AbsoluteFill>
   );
 };
 
-const Block: React.FC<{ cx: number; top: number; zoomFrom: number; children: React.ReactNode }> = ({ cx, top, zoomFrom, children }) => {
-  const frame = useCurrentFrame();
-  const z = 1 + 0 * clamp01((frame / FPS - zoomFrom) / 5);
-  return (
-    <div style={{ position: "absolute", left: cx - 900, width: 1800, top, display: "flex", flexDirection: "column", alignItems: "center", transform: `scale(${z})`, transformOrigin: `900px 60px` }}>
-      {children}
-    </div>
-  );
-};
-
 export const PresentCard: React.FC = () => {
-  const shadow = useShadow();
-  return (
-    <AbsoluteFill style={{ pointerEvents: "none" }}>
-      <Block cx={960} top={480} zoomFrom={TB.presentIn}>
-        <DecodeText text="MEMPERSEMBAHKAN" start={TB.presentIn} out={TB.presentOut} spread={0.8} seed={2} style={{ fontFamily: FONTS.sans, fontWeight: 700, fontSize: 66, letterSpacing: "0.2em", paddingLeft: "0.2em", color: "#FFFFFF", textShadow: shadow }} />
-      </Block>
-    </AbsoluteFill>
-  );
-};
-
-const TwoLine: React.FC<{ cx: number; top: number; l1: string; l2: string; start: number; out: number; seed: number; big?: number; salawat?: boolean }> = ({ cx, top, l1, l2, start, out, seed, big = 118, salawat }) => {
-  const shadow = useShadow();
   const frame = useCurrentFrame();
   const t = frame / FPS;
-  const sIn = smoothstep(start + 0.9, start + 1.4, t) * (1 - smoothstep(out + 0.1, out + 0.4, t));
+  const rules = EASE.out(clamp01((t - TB.presentIn - 0.6) / 1.0)) * (1 - EASE.inOut(clamp01((t - TB.presentOut) / 0.7)));
   return (
     <AbsoluteFill style={{ pointerEvents: "none" }}>
-      <Block cx={cx} top={top} zoomFrom={start}>
-        <DecodeText text={l1} start={start} out={out} spread={0.7} seed={seed} style={{ fontFamily: FONTS.sans, fontWeight: 600, fontSize: 40, letterSpacing: "0.22em", paddingLeft: "0.22em", color: "#FFFFFF", textShadow: shadow }} />
-        <div style={{ display: "flex", alignItems: "center", marginTop: 4 }}>
-          <DecodeText text={l2} start={start + 0.4} out={out + 0.05} spread={0.6} seed={seed + 5} style={{ fontFamily: FONTS.sans, fontWeight: 800, fontSize: big, letterSpacing: "0.05em", lineHeight: 1.05, color: GOLD_TEXT, textShadow: shadow }} />
-          {salawat && (
-            <span style={{ fontFamily: FONTS.arabic, fontSize: big * 0.78, color: GOLD_TEXT, marginLeft: 22, lineHeight: 1, opacity: sIn, textShadow: shadow, filter: sIn < 1 ? `blur(${(1 - sIn) * 8}px)` : undefined }}>{"ﷺ"}</span>
-          )}
+      <div style={{ position: "absolute", top: 482, left: 0, right: 0, display: "flex", alignItems: "center", justifyContent: "center", gap: 30 }}>
+        <div style={{ opacity: rules }}>
+          <GoldRule width={150} progress={rules} dir="left" />
         </div>
-      </Block>
+        <Elegant start={TB.presentIn} out={TB.presentOut} dur={1.3}>
+          <span style={{ fontFamily: FONTS.title, fontWeight: 500, fontSize: 46, letterSpacing: "0.5em", paddingLeft: "0.5em", color: "#F4FFFB", filter: SOFT_SHADOW }}>MEMPERSEMBAHKAN</span>
+        </Elegant>
+        <div style={{ opacity: rules }}>
+          <GoldRule width={150} progress={rules} dir="right" />
+        </div>
+      </div>
     </AbsoluteFill>
   );
 };
 
-export const HatiCard: React.FC = () => <TwoLine cx={960} top={392} l1="SARANA MEMPERSIAPKAN" l2="HATI" start={TB.hatiIn} out={TB.hatiOut} seed={7} />;
-export const AllahCard: React.FC = () => <TwoLine cx={1270} top={330} l1="BERTAMU KEPADA" l2="ALLAH" start={TB.allahIn} out={TB.allahOut} seed={11} />;
-export const RasulCard: React.FC = () => <TwoLine cx={650} top={330} l1="BERTAMU KEPADA" l2="RASULULLAH" start={TB.rasulIn} out={TB.rasulOut} seed={19} big={100} salawat />;
+const TwoLine: React.FC<{ cx: number; top: number; l1: string; l2: string; start: number; out: number; big?: number; salawat?: boolean }> = ({ cx, top, l1, l2, start, out, big = 104, salawat }) => {
+  const keyStyle: React.CSSProperties = { fontFamily: FONTS.title, fontWeight: 600, fontSize: big, letterSpacing: "0.06em", lineHeight: 1.05, whiteSpace: "nowrap" };
+  return (
+    <AbsoluteFill style={{ pointerEvents: "none" }}>
+      <div style={{ position: "absolute", left: cx - 900, width: 1800, top, display: "flex", flexDirection: "column", alignItems: "center" }}>
+        <Elegant start={start} out={out} dur={1.1}>
+          <span style={{ fontFamily: FONTS.sans, fontWeight: 500, fontSize: 25, letterSpacing: "0.42em", paddingLeft: "0.42em", color: "rgba(244,255,251,0.94)", filter: SOFT_SHADOW }}>{l1}</span>
+        </Elegant>
+        <div style={{ display: "flex", alignItems: "center", marginTop: 10 }}>
+          <Elegant start={start + 0.45} out={out + 0.05} dur={1.3} style={{ position: "relative", filter: "drop-shadow(0 3px 12px rgba(1,20,16,0.6)) drop-shadow(0 0 18px rgba(214,179,74,0.25))" }}>
+            <span style={{ ...keyStyle, color: "transparent", backgroundImage: GOLD_FILL, WebkitBackgroundClip: "text", backgroundClip: "text", display: "inline-block" }}>{l2}</span>
+            <TextSweep text={l2} style={keyStyle} start={start + 2.0} duration={1.4} intensity={0.7} />
+          </Elegant>
+          {salawat && (
+            <Elegant start={start + 1.2} out={out + 0.1} dur={0.9}>
+              <span style={{ fontFamily: FONTS.arabic, fontSize: big * 0.72, color: "#F0D488", marginLeft: 22, lineHeight: 1, display: "inline-block", filter: SOFT_SHADOW }}>{"ﷺ"}</span>
+            </Elegant>
+          )}
+        </div>
+      </div>
+    </AbsoluteFill>
+  );
+};
+
+export const HatiCard: React.FC = () => <TwoLine cx={960} top={392} l1="SARANA MEMPERSIAPKAN" l2="HATI" start={TB.hatiIn} out={TB.hatiOut} />;
+export const AllahCard: React.FC = () => <TwoLine cx={1270} top={330} l1="BERTAMU KEPADA" l2="ALLAH" start={TB.allahIn} out={TB.allahOut} />;
+export const RasulCard: React.FC = () => <TwoLine cx={650} top={330} l1="BERTAMU KEPADA" l2="RASULULLAH" start={TB.rasulIn} out={TB.rasulOut} big={92} salawat />;
