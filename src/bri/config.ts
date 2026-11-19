@@ -155,8 +155,7 @@ export const SHOTS: Shot[] = [
     id: "sacred-build",
     from: TB.cut3,
     to: TB.drop,
-    palette: "bright",
-    city: true,
+    palette: "kv",
     pos: { x: [[TB.cut3, 0], [TB.drop, 0]], y: [[TB.cut3, 8], [TB.drop, 7.6]], z: [[TB.cut3, -66], [TB.drop, -52]] },
     yaw: [[TB.cut3, 0], [TB.drop, 0]],
     pitch: [[TB.cut3, 0], [TB.drop, 0]],
@@ -167,8 +166,7 @@ export const SHOTS: Shot[] = [
     id: "kaaba-orbit",
     from: TB.drop,
     to: TB.cut5,
-    palette: "bright",
-    city: true,
+    palette: "kv",
     orbit: { target: KAABA_TARGET, angle: [[TB.drop, -0.62], [TB.cut5, -0.3]], radius: [[TB.drop, 50], [TB.cut5, 42]], height: [[TB.drop, 3.5], [TB.cut5, 5.5]], yawOffset: 0.3, pitchOffset: 0.05 },
     fov: 44,
     cy: 0.5,
@@ -177,8 +175,7 @@ export const SHOTS: Shot[] = [
     id: "dome-orbit",
     from: TB.cut5,
     to: TB.cut6,
-    palette: "bright",
-    city: true,
+    palette: "kv",
     orbit: { target: DOME_TARGET, angle: [[TB.cut5, 0.62], [TB.cut6, 0.3]], radius: [[TB.cut5, 66], [TB.cut6, 56]], height: [[TB.cut5, -3], [TB.cut6, -1]], yawOffset: -0.32, pitchOffset: 0.06 },
     fov: 44,
     cy: 0.5,
@@ -187,8 +184,7 @@ export const SHOTS: Shot[] = [
     id: "title-wide",
     from: TB.cut6,
     to: TB.finalStart,
-    palette: "bright",
-    city: true,
+    palette: "kv",
     pos: { x: [[TB.cut6, -2], [TB.finalStart, 1]], y: [[TB.cut6, 7.2], [TB.finalStart, 6.4]], z: [[TB.cut6, -30], [TB.finalStart, -4]] },
     yaw: [[TB.cut6, 0.01], [TB.finalStart, -0.01]],
     pitch: [[TB.cut6, 0], [TB.finalStart, 0]],
@@ -215,11 +211,8 @@ export const RIBBONS: { at: number; kind: "laser" | "swirlL" | "swirlR" | "arc" 
   { at: 12.7, kind: "laser" },
   { at: 16.3, kind: "swirlR" },
   { at: 20.9, kind: "swirlL" },
-  { at: 24.2, kind: "arc" },
   { at: 27.1, kind: "swirlR" },
-  { at: 30.6, kind: "laser" },
   { at: 33.2, kind: "swirlL" },
-  { at: 37.4, kind: "swirlR" },
   { at: 47.1, kind: "arc" },
   { at: 53.7, kind: "swirlL" },
   { at: 57.2, kind: "swirlR" },
@@ -233,4 +226,30 @@ export const FLASHES: { at: number; strength: number }[] = [
   { at: TB.drop, strength: 0.9 },
   { at: TB.cut5, strength: 0.55 },
   { at: TB.cut6, strength: 0.55 },
+];
+
+/**
+ * 2.5D camera over the key-visual plate for the landmark shots, so the Ka'bah
+ * and the Green Dome are the same ones as in the ending. Keyframes [t, v]:
+ * s = zoom, (fx, fy) = plate point placed at screen (sx, sy), ry = perspective yaw (deg).
+ * seqFrom = when the key-visual loop's local clock starts (aligns its scans).
+ */
+export type PlateShot = { id: string; from: number; to: number; seqFrom: number; intro?: boolean; s: K; fx: K; fy: K; sx: K; sy: K; ry: K };
+
+export const PLATE_SHOTS: PlateShot[] = [
+  { id: "sacred-build", from: TB.cut3, to: TB.drop, seqFrom: TB.cut3, intro: true, s: [[TB.cut3, 1.14], [TB.drop, 1.06]], fx: [[TB.cut3, 960], [TB.drop, 960]], fy: [[TB.cut3, 640], [TB.drop, 630]], sx: [[TB.cut3, 960], [TB.drop, 960]], sy: [[TB.cut3, 600], [TB.drop, 590]], ry: [[TB.cut3, 0], [TB.drop, 0]] },
+  { id: "kaaba", from: TB.drop, to: TB.cut5, seqFrom: TB.drop - 1.9, s: [[TB.drop, 1.62], [TB.cut5, 1.46]], fx: [[TB.drop, 265], [TB.cut5, 265]], fy: [[TB.drop, 683], [TB.cut5, 683]], sx: [[TB.drop, 380], [TB.cut5, 370]], sy: [[TB.drop, 620], [TB.cut5, 640]], ry: [[TB.drop, 3], [TB.cut5, 1]] },
+  { id: "dome", from: TB.cut5, to: TB.cut6, seqFrom: TB.cut5 - 2.2, s: [[TB.cut5, 1.62], [TB.cut6, 1.46]], fx: [[TB.cut5, 1705], [TB.cut6, 1705]], fy: [[TB.cut5, 661], [TB.cut6, 661]], sx: [[TB.cut5, 1560], [TB.cut6, 1580]], sy: [[TB.cut5, 600], [TB.cut6, 620]], ry: [[TB.cut5, -3], [TB.cut6, -1]] },
+  { id: "title", from: TB.cut6, to: TB.finalStart, seqFrom: TB.cut6 - 2.4, s: [[TB.cut6, 1.38], [TB.finalStart, 1.18]], fx: [[TB.cut6, 960], [TB.finalStart, 960]], fy: [[TB.cut6, 700], [TB.finalStart, 690]], sx: [[TB.cut6, 960], [TB.finalStart, 960]], sy: [[TB.cut6, 740], [TB.finalStart, 720]], ry: [[TB.cut6, 0], [TB.finalStart, 0]] },
+];
+
+/** Flying "selendang" (light fabric) passes in the earlier shots. */
+export const SELENDANG: { at: number; preset: "riseL" | "riseR" | "across" | "low" }[] = [
+  { at: 2.0, preset: "riseL" },
+  { at: 7.4, preset: "across" },
+  { at: 14.0, preset: "riseR" },
+  { at: 23.2, preset: "low" },
+  { at: 29.6, preset: "riseL" },
+  { at: 36.4, preset: "across" },
+  { at: 50.4, preset: "riseR" },
 ];

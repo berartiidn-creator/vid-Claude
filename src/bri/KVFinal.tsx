@@ -19,7 +19,7 @@ import { KVParticles } from "../keyvisual/KVParticles";
 import { LOGO_ASPECT, LOGO_SRC } from "../components/typography/LogoReveal";
 import { ImageSweep, TextSweep } from "../components/typography/GoldenLightSweep";
 import { Glint } from "../components/typography/Ornament";
-import { TB } from "./config";
+import { PLATE_SHOTS, type PlateShot, TB } from "./config";
 
 const PLATE = staticFile("assets/kvfinal/kv-plate.png");
 const PLAQUE = staticFile("assets/kvfinal/kv-plaque.png");
@@ -34,18 +34,18 @@ const Masked: React.FC<{ mask: string; background: string; opacity: number }> = 
     <AbsoluteFill style={{ WebkitMaskImage: `url(${mask})`, WebkitMaskSize: "100% 100%", maskImage: `url(${mask})`, maskSize: "100% 100%", background, opacity, mixBlendMode: "screen" }} />
   );
 
-/** Background loop scene (local time starts at the final segment). */
-const LoopScene: React.FC = () => {
+/** Background loop scene (local clock starts when its Sequence starts). */
+const LoopScene: React.FC<{ intro?: boolean }> = ({ intro = true }) => {
   const frame = useCurrentFrame();
   const t = frame / FPS; // local
   const p = EASE.inOut(Math.min(1, t / KV.durationSeconds));
   const scale = KV.push.from + (KV.push.to - KV.push.from) * p;
   const exposure = keyAt(KV.exposure, t);
   // BRI-style intro: dark plate, skyline lines drawn in from both sides
-  const dark = 0.72 * (1 - smoothstep(0.7, 1.8, t));
+  const dark = intro ? 0.72 * (1 - smoothstep(0.7, 1.8, t)) : 0;
   const R = 50 * EASE.inOut(clamp01((t - 0.05) / 1.25));
   const drawBg = `linear-gradient(90deg, #EFFFF9 0%, #EFFFF9 ${R}%, transparent ${R + 4}%, transparent ${96 - R}%, #EFFFF9 ${100 - R}%, #EFFFF9 100%)`;
-  const lineOp = 0.95 * (1 - smoothstep(1.3, 2.2, t));
+  const lineOp = intro ? 0.95 * (1 - smoothstep(1.3, 2.2, t)) : 0;
   return (
     <AbsoluteFill style={{ transform: `scale(${scale})`, transformOrigin: `${KV.push.originX}px ${KV.push.originY}px` }}>
       <AbsoluteFill style={{ filter: exposure < 0.999 ? `brightness(${exposure})` : undefined }}>
@@ -60,12 +60,16 @@ const LoopScene: React.FC = () => {
   );
 };
 
-const Title: React.FC = () => {
+type TitleProps = { box?: number[]; start?: number; out?: number; sweepAt?: number; accentAt?: number };
+
+/** New MANASIK UMROH artwork (IMG_2140): light line, slice-glitch in, optional glitch out. */
+export const KVTitle: React.FC<TitleProps> = ({ box = kvf.title, start = TB.kvTitleIn, out, sweepAt = TB.goldenSweep, accentAt = TB.finalAccent }) => {
   const frame = useCurrentFrame();
   const t = frame / FPS;
-  const [x, y, w, h] = kvf.title;
-  const start = TB.kvTitleIn;
+  const [x, y, w, h] = box;
+  const k0 = w / kvf.title[2];
   if (t < start - 0.4) return null;
+  if (out !== undefined && t > out + 0.7) return null;
   const line = EASE.out(clamp01((t - (start - 0.4)) / 0.45)) * (1 - smoothstep(start + 0.4, start + 1.0, t));
   const settle = EASE.out(clamp01((t - start) / 0.9));
   const scale = 1.05 - 0.05 * settle;
@@ -82,18 +86,26 @@ const Title: React.FC = () => {
           const a = start + hash(k * 13 + 5) * 0.4;
           const p = clamp01((t - a) / 0.26);
           if (p <= 0) return null;
-          const jitter = (1 - EASE.out(p)) * (hash(k * 7) < 0.5 ? -1 : 1) * 40;
-          const op = p < 1 ? 0.5 + 0.5 * hash(frame * 3 + k) : 1;
+          let jitter = (1 - EASE.out(p)) * (hash(k * 7) < 0.5 ? -1 : 1) * 40;
+          let op = p < 1 ? 0.5 + 0.5 * hash(frame * 3 + k) : 1;
+          if (out !== undefined) {
+            const e = clamp01((t - out - hash(k * 23) * 0.3) / 0.22);
+            if (e >= 1) return null;
+            if (e > 0) {
+              jitter = (hash(frame * 7 + k) - 0.5) * 70 * e;
+              op = (1 - e) * (0.5 + 0.5 * hash(frame + k));
+            }
+          }
           return (
             <div key={k} style={{ position: "absolute", inset: 0, transform: `translateX(${jitter}px)`, opacity: op, clipPath: `inset(${(k / N) * 100}% 0 ${100 - ((k + 1) / N) * 100}% 0)` }}>
               <Img src={TITLE} style={{ width: "100%", height: "100%" }} />
             </div>
           );
         })}
-        <ImageSweep src={TITLE} start={TB.goldenSweep} duration={1.2} intensity={0.85} />
+        <ImageSweep src={TITLE} start={sweepAt} duration={1.2} intensity={0.85} />
       </div>
       {kvf.onions.map(([ox, oy], i) => (
-        <Glint key={i} x={ox} y={oy + 6} size={70} intensity={glint(start + 0.9 + i * 0.2) + glint(TB.finalAccent + i * 0.2)} rotate={15} />
+        <Glint key={i} x={x + (ox - kvf.title[0]) * k0} y={y + (oy - kvf.title[1]) * k0 + 6} size={70} intensity={glint(start + 0.9 + i * 0.2) + glint(accentAt + i * 0.2)} rotate={15} />
       ))}
     </AbsoluteFill>
   );
@@ -155,6 +167,37 @@ const Swoosh: React.FC = () => {
   );
 };
 
+/** 2.5D camera over the plate (zoom / pan / slight perspective yaw). */
+const PlateShotView: React.FC<{ shot: PlateShot }> = ({ shot }) => {
+  const frame = useCurrentFrame();
+  const t = frame / FPS;
+  const lin = (v: number) => v;
+  const sc = keyAt(shot.s, t, lin);
+  const fx = keyAt(shot.fx, t, lin);
+  const fy = keyAt(shot.fy, t, lin);
+  const m = 70;
+  const dx = Math.min(-m, Math.max(1920 + m - sc * 1920, keyAt(shot.sx, t, lin) - sc * fx));
+  const dy = Math.min(-m, Math.max(1080 + m - sc * 1080, keyAt(shot.sy, t, lin) - sc * fy));
+  const ry = keyAt(shot.ry, t, lin);
+  return (
+    <AbsoluteFill style={{ transform: `perspective(2400px) rotateY(${ry}deg) scale(1.06)`, overflow: "hidden" }}>
+      <AbsoluteFill style={{ transformOrigin: "0 0", transform: `translate(${dx}px, ${dy}px) scale(${sc})` }}>
+        <Sequence from={f(shot.seqFrom)} layout="none">
+          <LoopScene intro={shot.intro ?? false} />
+        </Sequence>
+      </AbsoluteFill>
+    </AbsoluteFill>
+  );
+};
+
+/** Landmark shots (18.8-41.26 s): the same Ka'bah and Green Dome as the ending. */
+export const PlateShots: React.FC = () => {
+  const frame = useCurrentFrame();
+  const t = frame / FPS;
+  const shot = PLATE_SHOTS.find((p) => t >= p.from && t < p.to);
+  return shot ? <PlateShotView key={shot.id} shot={shot} /> : null;
+};
+
 export const KVFinal: React.FC = () => {
   const frame = useCurrentFrame();
   if (frame / FPS < TB.finalStart - 0.05) return null;
@@ -163,7 +206,7 @@ export const KVFinal: React.FC = () => {
       <Sequence from={f(TB.finalStart)} layout="none">
         <LoopScene />
       </Sequence>
-      <Title />
+      <KVTitle />
       <Logo />
       <Plaque />
       <Swoosh />
