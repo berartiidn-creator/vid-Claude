@@ -12,7 +12,7 @@ import { BRIWorld } from "./BRIWorld";
 import { BrightHorizon, Clouds, Flashes, HudLines } from "./Atmosphere";
 import { NeonRibbons, RingArcs } from "./NeonRibbons";
 import { AllahCard, HatiCard, LogoCard, PresentCard, RasulCard } from "./BRICards";
-import { KVFinal, KVTitle, PlateShots } from "./KVFinal";
+import { KVFinal, KVFinalTypography, KVTitle, PlateShots } from "./KVFinal";
 import { Selendang } from "./Selendang";
 import { TB } from "./config";
 import { BRI_SOUND_CUES } from "./sound";
@@ -43,6 +43,7 @@ export const BumperBRI: React.FC = () => {
       {between(TB.rasulIn - 0.1, TB.rasulOut + 0.8) && <RasulCard />}
       {between(TB.manasikIn - 0.5, TB.titleOut + 0.8) && <KVTitle box={[370, 300, 1180, 187]} start={TB.manasikIn} out={TB.titleOut} sweepAt={TB.swooshIn + 0.4} accentAt={-10} />}
 
+      <KVFinalTypography />
       <Flashes />
       {MUSIC_BED.enabled && (
         <Html5Audio

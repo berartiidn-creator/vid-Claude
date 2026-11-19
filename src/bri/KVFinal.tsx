@@ -201,6 +201,7 @@ export const PlateShots: React.FC = () => {
   return shot ? <PlateShotView key={shot.id} shot={shot} /> : null;
 };
 
+/** Ending background (key-visual loop). Typography is a separate top layer. */
 export const KVFinal: React.FC = () => {
   const frame = useCurrentFrame();
   if (frame / FPS < TB.finalStart - 0.05) return null;
@@ -209,6 +210,16 @@ export const KVFinal: React.FC = () => {
       <Sequence from={f(TB.finalStart)} layout="none">
         <LoopScene />
       </Sequence>
+    </AbsoluteFill>
+  );
+};
+
+/** Ending typography: always above ribbons and particles so it stays readable. */
+export const KVFinalTypography: React.FC = () => {
+  const frame = useCurrentFrame();
+  if (frame / FPS < TB.finalStart - 0.05) return null;
+  return (
+    <AbsoluteFill>
       <KVTitle />
       <Logo />
       <Plaque />
