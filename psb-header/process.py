@@ -13,6 +13,7 @@ import cv2
 
 sys.path.insert(0, __file__.rsplit("/", 1)[0])
 import logo_model as lm  # noqa: E402
+import school_text as stx  # noqa: E402
 
 ap = argparse.ArgumentParser()
 ap.add_argument("dl"); ap.add_argument("work"); ap.add_argument("out")
@@ -28,6 +29,7 @@ lm.OPK, lm.BODY_T = 11, 0.3
 SRC = A.dl + "/RAW/raw.mp4"
 W, H = 1080, 1920
 R = lm.Remover(A.work + "/logo_model.npz", A.work + "/regress.npz")
+ST = stx.SchoolText(A.work + "/ppdb.raw", A.dl + "/fonts/pjs800.ttf")
 
 
 def load_rgba(p):
@@ -97,6 +99,8 @@ while True:
     match = R.present(f)
     if match > 0.4:
         R.clean(f)
+
+    ST.apply(f, A.start + n / A.fps)
 
     top_y = f[:400:8, ::8].mean()
     card = top_y > 205
