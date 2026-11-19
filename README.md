@@ -3,7 +3,9 @@
 A 40-second, 1920x1080, 30 fps cinematic event opener built with **Remotion + React + TypeScript**.
 Every frame is deterministic: no `Math.random`, no real-time state. The same frame always renders the same pixels.
 
-**Final output:** `out/ALBAHJAH_MANASIK_UMROH_BUMPER_40S.mp4` (H.264, yuv420p, AAC 320 kbps, 1200 frames)
+**Final output:** `renders/ALBAHJAH_MANASIK_UMROH_BUMPER_40S.mp4` (H.264 High, yuv420p BT.709, AAC 48 kHz stereo, 1200 frames, 40.000 s)
+
+Also in `renders/`: a 960x540 preview and a contact sheet (one frame every 2.5 s).
 
 | Scene | Time | Content |
 |---|---|---|
@@ -36,7 +38,8 @@ export REMOTION_BROWSER=/path/to/chrome-headless-shell
 ```bash
 npm run studio           # interactive preview in Remotion Studio (scrub the timeline)
 npm run render:preview   # quick half-resolution preview -> out/preview_960x540.mp4
-npm run render           # final 1080p master -> out/ALBAHJAH_MANASIK_UMROH_BUMPER_40S.mp4
+npm run render           # final 1080p render -> out/ALBAHJAH_MANASIK_UMROH_BUMPER_40S.mp4
+npm run finalize         # convert to broadcast-range yuv420p BT.709 -> renders/ (needs ffmpeg)
 npm run stills           # storyboard check stills -> out/stills/
 npm run typecheck
 ```
@@ -44,7 +47,7 @@ npm run typecheck
 Verify a render:
 
 ```bash
-ffprobe -v error -show_entries stream=codec_name,width,height,r_frame_rate,nb_frames -show_entries format=duration out/ALBAHJAH_MANASIK_UMROH_BUMPER_40S.mp4
+ffprobe -v error -count_frames -show_entries stream=codec_name,width,height,r_frame_rate,pix_fmt,nb_read_frames -show_entries format=duration renders/ALBAHJAH_MANASIK_UMROH_BUMPER_40S.mp4
 ```
 
 ---

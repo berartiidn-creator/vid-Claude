@@ -9,7 +9,8 @@
     "render:preview": "remotion render src/index.ts AlBahjahBumper out/preview_960x540.mp4 --codec=h264 --scale=0.5 --crf=22 --browser-executable=${REMOTION_BROWSER:-/opt/pw-browsers/chromium_headless_shell-1243/chrome-headless-shell-linux64/chrome-headless-shell}",
     "stills": "node scripts/render-stills.mjs",
     "audio": "python3 scripts/generate_audio.py",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "finalize": "ffmpeg -y -i out/ALBAHJAH_MANASIK_UMROH_BUMPER_40S.mp4 -vf scale=in_range=full:out_range=tv,format=yuv420p -c:v libx264 -preset slow -crf 16 -profile:v high -color_range tv -colorspace bt709 -color_primaries bt709 -color_trc bt709 -movflags +faststart -c:a copy renders/ALBAHJAH_MANASIK_UMROH_BUMPER_40S.mp4"
   },
   "dependencies": {
     "@remotion/bundler": "^4.0.545",
