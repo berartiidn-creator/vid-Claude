@@ -5,6 +5,7 @@ Outputs: renders/storyboard/
            frames/scene-XX-*.jpg   full-HD frames per scene
            storyboard-cover.png    overview of the 9 scenes
            storyboard-page-N.png   3 scenes per page, with notes
+           storyboard-scene-XX.png one image per scene (large peak frame + notes)
            STORYBOARD_MANASIK_UMROH_60S.pdf
 Usage  : python3 scripts/build_storyboard.py <ttf-font-dir>
 """
@@ -209,6 +210,48 @@ def page(n, scenes):
     return img
 
 
+def scene_page(sc):
+    """One storyboard image per scene: large peak frame, start/end frames, full notes."""
+    W, H = 2400, 1400
+    img = Image.new("RGB", (W, H), BG)
+    d = ImageDraw.Draw(img)
+    d.text((60, 34), "AL-BAHJAH MANASIK UMROH", font=SMALL, fill=MUTED)
+    d.text((60, 62), f"SCENE {sc['no']:02d} / {len(SCENES):02d}", font=LBL, fill=GOLD)
+    d.text((60, 90), sc["title"], font=TITLE, fill=WHITE)
+    d.text((W - 60 - d.textlength(sc["tc"], font=TITLE), 90), sc["tc"], font=TITLE, fill=GOLD)
+    d.line((60, 160, W - 60, 160), fill=LINE, width=2)
+    top = 190
+    hw = 1520
+    hh = round(hw * 9 / 16)
+    sw = W - 120 - hw - 30
+    sh = round(sw * 9 / 16)
+    shots = [(sc["frames"][1], 60, top, hw, "PUNCAK"), (sc["frames"][0], 60 + hw + 30, top, sw, "AWAL"), (sc["frames"][2], 60 + hw + 30, top + hh - sh, sw, "AKHIR")]
+    for fr, x, y, w, name in shots:
+        im = thumb(fr, w)
+        img.paste(im, (x, y))
+        d.rectangle((x, y, x + w, y + im.height), outline=LINE, width=2)
+        lab = f"{name}  {ts(fr)}"
+        d.rectangle((x, y, x + 20 + d.textlength(lab, font=LBL), y + 36), fill=(1, 20, 16))
+        d.text((x + 10, y + 8), lab, font=LBL, fill=GOLD)
+    # notes
+    ny = top + hh + 36
+    cols = [("VISUAL", sc["visual"]), ("KAMERA", sc["camera"]), ("TEKS", sc["text"]), ("EFEK", sc["fx"]), ("TRANSISI", sc["transition"]), ("AUDIO", sc["audio"])]
+    colw = (W - 120) // 3
+    row_y = ny
+    for r in range(2):
+        bottom = row_y
+        for c in range(3):
+            k, v = cols[r * 3 + c]
+            cx = 60 + c * colw
+            d.text((cx, row_y), k, font=LBL, fill=GOLD)
+            bottom = max(bottom, wrap(d, (cx, row_y + 28), v, TXT, colw - 50, WHITE, spacing=6))
+        row_y = bottom + 22
+    out = OUT / f"storyboard-scene-{sc['no']:02d}.png"
+    img = img.crop((0, 0, W, min(H, row_y + 30)))
+    img.save(out, optimize=True)
+    return img
+
+
 def main():
     OUT.mkdir(parents=True, exist_ok=True)
     (OUT / "frames").mkdir(exist_ok=True)
@@ -216,7 +259,8 @@ def main():
         for k, fr in enumerate(sc["frames"]):
             shutil.copy(STILLS / f"f{fr:04d}.jpg", OUT / "frames" / f"scene-{sc['no']:02d}-{['a-awal', 'b-puncak', 'c-akhir'][k]}-{ts(fr).replace(':', 'm').replace('.', 's')}.jpg")
     pages = [cover()] + [page(i + 1, SCENES[i * 3 : i * 3 + 3]) for i in range(3)]
-    pdf = [p.convert("RGB") for p in pages]
+    singles = [scene_page(sc) for sc in SCENES]
+    pdf = [p.convert("RGB") for p in [pages[0]] + singles]
     pdf[0].save(OUT / "STORYBOARD_MANASIK_UMROH_60S.pdf", save_all=True, append_images=pdf[1:], resolution=150)
     print("ok", len(pages), "pages")
 
