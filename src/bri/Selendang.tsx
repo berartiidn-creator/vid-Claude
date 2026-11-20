@@ -32,13 +32,15 @@ const bez = (p: [P, P, P, P], u: number): P => {
   ];
 };
 
-export const Selendang: React.FC = () => {
+export type SelendangPass = (typeof SELENDANG)[number];
+
+export const Selendang: React.FC<{ passes?: SelendangPass[] }> = ({ passes = SELENDANG }) => {
   const frame = useCurrentFrame();
   const ref = useRef<HTMLCanvasElement>(null);
   const glowRef = useRef<HTMLCanvasElement | null>(null);
   const t = frame / FPS;
   const durOf = (s: { dur?: number }) => s.dur ?? DUR;
-  const active = SELENDANG.filter((s) => t >= s.at && t < s.at + durOf(s));
+  const active = passes.filter((s) => t >= s.at && t < s.at + durOf(s));
 
   useLayoutEffect(() => {
     const cv = ref.current;

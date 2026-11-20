@@ -5,6 +5,7 @@ import { VIDEO } from "./config/theme";
 import { KeyVisualAnimated } from "./keyvisual/KeyVisualAnimated";
 import { KV } from "./keyvisual/config";
 import { BumperBRI } from "./bri/BumperBRI";
+import { TransitionBumper, TRANSITION } from "./bri/TransitionBumper";
 
 export const RemotionRoot: React.FC = () => (
   <>
@@ -20,6 +21,14 @@ export const RemotionRoot: React.FC = () => (
       id="AlBahjahBumperBRIStyle"
       component={BumperBRI}
       durationInFrames={VIDEO.durationInFrames}
+      fps={VIDEO.fps}
+      width={VIDEO.width}
+      height={VIDEO.height}
+    />
+    <Composition
+      id="AlBahjahTransition15s"
+      component={TransitionBumper}
+      durationInFrames={TRANSITION.durationSeconds * VIDEO.fps}
       fps={VIDEO.fps}
       width={VIDEO.width}
       height={VIDEO.height}

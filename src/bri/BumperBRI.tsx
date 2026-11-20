@@ -23,7 +23,10 @@ import { BRI_SOUND_CUES } from "./sound";
 
 loadAllFonts();
 
-export const BumperBRI: React.FC = () => {
+/** Every layer is on by default; the 15 s transition reuses shots with some layers off. */
+export type BumperBRIProps = { cards?: boolean; audio?: boolean; selendang?: boolean; dof?: boolean; flashes?: boolean };
+
+export const BumperBRI: React.FC<BumperBRIProps> = ({ cards = true, audio = true, selendang = true, dof = true, flashes = true }) => {
   const frame = useCurrentFrame();
   const { durationInFrames, fps } = useVideoConfig();
   const t = frame / FPS;
@@ -38,7 +41,7 @@ export const BumperBRI: React.FC = () => {
           <feGaussianBlur stdDeviation={`${(12 * whip).toFixed(2)} ${(4 * whip).toFixed(2)}`} edgeMode="duplicate" />
         </filter>
       </svg>
-      <AbsoluteFill style={{ filter: [whip > 0.03 ? "url(#whip)" : "", dofAmount(t) > 0.02 ? `blur(${(1.8 * dofAmount(t)).toFixed(2)}px)` : ""].join(" ").trim() || undefined }}>
+      <AbsoluteFill style={{ filter: [whip > 0.03 ? "url(#whip)" : "", dof && dofAmount(t) > 0.02 ? `blur(${(1.8 * dofAmount(t)).toFixed(2)}px)` : ""].join(" ").trim() || undefined }}>
         <BRIWorld />
         {/* natural grade on the key visual: less candy saturation, a touch more contrast */}
         <AbsoluteFill style={{ filter: "saturate(0.88) contrast(1.06) brightness(0.98)" }}>
@@ -48,16 +51,16 @@ export const BumperBRI: React.FC = () => {
         <Clouds />
       </AbsoluteFill>
       <NeonRibbons />
-      <Selendang />
+      {selendang && <Selendang />}
       <GoldDust />
 
-      {between(TB.logoIn - 0.1, TB.logoOut + 0.7) && <LogoCard />}
-      {between(TB.presentIn - 0.1, TB.presentOut + 0.8) && <PresentCard />}
-      {between(TB.hatiIn - 0.1, TB.hatiOut + 0.8) && <HatiCard />}
-      {between(TB.allahIn - 0.1, TB.allahOut + 0.8) && <AllahCard />}
-      {between(TB.rasulIn - 0.1, TB.rasulOut + 0.8) && <RasulCard />}
+      {cards && between(TB.logoIn - 0.1, TB.logoOut + 0.7) && <LogoCard />}
+      {cards && between(TB.presentIn - 0.1, TB.presentOut + 0.8) && <PresentCard />}
+      {cards && between(TB.hatiIn - 0.1, TB.hatiOut + 0.8) && <HatiCard />}
+      {cards && between(TB.allahIn - 0.1, TB.allahOut + 0.8) && <AllahCard />}
+      {cards && between(TB.rasulIn - 0.1, TB.rasulOut + 0.8) && <RasulCard />}
 
-      <Flashes />
+      {flashes && <Flashes />}
       <FullScreenSweep start={TB.finalStart - 0.2} duration={1.6} color={COLORS.gold} core="#FFF4D0" strength={0.45} angle={20} />
       <KVFinalTypography />
       {/* MANASIK UMROH: one continuous title from its reveal to the last frame */}
@@ -65,13 +68,13 @@ export const BumperBRI: React.FC = () => {
       <ClosingBreath />
       <LensDirt />
       <Grade />
-      {MUSIC_BED.enabled && (
+      {audio && MUSIC_BED.enabled && (
         <Html5Audio
           src={staticFile(MUSIC_BED.file)}
           volume={(fr) => MUSIC_BED.volume * interpolate(fr, [0, 4, durationInFrames - MUSIC_BED.fadeOutSeconds * fps, durationInFrames], [0, 1, 1, 0], { extrapolateLeft: "clamp", extrapolateRight: "clamp" })}
         />
       )}
-      {BRI_SOUND_CUES.filter((c) => c.enabled).map((c) => (
+      {audio && BRI_SOUND_CUES.filter((c) => c.enabled).map((c) => (
         <Sequence key={c.id} from={f(c.at)} layout="none">
           <Html5Audio src={staticFile(c.file)} volume={c.volume} />
         </Sequence>
