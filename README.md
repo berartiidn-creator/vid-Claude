@@ -233,3 +233,18 @@ npm run render:bri                          # 1080p master -> out/ALBAHJAH_MANAS
 ```
 
 Shots, timings, palettes, ribbons and flashes: `src/bri/config.ts`. SFX: `src/bri/sound.ts`.
+
+### Final 1080p render of the BRI-style cut
+
+The composition is layer-heavy; a single-pass 1080p render can run Chrome out of memory. Render it in chunks:
+
+```bash
+bash scripts/render_chunks.sh AlBahjahBumperBRIStyle out/ALBAHJAH_MANASIK_UMROH_BUMPER_60S_BRISTYLE.mp4 450 3
+npm run finalize:bri    # broadcast yuv420p BT.709, exactly 60 s -> renders/
+```
+
+If the audio-only step times out, mix the soundtrack with ffmpeg from the same cue list (identical times, volumes and fades):
+export the cues from `src/bri/sound.ts` to JSON and run `python3 scripts/mix_audio.py cues.json out/chunks_AlBahjahBumperBRIStyle/audio.wav`,
+then mux it with the concatenated chunks.
+
+**Output:** `renders/ALBAHJAH_MANASIK_UMROH_BUMPER_60S_BRISTYLE.mp4` (1920x1080, 30 fps, 1800 frames, 60.000 s, H.264 High yuv420p BT.709, AAC 48 kHz stereo).
