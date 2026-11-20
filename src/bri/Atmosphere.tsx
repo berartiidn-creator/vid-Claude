@@ -6,8 +6,19 @@ import { FPS } from "../config/timeline";
 import { clamp01, EASE, smoothstep } from "../lib/anim";
 import { project } from "../lib/camera3d";
 import { hash } from "../lib/random";
-import { FLASHES, PALETTES, shotAt, TB } from "./config";
+import { CBD_Z, FLASHES, MADINAH_Z, PALETTES, shotAt, TB } from "./config";
+import { mulberry32 } from "../lib/random";
+import type { V3 } from "../lib/camera3d";
 import { shotCamera } from "./shotCamera";
+
+/** Cloud billboards placed in world space around the Makkah and Madinah districts. */
+const WORLD_CLOUDS: { key: string; p: V3; w: number; o: number; i: number }[] = (() => {
+  const r = mulberry32(606);
+  const out: { key: string; p: V3; w: number; o: number; i: number }[] = [];
+  for (let n = 0; n < 30; n++) out.push({ key: `m${n}`, p: [(r() - 0.5) * 680, 30 + r() * 360, CBD_Z - 130 + r() * 780], w: 130 + r() * 170, o: 0.35 + r() * 0.35, i: n % 3 });
+  for (let n = 0; n < 20; n++) out.push({ key: `d${n}`, p: [(r() - 0.5) * 560, 6 + r() * 70, MADINAH_Z - 90 + r() * 600], w: 90 + r() * 140, o: 0.3 + r() * 0.3, i: n % 3 });
+  return out;
+})();
 
 const CLOUD = [0, 1, 2].map((i) => staticFile(`assets/bri/cloud-${i}.png`));
 
@@ -26,15 +37,24 @@ export const Clouds: React.FC = () => {
     const sp = 14 + j * 9;
     const x = -600 + ((t * sp + j * 700) % 2600) - 300;
     const y = j % 2 === 0 ? -260 + j * 30 : 380 + j * 40;
-    layers.push(<Cloud key={`a${j}`} i={j} x={x} y={y} w={2200} opacity={k * (j % 2 === 0 ? 0.55 : 0.32)} />);
+    layers.push(<Cloud key={`a${j}`} i={j} x={x} y={y} w={2200} opacity={k * (shot.cbd ? 0.6 : 1) * (j % 2 === 0 ? 0.55 : 0.32)} />);
   }
-  // shot 2: clouds rushing past as the camera rises
-  if (shot.id === "night-rise") {
-    const p = (t - shot.from) / (shot.to - shot.from);
-    for (let j = 0; j < 3; j++) {
-      const y = 1300 - ((p * 2600 + j * 900) % 2700);
-      layers.push(<Cloud key={`n${j}`} i={j + 1} x={-400 + j * 500} y={y} w={2400} opacity={0.16} />);
+  // tower shots: clouds live in 3D space, so the moving camera flies through them
+  if (shot.cbd) {
+    const cam = shotCamera(frame);
+    const items: { key: string; i: number; x: number; y: number; w: number; o: number; d: number }[] = [];
+    for (const c of WORLD_CLOUDS) {
+      const q = project(cam, c.p);
+      if (!q) continue;
+      const wpx = (c.w * cam.focal) / q.d;
+      if (wpx < 40 || wpx > 7000) continue;
+      if (q.x + wpx / 2 < -50 || q.x - wpx / 2 > VIDEO.width + 50 || q.y + wpx / 4 < -50 || q.y - wpx / 4 > VIDEO.height + 50) continue;
+      const o = c.o * k * 1.6 * smoothstep(20, 110, q.d) * (1 - smoothstep(650, 1000, q.d));
+      if (o < 0.01) continue;
+      items.push({ key: c.key, i: c.i, x: q.x - wpx / 2, y: q.y - wpx / 4, w: wpx, o, d: q.d });
     }
+    items.sort((a, b) => b.d - a.d);
+    for (const it of items) layers.push(<Cloud key={it.key} i={it.i} x={it.x} y={it.y} w={it.w} opacity={it.o} />);
   }
   // opening misty pass and whiteout transition
   const open = 1 - smoothstep(0, 1.6, t);

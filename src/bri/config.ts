@@ -245,14 +245,14 @@ export const FLASHES: { at: number; strength: number }[] = [
  * s = zoom, (fx, fy) = plate point placed at screen (sx, sy), ry = perspective yaw (deg).
  * seqFrom = when the key-visual loop's local clock starts (aligns its scans).
  */
-export type PlateShot = { id: string; from: number; to: number; seqFrom: number; intro?: boolean; ease?: boolean; s: K; fx: K; fy: K; sx: K; sy: K; ry: K };
+export type PlateShot = { id: string; from: number; to: number; seqFrom: number; intro?: boolean; ease?: boolean; truck?: K; s: K; fx: K; fy: K; sx: K; sy: K; ry: K };
 
 export const PLATE_SHOTS: PlateShot[] = [
-  { id: "sacred-build", from: TB.cut3, to: TB.drop, seqFrom: TB.cut3, intro: true, s: [[TB.cut3, 1.14], [TB.drop, 1.06]], fx: [[TB.cut3, 960], [TB.drop, 960]], fy: [[TB.cut3, 640], [TB.drop, 630]], sx: [[TB.cut3, 960], [TB.drop, 960]], sy: [[TB.cut3, 600], [TB.drop, 590]], ry: [[TB.cut3, 0], [TB.drop, 0]] },
-  { id: "kaaba", from: TB.drop, to: TB.cut5, seqFrom: TB.drop - 1.9, s: [[TB.drop, 1.62], [TB.cut5, 1.46]], fx: [[TB.drop, 265], [TB.cut5, 265]], fy: [[TB.drop, 683], [TB.cut5, 683]], sx: [[TB.drop, 380], [TB.cut5, 370]], sy: [[TB.drop, 620], [TB.cut5, 640]], ry: [[TB.drop, 3], [TB.cut5, 1]] },
-  { id: "dome", from: TB.cut5, to: TB.cut6, seqFrom: TB.cut5 - 2.2, s: [[TB.cut5, 1.62], [TB.cut6, 1.46]], fx: [[TB.cut5, 1705], [TB.cut6, 1705]], fy: [[TB.cut5, 661], [TB.cut6, 661]], sx: [[TB.cut5, 1560], [TB.cut6, 1580]], sy: [[TB.cut5, 600], [TB.cut6, 620]], ry: [[TB.cut5, -3], [TB.cut6, -1]] },
+  { id: "sacred-build", from: TB.cut3, to: TB.drop, seqFrom: TB.cut3, intro: true, truck: [[TB.cut3, -18], [TB.drop, 18]], s: [[TB.cut3, 1.14], [TB.drop, 1.06]], fx: [[TB.cut3, 960], [TB.drop, 960]], fy: [[TB.cut3, 640], [TB.drop, 630]], sx: [[TB.cut3, 960], [TB.drop, 960]], sy: [[TB.cut3, 600], [TB.drop, 590]], ry: [[TB.cut3, 0], [TB.drop, 0]] },
+  { id: "kaaba", from: TB.drop, to: TB.cut5, seqFrom: TB.drop - 1.9, truck: [[TB.drop, 26], [TB.cut5, -26]], s: [[TB.drop, 1.62], [TB.cut5, 1.46]], fx: [[TB.drop, 265], [TB.cut5, 265]], fy: [[TB.drop, 683], [TB.cut5, 683]], sx: [[TB.drop, 380], [TB.cut5, 370]], sy: [[TB.drop, 620], [TB.cut5, 640]], ry: [[TB.drop, 3], [TB.cut5, 1]] },
+  { id: "dome", from: TB.cut5, to: TB.cut6, seqFrom: TB.cut5 - 2.2, truck: [[TB.cut5, -26], [TB.cut6, 26]], s: [[TB.cut5, 1.62], [TB.cut6, 1.46]], fx: [[TB.cut5, 1705], [TB.cut6, 1705]], fy: [[TB.cut5, 661], [TB.cut6, 661]], sx: [[TB.cut5, 1560], [TB.cut6, 1580]], sy: [[TB.cut5, 600], [TB.cut6, 620]], ry: [[TB.cut5, -3], [TB.cut6, -1]] },
   // title shot flows straight into the final key visual (no cut): ease out to the full frame on the drop
-  { id: "title", from: TB.cut6, to: TB.end + 1, seqFrom: TB.cut6 - 2.4, ease: true, s: [[TB.cut6, 1.36], [TB.finalStart, 1.2], [TB.finalStart + 2.4, 1.012], [TB.end, 1.032]], fx: [[TB.cut6, 960], [TB.end, 960]], fy: [[TB.cut6, 700], [TB.finalStart, 690], [TB.finalStart + 2.4, 540], [TB.end, 540]], sx: [[TB.cut6, 960], [TB.end, 960]], sy: [[TB.cut6, 740], [TB.finalStart, 720], [TB.finalStart + 2.4, 540], [TB.end, 540]], ry: [[TB.cut6, 0], [TB.end, 0]] },
+  { id: "title", from: TB.cut6, to: TB.end + 1, seqFrom: TB.cut6 - 2.4, ease: true, truck: [[TB.cut6, 22], [TB.finalStart, -6], [TB.finalStart + 2.4, 14], [TB.end, -20]], s: [[TB.cut6, 1.36], [TB.finalStart, 1.2], [TB.finalStart + 2.4, 1.0], [TB.end, 1.024]], fx: [[TB.cut6, 960], [TB.end, 960]], fy: [[TB.cut6, 700], [TB.finalStart, 690], [TB.finalStart + 2.4, 540], [TB.end, 540]], sx: [[TB.cut6, 960], [TB.end, 960]], sy: [[TB.cut6, 740], [TB.finalStart, 720], [TB.finalStart + 2.4, 540], [TB.end, 540]], ry: [[TB.cut6, 0], [TB.end, 0]] },
 ];
 
 /** Flying "selendang" (light fabric) passes in the earlier shots. */
@@ -266,3 +266,21 @@ export const SELENDANG: { at: number; preset: "riseL" | "riseR" | "across" | "lo
   // fabric wipes carrying each cut: 3 beats long, densest exactly on the cut
   ...[TB.cut1, TB.cut2, TB.cut3, TB.cut5, TB.cut6].map((c) => ({ at: c - 1.5 * BEAT, preset: "wipe" as const, dur: 3 * BEAT, body: 0.5 })),
 ];
+
+/**
+ * Organic camera: smooth deterministic "operator" drift (sum of incommensurate
+ * sines, range about -1..1) and a speed ramp that makes every shot move faster
+ * into and out of its cuts and slower while text is being read.
+ */
+export const drift = (t: number, seed: number) =>
+  0.5 * Math.sin(t * 0.71 + seed) + 0.3 * Math.sin(t * 1.13 + seed * 2.1) + 0.2 * Math.sin(t * 1.97 + seed * 3.7);
+
+export const RAMP = 0.55;
+export const rampTime = (t: number, from: number, to: number) => {
+  const p = Math.max(0, Math.min(1, (t - from) / (to - from)));
+  return from + (p + (RAMP * Math.sin(2 * Math.PI * p)) / (2 * Math.PI)) * (to - from);
+};
+
+/** Cuts carried by motion blur (camera whip). */
+export const CUTS = [TB.cut1, TB.cut2, TB.cut3, TB.cut5, TB.cut6];
+export const whipAt = (t: number) => CUTS.reduce((m, c) => Math.max(m, Math.exp(-(((t - c) / 0.11) ** 2))), 0);

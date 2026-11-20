@@ -18,7 +18,7 @@ import { KVParticles } from "../keyvisual/KVParticles";
 import { LOGO_ASPECT, LOGO_SRC } from "../components/typography/LogoReveal";
 import { ImageSweep, TextSweep } from "../components/typography/GoldenLightSweep";
 import { Glint } from "../components/typography/Ornament";
-import { BEAT, PLATE_SHOTS, type PlateShot, TB } from "./config";
+import { BEAT, drift, PLATE_SHOTS, type PlateShot, rampTime, TB } from "./config";
 import { GodRays } from "./Details";
 
 const PLATE = staticFile("assets/kvfinal/kv-plate.png");
@@ -28,6 +28,7 @@ const TITLE = staticFile("assets/title/manasik-umroh-title-oneline-hd.png");
 const DEPTH_MID = staticFile("assets/kvfinal/kv-depth-mid.png");
 const DEPTH_NEAR = staticFile("assets/kvfinal/kv-depth-near.png");
 const LINES = staticFile("assets/keyvisual/kv-lines-arch.png");
+const HAZE = [staticFile("assets/bri/cloud-0.png"), staticFile("assets/bri/cloud-2.png")];
 const FLOOR = staticFile("assets/keyvisual/kv-lines-floor.png");
 export const TAGLINE_KV = "Umrah Bersama Al-Bahjah, Bernilai Sedekah & Da\u2019wah";
 
@@ -37,7 +38,7 @@ const Masked: React.FC<{ mask: string; background: string; opacity: number }> = 
   );
 
 /** Background loop scene (local clock starts when its Sequence starts). */
-const LoopScene: React.FC<{ intro?: boolean }> = ({ intro = true }) => {
+const LoopScene: React.FC<{ intro?: boolean; pan?: number }> = ({ intro = true, pan = 0 }) => {
   const frame = useCurrentFrame();
   const t = frame / FPS; // local
   const p = EASE.inOut(Math.min(1, t / KV.durationSeconds));
@@ -52,10 +53,11 @@ const LoopScene: React.FC<{ intro?: boolean }> = ({ intro = true }) => {
   const pk = smoothstep(intro ? 2.2 : 0, intro ? 3.4 : 0.01, t);
   const ox = 7 * Math.sin((Math.PI * 2 * t) / 15) * pk;
   const oy = 2.5 * Math.sin((Math.PI * 2 * t) / 19 + 1) * pk;
+  // far layers lag behind the camera truck, near layers lead it
   const layer = (k: number, mask?: string) => (
     <AbsoluteFill
       style={{
-        transform: `translate(${ox * k}px, ${oy * k}px)`,
+        transform: `translate(${ox * k + pan * (k - 0.6)}px, ${oy * k}px)`,
         WebkitMaskImage: mask ? `url(${mask})` : undefined,
         WebkitMaskSize: "100% 100%",
         maskImage: mask ? `url(${mask})` : undefined,
@@ -72,6 +74,12 @@ const LoopScene: React.FC<{ intro?: boolean }> = ({ intro = true }) => {
     <AbsoluteFill style={{ transform: `scale(${scale * 1.01})`, transformOrigin: `${KV.push.originX}px ${KV.push.originY}px` }}>
       {layer(0.25)}
       {layer(0.6, DEPTH_MID)}
+      {/* horizon haze drifting between the city and the floor */}
+      <AbsoluteFill style={{ mixBlendMode: "screen", opacity: 0.16, pointerEvents: "none" }}>
+        {[0, 1].map((j) => (
+          <Img key={j} src={HAZE[j]} style={{ position: "absolute", left: ((t * (9 + j * 5) + j * 900) % 2600) - 1400 + pan * 0.15, top: 600 + j * 70, width: 2200, height: 330, opacity: 0.9 - j * 0.3 }} />
+        ))}
+      </AbsoluteFill>
       {layer(1, DEPTH_NEAR)}
       {dark > 0.01 && <AbsoluteFill style={{ background: `rgba(1,22,17,${dark})` }} />}
       <Masked mask={LINES} background={drawBg} opacity={lineOp} />
@@ -250,9 +258,11 @@ const Swoosh: React.FC = () => {
 /** 2.5D camera over the plate (zoom / pan / slight perspective yaw). */
 const PlateShotView: React.FC<{ shot: PlateShot }> = ({ shot }) => {
   const frame = useCurrentFrame();
-  const t = frame / FPS;
+  const t0 = frame / FPS;
   const lin = (v: number) => v;
   const ez = shot.ease ? EASE.inOut : lin;
+  // speed ramp: faster into / out of the cuts, slower while text is read
+  const t = shot.ease ? t0 : rampTime(t0, shot.from, shot.to);
   const sc = keyAt(shot.s, t, ez);
   const fx = keyAt(shot.fx, t, ez);
   const fy = keyAt(shot.fy, t, ez);
@@ -261,14 +271,20 @@ const PlateShotView: React.FC<{ shot: PlateShot }> = ({ shot }) => {
   const dx = Math.min(-m, Math.max(1920 + m - sc * 1920, keyAt(shot.sx, t, ez) - sc * fx));
   const dy = Math.min(-m, Math.max(1080 + m - sc * 1080, keyAt(shot.sy, t, ez) - sc * fy));
   const ry = keyAt(shot.ry, t, lin);
+  // lateral camera truck (drives the depth-layer parallax) + operator drift
+  const truck = shot.truck ? keyAt(shot.truck, t, ez) : 0;
+  const hx = truck + 3.5 * drift(t0, 5);
+  const hy = 2.5 * drift(t0, 6);
+  const rot = 0.12 * drift(t0, 7);
+  const over = hasRy ? 1.06 : 1.035;
   return (
-    <AbsoluteFill style={{ transform: hasRy ? `perspective(2400px) rotateY(${ry}deg) scale(1.06)` : undefined, overflow: "hidden" }}>
+    <AbsoluteFill style={{ transform: `${hasRy ? `perspective(2400px) rotateY(${ry}deg) ` : ""}translate(${hx}px, ${hy}px) rotate(${rot}deg) scale(${over})`, overflow: "hidden" }}>
       <AbsoluteFill style={{ transformOrigin: "0 0", transform: `translate(${dx}px, ${dy}px) scale(${sc})` }}>
         <Sequence from={f(shot.seqFrom)} layout="none">
-          <LoopScene intro={shot.intro ?? false} />
+          <LoopScene intro={shot.intro ?? false} pan={truck} />
         </Sequence>
-        {shot.id === "kaaba" && <GodRays cx={265} cy={540} intensity={smoothstep(TB.allahIn - 0.2, TB.allahIn + 4 * BEAT, t) * (1 - smoothstep(TB.allahOut, TB.cut5, t))} />}
-        {shot.id === "dome" && <GodRays cx={1705} cy={545} color="200,255,236" intensity={smoothstep(TB.rasulIn - 0.2, TB.rasulIn + 4 * BEAT, t) * (1 - smoothstep(TB.rasulOut, TB.cut6, t))} />}
+        {shot.id === "kaaba" && <GodRays cx={265} cy={540} intensity={smoothstep(TB.allahIn - 0.2, TB.allahIn + 4 * BEAT, t0) * (1 - smoothstep(TB.allahOut, TB.cut5, t0))} />}
+        {shot.id === "dome" && <GodRays cx={1705} cy={545} color="200,255,236" intensity={smoothstep(TB.rasulIn - 0.2, TB.rasulIn + 4 * BEAT, t0) * (1 - smoothstep(TB.rasulOut, TB.cut6, t0))} />}
       </AbsoluteFill>
     </AbsoluteFill>
   );

@@ -18,7 +18,7 @@ const GOLD_FILL = "linear-gradient(180deg, #FFF4CF 0%, #F0D488 38%, #D6B34A 62%,
 const SOFT_SHADOW = "drop-shadow(0 2px 10px rgba(1,20,16,0.55))";
 
 /** Mask-open reveal from the centre + fade; fade-out exit. */
-const Elegant: React.FC<{ start: number; out: number; dur?: number; children: React.ReactNode; style?: React.CSSProperties }> = ({ start, out, dur = 1.1, children, style }) => {
+const Elegant: React.FC<{ start: number; out: number; dur?: number; children: React.ReactNode; style?: React.CSSProperties; track?: [number, number] }> = ({ start, out, dur = 1.1, children, style, track }) => {
   const frame = useCurrentFrame();
   const t = frame / FPS;
   const p = EASE.inOut(clamp01((t - start) / dur));
@@ -26,7 +26,10 @@ const Elegant: React.FC<{ start: number; out: number; dur?: number; children: Re
   if (p <= 0 || o >= 1) return null;
   const half = 3 + 57 * p;
   const mask = p < 1 ? `linear-gradient(90deg, transparent ${50 - half - 8}%, #000 ${50 - half}%, #000 ${50 + half}%, transparent ${50 + half + 8}%)` : undefined;
-  return <div style={{ display: "inline-block", opacity: Math.min(1, p * 1.4) * (1 - o), WebkitMaskImage: mask, maskImage: mask, ...style }}>{children}</div>;
+  // tracking settles in over twice the reveal time (letters never change shape)
+  const tp = EASE.out(clamp01((t - start) / (dur * 2.2)));
+  const ls = track ? `${(track[0] + (track[1] - track[0]) * tp).toFixed(4)}em` : undefined;
+  return <div style={{ display: "inline-block", opacity: Math.min(1, p * 1.4) * (1 - o), WebkitMaskImage: mask, maskImage: mask, letterSpacing: ls, ...style }}>{children}</div>;
 };
 
 export const LogoCard: React.FC = () => {
@@ -56,8 +59,8 @@ export const PresentCard: React.FC = () => {
         <div style={{ opacity: rules }}>
           <GoldRule width={150} progress={rules} dir="left" />
         </div>
-        <Elegant start={TB.presentIn} out={TB.presentOut} dur={1.3}>
-          <span style={{ fontFamily: FONTS.sans, fontWeight: 500, fontSize: 34, letterSpacing: "0.42em", paddingLeft: "0.42em", color: "rgba(244,255,251,0.96)", filter: SOFT_SHADOW }}>MEMPERSEMBAHKAN</span>
+        <Elegant start={TB.presentIn} out={TB.presentOut} dur={1.3} track={[0.7, 0.42]}>
+          <span style={{ fontFamily: FONTS.sans, fontWeight: 500, fontSize: 34, letterSpacing: "inherit", paddingLeft: "0.42em", color: "rgba(244,255,251,0.96)", filter: SOFT_SHADOW }}>MEMPERSEMBAHKAN</span>
         </Elegant>
         <div style={{ opacity: rules }}>
           <GoldRule width={150} progress={rules} dir="right" />
@@ -77,13 +80,15 @@ const Breath: React.FC<{ start: number; out: number }> = ({ start, out }) => {
   return <div style={{ position: "absolute", left: "50%", top: "50%", width: 640, height: 220, transform: "translate(-50%, -50%)", background: `radial-gradient(ellipse at center, rgba(214,179,74,${0.24 * on * b}) 0%, rgba(214,179,74,${0.08 * on * b}) 45%, transparent 72%)`, filter: "blur(8px)", pointerEvents: "none" }} />;
 };
 
-const TwoLine: React.FC<{ cx: number; top: number; l1: string; l2: string; start: number; out: number; big?: number; salawat?: boolean }> = ({ cx, top, l1, l2, start, out, big = 104, salawat }) => {
+const TwoLine: React.FC<{ cx: number; top: number; l1: string; l2: string; start: number; out: number; big?: number; salawat?: boolean; dir?: number }> = ({ cx, top, l1, l2, start, out, big = 104, salawat, dir = 1 }) => {
+  const frame = useCurrentFrame();
+  const drift = dir * 22 * EASE.inOut(clamp01((frame / FPS - start) / (out + 0.7 - start)));
   const keyStyle: React.CSSProperties = { fontFamily: FONTS.decorative, fontWeight: 700, fontSize: big, letterSpacing: "0.04em", lineHeight: 1.1, whiteSpace: "nowrap" };
   return (
     <AbsoluteFill style={{ pointerEvents: "none" }}>
-      <div style={{ position: "absolute", left: cx - 900, width: 1800, top, display: "flex", flexDirection: "column", alignItems: "center" }}>
-        <Elegant start={start} out={out} dur={1.1}>
-          <span style={{ fontFamily: FONTS.sans, fontWeight: 500, fontSize: 25, letterSpacing: "0.42em", paddingLeft: "0.42em", color: "rgba(244,255,251,0.94)", filter: SOFT_SHADOW }}>{l1}</span>
+      <div style={{ position: "absolute", left: cx - 900, width: 1800, top, display: "flex", flexDirection: "column", alignItems: "center", transform: `translateX(${drift.toFixed(2)}px)` }}>
+        <Elegant start={start} out={out} dur={1.1} track={[0.7, 0.42]}>
+          <span style={{ fontFamily: FONTS.sans, fontWeight: 500, fontSize: 25, letterSpacing: "inherit", paddingLeft: "0.42em", color: "rgba(244,255,251,0.94)", filter: SOFT_SHADOW }}>{l1}</span>
         </Elegant>
         <div style={{ position: "relative", display: "flex", alignItems: "center", marginTop: 10 }}>
           <Breath start={start} out={out} />
@@ -102,6 +107,6 @@ const TwoLine: React.FC<{ cx: number; top: number; l1: string; l2: string; start
   );
 };
 
-export const HatiCard: React.FC = () => <TwoLine cx={960} top={392} l1="SARANA MEMPERSIAPKAN" l2="HATI" start={TB.hatiIn} out={TB.hatiOut} />;
-export const AllahCard: React.FC = () => <TwoLine cx={1270} top={330} l1="BERTAMU KEPADA" l2="ALLAH" start={TB.allahIn} out={TB.allahOut} />;
-export const RasulCard: React.FC = () => <TwoLine cx={650} top={330} l1="BERTAMU KEPADA" l2="RASULULLAH" start={TB.rasulIn} out={TB.rasulOut} big={92} salawat />;
+export const HatiCard: React.FC = () => <TwoLine cx={960} top={392} l1="SARANA MEMPERSIAPKAN" l2="HATI" start={TB.hatiIn} out={TB.hatiOut} dir={-1} />;
+export const AllahCard: React.FC = () => <TwoLine cx={1270} top={330} l1="BERTAMU KEPADA" l2="ALLAH" start={TB.allahIn} out={TB.allahOut} dir={1} />;
+export const RasulCard: React.FC = () => <TwoLine cx={650} top={330} l1="BERTAMU KEPADA" l2="RASULULLAH" start={TB.rasulIn} out={TB.rasulOut} big={92} salawat dir={-1} />;

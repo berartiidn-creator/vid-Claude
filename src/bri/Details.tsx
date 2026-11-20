@@ -7,12 +7,12 @@
  * All timings follow the backsound beat grid (config BEAT).
  */
 import React, { useLayoutEffect, useRef } from "react";
-import { AbsoluteFill, useCurrentFrame } from "remotion";
+import { AbsoluteFill, Img, staticFile, useCurrentFrame } from "remotion";
 import { VIDEO } from "../config/theme";
 import { FPS } from "../config/timeline";
 import { smoothstep } from "../lib/anim";
 import { mulberry32 } from "../lib/random";
-import { BEAT, BEAT0, shotAt, TB } from "./config";
+import { BEAT, BEAT0, beatAt, CUTS, shotAt, TB } from "./config";
 
 const rnd = mulberry32(4242);
 const DUST = Array.from({ length: 64 }, () => ({ x: rnd() * 2100 - 90, y: rnd() * 1300, s: 5 + Math.pow(rnd(), 2.2) * 34, sp: 8 + rnd() * 18, sw: rnd() * 40, ph: rnd() * 100, a: 0.12 + rnd() * 0.3, gold: rnd() < 0.7 }));
@@ -120,6 +120,28 @@ export const ClosingBreath: React.FC = () => {
     <AbsoluteFill style={{ pointerEvents: "none" }}>
       <AbsoluteFill style={{ mixBlendMode: "screen", background: `radial-gradient(ellipse 60% 26% at 50% 74%, rgba(255,240,200,${0.45 * swell}) 0%, rgba(214,179,74,${0.2 * swell}) 45%, transparent 80%)` }} />
       <AbsoluteFill style={{ background: `rgba(1,14,11,${0.3 * dim})` }} />
+    </AbsoluteFill>
+  );
+};
+
+const DIRT = staticFile("assets/bri/lens-dirt.png");
+const bump = (t: number, c: number, w: number) => Math.exp(-(((t - c) / w) ** 2));
+
+/** Lens dirt revealed only when strong light hits the lens (flares, blooms, the horizon). */
+export const LensDirt: React.FC = () => {
+  const frame = useCurrentFrame();
+  const t = frame / FPS;
+  const flares = Math.max(bump(t, beatAt(29) + 0.65, 0.45), bump(t, 39.75, 0.45), bump(t, TB.goldenSweep + 0.65, 0.5));
+  const cuts = CUTS.reduce((m, c) => Math.max(m, bump(t, c, 0.18)), 0);
+  const drop = Math.max(bump(t, TB.drop, 0.3), bump(t, TB.finalStart + 0.4, 0.5));
+  const base = t > TB.cut3 ? 0.1 : 0.05;
+  const close = smoothstep(56.4, 58.4, t) * (1 - smoothstep(58.6, 59.8, t));
+  const k = Math.min(1, base + 0.75 * flares + 0.45 * cuts + 0.5 * drop + 0.5 * close);
+  const cy = flares > 0.3 ? 410 : 760;
+  const mask = `radial-gradient(ellipse 900px 520px at 960px ${cy}px, #000 0%, rgba(0,0,0,0.5) 45%, transparent 85%)`;
+  return (
+    <AbsoluteFill style={{ pointerEvents: "none", mixBlendMode: "screen", opacity: 0.55 * k, WebkitMaskImage: mask, maskImage: mask }}>
+      <Img src={DIRT} style={{ width: "100%", height: "100%", filter: "sepia(0.6) saturate(1.4) hue-rotate(-12deg)" }} />
     </AbsoluteFill>
   );
 };

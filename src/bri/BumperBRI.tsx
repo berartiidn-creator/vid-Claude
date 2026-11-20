@@ -12,13 +12,13 @@ import { BRIWorld } from "./BRIWorld";
 import { BrightHorizon, Clouds, Flashes } from "./Atmosphere";
 import { NeonRibbons } from "./NeonRibbons";
 import { Grade } from "./Grade";
-import { ClosingBreath, dofAmount, GoldDust } from "./Details";
+import { ClosingBreath, dofAmount, GoldDust, LensDirt } from "./Details";
 import { FullScreenSweep } from "../components/fx/FullScreenSweep";
 import { COLORS } from "../config/theme";
 import { AllahCard, HatiCard, LogoCard, PresentCard, RasulCard } from "./BRICards";
 import { KVFinalTypography, KVTitle, PlateShots } from "./KVFinal";
 import { Selendang } from "./Selendang";
-import { beatAt, TB } from "./config";
+import { beatAt, TB, whipAt } from "./config";
 import { BRI_SOUND_CUES } from "./sound";
 
 loadAllFonts();
@@ -28,12 +28,22 @@ export const BumperBRI: React.FC = () => {
   const { durationInFrames, fps } = useVideoConfig();
   const t = frame / FPS;
   const between = (a: number, b: number) => t >= a && t < b;
+  const whip = whipAt(t);
   return (
     <AbsoluteFill style={{ backgroundColor: "#032E28", overflow: "hidden" }}>
       {/* background rack-focus while text is being read */}
-      <AbsoluteFill style={{ filter: dofAmount(t) > 0.02 ? `blur(${(1.8 * dofAmount(t)).toFixed(2)}px)` : undefined }}>
+      {/* camera whip: directional motion blur on every cut */}
+      <svg width={0} height={0} style={{ position: "absolute" }}>
+        <filter id="whip" x="-5%" y="-5%" width="110%" height="110%">
+          <feGaussianBlur stdDeviation={`${(12 * whip).toFixed(2)} ${(4 * whip).toFixed(2)}`} edgeMode="duplicate" />
+        </filter>
+      </svg>
+      <AbsoluteFill style={{ filter: [whip > 0.03 ? "url(#whip)" : "", dofAmount(t) > 0.02 ? `blur(${(1.8 * dofAmount(t)).toFixed(2)}px)` : ""].join(" ").trim() || undefined }}>
         <BRIWorld />
-        <PlateShots />
+        {/* natural grade on the key visual: less candy saturation, a touch more contrast */}
+        <AbsoluteFill style={{ filter: "saturate(0.88) contrast(1.06) brightness(0.98)" }}>
+          <PlateShots />
+        </AbsoluteFill>
         <BrightHorizon />
         <Clouds />
       </AbsoluteFill>
@@ -53,6 +63,7 @@ export const BumperBRI: React.FC = () => {
       {/* MANASIK UMROH: one continuous title from its reveal to the last frame */}
       {t >= TB.manasikIn - 0.5 && <KVTitle start={TB.manasikIn} sweepAt={TB.goldenSweep} accentAt={TB.finalAccent} shines={[beatAt(29), 39.75 - 0.65, TB.goldenSweep]} reflectUntil={TB.kvTaglineIn} />}
       <ClosingBreath />
+      <LensDirt />
       <Grade />
       {MUSIC_BED.enabled && (
         <Html5Audio
