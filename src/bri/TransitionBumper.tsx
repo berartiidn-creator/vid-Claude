@@ -39,7 +39,8 @@ const PASSES: SelendangPass[] = [
   { at: -0.2, preset: "riseL", dur: 2.6 },
   { at: 3.47 - 0.65, preset: "wipe", dur: 1.3, body: 0.5 },
   { at: 9.4 - 0.65, preset: "wipe", dur: 1.3, body: 0.45 },
-  { at: 12.9, preset: "riseR", dur: 3.4 },
+  // exit sweep stays low under the branding and fades out exactly at 15 s (clean last frame)
+  { at: 12.4, preset: "low", dur: 2.6 },
 ];
 const SFX: { at: number; file: string; volume: number }[] = [
   { at: 0.0, file: "audio/sfx/00_deep_intro.wav", volume: 0.3 },
