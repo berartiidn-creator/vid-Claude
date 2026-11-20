@@ -15,6 +15,6 @@ const serveUrl = await bundle({ entryPoint: path.resolve("src/index.ts") });
 const composition = await selectComposition({ serveUrl, id: process.env.COMP || "AlBahjahBumper", browserExecutable });
 for (const frame of frames) {
   const output = `out/stills/f${String(frame).padStart(4, "0")}.jpg`;
-  await renderStill({ serveUrl, composition, frame, output, scale, imageFormat: "jpeg", jpegQuality: 88, chromiumOptions: { gl: "swangle" }, browserExecutable });
+  await renderStill({ serveUrl, composition, frame, output, scale, imageFormat: "jpeg", jpegQuality: Number(process.env.JPEG_Q || 88), chromiumOptions: { gl: "swangle" }, browserExecutable });
   console.log(output);
 }
