@@ -16,7 +16,7 @@ Jam berdasarkan data followers: mayoritas umur 25 sampai 44 di kota WIB (Jakarta
 
 Rasio: 5 TOFU (50%), 3 MOFU (30%), 2 BOFU (20%). Tidak ada dua tipe atau dua rumus hook yang sama berurutan.
 
-### Minggu 1
+### Minggu 1 (diganti oleh `plan/2026-11-30.md` setelah keputusan percaya diri)
 
 | Hari | Jam | Kode | Format | Funnel | Tipe | Sudut spesifik | Rumus hook | Skor hook |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
