@@ -54,11 +54,28 @@ Landing page masih berupa file kode (.tsx) dan belum punya alamat web. Setelah o
 
 | Opsi | Karakter |
 | --- | --- |
-| **Firas Byzi \| Arah Hidup** (saran) | 23 |
+| **Firas Byzi \| Percaya Diri** (saran, sesuai keputusan pintu masuk) | 25 |
+| Firas Byzi \| Arah Hidup | 23 |
 | Firas Byzi \| Arah Hidup Karier | 30 |
 | Firas \| Bingung Arah Hidup? | 27 |
 
 ### 4. Bio (9 dari 20), maks 150 karakter
+
+**Opsi utama setelah keputusan "percaya diri" (132 karakter)**
+```
+Kamu gak kurang pede, cuma belum kenal diri dan arahmu.
+Aku bantu umur 20-35 lebih pede lewat BERARTI Framework.
+Tes gratis di bawah
+```
+
+**Alternatif (119 karakter)**
+```
+Pede bukan bawaan lahir.
+Aku bantu kamu (20-35) kenal diri, nemu arah, lalu berani melangkah.
+Tes BERARTI Index gratis:
+```
+
+Opsi A sampai C di bawah adalah versi sebelum keputusan, fokus arah hidup.
 
 **Opsi A (saran), 141 karakter**
 ```
@@ -102,14 +119,14 @@ Cover Reels 3 sampai 4 kata, terbaca di ukuran kecil, warna navy dan biru sesuai
 
 Konten konser di luar niche: **jangan dihapus**, karena masih menyumbang reach. Arsipkan dari grid atau pindahkan ke highlight "Event" kalau itu bagian dari pekerjaanmu.
 
-## Satu keputusan yang perlu kamu ambil
+## Keputusan positioning (sudah diputuskan: faith-friendly, pintu masuk percaya diri)
 
 Brand Blueprint bagian 18 sudah mencatat: "tentukan apakah brand general-market atau faith-based". Data akunmu sekarang menunjukkan audiens yang paling besar datang dari konten dakwah. Ada dua jalan:
 
 - **General market** (sesuai blueprint sekarang): konten dakwah dipisah, BERARTI fokus arah hidup dan karier.
 - **Faith-friendly**: tetap general, tapi sesekali ada konten "makna dan nilai" yang terhubung ke pilar Relevance and Meaning dan Transcendence and Impact. Penonton konser bisa jadi pintu masuk kalau jembatannya jelas.
 
-Naskah di folder ini memakai jalan pertama. Kalau kamu pilih yang kedua, bilang, nanti aku tambah 2 naskah jembatan.
+**Keputusan Firas: faith-friendly, dengan percaya diri sebagai pintu masuk.** Konten dakwah tidak perlu dipisah, tapi tiap kali muncul harus ada jembatan ke percaya diri atau arah hidup. Panduan lengkap di `context/brand-berarti.md`.
 
 ## Skor ulang (perkiraan, jujur)
 

@@ -11,6 +11,8 @@ Semua isi folder ini adalah draf untuk dicek Firas sebelum dipakai. Tidak ada ya
 | `04-rencana-dan-jadwal.md` | Minggu persiapan, jadwal 2 minggu (30 Nov sampai 13 Des 2026), engagement harian |
 | `05-naskah-reels-PAS.md` | 10 naskah Problem-Agitate-Solution, hook dinilai, teks layar, caption, hasil cek |
 | `06-story-dm-engagement.md` | DM kata kunci ARAH dan MULAI, follow up, template story, urutan balas komentar |
+| `09-prompt-gemini-canvas.md` | 3 prompt siap tempel: perbaikan landing dan hasil Index, Pede60, Arah90 versi pertama |
+| `produk/BERARTI_Arah90_Versi_Awal.xlsx` | Workbook yang sudah dibersihkan, siap dijual sebagai Arah90 versi awal |
 | `08-micro-tools-dan-arah90.md` | 30 masalah untuk micro-tools AI, 6 tool gratis yang dibangun duluan, Arah90 versi aplikasi (Arah90) |
 | `07-audit-landing-dan-starter-kit.md` | Temuan di landing page dan file Arah90 yang harus beres sebelum konten BOFU tayang |
 | `context/` | `brand-berarti.md`, `voice.md` sementara, template voice asli |

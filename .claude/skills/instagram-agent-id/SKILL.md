@@ -95,7 +95,9 @@ Baca dulu file ini, jangan menebak brand:
 - Jangan pernah mengarang testimoni, jumlah pengguna, atau angka penjualan. Konten tipe Bukti baru dibuat setelah ada testimoni asli.
 - Formula komunikasi brand (Empathy, Reframe, Insight, Framework, Action) dipetakan ke PAS: Problem = Empathy, Agitate = akibat bila dibiarkan, Solution = Reframe plus Framework plus Action.
 - Dua pilar berhuruf R: di audio selalu sebut nama lengkap (Readiness to Act, Relevance and Meaning).
-- Konten di luar niche (misalnya konser atau dakwah) dicatat terpisah. Data November 2026: Reels konser 102 ribu reach tapi hanya +16 followers. Keputusan general market atau faith-friendly masih di tangan pengguna.
+- Pintu masuk konten: **percaya diri**. Hook TOFU sebaiknya menyentuh rasa pede, minder, grogi, atau ragu, lalu diarahkan ke kenal diri dan arah. Territory tetap arah hidup.
+- Positioning **faith-friendly**: inklusif, nilai dan iman sebagai pilihan, tanpa dalil sebagai dasar klaim psikologis dan tanpa menghakimi ibadah orang. Konten dakwah boleh muncul kalau ada jembatan ke percaya diri atau arah hidup. Data November 2026: Reels konser 102 ribu reach tapi hanya +16 followers karena tidak ada jembatan.
+- Tool gratis yang aktif: Pede60. Jangan mempromosikan tool lain sebelum dibangun.
 
 ### Data akun
 - Konektor: Windsor.ai connector `instagram`, akun `firasbyzi` (trial 30 hari). Panggil get_fields sebelum get_data, satu breakdown (kota atau umur) per request.
