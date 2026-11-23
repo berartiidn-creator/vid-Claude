@@ -1,0 +1,212 @@
+=== C1
+CAPTION LINT  ·  541 / 2200 chars  ·  4 hashtags  ·  2 ask(s)
+==============================================================
+  WHAT THE FEED SHOWS
+  +------------------------------------------------------+
+  | 3 tanda kamu bukan malas, cuma belum punya arah.     |
+  | Nomor 3 paling sering gak disadari.                  |
+  |                                                      |
+  | Semangat tiap Senin, hilang hari Rabu.               |
+  +-------------------------------------------- ... more +
+  PASS  LENGTH            541 / 2200 characters
+  PASS  FIRST LINE        84 characters, lands whole
+  PASS  HOOK IS CONCRETE  5 number(s) or name(s) in the visible window
+  PASS  HASHTAGS          4 tag(s): #arahhidup #pengembangandiri #quarterlifecrisis #berartify
+  PASS  TAG PLACEMENT     tags are below the fold
+  PASS  LINKS             no dead links in the body
+  WARN  ONE ASK           2 asks (comment a keyword, follow). Two asks is the same as none
+  PASS  EMOJI             0 emoji, 0.0 per 100 characters
+  WARN  SEARCH TERMS      2/3 present, 0 in the visible window. Missing: arah karier
+--------------------------------------------------------------
+  VERDICT  REVIEW
+=== C2
+CAPTION LINT  ·  538 / 2200 chars  ·  4 hashtags  ·  1 ask(s)
+==============================================================
+  WHAT THE FEED SHOWS
+  +------------------------------------------------------+
+  | Berhenti cari passion. 5 kelas online setahun gak    |
+  | bakal ngasih jawabannya kalau kamu belum kenal pola  |
+  | dirimu.                                              |
+  |                                                      |
+  | Passion jarang                                       |
+  +-------------------------------------------- ... more +
+  PASS  LENGTH            538 / 2200 characters
+  PASS  FIRST LINE        109 characters, lands whole
+  PASS  HOOK IS CONCRETE  1 number(s) or name(s) in the visible window
+  PASS  HASHTAGS          4 tag(s): #passion #arahkarier #pengembangandiri #berartify
+  PASS  TAG PLACEMENT     tags are below the fold
+  PASS  LINKS             no dead links in the body
+  PASS  ONE ASK           one call to action: follow
+  PASS  EMOJI             0 emoji, 0.0 per 100 characters
+  WARN  SEARCH TERMS      1/3 present, 0 in the visible window. Missing: arah hidup, pengembangan diri
+--------------------------------------------------------------
+  VERDICT  REVIEW
+=== C3
+CAPTION LINT  ·  524 / 2200 chars  ·  4 hashtags  ·  1 ask(s)
+==============================================================
+  WHAT THE FEED SHOWS
+  +------------------------------------------------------+
+  | Punya 5 minat tapi gak ada yang dipilih? Pakai 3     |
+  | filter ini sebelum 12 bulan lagi lewat.              |
+  |                                                      |
+  | Kamu bukan kehilangan arah. Kamu ke                  |
+  +-------------------------------------------- ... more +
+  PASS  LENGTH            524 / 2200 characters
+  PASS  FIRST LINE        88 characters, lands whole
+  PASS  HOOK IS CONCRETE  5 number(s) or name(s) in the visible window
+  PASS  HASHTAGS          4 tag(s): #bingungpilihan #arahhidup #pengembangandiri #berartify
+  PASS  TAG PLACEMENT     tags are below the fold
+  PASS  LINKS             no dead links in the body
+  PASS  ONE ASK           one call to action: follow
+  PASS  EMOJI             0 emoji, 0.0 per 100 characters
+  WARN  SEARCH TERMS      1/3 present, 0 in the visible window. Missing: arah hidup, pengembangan diri
+--------------------------------------------------------------
+  VERDICT  REVIEW
+=== C4
+CAPTION LINT  ·  503 / 2200 chars  ·  4 hashtags  ·  2 ask(s)
+==============================================================
+  WHAT THE FEED SHOWS
+  +------------------------------------------------------+
+  | Umur 25, teman udah nikah dan jadi manajer, kamu     |
+  | masih bingung arah? Baca ini dulu.                   |
+  |                                                      |
+  | Jam 11 malam buka Instagram, terus bandi             |
+  +-------------------------------------------- ... more +
+  PASS  LENGTH            503 / 2200 characters
+  PASS  FIRST LINE        83 characters, lands whole
+  PASS  HOOK IS CONCRETE  4 number(s) or name(s) in the visible window
+  PASS  HASHTAGS          4 tag(s): #quarterlifecrisis #comparison #arahhidup #berartify
+  PASS  TAG PLACEMENT     tags are below the fold
+  PASS  LINKS             no dead links in the body
+  WARN  ONE ASK           2 asks (comment a keyword, follow). Two asks is the same as none
+  PASS  EMOJI             0 emoji, 0.0 per 100 characters
+  FAIL  SEARCH TERMS      0/3 present. Missing: arah hidup, pengembangan diri, arah karier
+--------------------------------------------------------------
+  VERDICT  FIX
+=== C5
+CAPTION LINT  ·  415 / 2200 chars  ·  4 hashtags  ·  1 ask(s)
+==============================================================
+  WHAT THE FEED SHOWS
+  +------------------------------------------------------+
+  | Kerja 3 tahun, gaji aman, tapi tiap Minggu malam     |
+  | rasanya berat? Cek 2 hal ini sebelum resign.         |
+  |                                                      |
+  | 1. Bagian kerjaan mana yang ma                       |
+  +-------------------------------------------- ... more +
+  PASS  LENGTH            415 / 2200 characters
+  PASS  FIRST LINE        93 characters, lands whole
+  PASS  HOOK IS CONCRETE  6 number(s) or name(s) in the visible window
+  PASS  HASHTAGS          4 tag(s): #karier #autopilot #arahkarier #berartify
+  PASS  TAG PLACEMENT     tags are below the fold
+  PASS  LINKS             no dead links in the body
+  PASS  ONE ASK           one call to action: follow
+  PASS  EMOJI             0 emoji, 0.0 per 100 characters
+  WARN  SEARCH TERMS      1/3 present, 0 in the visible window. Missing: arah hidup, pengembangan diri
+--------------------------------------------------------------
+  VERDICT  REVIEW
+=== C6
+CAPTION LINT  ·  475 / 2200 chars  ·  4 hashtags  ·  1 ask(s)
+==============================================================
+  WHAT THE FEED SHOWS
+  +------------------------------------------------------+
+  | 11 tipe orang bingung arah hidup. Kamu Overthinker,  |
+  | People Pleaser, atau Explorer?                       |
+  |                                                      |
+  | Kalau kamu gak tahu tipemu, kamu bakal pa            |
+  +-------------------------------------------- ... more +
+  PASS  LENGTH            475 / 2200 characters
+  PASS  FIRST LINE        82 characters, lands whole
+  PASS  HOOK IS CONCRETE  6 number(s) or name(s) in the visible window
+  PASS  HASHTAGS          4 tag(s): #tesarahhidup #pengembangandiri #kenalidiri #berartify
+  PASS  TAG PLACEMENT     tags are below the fold
+  PASS  LINKS             no dead links in the body
+  PASS  ONE ASK           one call to action: comment a keyword
+  PASS  EMOJI             0 emoji, 0.0 per 100 characters
+  WARN  SEARCH TERMS      1/3 present, 1 in the visible window. Missing: pengembangan diri, arah karier
+--------------------------------------------------------------
+  VERDICT  REVIEW
+=== C7
+CAPTION LINT  ·  502 / 2200 chars  ·  4 hashtags  ·  1 ask(s)
+==============================================================
+  WHAT THE FEED SHOWS
+  +------------------------------------------------------+
+  | {{3}} kali aku ganti arah, {{2}} kali gagal. Ini     |
+  | yang akhirnya berubah di percobaan ke-{{4}}.         |
+  |                                                      |
+  | {{2 sampai 3 kalimat cerita as                       |
+  +-------------------------------------------- ... more +
+  PASS  LENGTH            502 / 2200 characters
+  PASS  FIRST LINE        93 characters, lands whole
+  PASS  HOOK IS CONCRETE  6 number(s) or name(s) in the visible window
+  PASS  HASHTAGS          4 tag(s): #arahhidup #ceritakarier #pengembangandiri #berartify
+  PASS  TAG PLACEMENT     tags are below the fold
+  PASS  LINKS             no dead links in the body
+  PASS  ONE ASK           one call to action: comment a keyword
+  PASS  EMOJI             0 emoji, 0.0 per 100 characters
+  WARN  SEARCH TERMS      1/3 present, 0 in the visible window. Missing: pengembangan diri, arah karier
+--------------------------------------------------------------
+  VERDICT  REVIEW
+=== C8
+CAPTION LINT  ·  514 / 2200 chars  ·  4 hashtags  ·  1 ask(s)
+==============================================================
+  WHAT THE FEED SHOWS
+  +------------------------------------------------------+
+  | Jangan resign dulu. Jawab 3 pertanyaan ini malam     |
+  | ini, ditulis, jangan cuma dipikirin.                 |
+  |                                                      |
+  | 1. Keputusan besar mana yang kamu ambi               |
+  +-------------------------------------------- ... more +
+  PASS  LENGTH            514 / 2200 characters
+  PASS  FIRST LINE        85 characters, lands whole
+  PASS  HOOK IS CONCRETE  4 number(s) or name(s) in the visible window
+  PASS  HASHTAGS          4 tag(s): #resign #arahkarier #pengembangandiri #berartify
+  PASS  TAG PLACEMENT     tags are below the fold
+  PASS  LINKS             no dead links in the body
+  PASS  ONE ASK           one call to action: comment a keyword
+  PASS  EMOJI             0 emoji, 0.0 per 100 characters
+  FAIL  SEARCH TERMS      0/3 present. Missing: arah hidup, pengembangan diri, arah karier
+--------------------------------------------------------------
+  VERDICT  FIX
+=== C9
+CAPTION LINT  ·  472 / 2200 chars  ·  4 hashtags  ·  1 ask(s)
+==============================================================
+  WHAT THE FEED SHOWS
+  +------------------------------------------------------+
+  | Skor tesmu 68, tipe Explorer (contoh). Terus?        |
+  | Kebanyakan orang berhenti di screenshot.             |
+  |                                                      |
+  | Hasil tes itu peta. Peta gak jalan se                |
+  +-------------------------------------------- ... more +
+  PASS  LENGTH            472 / 2200 characters
+  PASS  FIRST LINE        86 characters, lands whole
+  PASS  HOOK IS CONCRETE  5 number(s) or name(s) in the visible window
+  PASS  HASHTAGS          4 tag(s): #starterkit #arahhidup #roadmap90hari #berartify
+  PASS  TAG PLACEMENT     tags are below the fold
+  PASS  LINKS             no dead links in the body
+  PASS  ONE ASK           one call to action: comment a keyword
+  PASS  EMOJI             0 emoji, 0.0 per 100 characters
+  FAIL  SEARCH TERMS      0/3 present. Missing: arah hidup, pengembangan diri, arah karier
+--------------------------------------------------------------
+  VERDICT  FIX
+=== C10
+CAPTION LINT  ·  461 / 2200 chars  ·  4 hashtags  ·  1 ask(s)
+==============================================================
+  WHAT THE FEED SHOWS
+  +------------------------------------------------------+
+  | Kamu bisa tanya ChatGPT soal arah hidup gratis.      |
+  | Masalahnya, jawabannya generik karena dia gak kenal  |
+  | kamu.                                                |
+  |                                                      |
+  | Di Berartify Start                                   |
+  +-------------------------------------------- ... more +
+  PASS  LENGTH            461 / 2200 characters
+  PASS  FIRST LINE        105 characters, lands whole
+  PASS  HOOK IS CONCRETE  3 number(s) or name(s) in the visible window
+  PASS  HASHTAGS          4 tag(s): #chatgpt #arahkarier #starterkit #berartify
+  PASS  TAG PLACEMENT     tags are below the fold
+  PASS  LINKS             no dead links in the body
+  PASS  ONE ASK           one call to action: comment a keyword
+  PASS  EMOJI             0 emoji, 0.0 per 100 characters
+  WARN  SEARCH TERMS      1/3 present, 1 in the visible window. Missing: pengembangan diri, arah karier
+--------------------------------------------------------------
+  VERDICT  REVIEW
