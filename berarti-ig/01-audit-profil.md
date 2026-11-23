@@ -131,3 +131,24 @@ Brand Blueprint bagian 18 sudah mencatat: "tentukan apakah brand general-market 
 ## Skor ulang (perkiraan, jujur)
 
 Kalau nama, bio, link, dan aktivitas diperbaiki: bagian yang terlihat naik dari 21 ke sekitar 52 dari 62 (nama 11, bio baris pertama 11, isi bio 6, link 8, handle 5, kategori 3, aktivitas 8 setelah 7 hari jadwal berjalan). Selisih sekitar +31 poin. Pinned, highlight, grid, foto, dan story baru bisa dinilai setelah kamu kirim screenshot.
+
+---
+
+## Rekomendasi final (/ig-profile, 23 November 2026, setelah keputusan BERARTI, percaya diri, faith-friendly)
+
+Data profil dari Windsor masih sama: nama "Firas Byzi", bio lama, link kosong, posting terakhir 3 November.
+
+Urutan ubah:
+1. **Nama:** `Firas Byzi | Percaya Diri` (25 karakter).
+2. **Bio (137 karakter):**
+```
+Pede bukan sombong.
+Pede datang dari kenal diri dan tahu mau ke mana, aku bantu umur 20-35 nemu dua-duanya.
+Cek sumber pede kamu, gratis:
+```
+3. **Pinned:** #1 Reels archetype (C6), #2 cerita founder soal pede (C7, isi cerita asli), #3 kosongkan sampai ada testimoni pembeli asli atau demo Pede60.
+4. **Highlight:** Mulai Sini, Tes Gratis, Arah90, Tanya Jawab, Event. "Cerita Mereka" dibuat setelah ada testimoni asli.
+5. **Link:** satu, landing page BERARTI Index setelah online.
+6. **Grid:** cover 3 sampai 4 kata. Konten konser jadi highlight "Event", tidak dihapus.
+
+Skor bagian yang terlihat: 21 dari 62 sekarang, 45 dari 62 setelah nama, bio, dan link diubah, sekitar 53 setelah 7 hari posting rutin.
