@@ -1,0 +1,239 @@
+{
+  "durationSeconds": 52.3,
+  "seed": 2411,
+  "sections": [
+    {
+      "start": 0,
+      "end": 5.5,
+      "mood": "curious",
+      "energy": 0.4
+    },
+    {
+      "start": 5.5,
+      "end": 10.0,
+      "mood": "warm",
+      "energy": 0.32
+    },
+    {
+      "start": 10.0,
+      "end": 16.9,
+      "mood": "tense",
+      "energy": 0.34
+    },
+    {
+      "start": 16.9,
+      "end": 21.7,
+      "mood": "suspense",
+      "energy": 0.3
+    },
+    {
+      "start": 21.7,
+      "end": 28.0,
+      "mood": "reflective",
+      "energy": 0.26
+    },
+    {
+      "start": 28.0,
+      "end": 40.3,
+      "mood": "hopeful",
+      "energy": 0.42
+    },
+    {
+      "start": 40.3,
+      "end": 47.8,
+      "mood": "warm",
+      "energy": 0.45
+    },
+    {
+      "start": 47.8,
+      "end": 52.3,
+      "mood": "energetic",
+      "energy": 0.48
+    }
+  ],
+  "intentionalSilences": [],
+  "sfxCues": [
+    {
+      "time": 0.05,
+      "asset": "audio/sfx/tick.wav",
+      "purpose": "jarum jam bergerak di hook",
+      "gain": 0.14
+    },
+    {
+      "time": 2.6,
+      "asset": "audio/sfx/pop.wav",
+      "purpose": "gelembung ide teman muncul",
+      "gain": 0.14
+    },
+    {
+      "time": 2.95,
+      "asset": "audio/sfx/shimmer.wav",
+      "purpose": "lampu ide di atas teman menyala",
+      "gain": 0.12
+    },
+    {
+      "time": 5.5,
+      "asset": "audio/sfx/whoosh.wav",
+      "purpose": "kilas balik ke jam 9 pagi",
+      "gain": 0.13
+    },
+    {
+      "time": 7.5,
+      "asset": "audio/sfx/shimmer.wav",
+      "purpose": "lampu ide Raka menyala",
+      "gain": 0.13
+    },
+    {
+      "time": 10.0,
+      "asset": "audio/sfx/whoosh.wav",
+      "purpose": "masuk close-up gugup",
+      "gain": 0.12
+    },
+    {
+      "time": 12.95,
+      "asset": "audio/sfx/pop.wav",
+      "purpose": "gelembung pikiran sok tahu",
+      "gain": 0.13
+    },
+    {
+      "time": 13.05,
+      "asset": "audio/sfx/dive.wav",
+      "purpose": "wajah gugup bergetar",
+      "gain": 0.1
+    },
+    {
+      "time": 14.95,
+      "asset": "audio/sfx/impact.wav",
+      "purpose": "kata DIAM",
+      "gain": 0.16
+    },
+    {
+      "time": 16.15,
+      "asset": "audio/sfx/snap.wav",
+      "purpose": "resleting di mulut Raka",
+      "gain": 0.15
+    },
+    {
+      "time": 17.1,
+      "asset": "audio/sfx/pop.wav",
+      "purpose": "teman bicara",
+      "gain": 0.12
+    },
+    {
+      "time": 20.5,
+      "asset": "audio/sfx/tap.wav",
+      "purpose": "semua mengangguk",
+      "gain": 0.13
+    },
+    {
+      "time": 20.6,
+      "asset": "audio/sfx/pop.wav",
+      "purpose": "centang di atas rekan",
+      "gain": 0.13
+    },
+    {
+      "time": 21.7,
+      "asset": "audio/sfx/wind.wav",
+      "purpose": "suasana malam",
+      "gain": 0.08
+    },
+    {
+      "time": 24.85,
+      "asset": "audio/sfx/pop.wav",
+      "purpose": "pertanyaan rendah hati",
+      "gain": 0.12
+    },
+    {
+      "time": 26.8,
+      "asset": "audio/sfx/pop.wav",
+      "purpose": "pertanyaan atau takut",
+      "gain": 0.12
+    },
+    {
+      "time": 28.35,
+      "asset": "audio/sfx/rise.wav",
+      "purpose": "Lingkaran Berani muncul",
+      "gain": 0.13
+    },
+    {
+      "time": 28.6,
+      "asset": "audio/sfx/shimmer.wav",
+      "purpose": "kilau saat paham",
+      "gain": 0.13
+    },
+    {
+      "time": 29.75,
+      "asset": "audio/sfx/tap.wav",
+      "purpose": "kartu 01",
+      "gain": 0.16
+    },
+    {
+      "time": 33.05,
+      "asset": "audio/sfx/tap.wav",
+      "purpose": "kartu 02",
+      "gain": 0.16
+    },
+    {
+      "time": 37.3,
+      "asset": "audio/sfx/rise.wav",
+      "purpose": "dua jalur mulai menyatu",
+      "gain": 0.12
+    },
+    {
+      "time": 39.1,
+      "asset": "audio/sfx/snap.wav",
+      "purpose": "tanda tambah, jalan bareng",
+      "gain": 0.14
+    },
+    {
+      "time": 41.6,
+      "asset": "audio/sfx/whoosh.wav",
+      "purpose": "Raka mengangkat tangan",
+      "gain": 0.12
+    },
+    {
+      "time": 43.2,
+      "asset": "audio/sfx/shimmer.wav",
+      "purpose": "kalimat aku punya satu usulan",
+      "gain": 0.13
+    },
+    {
+      "time": 44.2,
+      "asset": "audio/sfx/pop.wav",
+      "purpose": "centang setelah usulan",
+      "gain": 0.13
+    },
+    {
+      "time": 44.8,
+      "asset": "audio/sfx/pop.wav",
+      "purpose": "teman-teman muncul bersama",
+      "gain": 0.12
+    },
+    {
+      "time": 46.7,
+      "asset": "audio/sfx/shimmer.wav",
+      "purpose": "kilau di atas penonton",
+      "gain": 0.11
+    },
+    {
+      "time": 47.9,
+      "asset": "audio/sfx/rise.wav",
+      "purpose": "tangga naik",
+      "gain": 0.12
+    },
+    {
+      "time": 48.1,
+      "asset": "audio/sfx/tap.wav",
+      "purpose": "tombol follow",
+      "gain": 0.15
+    },
+    {
+      "time": 51.3,
+      "asset": "audio/sfx/shimmer.wav",
+      "purpose": "logo berarti di akhir",
+      "gain": 0.12
+    }
+  ],
+  "musicSource": "generated-original",
+  "rightsNotes": "Skor latar dibuat lokal dengan npm run score tanpa sampel pihak ketiga. SFX bawaan starter (original)."
+}
