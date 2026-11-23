@@ -27,6 +27,8 @@ Isi `{{NOMOR_LAYANAN_DARURAT}}` dengan layanan yang sudah kamu cek masih aktif. 
 
 ## Prompt 1: Perbaikan landing page dan halaman hasil BERARTI Index
 
+**Status: sudah dikerjakan langsung di kode.** File hasilnya ada di `berarti-ig/landing/berarti_landing_page.tsx` dan sudah diuji di browser. Unggah file itu ke Gemini Canvas, ganti 3 konstanta di bagian atas (`LINK_PEMBAYARAN`, `NOMOR_WA`, `NOMOR_LAYANAN_DARURAT`), selesai. Prompt di bawah hanya dipakai kalau kamu ingin Gemini mengulang perbaikannya dari file lama.
+
 ```text
 Saya mengunggah file berarti_landing_page.tsx. Perbaiki file ini tanpa mengubah logika skor dan rumus archetype yang sudah ada (DIMENSIONS, QUESTIONS, ARCHETYPES, cara menghitung norm dan total). Hasil akhir: satu file React yang bisa langsung dijalankan di Canvas.
 
