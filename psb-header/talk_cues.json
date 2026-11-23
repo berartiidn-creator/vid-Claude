@@ -1,0 +1,137 @@
+{
+ "offset": 0.4,
+ "cues": [
+  {
+   "t": 0.0,
+   "file": "dl/whoosh_82004786.mp3",
+   "gain_db": -21,
+   "align": "peak"
+  },
+  {
+   "t": 0.22,
+   "file": "dl/impact_a3d0735c.mp3",
+   "gain_db": -21,
+   "align": "peak"
+  },
+  {
+   "t": 2.75,
+   "file": "dl/impact_a3d0735c.mp3",
+   "gain_db": -21,
+   "align": "peak"
+  },
+  {
+   "t": 10.1,
+   "file": "dl/impact_a3d0735c.mp3",
+   "gain_db": -21,
+   "align": "peak"
+  },
+  {
+   "t": 13.33,
+   "file": "dl/impact_a3d0735c.mp3",
+   "gain_db": -21,
+   "align": "peak"
+  },
+  {
+   "t": 22.95,
+   "file": "dl/impact_a3d0735c.mp3",
+   "gain_db": -21,
+   "align": "peak"
+  },
+  {
+   "t": 2.53,
+   "file": "dl/whoosh_34ba7605.mp3",
+   "gain_db": -24,
+   "align": "peak"
+  },
+  {
+   "t": 10.07,
+   "file": "dl/whoosh_34ba7605.mp3",
+   "gain_db": -24,
+   "align": "peak"
+  },
+  {
+   "t": 11.0,
+   "file": "dl/whoosh_34ba7605.mp3",
+   "gain_db": -24,
+   "align": "peak"
+  },
+  {
+   "t": 16.93,
+   "file": "dl/whoosh_34ba7605.mp3",
+   "gain_db": -24,
+   "align": "peak"
+  },
+  {
+   "t": 22.9,
+   "file": "dl/whoosh_34ba7605.mp3",
+   "gain_db": -24,
+   "align": "peak"
+  },
+  {
+   "t": 23.73,
+   "file": "dl/whoosh_34ba7605.mp3",
+   "gain_db": -24,
+   "align": "peak"
+  },
+  {
+   "t": 1.23,
+   "file": "dl/pop_2485943f.mp3",
+   "gain_db": -27,
+   "align": "start"
+  },
+  {
+   "t": 5.12,
+   "file": "dl/pop_2485943f.mp3",
+   "gain_db": -27,
+   "align": "start"
+  },
+  {
+   "t": 6.23,
+   "file": "dl/pop_2485943f.mp3",
+   "gain_db": -27,
+   "align": "start"
+  },
+  {
+   "t": 7.33,
+   "file": "dl/pop_2485943f.mp3",
+   "gain_db": -27,
+   "align": "start"
+  },
+  {
+   "t": 8.23,
+   "file": "dl/pop_2485943f.mp3",
+   "gain_db": -27,
+   "align": "start"
+  },
+  {
+   "t": 15.35,
+   "file": "dl/pop_2485943f.mp3",
+   "gain_db": -27,
+   "align": "start"
+  },
+  {
+   "t": 19.85,
+   "file": "dl/pop_2485943f.mp3",
+   "gain_db": -27,
+   "align": "start"
+  },
+  {
+   "t": 21.95,
+   "file": "dl/pop_2485943f.mp3",
+   "gain_db": -27,
+   "align": "start"
+  },
+  {
+   "t": 25.2,
+   "file": "dl/riser_5ffa4388.mp3",
+   "gain_db": -24,
+   "align": "peak"
+  },
+  {
+   "t": 25.97,
+   "file": "dl/chime_8d945fb1.mp3",
+   "gain_db": -22,
+   "align": "start"
+  }
+ ]
+}
