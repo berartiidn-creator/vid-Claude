@@ -72,7 +72,7 @@ MIN 27  10.00  REEL      TAWARAN #13  5.6 12 minggu dari Januari: Arah90, MULAI 
                hanya kalau Arah90 dan pembayaran aktif. Cadangan: 3.7 umur 22 (81)
 ```
 
-Ringkasan: 24 posting dalam 5 minggu (23 Reels, 2 carousel bila semua cadangan tidak dipakai). Tidak ada tipe yang sama berurutan. Funnel: TOFU penuh di minggu pertama sambil menunggu landing page, lalu MOFU dengan ARAH mulai 1 Desember, BOFU hanya setelah pembayaran aktif.
+Ringkasan: 23 posting dalam 5 minggu, 21 Reels dan 2 carousel. Tidak ada tipe yang sama berurutan. Funnel: TOFU penuh di minggu pertama sambil menunggu landing page, lalu MOFU dengan ARAH mulai 1 Desember, BOFU hanya setelah pembayaran aktif.
 
 ## Story harian
 - 3 sampai 5 frame, repost Reels hari itu plus satu stiker.
