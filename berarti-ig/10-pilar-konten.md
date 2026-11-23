@@ -81,7 +81,7 @@ Setiap ide lolos North Star BERARTI: membantu kenal diri, menyaring arah, atau m
 | 1 | Cerita founder soal pede dan public speaking | {{3}} kali aku ganti arah, {{2}} kali gagal. Ini yang berubah. | #15 Flop Record | MOFU, Reels | 81 |
 | 2 | Rekaman asli kelas public speaking yang Firas ajar | {{momen asli di kelas}}, dan saat itu muridku berhenti gemetar. Kamu juga bisa. | #18 Cold Open | MOFU, Reels | 61 |
 | 3 | Pengalaman gagal presentasi di depan banyak orang | Aku pernah blank di depan {{N}} orang. Kamu gak harus ngulang kesalahanku. | #15 Flop Record | MOFU, Reels | 76 |
-| 4 | Kenapa BERARTI Index dibuat gratis | Aku bikin tes 60 soal ini gratis. Alasannya bukan buat jualan. | #21 Mid-Sentence | MOFU, Reels | 76 |
+| 4 | Kenapa BERARTI Index dibuat gratis | Aku bikin tes 60 soal ini gratis. Kamu perlu tahu alasan jujurnya. | #21 Mid-Sentence | MOFU, Reels | 79 |
 | 5 | Tanya jawab dari kotak pertanyaan story | "Kak, aku harus resign gak?" Masuk {{N}} kali minggu ini. | #16 Verbatim Question | MOFU, Reels | 77 |
 | 6 | Arah90 versi awal: hasil tes adalah peta, ini jalannya | Skor tesmu udah keluar? Jangan berhenti di screenshot, ini 12 minggu jalannya. | #13 Before After | BOFU, Reels | 80 |
 | 7 | Menjawab keberatan harga Rp99 ribu | "Rp99 ribu buat refleksi diri? Mahal." Oke, tapi hitung dulu biaya salah arah kamu. | #12 Objection | BOFU, Reels | 82 |
@@ -93,4 +93,6 @@ Setiap ide lolos North Star BERARTI: membantu kenal diri, menyaring arah, atau m
 
 - Ide P1 nomor 10 (Pede60) dan P5 nomor 6 sampai 9 (Arah90) baru tayang setelah tool atau produknya aktif.
 - P5 nomor 2 dan 8 masih di bawah 70 karena bergantung pada cerita dan testimoni asli. Tulis ulang hook-nya setelah kejadian aslinya ada.
+- Hook yang menyebut pengalaman Firas (P2 nomor 10 soal skor, P4 nomor 6 soal sulit menjawab, P5 nomor 9 soal catatan 30 hari) hanya dipakai kalau memang benar terjadi. Kalau tidak, ubah sesuai kenyataan.
+- P5 nomor 4 harus jujur: tes gratis adalah pintu ke Arah90. Sebut itu terang-terangan, orang lebih percaya.
 - P4 nomor 8 sudah dijadwalkan Kamis 3 Desember. Pede bukan sombong (Senin 30 November) sengaja tidak diulang di sini.
