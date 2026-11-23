@@ -42,7 +42,13 @@ TRANSFORMASI  komunitas, workshop, mentoring 1-on-1 (harga belum final)
 
 ## Yang harus beres sebelum funnel jalan
 
-- [ ] Link landing page Berartify Index di bio.
+Detail dan alasannya ada di `07-audit-landing-dan-starter-kit.md`.
+
+- [ ] File Starter Kit di Drive dikunci (sekarang siapa saja yang punya link bisa mengedit), sel input dikosongkan, dibagikan sebagai link `/copy` hanya setelah bayar.
+- [ ] Tombol "Bayar Rp99.000" di landing page dihubungkan ke pembayaran nyata (sekarang langsung menampilkan "Pemesanan Berhasil" tanpa menagih).
+- [ ] Testimoni di landing page dipastikan asli, atau dihapus.
+- [ ] Nama di landing page diganti dari "BERARTI™ Index" ke "Berartify™ Index", AI Prompt Hub ditambahkan ke daftar isi kit.
+- [ ] Landing page dionlinekan (sekarang masih file .tsx) lalu link-nya dipasang di bio.
 - [ ] Halaman hasil Index punya tombol atau link ke Starter Kit.
 - [ ] Sheet "Link dan Bantuan" di Starter Kit masih placeholder semua (ebook, video tutorial, WhatsApp support, form feedback, website, form testimoni). Pembeli akan melihat teks "[GANTI DENGAN LINK ...]". Isi sebelum C9 tayang.
 - [ ] Cara kirim DM kata kunci: manual dulu (cukup untuk volume sekarang), atau pakai alat auto-DM resmi yang terhubung ke Instagram API kalau komentar sudah puluhan per posting.

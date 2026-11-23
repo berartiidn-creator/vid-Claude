@@ -90,6 +90,8 @@ Baca dulu file ini, jangan menebak brand:
 - Setiap ide harus lolos 3 pertanyaan North Star: membantu kenal diri, menyaring arah, mengambil langkah nyata. Kalau tidak, buang.
 - Produk yang boleh disebut: Berartify Index (gratis, 60 soal, 6 dimensi, skor 0 sampai 100, 11 archetype) dan Berartify Starter Kit (Rp99.000: Reflection Journal, Life Design Canvas, Roadmap 90 Hari, Impact Statement, AI Prompt Hub 5 prompt). Premium belum punya harga, jangan dijual.
 - Skor 68 dan archetype The Explorer di file Starter Kit adalah data contoh. Kalau dipakai di video, tulis CONTOH.
+- DM kata kunci KIT berisi link halaman pembayaran, bukan link file Starter Kit. Link file (format `/copy`) hanya dikirim otomatis setelah lunas. Jangan pernah menulis link `/edit` file Starter Kit di konten, DM, atau repo.
+- Landing page (sumber: `berarti_landing_page.tsx`) masih memakai nama "BERARTI™ Index" dan "Life Direction Starter Kit". Di konten tetap pakai Berartify Index dan Berartify Starter Kit, dan cek `berartify-ig/07-audit-landing-dan-starter-kit.md` sebelum menulis naskah BOFU.
 - Jangan pernah mengarang testimoni, jumlah pengguna, atau angka penjualan. Konten tipe Bukti baru dibuat setelah ada testimoni asli.
 - Formula komunikasi brand (Empathy, Reframe, Insight, Framework, Action) dipetakan ke PAS: Problem = Empathy, Agitate = akibat bila dibiarkan, Solution = Reframe plus Framework plus Action.
 - Dua pilar berhuruf R: di audio selalu sebut nama lengkap (Readiness to Act, Relevance and Meaning).
