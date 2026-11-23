@@ -23,7 +23,7 @@ Kalau gerbang belum lewat, pakai cadangan di slot itu. Jangan menggeser semua ja
 ```
 MINGGU 23 NOV  (pemanasan, semua TOFU, ajakan follow)
 SEN 23  pasang nama dan bio baru, story perkenalan ulang, engagement
-SEL 24  19.00  REEL      OPINI   #22  S1  Kamu gak sombong, kamu belum pede        87  VIDEO SUDAH JADI
+SEL 24  19.00  REEL      CERITA  #18  S1v2 Raka diam 10 menit di rapat (storytelling) 60  NASKAH BARU, VIDEO PERLU DIBUAT ULANG
 RAB 25  story (polling: "Pede kamu paling goyah pas: presentasi / ketemu orang baru") + engagement
 KAM 26  19.00  REEL      AJAR    #10  1.3 Blank di tengah presentasi, 1 kalimat    76
 JUM 27  19.00  REEL      OPINI   #7   3.3 Gaji naik 2 kali tapi gak bahagia        94
