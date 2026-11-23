@@ -67,7 +67,7 @@ Sisanya (#2, #4, #6, #7, #9, #13, #14, #16, #17, #21) dimasukkan ke dalam Starte
 
 | Nama | Penilaian |
 | --- | --- |
-| **Berartify Arah90** | **Rekomendasi.** Menyebut hasil (arah) dan jangka waktu (90 hari) dalam satu kata. Gampang diucap di Reels ("komen ARAH90"), angka di depan cocok untuk hook, dan beda jelas dari tes gratisnya. |
+| **Berartify Arah90** | **Rekomendasi.** Menyebut hasil (arah) dan jangka waktu (90 hari) dalam satu kata. Gampang diucap di Reels, angka di depan cocok untuk hook, dan beda jelas dari tes gratisnya. |
 | Berartify Peta Arah | Jelas, tapi "peta" hanya menggambarkan perencanaan, bukan menjalankan. |
 | Berartify Life Design Studio | Terdengar premium, tapi panjang dan bahasa Inggris untuk audiens yang ngobrol pakai bahasa sehari-hari. |
 | Berartify Kompas | Metafora paling kuat dari Blueprint ("kompas internal"), tapi bertabrakan dengan merek media besar Kompas. Risiko merek dagang, jangan dipakai. |
@@ -115,4 +115,4 @@ Tes Berartify Index (gratis)
 
 - Reels **C10** (ChatGPT gratis vs 5 prompt) tidak relevan lagi karena Arah90 tidak memakai copy paste prompt. Ganti sudutnya jadi: "Kamu bisa tanya AI gratis. Bedanya, Arah90 udah tahu skor dan archetype kamu."
 - Reels **C9** tinggal ganti nama produk dan visual (rekam layar aplikasi, bukan spreadsheet).
-- Kata kunci BOFU **KIT** diganti **ARAH90**.
+- Kata kunci BOFU **KIT** diganti **MULAI**. Jangan pakai ARAH90 sebagai kata kunci, karena mengandung kata ARAH dan akan tertukar dengan kata kunci MOFU saat DM otomatis.
