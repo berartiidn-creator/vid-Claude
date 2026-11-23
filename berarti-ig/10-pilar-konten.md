@@ -81,7 +81,7 @@ Setiap ide lolos North Star BERARTI: membantu kenal diri, menyaring arah, atau m
 | 1 | Cerita founder soal pede dan public speaking | {{3}} kali aku ganti arah, {{2}} kali gagal. Ini yang berubah. | #15 Flop Record | MOFU, Reels | 81 |
 | 2 | Rekaman asli kelas public speaking yang Firas ajar | {{momen asli di kelas}}, dan saat itu muridku berhenti gemetar. Kamu juga bisa. | #18 Cold Open | MOFU, Reels | 61 |
 | 3 | Pengalaman gagal presentasi di depan banyak orang | Aku pernah blank di depan {{N}} orang. Kamu gak harus ngulang kesalahanku. | #15 Flop Record | MOFU, Reels | 76 |
-| 4 | Kenapa BERARTI Index dibuat gratis | Aku bikin tes 60 soal ini gratis. Kamu perlu tahu alasan jujurnya. | #21 Mid-Sentence | MOFU, Reels | 79 |
+| 4 | Kenapa BERARTI Index dibuat gratis | Kamu gak bayar apa pun buat tes 60 soal ini. Ini alasan jujurku. | #21 Mid-Sentence | MOFU, Reels | 79 |
 | 5 | Tanya jawab dari kotak pertanyaan story | "Kak, aku harus resign gak?" Masuk {{N}} kali minggu ini. | #16 Verbatim Question | MOFU, Reels | 77 |
 | 6 | Arah90 versi awal: hasil tes adalah peta, ini jalannya | Skor tesmu udah keluar? Jangan berhenti di screenshot, ini 12 minggu jalannya. | #13 Before After | BOFU, Reels | 80 |
 | 7 | Menjawab keberatan harga Rp99 ribu | "Rp99 ribu buat refleksi diri? Mahal." Oke, tapi hitung dulu biaya salah arah kamu. | #12 Objection | BOFU, Reels | 82 |
