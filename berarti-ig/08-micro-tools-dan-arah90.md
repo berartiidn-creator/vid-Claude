@@ -46,16 +46,16 @@ Singkatan "Siapa": Mhs = mahasiswa, FG = fresh graduate, YP = young professional
 
 ## Mana yang dibangun duluan (gratis, untuk TOFU)
 
-Bangun 6 dulu karena paling mudah dibuat, paling mudah dijelaskan dalam 1 Reels, dan langsung menyambung ke Berartify Index:
+Bangun 6 dulu karena paling mudah dibuat, paling mudah dijelaskan dalam 1 Reels, dan langsung menyambung ke BERARTI Index:
 
 1. **Saring Pilihan** (#1): pasangannya Reels C3.
 2. **Cek Siap Resign** (#3): pasangannya Reels C5 dan C8.
 3. **Perkenalan 60 Detik** (#5): pencarian tinggi menjelang musim rekrutmen.
 4. **Skrip Bilang Tidak** (#11): hasilnya gampang di-screenshot dan dibagikan.
 5. **Sukses Versiku** (#8): pasangannya Reels C4.
-6. **Penerjemah Hasil Tes** (#26): orang yang sudah tes MBTI ditarik ke Berartify Index.
+6. **Penerjemah Hasil Tes** (#26): orang yang sudah tes MBTI ditarik ke BERARTI Index.
 
-Semua tool gratis berakhir dengan satu ajakan yang sama: "Mau tahu arahmu secara utuh? Tes Berartify Index gratis." Tool-tool ini menggantikan peran ajakan komen ARAH di Reels: kata kuncinya tetap ARAH, isi DM-nya link tool yang dibahas di video plus link tes.
+Semua tool gratis berakhir dengan satu ajakan yang sama: "Mau tahu arahmu secara utuh? Tes BERARTI Index gratis." Tool-tool ini menggantikan peran ajakan komen ARAH di Reels: kata kuncinya tetap ARAH, isi DM-nya link tool yang dibahas di video plus link tes.
 
 Sisanya (#2, #4, #6, #7, #9, #13, #14, #16, #17, #21) dimasukkan ke dalam Starter Kit versi aplikasi di bawah. Tool #29 dan #30 jadi fitur lanjutan karena butuh penyimpanan progres.
 
@@ -67,17 +67,17 @@ Sisanya (#2, #4, #6, #7, #9, #13, #14, #16, #17, #21) dimasukkan ke dalam Starte
 
 | Nama | Penilaian |
 | --- | --- |
-| **Berartify Arah90** | **Rekomendasi.** Menyebut hasil (arah) dan jangka waktu (90 hari) dalam satu kata. Gampang diucap di Reels, angka di depan cocok untuk hook, dan beda jelas dari tes gratisnya. |
-| Berartify Peta Arah | Jelas, tapi "peta" hanya menggambarkan perencanaan, bukan menjalankan. |
-| Berartify Life Design Studio | Terdengar premium, tapi panjang dan bahasa Inggris untuk audiens yang ngobrol pakai bahasa sehari-hari. |
-| Berartify Kompas | Metafora paling kuat dari Blueprint ("kompas internal"), tapi bertabrakan dengan merek media besar Kompas. Risiko merek dagang, jangan dipakai. |
-| Berartify Starter Kit (tetap) | Terdengar seperti kumpulan file. Justru itu yang mau ditinggalkan. |
+| **BERARTI Arah90** | **Rekomendasi.** Menyebut hasil (arah) dan jangka waktu (90 hari) dalam satu kata. Gampang diucap di Reels, angka di depan cocok untuk hook, dan beda jelas dari tes gratisnya. |
+| BERARTI Peta Arah | Jelas, tapi "peta" hanya menggambarkan perencanaan, bukan menjalankan. |
+| BERARTI Life Design Studio | Terdengar premium, tapi panjang dan bahasa Inggris untuk audiens yang ngobrol pakai bahasa sehari-hari. |
+| BERARTI Kompas | Metafora paling kuat dari Blueprint ("kompas internal"), tapi bertabrakan dengan merek media besar Kompas. Risiko merek dagang, jangan dipakai. |
+| BERARTI Starter Kit (tetap) | Terdengar seperti kumpulan file. Justru itu yang mau ditinggalkan. |
 
-Pakai nama **Berartify Arah90** di semua tempat: landing page (ganti "Life Direction Starter Kit"), halaman pembayaran, Reels, dan DM.
+Pakai nama **BERARTI Arah90** di semua tempat: landing page (ganti "Life Direction Starter Kit"), halaman pembayaran, Reels, dan DM.
 
 ### Isi Arah90: 7 modul dalam 1 aplikasi
 
-Prinsip: user cukup memasukkan hasil Berartify Index sekali, lalu setiap modul membawa jawaban dari modul sebelumnya. Tidak ada lagi copy paste prompt ke ChatGPT, tidak ada sel kuning.
+Prinsip: user cukup memasukkan hasil BERARTI Index sekali, lalu setiap modul membawa jawaban dari modul sebelumnya. Tidak ada lagi copy paste prompt ke ChatGPT, tidak ada sel kuning.
 
 | Urutan | Modul | Menggantikan | Yang dilakukan AI | Hasil yang dibawa pulang |
 | --- | --- | --- | --- | --- |
@@ -94,7 +94,7 @@ Ebook materi inti tetap ada sebagai PDF pendamping, dibuka dari modul Baca.
 ### Alur user
 
 ```
-Tes Berartify Index (gratis)
+Tes BERARTI Index (gratis)
   -> halaman hasil: kartu archetype + tombol "Lanjut ke Arah90"
   -> bayar Rp99.000
   -> email berisi link Arah90 + kode akses
@@ -113,6 +113,6 @@ Tes Berartify Index (gratis)
 
 ### Yang berubah di konten
 
-- Reels **C10** (ChatGPT gratis vs 5 prompt) tidak relevan lagi karena Arah90 tidak memakai copy paste prompt. Ganti sudutnya jadi: "Kamu bisa tanya AI gratis. Bedanya, Arah90 udah tahu skor dan archetype kamu."
-- Reels **C9** tinggal ganti nama produk dan visual (rekam layar aplikasi, bukan spreadsheet).
+- Reels **C10** sudah ditulis ulang: "Kamu bisa tanya AI gratis. Tapi dia gak tahu 6 skor kamu." (skor hook 81,4). Lihat `05-naskah-reels-PAS.md`.
+- Reels **C9** sudah diganti ke BERARTI Arah90 dengan rekam layar aplikasi.
 - Kata kunci BOFU **KIT** diganti **MULAI**. Jangan pakai ARAH90 sebagai kata kunci, karena mengandung kata ARAH dan akan tertukar dengan kata kunci MOFU saat DM otomatis.

@@ -16,7 +16,7 @@ Komposisi mengikuti skill: akun seniche, akun audiens sama beda sudut, dan akun 
 
 | # | Kreator | Handle (verifikasi) | Kenapa dipilih | Yang ditiru |
 | --- | --- | --- | --- | --- |
-| 1 | Satu Persen | @satupersen.id | Paling dekat ke territory Berartify: "sekolah kehidupan", quarter life crisis, kenal diri | Format penjelasan psikologi yang dibungkus pertanyaan relatable, visual sistem |
+| 1 | Satu Persen | @satupersen.id | Paling dekat ke territory BERARTI: "sekolah kehidupan", quarter life crisis, kenal diri | Format penjelasan psikologi yang dibungkus pertanyaan relatable, visual sistem |
 | 2 | Fellexandro Ruby | @fellexandro | Karier dan produktivitas untuk 20 sampai 35, audiens young professional | Talking head tajam, framework bernama, opini kontra soal karier |
 | 3 | Analisa Widyaningrum | @analisa.widyaningrum | Psikolog, audiens yang overthinking dan butuh validasi | Validasi dulu, lalu reframe (sama dengan formula Empathy ke Reframe di blueprint) |
 | 4 | Jiemi Ardian | @jiemiardian | Psikiater, membongkar mitos kesehatan mental | Hook membantah keyakinan umum, bahasa awam untuk istilah psikologi |
@@ -59,7 +59,7 @@ Yang bisa dipelajari: video 1 Nov dibuka langsung di tengah aksi (rumus #18 Cold
 5. Kirim file itu ke aku, atau jalankan sendiri:
 
 ```bash
-python3 -I ~/.claude/skills/ig-viral/swipe.py berartify-ig/benchmark-template.tsv --out ~/.claude/instagram/swipe.md
+python3 -I ~/.claude/skills/ig-viral/swipe.py berarti-ig/benchmark-template.tsv --out ~/.claude/instagram/swipe.md
 ```
 
 Hasilnya: Reels diurutkan berdasarkan outlier multiple (di atas 3x adalah sinyal, di bawah 1,5x diabaikan) dan rumus hook tiap baris. `ig-reel` akan membaca `swipe.md` itu untuk naskah berikutnya.

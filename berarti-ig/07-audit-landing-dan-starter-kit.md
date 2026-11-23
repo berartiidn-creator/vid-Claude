@@ -7,7 +7,7 @@ Dicek 23 November 2026. Sumber: file `berarti_landing_page (3).tsx` di Google Dr
 | Bagian | Status |
 | --- | --- |
 | Landing page | Masih file kode React (.tsx), belum punya alamat web. Belum bisa dipasang di bio. |
-| Tes Berartify Index di landing page | Jalan: 60 pertanyaan, 6 dimensi, skor 0 sampai 100, 11 archetype. Logika archetype sama dengan file Starter Kit. |
+| Tes BERARTI Index di landing page | Jalan: 60 pertanyaan, 6 dimensi, skor 0 sampai 100, 11 archetype. Logika archetype sama dengan file Starter Kit. |
 | Tombol bayar | **Belum terhubung ke pembayaran apa pun.** |
 | Testimoni di landing page | **Perlu dicek: asli atau contoh?** |
 | File Starter Kit di Drive | **Siapa pun yang punya link bisa mengedit file master.** |
@@ -36,15 +36,15 @@ Perbaikan:
 1. Ubah akses link ke "Dibatasi", atau minimal "Viewer".
 2. Kosongkan semua sel kuning (input) di file master, kembalikan Hasil Index ke contoh yang jelas ditandai CONTOH.
 3. Konversi file ke format Google Sheets asli (File, Simpan sebagai Google Spreadsheet), lalu bagikan ke pembeli dalam bentuk link salinan: ganti akhir link dari `/edit...` jadi `/copy`. Tiap pembeli otomatis dapat salinan miliknya sendiri.
-4. Link salinan itu hanya dikirim **setelah pembayaran**, lewat email otomatis dari sistem pembayaran. Jangan dikirim lewat DM kata kunci KIT. DM KIT berisi link halaman pembayaran.
+4. Link salinan itu hanya dikirim **setelah pembayaran**, lewat email otomatis dari sistem pembayaran. Jangan dikirim lewat DM kata kunci MULAI. DM MULAI berisi link halaman pembayaran. Langkah ini berlaku selama produk masih spreadsheet; setelah Arah90 jadi, yang dikirim adalah link aplikasi plus kode akses.
 
 ## Ketidaksesuaian dengan Brand Blueprint dan konten
 
 | Di landing page | Seharusnya (Blueprint) | Kenapa penting |
 | --- | --- | --- |
-| "BERARTI™ Index", "BERARTI™ by Firas Byzi", tidak ada kata Berartify sama sekali | Berartify™ Index, Berartify™ Starter Kit. BERARTI Framework hanya nama metodologi. | Blueprint melarang Berartify dan BERARTI terdengar seperti dua brand. Bio dan Reels memakai "Berartify", jadi orang dari IG akan bingung. |
-| "Life Direction Starter Kit" | Berartify™ Starter Kit | Nama produk harus sama di Reels, DM, dan halaman bayar. |
-| Isi kit 5 item, tanpa AI Prompt Hub | 8 sheet, termasuk AI Prompt Hub | Reels C10 menjual AI Prompt Hub. Kalau di landing page tidak ada, orang dari C10 merasa salah halaman. |
+| "BERARTI™ Index", "BERARTI™ by Firas Byzi" | Sudah benar. Brand sekarang BERARTI, nama Berartify tidak dipakai lagi. | Pastikan bio, Reels, DM, dan halaman bayar memakai nama yang sama. |
+| "Life Direction Starter Kit" | BERARTI Arah90 | Nama produk harus sama di Reels, DM, dan halaman bayar. |
+| Isi kit 5 item versi file | 7 modul aplikasi Arah90 (Baca, Gali, Saring, Kanvas, Peta 90, Bio, Cek-in) | Reels C9 dan C10 menunjukkan aplikasinya. Kalau landing page masih menjual file, orang dari Reels merasa salah halaman. |
 | FAQ: akses lewat "member area" untuk unduh "PDF, Template" | File Google Sheets (plus ebook PDF) | Ekspektasi pembeli harus cocok dengan yang diterima. |
 | "Tes psikologi gratis ... dalam 5 menit" | Assessment refleksi diri, 60 pertanyaan | 60 pertanyaan dalam 5 menit berarti 5 detik per soal. Tulis "sekitar 10 menit". Kata "tes psikologi" sebaiknya diganti "tes refleksi diri" kecuali instrumennya sudah divalidasi psikolog. |
 | Video "Tonton Video 4 Menit Ini" hanya kotak dengan ikon play | Video asli atau hapus | Tombol play yang tidak bisa diputar terlihat rusak. |
@@ -58,6 +58,6 @@ Yang sudah bagus dan selaras: hero memakai core statement Blueprint, ada tagline
 
 1. Kunci file Starter Kit (akses Dibatasi, kosongkan sel input, buat link `/copy`).
 2. Siapkan halaman pembayaran yang mengirim link `/copy` otomatis setelah lunas.
-3. Perbaiki landing page: nama brand, tombol bayar ke halaman pembayaran, testimoni, isi kit plus AI Prompt Hub, FAQ, durasi tes, footer.
+3. Perbaiki landing page: nama produk jadi BERARTI Arah90, tombol bayar ke halaman pembayaran, testimoni, daftar 7 modul, FAQ, durasi tes, footer.
 4. Online-kan landing page supaya punya alamat web, lalu pasang di bio.
 5. Baru jalankan jadwal konten. C1 sampai C8 aman tayang begitu link tes hidup. C9 dan C10 tunggu langkah 2 selesai.

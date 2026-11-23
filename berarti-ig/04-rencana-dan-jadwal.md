@@ -4,8 +4,8 @@
 
 | Hari | Tugas |
 | --- | --- |
-| Senin 23 | Ganti nama profil dan bio (pilih opsi di `01-audit-profil.md`). Pasang link Berartify Index. |
-| Selasa 24 | Isi semua placeholder di sheet "Link dan Bantuan" Starter Kit. Pastikan halaman hasil Index punya link ke Starter Kit. |
+| Senin 23 | Ganti nama profil dan bio (pilih opsi di `01-audit-profil.md`). Pasang link BERARTI Index. |
+| Selasa 24 | Kunci file Starter Kit lama di Drive. Pastikan halaman hasil Index punya link ke Arah90. Mulai bangun 6 tool gratis dan Arah90 di Gemini Canvas. |
 | Rabu 25 | Isi `{{...}}` di naskah C7 dengan cerita asli. Kirim 3 caption atau transkrip asli kamu supaya `voice.md` bisa dikunci. |
 | Kamis 26 sampai Sabtu 28 | Rekam C1 sampai C7 (batch). Bikin 5 cover highlight. Arsipkan konten konser dari 9 grid teratas atau pindah ke highlight "Event". |
 | Setiap hari mulai 24 | Story 3 sampai 5 frame (template di `06-story-dm-engagement.md`), supaya akun terlihat hidup sebelum Reels pertama tayang. |
@@ -32,9 +32,9 @@ Rasio: 5 TOFU (50%), 3 MOFU (30%), 2 BOFU (20%). Tidak ada dua tipe atau dua rum
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | Senin 7 Des | 19.00 | C1 | Reels | TOFU | Opini | 3 tanda kamu bukan malas | #11 Numbered | 87,0 |
 | Selasa 8 Des | 19.00 | C8 | Reels | MOFU | Ajar | Jangan resign dulu, 3 pertanyaan jurnal | #2 Negative Command | 80,2 |
-| Kamis 10 Des | 19.00 | C9 | Reels | BOFU | Tawaran | Hasil tes cuma peta, Starter Kit Rp99 ribu. **Pin #3** | #13 Before After | 100 |
+| Kamis 10 Des | 19.00 | C9 | Reels | BOFU | Tawaran | Hasil tes cuma peta, Arah90 Rp99 ribu. **Pin #3**. Tayang hanya kalau Arah90 dan pembayaran sudah aktif | #13 Before After | 100 |
 | Jumat 11 Des | 19.00 | C5 | Reels | TOFU | Ajar | Kerja 3 tahun autopilot, cek 2 hal sebelum resign | #14 The Callout | 81,4 |
-| Minggu 13 Des | 10.00 | C10 | Reels | BOFU | Tawaran | ChatGPT gratis vs 5 prompt AI Prompt Hub | #12 The Objection | 76,4 |
+| Minggu 13 Des | 10.00 | C10 | Reels | BOFU | Tawaran | AI gratis vs Arah90 yang kenal skor kamu. Tayang hanya kalau Arah90 sudah aktif | #12 The Objection | 81,4 |
 
 Rabu dan Sabtu sengaja kosong untuk story, membalas komentar dan DM, serta merekam batch berikutnya.
 
@@ -44,14 +44,14 @@ Rabu dan Sabtu sengaja kosong untuk story, membalas komentar dan DM, serta merek
 | --- | --- | --- | --- |
 | C1 | 3 tanda kamu bukan malas | "Aku sering cari motivasi, lalu bingung lagi" | Brand belief: masalahnya kompas, bukan motivasi |
 | C2 | Berhenti cari passion | "Punya banyak minat tapi makin bingung" | Pilar Being Aware |
-| C3 | 5 minat, 3 filter | "Kalau semua pilihan terlihat menarik" | Prompt Hub nomor 5 (menyaring pilihan) |
+| C3 | 5 minat, 3 filter | "Kalau semua pilihan terlihat menarik" | Tool gratis Saring Pilihan, lalu modul Saring di Arah90 |
 | C4 | Umur 25 merasa tertinggal | "Teman-temanku sudah jauh" | Definisi sukses personal (Before After di blueprint) |
 | C5 | Kerja 3 tahun autopilot | "Produktif tapi hidup terasa autopilot" | Segmen young professional, pilar Alignment of Values |
-| C6 | 11 archetype | "Aku sebenarnya cocoknya ke mana?" | **Berartify Index (gratis)** |
+| C6 | 11 archetype | "Aku sebenarnya cocoknya ke mana?" | **BERARTI Index (gratis)** |
 | C7 | Cerita founder | Founder brand: mentor yang pernah bingung | BERARTI Framework |
 | C8 | Jangan resign dulu | "Takut salah pilih karier" | Preview Reflection Journal |
-| C9 | Hasil tes, terus ngapain? | "Banyak insight, minim aksi" | **Starter Kit Rp99.000** |
-| C10 | ChatGPT gratis vs 5 prompt | Keberatan "bisa tanya AI sendiri" | **Starter Kit: AI Prompt Hub** |
+| C9 | Hasil tes, terus ngapain? | "Banyak insight, minim aksi" | **Arah90 Rp99.000** |
+| C10 | AI gratis vs Arah90 | Keberatan "bisa tanya AI sendiri" | **Arah90: 7 modul yang saling nyambung** |
 
 Semua lolos 3 pertanyaan North Star blueprint: membantu kenal diri, menyaring arah, dan mengambil langkah nyata.
 
@@ -59,7 +59,7 @@ Semua lolos 3 pertanyaan North Star blueprint: membantu kenal diri, menyaring ar
 
 - **5 akun besar**: @satupersen.id, @fellexandro, @analisa.widyaningrum, @jiemiardian, @raymondchins. Komentar yang punya opini, bukan emoji.
 - **3 akun seukuran** (3 sampai 10 ribu followers, niche pengembangan diri atau karier): cari lewat hashtag #arahhidup dan #quarterlifecrisis, simpan daftarnya di highlight pribadi atau catatan.
-- **2 calon pembeli**: orang yang komen ARAH tapi belum komen KIT, atau yang membalas story kuis. Balas atau sapa di posting mereka.
+- **2 calon pembeli**: orang yang komen ARAH tapi belum komen MULAI, atau yang membalas story kuis. Balas atau sapa di posting mereka.
 
 ## Setelah 2 minggu
 

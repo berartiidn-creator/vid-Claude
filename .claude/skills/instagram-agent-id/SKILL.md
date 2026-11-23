@@ -1,6 +1,6 @@
 ---
 name: "instagram-agent-id"
-description: "Kelola akun Instagram @firasbyzi untuk Berartify (arah hidup dan karier, funnel ke Berartify Index gratis dan Starter Kit Rp99 ribu): audit profil skor 100, naskah Reels dari 26 rumus hook yang dinilai, jadwal mingguan, cek caption, riset Reels yang meledak, funnel TOFU MOFU BOFU, dan humanizer."
+description: "Kelola akun Instagram @firasbyzi untuk BERARTI (arah hidup dan karier, funnel ke BERARTI Index gratis dan Arah90 Rp99 ribu): audit profil skor 100, naskah Reels dari 26 rumus hook yang dinilai, jadwal mingguan, cek caption, riset Reels yang meledak, funnel TOFU MOFU BOFU, dan humanizer."
 ---
 
 # instagram-agent-id
@@ -76,22 +76,22 @@ Urutkan berdasarkan outlier multiple: views dibagi median 12 Reels terakhir akun
 
 Sebelum menunjukkan draf: hapus karakter tak terlihat (zero-width, soft hyphen, BOM, spasi keras), ganti em dash dengan koma, ganti tanda kutip miring dengan lurus, elipsis jadi tiga titik. Tandai untuk ditulis ulang: "bukan cuma X, tapi Y", tiga serangkai yang dipaksakan, pembuka "di video ini" atau "halo guys", daftar berpoin emoji, kata hiperbola, "stop scroll", "follow for more", "tag teman kamu", panjang kalimat yang seragam. Tiru gaya pengguna dari 3 caption atau transkrip asli miliknya; jika belum ada, minta dulu. Draf selalu dikirim untuk dicek pengguna sebelum diposting.
 
-## Konteks Berartify (wajib dibaca sebelum mode apa pun)
+## Konteks BERARTI (wajib dibaca sebelum mode apa pun)
 
 Baca dulu file ini, jangan menebak brand:
-- `berartify-ig/context/brand-berartify.md`: positioning, 7 pilar BERARTI, 11 archetype, produk, North Star.
-- `berartify-ig/context/voice.md`: gaya bicara Firas. Masih sementara. Jika pengguna sudah mengirim 3 caption atau transkrip asli, perbarui file ini dulu.
-- `berartify-ig/01` sampai `06`: audit profil, funnel, benchmark, jadwal, naskah, DM dan story yang sudah disetujui atau sedang direview.
+- `berarti-ig/context/brand-berarti.md`: positioning, 7 pilar BERARTI, 11 archetype, produk, North Star.
+- `berarti-ig/context/voice.md`: gaya bicara Firas. Masih sementara. Jika pengguna sudah mengirim 3 caption atau transkrip asli, perbarui file ini dulu.
+- `berarti-ig/01` sampai `08`: audit profil, funnel, benchmark, jadwal, naskah, DM dan story yang sudah disetujui atau sedang direview.
 
 ### Aturan sinkron funnel
-- Satu link bio: halaman tes Berartify Index. Starter Kit ditawarkan lewat halaman hasil tes dan DM kata kunci, bukan link tree.
-- Kata kunci MOFU: **ARAH** (kirim link Berartify Index). Kata kunci BOFU: **KIT** (kirim link Starter Kit). Jangan menambah kata kunci baru tanpa alasan.
-- Rasio: TOFU sekitar 50%, MOFU 30 sampai 35%, BOFU 15 sampai 20%. TOFU ditutup ajakan follow. MOFU ditutup komen ARAH. BOFU ditutup komen KIT.
+- Satu link bio: halaman tes BERARTI Index. Arah90 ditawarkan lewat halaman hasil tes dan DM kata kunci, bukan link tree.
+- Kata kunci MOFU: **ARAH** (kirim link BERARTI Index). Kata kunci BOFU: **MULAI** (kirim link Arah90). Jangan menambah kata kunci baru tanpa alasan.
+- Rasio: TOFU sekitar 50%, MOFU 30 sampai 35%, BOFU 15 sampai 20%. TOFU ditutup ajakan follow. MOFU ditutup komen ARAH. BOFU ditutup komen MULAI.
 - Setiap ide harus lolos 3 pertanyaan North Star: membantu kenal diri, menyaring arah, mengambil langkah nyata. Kalau tidak, buang.
-- Produk yang boleh disebut: Berartify Index (gratis, 60 soal, 6 dimensi, skor 0 sampai 100, 11 archetype) dan Berartify Starter Kit (Rp99.000: Reflection Journal, Life Design Canvas, Roadmap 90 Hari, Impact Statement, AI Prompt Hub 5 prompt). Premium belum punya harga, jangan dijual.
-- Skor 68 dan archetype The Explorer di file Starter Kit adalah data contoh. Kalau dipakai di video, tulis CONTOH.
-- DM kata kunci KIT berisi link halaman pembayaran, bukan link file Starter Kit. Link file (format `/copy`) hanya dikirim otomatis setelah lunas. Jangan pernah menulis link `/edit` file Starter Kit di konten, DM, atau repo.
-- Landing page (sumber: `berarti_landing_page.tsx`) masih memakai nama "BERARTI™ Index" dan "Life Direction Starter Kit". Di konten tetap pakai Berartify Index dan Berartify Starter Kit, dan cek `berartify-ig/07-audit-landing-dan-starter-kit.md` sebelum menulis naskah BOFU.
+- Produk yang boleh disebut: BERARTI Index (gratis, 60 soal, 6 dimensi, skor 0 sampai 100, 11 archetype) dan BERARTI Arah90 (Rp99.000, 12 minggu, aplikasi 7 modul: Baca, Gali, Saring, Kanvas, Peta 90, Bio, Cek-in). Arah90 belum jadi: konten BOFU hanya tayang setelah aplikasi dan pembayaran aktif. Premium belum punya harga, jangan dijual. Nama Berartify sudah tidak dipakai.
+- Skor 68 dan archetype The Explorer di file Starter Kit lama adalah data contoh. Kalau dipakai di video, tulis CONTOH.
+- DM kata kunci MULAI berisi link halaman pembayaran, bukan link aplikasi Arah90. Link aplikasi dan kode akses hanya dikirim otomatis setelah lunas. Jangan pernah menulis link `/edit` file Starter Kit lama di konten, DM, atau repo.
+- Landing page (sumber: `berarti_landing_page.tsx`) memakai nama "BERARTI™ Index" (sudah benar) dan "Life Direction Starter Kit" (harus diganti BERARTI Arah90). Di konten pakai BERARTI Index dan BERARTI Arah90, dan cek `berarti-ig/07-audit-landing-dan-starter-kit.md` sebelum menulis naskah BOFU.
 - Jangan pernah mengarang testimoni, jumlah pengguna, atau angka penjualan. Konten tipe Bukti baru dibuat setelah ada testimoni asli.
 - Formula komunikasi brand (Empathy, Reframe, Insight, Framework, Action) dipetakan ke PAS: Problem = Empathy, Agitate = akibat bila dibiarkan, Solution = Reframe plus Framework plus Action.
 - Dua pilar berhuruf R: di audio selalu sebut nama lengkap (Readiness to Act, Relevance and Meaning).
@@ -100,4 +100,4 @@ Baca dulu file ini, jangan menebak brand:
 ### Data akun
 - Konektor: Windsor.ai connector `instagram`, akun `firasbyzi` (trial 30 hari). Panggil get_fields sebelum get_data, satu breakdown (kota atau umur) per request.
 - Audiens terbesar: 25 sampai 34, lalu 35 sampai 44. Kota WIB (Jakarta, Bekasi, Bandung, Cirebon, Yogyakarta). Jam awal: 19.00 WIB hari kerja, 10.00 WIB Minggu.
-- Instagram tidak bisa dibuka dari container cloud. Untuk riset Reels kreator lain, minta pengguna mengisi `berartify-ig/benchmark-template.tsv` lalu jalankan `swipe.py`.
+- Instagram tidak bisa dibuka dari container cloud. Untuk riset Reels kreator lain, minta pengguna mengisi `berarti-ig/benchmark-template.tsv` lalu jalankan `swipe.py`.

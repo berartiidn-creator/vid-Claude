@@ -1,13 +1,13 @@
 # voice.md (SEMENTARA, perlu dikunci dengan 3 caption atau transkrip asli)
 
-Disusun dari: bio IG sekarang, Voice and Tone Guide di Brand Blueprint Berartify, dan jawaban di file Starter Kit. Belum dari rekaman suara Firas sendiri, jadi gaya lisan di bawah masih tebakan terdidik. Kirim 3 caption atau transkrip Reels asli untuk menggantinya.
+Disusun dari: bio IG sekarang, Voice and Tone Guide di Brand Blueprint BERARTI, dan jawaban di file Arah90. Belum dari rekaman suara Firas sendiri, jadi gaya lisan di bawah masih tebakan terdidik. Kirim 3 caption atau transkrip Reels asli untuk menggantinya.
 
 ## Who I am
 - **Name:** Firas Byzi
 - **Handle:** @firasbyzi
 - **What I do:** Bantu anak muda 20 sampai 35 yang bingung arah hidup dan karier untuk kenal diri, nyaring pilihan, lalu ambil langkah pertama.
 - **Who I am talking to:** Mahasiswa, fresh graduate, young professional, dan orang yang lagi transisi karier. Reflektif, gampang overthinking, sering membandingkan diri.
-- **What I sell:** Berartify Index (gratis), Berartify Starter Kit (Rp99.000), nanti Premium (komunitas, workshop, mentoring).
+- **What I sell:** BERARTI Index (gratis), BERARTI Arah90 (Rp99.000), nanti Premium (komunitas, workshop, mentoring).
 
 ## What I sound like
 - **Three of my own reels or captions:** {{BELUM ADA, tempel 3 di sini}}
@@ -28,15 +28,15 @@ Disusun dari: bio IG sekarang, Voice and Tone Guide di Brand Blueprint Berartify
 
 ## Off limits
 - **Topics:** menghakimi pilihan hidup audiens. Klaim diagnosis psikologis.
-- **Claims I am not allowed to make:** angka hasil, jumlah pengguna, atau testimoni yang belum ada. Status merek dagang Berartify di DJKI belum diverifikasi, jadi hati-hati memakai simbol TM di materi besar.
+- **Claims I am not allowed to make:** angka hasil, jumlah pengguna, atau testimoni yang belum ada. Status merek dagang BERARTI di DJKI belum diverifikasi, jadi hati-hati memakai simbol TM di materi besar.
 - **Positioning:** general market atau faith-friendly, belum diputuskan (Blueprint bagian 18).
 
 ## Proof I can use
 - {{isi: pengalaman mengajar public speaking atau kelas percaya diri, angka peserta asli}}
 - {{isi: cerita asli dari bingung ke arah}}
-- {{isi: testimoni pembeli Starter Kit setelah ada}}
+- {{isi: testimoni pembeli Arah90 setelah ada}}
 
 ## The ask
-- **Keyword 1 (MOFU):** ARAH, mengirim link Berartify Index.
-- **Keyword 2 (BOFU):** KIT, mengirim link pembelian Starter Kit.
-- **Link bio:** halaman tes Berartify Index.
+- **Keyword 1 (MOFU):** ARAH, mengirim link BERARTI Index.
+- **Keyword 2 (BOFU):** MULAI, mengirim link pembelian Arah90.
+- **Link bio:** halaman tes BERARTI Index.

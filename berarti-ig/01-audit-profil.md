@@ -29,7 +29,7 @@ Setelah 3 November, reach harian jatuh ke 15 sampai 30 akun per hari karena tida
 | Bio baris pertama | 12 | 8 | Sudah menyebut masalah (bingung arah hidup) dan hasil (langkah pertama). Belum menyebut untuk siapa (umur 20 sampai 35). |
 | Isi bio | 8 | 1 | Daftar kata dipisah garis, ada salah ketik "Selv-Dev". Tidak ada bukti atau tawaran. |
 | Pinned tiga | 10 | ? | Tidak terbaca lewat API. |
-| Link | 8 | 0 | Kosong. Funnel ke Berartify Index dan Starter Kit putus di sini. |
+| Link | 8 | 0 | Kosong. Funnel ke BERARTI Index dan Arah90 putus di sini. |
 | Highlight | 8 | ? | Tidak terbaca lewat API. |
 | Grid 9 teratas | 8 | ? | Tidak terbaca penuh. Dua posting teratas yang terlihat adalah konten konser, di luar niche. |
 | Foto | 6 | ? | Tidak terbaca lewat API. |
@@ -46,9 +46,9 @@ Setelah 3 November, reach harian jatuh ke 15 sampai 30 akun per hari karena tida
 Jalankan jadwal di `04-rencana-dan-jadwal.md`: 5 Reels per minggu plus story harian. Ini satu-satunya bagian yang tidak bisa dibereskan dengan edit profil.
 
 ### 2. Link (0 dari 8)
-Satu link saja: **halaman tes gratis Berartify Index**. Jangan link tree berisi banyak pilihan. Starter Kit ditawarkan di halaman hasil tes dan lewat DM kata kunci KIT, bukan di link bio. Ini mengikuti urutan funnel di blueprint: Index dulu, baru Starter Kit.
+Satu link saja: **halaman tes gratis BERARTI Index**. Jangan link tree berisi banyak pilihan. Arah90 ditawarkan di halaman hasil tes dan lewat DM kata kunci MULAI, bukan di link bio. Ini mengikuti urutan funnel di blueprint: Index dulu, baru Arah90.
 
-Link landing page belum ada di file yang kamu kirim (sheet "Link dan Bantuan" di Starter Kit masih berisi placeholder). Isi `{{link Berartify Index}}`.
+Landing page masih berupa file kode (.tsx) dan belum punya alamat web. Setelah online, isi `{{link BERARTI Index}}`.
 
 ### 3. Nama profil (4 dari 12), maks 30 karakter
 
@@ -70,7 +70,7 @@ Tes arah hidup gratis di bawah
 **Opsi B, 135 karakter**
 ```
 Bantu umur 20-35 yang bingung arah hidup dan karier nemu langkah pertama.
-Founder Berartify. Cek tipe arahmu dari 11 archetype, gratis:
+Founder BERARTI. Cek tipe arahmu dari 11 archetype, gratis:
 ```
 
 **Opsi C, 139 karakter**
@@ -80,7 +80,7 @@ Aku bantu kamu (20-35) nemu arah hidup dan karier lewat BERARTI Framework.
 Tes gratis 60 soal di link bawah
 ```
 
-Opsi A memakai core statement dari Brand Blueprint, jadi bio, Reels, dan landing page bicara dengan kalimat yang sama. Versi bio IG di sheet Impact Statement (202 karakter) kepanjangan untuk Instagram dan memakai simbol ampersand, jadi tidak dipakai mentah.
+Opsi A memakai core statement dari Brand Blueprint, jadi bio, Reels, dan landing page bicara dengan kalimat yang sama. Versi bio IG di sheet Impact Statement Starter Kit lama (202 karakter) kepanjangan untuk Instagram dan memakai simbol ampersand, jadi tidak dipakai mentah.
 
 ### 5. Pinned tiga (?)
 
@@ -88,12 +88,12 @@ Opsi A memakai core statement dari Brand Blueprint, jadi bio, Reels, dan landing
 | --- | --- | --- |
 | 1 | C6 "11 tipe orang bingung arah" | Penjelasan tawaran gratis (Index), CTA komen ARAH |
 | 2 | C7 cerita founder | Perkenalan: kenapa Firas, kenapa BERARTI Framework |
-| 3 | C9 Starter Kit | Tawaran berbayar. Ganti dengan testimoni pembeli asli begitu sudah ada. |
+| 3 | C9 Arah90 | Tawaran berbayar. Ganti dengan testimoni pembeli asli begitu sudah ada. |
 
 ### 6. Highlight (?), 5 buah, dinamai sesuai pertanyaan calon pembeli
-1. **Mulai Sini**: siapa Firas, apa itu Berartify, link tes.
-2. **Tes Gratis**: cara isi Berartify Index, contoh hasil radar chart.
-3. **Starter Kit**: isi 8 sheet, harga Rp99 ribu, cara pakai dengan ChatGPT.
+1. **Mulai Sini**: siapa Firas, apa itu BERARTI, link tes.
+2. **Tes Gratis**: cara isi BERARTI Index, contoh hasil radar chart.
+3. **Arah90**: isi 7 modul, harga Rp99 ribu, cara mulai dari hasil Index.
 4. **Cerita Mereka**: testimoni asli saja. Kosongkan dulu kalau belum ada.
 5. **Tanya Jawab**: jawaban FAQ dari kotak pertanyaan story.
 
@@ -106,7 +106,7 @@ Konten konser di luar niche: **jangan dihapus**, karena masih menyumbang reach. 
 
 Brand Blueprint bagian 18 sudah mencatat: "tentukan apakah brand general-market atau faith-based". Data akunmu sekarang menunjukkan audiens yang paling besar datang dari konten dakwah. Ada dua jalan:
 
-- **General market** (sesuai blueprint sekarang): konten dakwah dipisah, Berartify fokus arah hidup dan karier.
+- **General market** (sesuai blueprint sekarang): konten dakwah dipisah, BERARTI fokus arah hidup dan karier.
 - **Faith-friendly**: tetap general, tapi sesekali ada konten "makna dan nilai" yang terhubung ke pilar Relevance and Meaning dan Transcendence and Impact. Penonton konser bisa jadi pintu masuk kalau jembatannya jelas.
 
 Naskah di folder ini memakai jalan pertama. Kalau kamu pilih yang kedua, bilang, nanti aku tambah 2 naskah jembatan.
