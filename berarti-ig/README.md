@@ -12,6 +12,9 @@ Semua isi folder ini adalah draf untuk dicek Firas sebelum dipakai. Tidak ada ya
 | `05-naskah-reels-PAS.md` | 10 naskah Problem-Agitate-Solution, hook dinilai, teks layar, caption, hasil cek |
 | `06-story-dm-engagement.md` | DM kata kunci ARAH dan MULAI, follow up, template story, urutan balas komentar |
 | `10-pilar-konten.md` | 5 pilar konten dan 50 ide dengan hook yang sudah dinilai |
+| `14-benchmark-viral-3-pilar.md` | Benchmark viral Communication, Confidence, Grow: 79 Shorts dari 23 akun, outlier multiple, rumus yang menang dan kalah |
+| `15-naskah-30-konten-3-pilar.md` | 30 tema dan naskah lengkap (hook sampai CTA), 10 per pilar, tiap tema dengan bukti permintaan dan bukti viral |
+| `work/benchmark-viral-2026-11.tsv`, `work/swipe.md` | Data mentah benchmark dengan link sumber, dan swipe file untuk `/ig-reel` |
 | `09-prompt-gemini-canvas.md` | 3 prompt siap tempel: perbaikan landing dan hasil Index, Pede60, Arah90 versi pertama |
 | `landing/berarti_landing_page.tsx` | Landing page yang sudah diperbaiki: halaman hasil baru, checkout palsu dihapus, hero percaya diri |
 | `produk/BERARTI_Arah90_Versi_Awal.xlsx` | Workbook yang sudah dibersihkan, siap dijual sebagai Arah90 versi awal |
