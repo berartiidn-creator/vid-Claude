@@ -53,7 +53,7 @@ export const makeTimeline = (keys: Key[], start: RigPose = BASE) => {
   };
 };
 
-const C = {skin: '#F2B48A', skinDark: '#D98E64', hair: '#3A2A20', hairHi: '#5B4434', blazer: '#2F5E45', blazerDark: '#244A36', tee: '#F6F4EE',
+const C = {skin: '#F2B48A', skinDark: '#D98E64', hair: '#2C241E', hairHi: '#6A625B', blazer: '#2F5E45', blazerDark: '#244A36', tee: '#F6F4EE',
   pants: '#CDB38C', pantsDark: '#B79C75', shoe: '#F7F7F5', sole: '#1E1E1E', ink: '#231915', lip: '#7A3328'};
 
 const HandShape: React.FC<{hand: Hand; mirror: boolean}> = ({hand, mirror}) => (
@@ -120,10 +120,10 @@ export const ArtiRig: React.FC<{t: number; pose: RigPose; x: number; y: number; 
         {shadow && <ellipse cx={200 + P.shiftX * 0.5} cy={984} rx={130} ry={16} fill="#00000022" />}
         {/* legs */}
         <g transform={`translate(${P.shiftX * 0.4} 0)`}>
-          <path d={`M128 ${600 + drop} L190 ${600 + drop} L186 ${600 + drop + legLen} L132 ${600 + drop + legLen} Z`} fill={C.pants} />
-          <path d={`M210 ${600 + drop} L272 ${600 + drop} L268 ${600 + drop + legLen} L214 ${600 + drop + legLen} Z`} fill={C.pants} />
-          <path d={`M196 ${600 + drop} L204 ${600 + drop} L204 ${700 + drop} Z`} fill={C.pantsDark} />
-          <rect x={112} y={942} width={82} height={36} rx={16} fill={C.shoe} /><rect x={112} y={970} width={82} height={12} rx={6} fill={C.sole} />
+          <path d={`M118 ${566 + drop} L282 ${566 + drop} L278 ${716 + drop} Q200 ${730 + drop} 122 ${716 + drop} Z`} fill={C.pants} />
+          <path d={`M122 ${700 + drop} L196 ${700 + drop} L188 980 L132 980 Z`} fill={C.pants} />
+          <path d={`M204 ${700 + drop} L278 ${700 + drop} L268 980 L212 980 Z`} fill={C.pants} />
+                    <rect x={112} y={942} width={82} height={36} rx={16} fill={C.shoe} /><rect x={112} y={970} width={82} height={12} rx={6} fill={C.sole} />
           <rect x={206} y={942} width={82} height={36} rx={16} fill={C.shoe} /><rect x={206} y={970} width={82} height={12} rx={6} fill={C.sole} />
         </g>
         {/* upper body, pivoting at the hips */}
@@ -132,7 +132,8 @@ export const ArtiRig: React.FC<{t: number; pose: RigPose; x: number; y: number; 
             <rect x={178} y={262} width={44} height={70} rx={14} fill={C.skin} />
             <path d="M178 300 Q200 318 222 300 L222 312 Q200 330 178 312 Z" fill={C.skinDark} />
             <path d="M104 334 Q200 304 296 334 L306 612 Q200 634 94 612 Z" fill={C.blazer} />
-            <path d="M166 318 L200 330 L234 318 L240 616 L160 616 Z" fill={C.tee} />
+            <path d="M166 318 L200 330 L234 318 L240 598 L160 598 Z" fill={C.tee} />
+            <path d="M158 596 L242 596 L243 606 L157 606 Z" fill={C.pantsDark} opacity={0.7} />
             <path d="M160 322 L200 452 L184 466 L132 344 Z" fill={C.blazerDark} />
             <path d="M240 322 L200 452 L216 466 L268 344 Z" fill={C.blazerDark} />
             <rect x={246} y={404} width={40} height={8} rx={4} fill={C.blazerDark} />
@@ -144,9 +145,8 @@ export const ArtiRig: React.FC<{t: number; pose: RigPose; x: number; y: number; 
             <ellipse cx={90 + tx * 0.3} cy={12} rx={14 * (1 - Math.max(0, P.turn) * 0.4)} ry={20} fill={C.skin} />
             <path d="M-86 -10 Q-88 76 -40 104 Q0 124 40 104 Q88 76 86 -10 Q80 -96 0 -98 Q-80 -96 -86 -10 Z" fill={C.skin} />
             <g transform={`translate(${tx * 0.25} 0)`}>
-              <path d="M-100 6 C-112 -64 -66 -128 -6 -126 C52 -136 116 -100 104 -12 C98 -36 84 -52 64 -58 C70 -34 48 -28 36 -46 C24 -20 -8 -26 -18 -48 C-34 -26 -64 -26 -74 -40 C-86 -26 -92 -12 -100 6 Z" fill={C.hair} />
-              <path d="M-40 -104 Q20 -128 70 -96" fill="none" stroke={C.hairHi} strokeWidth={10} strokeLinecap="round" />
-              <path d="M52 -50 Q86 -40 92 -2" fill="none" stroke={C.hair} strokeWidth={20} strokeLinecap="round" />
+              <path d="M-86 26 C-100 2 -112 -30 -104 -58 C-118 -92 -90 -124 -62 -126 C-50 -152 -8 -156 8 -142 C32 -160 78 -150 88 -120 C114 -110 120 -70 106 -46 C116 -20 106 6 90 26 L82 -4 C80 -24 78 -36 72 -48 C70 -34 60 -26 48 -44 C56 -54 58 -62 50 -66 C18 -74 -30 -72 -64 -52 C-74 -40 -76 -18 -74 6 Z" fill={C.hair} />
+              <path d="M-14 -122 Q48 -140 74 -100 Q86 -80 72 -66" fill="none" stroke={C.hairHi} strokeWidth={9} strokeLinecap="round" />
             </g>
             <g transform={`translate(${tx} ${bdy})`}>
               <rect x={-58} y={-34} width={44} height={9} rx={4.5} fill={C.ink} transform={`rotate(${bl} -36 -30)`} />
