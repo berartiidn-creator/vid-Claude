@@ -27,9 +27,11 @@ const KEYS: Key[] = [
   {t: 5.6, dur: 0.14, ease: 'out', p: {crouch: 0.4, nod: 6}},
   {t: 5.74, dur: 0.45, ease: 'back', p: {crouch: 0, nod: -8, tilt: 0, lean: -3, armR: {s: 22, e: 4, h: 0, hand: 'point'}, armL: {s: 30, e: 20, hand: 'open'}, brows: 'up', mouth: 'open', lookX: 0, lookY: -0.3}},
   {t: 6.25, dur: 0.3, p: {nod: 0, lean: 0}},
-  // step forward with weight shift
-  {t: 6.6, dur: 0.5, p: {shiftX: 60, lean: 4, armR: {s: 10, e: 8, hand: 'relaxed'}, armL: {s: 10, e: 8, hand: 'relaxed'}, brows: 'determined', mouth: 'calm'}},
-  {t: 7.1, dur: 0.35, ease: 'back', p: {lean: 0}},
+  // two real steps: lift, swing, plant, with counter-swinging arms and hip tilt
+  {t: 6.6, dur: 0.24, ease: 'out', p: {liftR: 36, legAR: 3, shiftX: 22, lean: 3, armR: {s: -6, e: 6, hand: 'relaxed'}, armL: {s: 18, e: 10, hand: 'relaxed'}, brows: 'determined', mouth: 'calm'}},
+  {t: 6.84, dur: 0.18, ease: 'in', p: {liftR: 0, legAR: 0, shiftX: 38}},
+  {t: 7.02, dur: 0.24, ease: 'out', p: {liftL: 36, legAL: 3, shiftX: 54, armR: {s: 18, e: 10}, armL: {s: -6, e: 6}}},
+  {t: 7.26, dur: 0.3, ease: 'back', p: {liftL: 0, legAL: 0, shiftX: 60, lean: 0, armR: {s: 8, e: 4}, armL: {s: 8, e: 4}}},
   // open palm offer while talking
   {t: 7.6, dur: 0.4, ease: 'back', p: {armR: {s: 42, e: 48, h: -10, hand: 'open'}, talk: 1, mouth: 'talk', brows: 'calm', tilt: -3, lookX: -0.2}},
   {t: 8.2, dur: 0.3, p: {armR: {s: 36, e: 56}, nod: 4}},

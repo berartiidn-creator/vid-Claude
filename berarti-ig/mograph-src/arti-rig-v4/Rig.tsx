@@ -8,10 +8,11 @@ export type Mouth = 'smile' | 'calm' | 'nervous' | 'pressed' | 'o' | 'sad' | 'op
 export type Arm = {s: number; e: number; h: number; hand: Hand};
 export type RigPose = {
   lean: number; crouch: number; shiftX: number; tilt: number; nod: number; turn: number;
+  liftR: number; liftL: number; legAR: number; legAL: number;
   armR: Arm; armL: Arm; brows: Brows; mouth: Mouth; lookX: number; lookY: number; eyeOpen: number; talk: number;
 };
 export const BASE: RigPose = {
-  lean: 0, crouch: 0, shiftX: 0, tilt: 0, nod: 0, turn: 0,
+  lean: 0, crouch: 0, shiftX: 0, tilt: 0, nod: 0, turn: 0, liftR: 0, liftL: 0, legAR: 0, legAL: 0,
   armR: {s: 8, e: 4, h: 0, hand: 'clicker'}, armL: {s: 8, e: 4, h: 0, hand: 'relaxed'},
   brows: 'calm', mouth: 'smile', lookX: 0, lookY: 0, eyeOpen: 1, talk: 0,
 };
@@ -43,7 +44,7 @@ export const makeTimeline = (keys: Key[], start: RigPose = BASE) => {
       const e = E[k.ease ?? 'inout'](p);
       const target = states[i];
       const blended: RigPose = {...target};
-      for (const f of ['lean', 'crouch', 'shiftX', 'tilt', 'nod', 'turn', 'lookX', 'lookY', 'eyeOpen', 'talk'] as const) blended[f] = L(prev[f], target[f], e);
+      for (const f of ['lean', 'crouch', 'shiftX', 'tilt', 'nod', 'turn', 'liftR', 'liftL', 'legAR', 'legAL', 'lookX', 'lookY', 'eyeOpen', 'talk'] as const) blended[f] = L(prev[f], target[f], e);
       blended.armR = lerpArm(prev.armR, target.armR, e); blended.armL = lerpArm(prev.armL, target.armL, e);
       blended.brows = e < 0.5 ? prev.brows : target.brows; blended.mouth = e < 0.5 ? prev.mouth : target.mouth;
       if (p < 1) { if (i === keys.length - 1 || t < keys[i + 1].t) return blended; }
@@ -133,23 +134,31 @@ export const ArtiRig: React.FC<{t: number; pose: RigPose; lagPose?: RigPose; x: 
   return (
     <div style={{position: 'absolute', left: x - 200 * s, top: y, width: 400 * s, height, transform: flip ? 'scaleX(-1)' : undefined}}>
       <svg width={400 * s} height={height} viewBox="0 0 400 1000" style={{overflow: 'visible'}}>
-        {shadow && <ellipse cx={200 + P.shiftX * 0.5} cy={982} rx={120} ry={15} fill="#00000020" />}
-        {/* legs: slim chinos with one soft shade on the inner leg */}
-        <g transform={`translate(${P.shiftX * 0.4} 0)`}>
-          <path d={`M126 ${570 + drop} L274 ${570 + drop} L272 ${700 + drop} L128 ${700 + drop} Z`} fill={C.pants} />
-          <path d={`M128 ${690 + drop} L199 ${690 + drop} L190 956 L140 956 Z`} fill={C.pants} />
-          <path d={`M201 ${690 + drop} L272 ${690 + drop} L260 956 L210 956 Z`} fill={C.pants} />
-          <path d={`M200 ${700 + drop} Q216 ${720 + drop} 218 956 L210 956 Z`} fill={C.pantsShade} opacity={0.8} />
-          {[[124, 0], [204, 1]].map(([sx, i]) => (
-            <g key={i}>
-              <path d={`M${sx + 6} 950 Q${sx + 4} 938 ${sx + 20} 936 L${sx + 56} 936 Q${sx + 74} 940 ${sx + 74} 962 L${sx + 74} 970 L${sx + 2} 970 Z`} fill={C.shoe} />
-              <path d={`M${sx + 22} 946 L${sx + 46} 946`} stroke="#D9D9D6" strokeWidth={3} strokeLinecap="round" />
-              <rect x={sx} y={968} width={76} height={12} rx={6} fill={C.sole} />
-            </g>
-          ))}
+        {shadow && <ellipse cx={200 + P.shiftX} cy={982} rx={120 - (P.liftR + P.liftL) * 0.5} ry={15} fill="#00000020" />}
+        {/* whole figure moves together; legs swing from the hips */}
+        <g transform={`translate(${P.shiftX} 0)`}>
+        <g>
+          {([['R', 164, 124, P.liftR, P.legAR], ['L', 236, 204, P.liftL, P.legAL]] as const).map(([k, hx, sx, lift, ang]) => {
+            const top = 690 + drop, ank = 956 - lift, from = 572 + drop;
+            const inner = k === 'R' ? [199, 190] : [201, 210];
+            const outer = k === 'R' ? [128, 140] : [272, 260];
+            return (
+              <g key={k} transform={`rotate(${k === 'R' ? ang : -ang} ${hx} ${top})`}>
+                <path d={`M${outer[0] - 1} ${from} L${inner[0] + (k === 'R' ? 4 : -4)} ${from} L${inner[0]} ${top} L${inner[1]} ${ank} L${outer[1]} ${ank} L${outer[0]} ${top} Z`} fill={C.pants} />
+                {k === 'L' && <path d={`M201 ${top + 10} Q216 ${top + 30} 218 ${ank} L210 ${ank} Z`} fill={C.pantsShade} opacity={0.8} />}
+                {lift > 2 && <path d={`M${(outer[0] + inner[0]) / 2 - 30} ${(top + ank) / 2 + 10} q30 8 60 0`} fill="none" stroke={C.pantsShade} strokeWidth={4} strokeLinecap="round" opacity={Math.min(1, lift / 20)} />}
+                <g transform={`translate(0 ${-lift}) rotate(${(k === 'R' ? -1 : 1) * lift * 0.25} ${sx + 38} 960)`}>
+                  <path d={`M${sx + 6} 950 Q${sx + 4} 938 ${sx + 20} 936 L${sx + 56} 936 Q${sx + 74} 940 ${sx + 74} 962 L${sx + 74} 970 L${sx + 2} 970 Z`} fill={C.shoe} />
+                  <path d={`M${sx + 22} 946 L${sx + 46} 946`} stroke="#D9D9D6" strokeWidth={3} strokeLinecap="round" />
+                  <rect x={sx} y={968} width={76} height={12} rx={6} fill={C.sole} />
+                </g>
+              </g>
+            );
+          })}
+          <path d={`M170 ${572 + drop} L230 ${572 + drop} L224 ${700 + drop} Q200 ${716 + drop} 176 ${700 + drop} Z`} fill={C.pants} />
         </g>
         {/* upper body, pivoting at the hips */}
-        <g transform={`translate(${P.shiftX} ${drop}) rotate(${P.lean + sway} 200 600)`}>
+        <g transform={`translate(0 ${drop}) rotate(${P.lean + sway + (P.liftL - P.liftR) * 0.06} 200 600)`}>
           <g transform={`translate(0 ${-breath * 3}) scale(1 ${1 + breath * 0.008})`} style={{transformOrigin: '200px 600px'}}>
             <rect x={182} y={232} width={36} height={70} rx={12} fill={C.skin} />
             <path d="M182 262 Q200 278 218 262 L218 276 Q200 292 182 276 Z" fill={C.skinShade} />
@@ -184,6 +193,7 @@ export const ArtiRig: React.FC<{t: number; pose: RigPose; lagPose?: RigPose; x: 
           </g>
           <ArmShape side="R" arm={P.armR} lag={handLagR} />
           <ArmShape side="L" arm={P.armL} lag={handLagL} />
+        </g>
         </g>
       </svg>
     </div>
