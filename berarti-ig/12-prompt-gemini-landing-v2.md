@@ -10,7 +10,7 @@ Sesudah Gemini selesai, cek tiga hal:
 ---
 
 ```
-Buatkan satu halaman web lengkap (single-file React + Tailwind, siap jalan di Canvas) untuk BERARTI: landing page, tes 36 pertanyaan, halaman hasil gratis, dan laporan berbayar "BERARTI Signature" yang terkunci kode akses. Semua teks berbahasa Indonesia, santai tapi sopan, sapaan "kamu". Jangan pakai em dash (—) dan jangan pakai simbol "&" di teks yang tampil; pakai koma, titik, atau kata "dan".
+Buatkan satu halaman web lengkap (single-file React + Tailwind, siap jalan di Canvas) untuk BERARTI: landing page, tes 36 pertanyaan, halaman hasil gratis, dan laporan berbayar "BERARTI Signature" yang terkunci kode akses. Semua teks berbahasa Indonesia, santai tapi sopan, sapaan "kamu". Jangan pakai tanda pisah panjang (em dash) dan jangan pakai simbol ampersand di teks yang tampil; pakai koma, titik, atau kata "dan".
 
 === 1. KONFIGURASI (taruh paling atas kode, mudah diedit) ===
 const CONFIG = {
