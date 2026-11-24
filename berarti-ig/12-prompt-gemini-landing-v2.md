@@ -1,5 +1,7 @@
 # Prompt Gemini Canvas: Landing Page BERARTI v2 (3 paket, gaya FYI)
 
+> **Sudah digantikan** oleh situs lengkap di `berarti-app/` (24 November 2026). Prompt ini disimpan sebagai arsip.
+
 Cara pakai: buka Gemini, pilih Canvas, tempel seluruh isi blok di bawah sebagai satu pesan. Setelah jadi, isi semua `{{...}}` di bagian CONFIG paling atas kode.
 
 Sesudah Gemini selesai, cek tiga hal:

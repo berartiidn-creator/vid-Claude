@@ -18,11 +18,14 @@ Ringkasan dari "BERARTI Brand Strategy Blueprint Final" (16 Agustus 2026) dan "B
 - **Visual:** near-black atau navy, aksen biru, font Inter, kartu rounded, chart, matriks, canvas. Terasa "clarity system", bukan poster motivasi.
 
 ## Produk dan funnel
-1. **BERARTI Index (gratis):** 60 pertanyaan, 6 dimensi, skor 0 sampai 100, radar chart, 11 archetype. Kata kunci DM: ARAH.
-2. **BERARTI Arah90 (Rp99.000, 12 minggu):** aplikasi AI (dibangun di Gemini Canvas) dengan 7 modul yang saling membawa jawaban: Baca, Gali, Saring, Kanvas, Peta 90, Bio, Cek-in. Ebook materi inti jadi PDF pendamping. Menggantikan Starter Kit versi spreadsheet. Kata kunci DM: MULAI. Rancangan lengkap di `berarti-ig/08-micro-tools-dan-arah90.md`.
-3. **Tool gratis (TOFU):** Pede60 (siapkan omongan 60 detik). Satu tool dulu, yang lain menyusul setelah ada data. Ditutup ajakan tes BERARTI Index.
-- **Urutan produk sekarang:** jual BERARTI Arah90 versi awal (workbook di `berarti-ig/produk/`, upgrade gratis ke aplikasi), lalu bangun aplikasi Arah90 versi pertama 4 modul (Baca, Gali, Kanvas, Peta 90). Prompt di `berarti-ig/09-prompt-gemini-canvas.md`.
-4. **Premium:** komunitas, workshop, mentoring 1-on-1. Harga belum final, jangan dijual dulu di konten.
+Semua produk ada di satu situs web, kode di `berarti-app/` (keputusan 24 November 2026). Situs dirilis setelah semua bagian siap.
+1. **BERARTI Index (gratis):** 36 pertanyaan, 6 dimensi, radar, 6 archetype "... Berarti" (Penentu Arah, Penggerak, Penjaga Nilai, Pencari Makna, Pemberi Dampak, Penjelajah). Hasil gratis dibuka setelah isi nama dan email. Kata kunci DM: ARAH.
+2. **BERARTI Signature (Rp49.000):** laporan pribadi (pola khas, titik buta, cara pikir yang perlu digeser, sumber pede yang belum dipakai, 7 hari pertama). Dibayar setelah melihat hasil gratis.
+3. **BERARTI Signature + Arah90 (Rp99.000):** semua isi Signature plus aplikasi web Arah90 selama 12 minggu: Gali (refleksi dengan pertanyaan lanjutan AI), Kanvas (Life Design Canvas), Peta 90 Hari, Cek-in mingguan. Pembeli Signature bisa upgrade Rp50.000 dalam 7 hari. Kata kunci DM: MULAI.
+   - Jangan menjanjikan fitur yang belum ada (Saring, Bio, ebook) di konten, DM, atau halaman jual.
+   - Workbook spreadsheet tidak dijual lagi; disimpan sebagai cadangan internal saja.
+4. **Tool gratis (TOFU):** Pede60 (siapkan omongan 60 detik). Satu tool dulu, yang lain menyusul setelah ada data. Ditutup ajakan tes BERARTI Index.
+5. **Premium:** komunitas, workshop, mentoring 1-on-1. Harga belum final, jangan dijual dulu di konten.
 
 ## 11 archetype
 The Future Leader, The Aligned Builder, The Contributor, The Emerging Builder, The Meaning Seeker, The Drifting Achiever, The People Pleaser, The Overthinker, The Explorer, The Lost Wanderer, The Transitioner.
