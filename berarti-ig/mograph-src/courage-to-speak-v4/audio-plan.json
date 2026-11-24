@@ -1,0 +1,329 @@
+{
+  "durationSeconds": 52.3,
+  "seed": 2411,
+  "sections": [
+    {
+      "start": 0,
+      "end": 5.5,
+      "mood": "curious",
+      "energy": 0.4
+    },
+    {
+      "start": 5.5,
+      "end": 10.0,
+      "mood": "warm",
+      "energy": 0.32
+    },
+    {
+      "start": 10.0,
+      "end": 16.9,
+      "mood": "tense",
+      "energy": 0.34
+    },
+    {
+      "start": 16.9,
+      "end": 21.7,
+      "mood": "suspense",
+      "energy": 0.3
+    },
+    {
+      "start": 21.7,
+      "end": 28.0,
+      "mood": "reflective",
+      "energy": 0.26
+    },
+    {
+      "start": 28.0,
+      "end": 40.3,
+      "mood": "hopeful",
+      "energy": 0.42
+    },
+    {
+      "start": 40.3,
+      "end": 47.8,
+      "mood": "warm",
+      "energy": 0.45
+    },
+    {
+      "start": 47.8,
+      "end": 52.3,
+      "mood": "energetic",
+      "energy": 0.48
+    }
+  ],
+  "intentionalSilences": [],
+  "sfxCues": [
+    {
+      "time": 0.05,
+      "asset": "audio/sfx/tick.wav",
+      "purpose": "timer 10 menit",
+      "gain": 0.14
+    },
+    {
+      "time": 2.3,
+      "asset": "audio/sfx/whoosh.wav",
+      "purpose": "Bimo mengangkat telunjuk",
+      "gain": 0.08
+    },
+    {
+      "time": 2.7,
+      "asset": "audio/sfx/pop.wav",
+      "purpose": "lampu ide muncul",
+      "gain": 0.14
+    },
+    {
+      "time": 2.85,
+      "asset": "audio/sfx/shimmer.wav",
+      "purpose": "lampu menyala",
+      "gain": 0.11
+    },
+    {
+      "time": 5.44,
+      "asset": "audio/sfx/whoosh.wav",
+      "purpose": "potong ke panggung",
+      "gain": 0.12
+    },
+    {
+      "time": 5.62,
+      "asset": "audio/sfx/pop.wav",
+      "purpose": "kartu jam 09:00",
+      "gain": 0.12
+    },
+    {
+      "time": 7.9,
+      "asset": "audio/sfx/pop.wav",
+      "purpose": "awan ide muncul",
+      "gain": 0.12
+    },
+    {
+      "time": 8.94,
+      "asset": "audio/sfx/shimmer.wav",
+      "purpose": "Raka dapat ide",
+      "gain": 0.12
+    },
+    {
+      "time": 10.06,
+      "asset": "audio/sfx/dive.wav",
+      "purpose": "lampu ide meredup",
+      "gain": 0.08
+    },
+    {
+      "time": 12.95,
+      "asset": "audio/sfx/pop.wav",
+      "purpose": "awan sok tahu",
+      "gain": 0.13
+    },
+    {
+      "time": 14.7,
+      "asset": "audio/sfx/whoosh.wav",
+      "purpose": "potong ke Raka",
+      "gain": 0.1
+    },
+    {
+      "time": 15.03,
+      "asset": "audio/sfx/whoosh.wav",
+      "purpose": "tangan naik setengah",
+      "gain": 0.1
+    },
+    {
+      "time": 15.95,
+      "asset": "audio/sfx/dive.wav",
+      "purpose": "tangan turun pelan",
+      "gain": 0.09
+    },
+    {
+      "time": 16.15,
+      "asset": "audio/sfx/impact.wav",
+      "purpose": "stempel DIAM",
+      "gain": 0.16
+    },
+    {
+      "time": 16.82,
+      "asset": "audio/sfx/whoosh.wav",
+      "purpose": "kembali ke rapat",
+      "gain": 0.11
+    },
+    {
+      "time": 17.15,
+      "asset": "audio/sfx/whoosh.wav",
+      "purpose": "Bimo berdiri",
+      "gain": 0.07
+    },
+    {
+      "time": 18.88,
+      "asset": "audio/sfx/shimmer.wav",
+      "purpose": "ide yang mirip",
+      "gain": 0.12
+    },
+    {
+      "time": 20.2,
+      "asset": "audio/sfx/pop.wav",
+      "purpose": "centang 1",
+      "gain": 0.12
+    },
+    {
+      "time": 20.32,
+      "asset": "audio/sfx/pop.wav",
+      "purpose": "centang 2",
+      "gain": 0.11
+    },
+    {
+      "time": 20.5,
+      "asset": "audio/sfx/pop.wav",
+      "purpose": "centang 3",
+      "gain": 0.11
+    },
+    {
+      "time": 21.48,
+      "asset": "audio/sfx/whoosh.wav",
+      "purpose": "iris ke malam",
+      "gain": 0.12
+    },
+    {
+      "time": 21.72,
+      "asset": "audio/sfx/wind.wav",
+      "purpose": "suasana malam",
+      "gain": 0.08
+    },
+    {
+      "time": 24.76,
+      "asset": "audio/sfx/pop.wav",
+      "purpose": "awan pertanyaan",
+      "gain": 0.12
+    },
+    {
+      "time": 27.25,
+      "asset": "audio/sfx/question.wav",
+      "purpose": "TAKUT?",
+      "gain": 0.12
+    },
+    {
+      "time": 27.78,
+      "asset": "audio/sfx/whoosh.wav",
+      "purpose": "iris ke solusi",
+      "gain": 0.12
+    },
+    {
+      "time": 28.75,
+      "asset": "audio/sfx/rise.wav",
+      "purpose": "Lingkaran Berani",
+      "gain": 0.13
+    },
+    {
+      "time": 28.8,
+      "asset": "audio/sfx/shimmer.wav",
+      "purpose": "paham",
+      "gain": 0.13
+    },
+    {
+      "time": 29.55,
+      "asset": "audio/sfx/tap.wav",
+      "purpose": "kartu rendah hati",
+      "gain": 0.16
+    },
+    {
+      "time": 32.9,
+      "asset": "audio/sfx/tap.wav",
+      "purpose": "kartu percaya diri",
+      "gain": 0.16
+    },
+    {
+      "time": 34.56,
+      "asset": "audio/sfx/snap.wav",
+      "purpose": "kepal berani",
+      "gain": 0.12
+    },
+    {
+      "time": 37.1,
+      "asset": "audio/sfx/snap.wav",
+      "purpose": "tanda tambah",
+      "gain": 0.14
+    },
+    {
+      "time": 38.65,
+      "asset": "audio/sfx/whoosh.wav",
+      "purpose": "kartu menyatu",
+      "gain": 0.08
+    },
+    {
+      "time": 40.43,
+      "asset": "audio/sfx/tap.wav",
+      "purpose": "langkah 1",
+      "gain": 0.07
+    },
+    {
+      "time": 40.85,
+      "asset": "audio/sfx/tap.wav",
+      "purpose": "langkah 2",
+      "gain": 0.07
+    },
+    {
+      "time": 41.27,
+      "asset": "audio/sfx/tap.wav",
+      "purpose": "langkah 3",
+      "gain": 0.07
+    },
+    {
+      "time": 42.1,
+      "asset": "audio/sfx/rise.wav",
+      "purpose": "Lingkaran Berani",
+      "gain": 0.1
+    },
+    {
+      "time": 42.96,
+      "asset": "audio/sfx/whoosh.wav",
+      "purpose": "tangan terangkat",
+      "gain": 0.1
+    },
+    {
+      "time": 43.15,
+      "asset": "audio/sfx/pop.wav",
+      "purpose": "gelembung usulan",
+      "gain": 0.13
+    },
+    {
+      "time": 44.15,
+      "asset": "audio/sfx/pop.wav",
+      "purpose": "centang 1",
+      "gain": 0.12
+    },
+    {
+      "time": 44.27,
+      "asset": "audio/sfx/pop.wav",
+      "purpose": "centang 2",
+      "gain": 0.11
+    },
+    {
+      "time": 44.7,
+      "asset": "audio/sfx/whoosh.wav",
+      "purpose": "close-up",
+      "gain": 0.1
+    },
+    {
+      "time": 47.54,
+      "asset": "audio/sfx/whoosh.wav",
+      "purpose": "iris ke penutup",
+      "gain": 0.12
+    },
+    {
+      "time": 47.9,
+      "asset": "audio/sfx/rise.wav",
+      "purpose": "Lingkaran CTA",
+      "gain": 0.1
+    },
+    {
+      "time": 48.78,
+      "asset": "audio/sfx/tap.wav",
+      "purpose": "klik follow",
+      "gain": 0.16
+    },
+    {
+      "time": 51.3,
+      "asset": "audio/sfx/shimmer.wav",
+      "purpose": "penutup",
+      "gain": 0.12
+    }
+  ],
+  "musicSource": "generated-original",
+  "rightsNotes": "Skor latar dibuat lokal dengan npm run score tanpa sampel pihak ketiga. SFX bawaan starter (original)."
+}
