@@ -1,26 +1,32 @@
-# Prompt Gemini Canvas: Landing Page BERARTI v2 (simple, gaya FYI)
+# Prompt Gemini Canvas: Landing Page BERARTI v2 (3 paket, gaya FYI)
 
 Cara pakai: buka Gemini, pilih Canvas, tempel seluruh isi blok di bawah sebagai satu pesan. Setelah jadi, isi semua `{{...}}` di bagian CONFIG paling atas kode.
 
 Sesudah Gemini selesai, cek tiga hal:
 1. Hitung soalnya, harus 36.
 2. Kerjakan tes sampai hasil muncul.
-3. Coba kode akses untuk membuka laporan Signature.
+3. Coba kedua kode akses: kode Signature membuka laporan tanpa Peta 90 Hari, kode Arah90 membuka semuanya.
+4. Pastikan tawaran upgrade Rp50.000 muncul untuk pemilik kode Signature.
 
 ---
 
 ```
-Buatkan satu halaman web lengkap (single-file React + Tailwind, siap jalan di Canvas) untuk BERARTI: landing page, tes 36 pertanyaan, halaman hasil gratis, dan laporan berbayar "BERARTI Signature" yang terkunci kode akses. Semua teks berbahasa Indonesia, santai tapi sopan, sapaan "kamu". Jangan pakai tanda pisah panjang (em dash) dan jangan pakai simbol ampersand di teks yang tampil; pakai koma, titik, atau kata "dan".
+Buatkan satu halaman web lengkap (single-file React + Tailwind, siap jalan di Canvas) untuk BERARTI: landing page, tes 36 pertanyaan, halaman hasil gratis, dan laporan berbayar dalam dua paket (BERARTI Signature dan BERARTI Signature + Arah90) yang dibuka dengan kode akses. Semua teks berbahasa Indonesia, santai tapi sopan, sapaan "kamu". Jangan pakai tanda pisah panjang (em dash) dan jangan pakai simbol ampersand di teks yang tampil; pakai koma, titik, atau kata "dan".
 
 === 1. KONFIGURASI (taruh paling atas kode, mudah diedit) ===
 const CONFIG = {
-  LINK_PEMBAYARAN: "{{LINK_PEMBAYARAN_SIGNATURE}}",   // payment link Rp99.000 dengan pengiriman otomatis
-  URL_APPS_SCRIPT: "{{URL_GOOGLE_APPS_SCRIPT}}",      // endpoint POST untuk simpan data dan kirim email hasil
-  KODE_AKSES: ["{{KODE_AKSES_1}}"],                   // kode yang dikirim setelah bayar (huruf besar, tanpa spasi)
+  LINK_SIGNATURE: "{{LINK_PEMBAYARAN_SIGNATURE_49}}",        // payment link Rp49.000
+  LINK_ARAH90: "{{LINK_PEMBAYARAN_SIGNATURE_ARAH90_99}}",    // payment link Rp99.000
+  LINK_UPGRADE: "{{LINK_PEMBAYARAN_UPGRADE_50}}",            // payment link Rp50.000, khusus pemilik paket Signature
+  URL_APPS_SCRIPT: "{{URL_GOOGLE_APPS_SCRIPT}}",             // endpoint POST untuk simpan data dan kirim email hasil
+  KODE_SIGNATURE: ["{{KODE_SIGNATURE_1}}"],                  // kode setelah bayar Rp49.000 (huruf besar, tanpa spasi)
+  KODE_ARAH90: ["{{KODE_ARAH90_1}}"],                        // kode setelah bayar Rp99.000 atau setelah upgrade
   NOMOR_WA: "{{NOMOR_WA_FORMAT_62}}",
   LINK_INSTAGRAM: "https://instagram.com/firasbyzi",
   NOMOR_LAYANAN_DARURAT: "{{NOMOR_LAYANAN_DARURAT}}",
-  HARGA: "Rp99.000",
+  HARGA_SIGNATURE: "Rp49.000",
+  HARGA_ARAH90: "Rp99.000",
+  HARGA_UPGRADE: "Rp50.000",
   SHOW_TESTIMONIALS: false   // jangan buat testimoni contoh; tampilkan hanya kalau nanti ada yang asli
 };
 Kalau URL_APPS_SCRIPT masih berisi "{{", lewati pengiriman data tanpa error dan tetap tampilkan hasil.
@@ -45,16 +51,20 @@ Kalau URL_APPS_SCRIPT masih berisi "{{", lewati pengiriman data tanpa error dan 
    Di samping atau bawah: lingkaran oranye dengan kartu contoh hasil (archetype "Penggerak Berarti" dan radar chart 6 dimensi, beri label kecil "contoh").
 3. Tiga poin singkat dengan ikon: Kenali dirimu. Lihat arahmu. Mulai langkahmu.
 4. Bagian "6 ARCHETYPE BERARTI": 6 kartu (lihat bagian 6). Tiap kartu: nama, satu kalimat sisi kuat, satu kalimat "tapi..." sisi tumbuh. Di HP bisa digeser ke samping.
-5. Bagian "APA YANG KAMU DAPAT": dua kolom saja.
-   - Kolom GRATIS (Rp0): Archetype kamu. Skor BERARTI Index 0 sampai 100. Radar 6 dimensi. Sumber percaya dirimu. Pemicu ragumu. 1 langkah untuk minggu ini. Kartu hasil untuk Instagram Story.
-   - Kolom BERARTI SIGNATURE (Rp99.000, label "bayar setelah lihat hasil"): semua yang gratis, ditambah Pola Khasmu, Titik Buta, Cara Pikir yang Perlu Digeser, Sumber Pede yang Belum Kamu Pakai, Peta 90 Hari (Arah90), dan Langkah 7 Hari Pertama.
-   - Kalimat kecil di bawah: Kerjakan tesnya dulu. Bayar hanya kalau kamu ingin membuka laporan lengkap.
-6. Bagian "CARA KERJANYA": 4 kartu bernomor. 01 Jawab 36 pertanyaan. 02 Isi nama dan email supaya hasil terkirim. 03 Lihat hasil gratismu. 04 Buka BERARTI Signature kalau kamu ingin rencana 90 hari.
+5. Bagian "PILIH YANG KAMU BUTUHKAN": tiga kartu paket berdampingan (di HP bertumpuk, paket Rp99.000 tampil paling menonjol: border oranye tebal dan pita "Rekomendasi"). Tiap kartu berisi daftar dengan centang hijau untuk yang didapat dan tanda silang abu-abu untuk yang tidak:
+   - BERARTI INDEX, Rp0, "Kenali pola arahmu." Dapat: archetype, skor BERARTI Index 0 sampai 100, radar 6 dimensi, sumber percaya diri, pemicu ragu, 1 langkah minggu ini, kartu hasil Instagram Story. Tidak dapat: semua isi laporan. Tombol: Mulai Tes Gratis.
+   - BERARTI SIGNATURE, Rp49.000, "Pahami pola khasmu." Dapat: semua isi Index, ditambah Pola Khasmu, Titik Buta, Cara Pikir yang Perlu Digeser, Sumber Pede yang Belum Kamu Pakai, Langkah 7 Hari Pertama. Tidak dapat: Peta 90 Hari, upgrade aplikasi Arah90. Tombol: Mulai Tes Dulu.
+   - BERARTI SIGNATURE + ARAH90, Rp99.000, "Ubah hasil jadi rencana 90 hari." Dapat: semua isi Signature, ditambah Peta 90 Hari (12 minggu dengan cek-in mingguan) dan upgrade gratis ke aplikasi Arah90 saat sudah jadi. Tombol: Mulai Tes Dulu.
+   - Kalimat kecil di bawah ketiga kartu: Kerjakan tesnya dulu. Bayar hanya kalau kamu ingin membuka laporan setelah melihat hasilmu.
+   - Semua tombol di bagian ini membawa ke tes, bukan ke pembayaran. Pembayaran hanya ada di halaman hasil.
+6. Bagian "CARA KERJANYA": 4 kartu bernomor. 01 Jawab 36 pertanyaan. 02 Isi nama dan email supaya hasil terkirim. 03 Lihat hasil gratismu. 04 Pilih paket kalau kamu ingin laporan lengkap atau rencana 90 hari.
 7. Bagian "DI BALIK TES INI": kotak foto (placeholder abu-abu bertuliskan "Foto Firas") dan teks: "Tes ini disusun oleh Firas Byzi untuk membantu kamu mengenal diri, menyaring arah, dan mulai melangkah. Ini tes refleksi diri, bukan tes psikologi klinis dan bukan diagnosis."
 8. Testimoni: hanya dirender kalau CONFIG.SHOW_TESTIMONIALS true. Jangan isi contoh.
 9. FAQ (accordion):
    - Berapa lama tesnya? Sekitar 6 menit untuk 36 pertanyaan.
-   - Apakah gratis? Tes dan hasil dasarnya gratis. Laporan BERARTI Signature Rp99.000, opsional, dibayar setelah kamu melihat hasil.
+   - Apakah gratis? Tes dan hasil dasarnya gratis. Laporan berbayar opsional: BERARTI Signature Rp49.000, atau Signature + Arah90 Rp99.000. Dibayar setelah kamu melihat hasil.
+   - Apa bedanya Signature dan Signature + Arah90? Signature menjelaskan pola khas dan titik butamu. Signature + Arah90 menambahkan Peta 90 Hari supaya hasil itu jadi langkah nyata selama 12 minggu.
+   - Sudah beli Signature, bisa upgrade? Bisa. Dalam 7 hari setelah membeli, tambah Rp50.000 untuk membuka Peta 90 Hari.
    - Apakah ini tes psikologi? Bukan. Ini tes refleksi diri untuk mengenal pola arah hidupmu, bukan diagnosis.
    - Data saya dipakai untuk apa? Untuk mengirim hasilmu dan info dari BERARTI. Kamu bisa minta berhenti atau minta datamu dihapus kapan saja lewat WhatsApp.
    - Apakah hasil bisa berubah? Bisa. Hasilnya menggambarkan kondisimu sekarang. Coba lagi setelah 90 hari.
@@ -162,11 +172,17 @@ Urutan:
    RM: Setiap malam selama 7 hari, tulis satu hal yang hari ini terasa berarti.
    TI: Bantu satu orang minggu ini dengan kemampuan yang kamu punya, sekecil apa pun.
 7. Tombol "Unduh kartu Story": buat gambar 1080x1920 dengan canvas (latar krem, Lingkaran Berani oranye, nama archetype, radar kecil, skor, tulisan "#jadiberarti" dan "@firasbyzi"), lalu unduh sebagai PNG.
-8. Bagian terkunci "BERARTI SIGNATURE": tampilkan judul 6 bagian laporan (lihat bagian 8) dengan isi diburamkan (blur), ikon gembok, lalu:
+8. Bagian terkunci "LAPORAN LENGKAPMU": tampilkan judul 6 bagian laporan (lihat bagian 8) dengan isi diburamkan (blur) dan ikon gembok, lalu:
    Judul: BUKA LAPORAN LENGKAPMU
-   Teks: Pola khas, titik buta, dan Peta 90 Hari yang disusun dari jawabanmu sendiri.
-   Tombol utama: "Buka BERARTI Signature Rp99rb" (buka CONFIG.LINK_PEMBAYARAN di tab baru).
-   Di bawahnya kolom "Sudah bayar? Masukkan kode akses" dan tombol "Buka". Kode dicocokkan dengan CONFIG.KODE_AKSES (tidak peka huruf besar kecil). Kalau cocok, buka laporan dan simpan status terbuka ke localStorage. Kalau salah, tampilkan "Kode belum cocok. Cek pesan setelah pembayaran atau hubungi kami di WhatsApp."
+   Teks: Pola khas, titik buta, dan rencana yang disusun dari jawabanmu sendiri.
+   Dua kartu pilihan berdampingan (di HP bertumpuk, Rp99.000 di atas dengan pita "Rekomendasi"):
+   - BERARTI SIGNATURE + ARAH90, Rp99.000: laporan lengkap dan Peta 90 Hari. Tombol utama oranye "Ambil Signature + Arah90 Rp99rb" (buka CONFIG.LINK_ARAH90 di tab baru).
+   - BERARTI SIGNATURE, Rp49.000: laporan lengkap tanpa Peta 90 Hari. Tombol sekunder bergaris "Ambil Signature Rp49rb" (buka CONFIG.LINK_SIGNATURE di tab baru).
+   Di bawahnya kolom "Sudah bayar? Masukkan kode akses" dan tombol "Buka". Cocokkan kode (tidak peka huruf besar kecil):
+   - Ada di CONFIG.KODE_ARAH90: buka semua bagian laporan. Simpan paket "arah90" ke localStorage.
+   - Ada di CONFIG.KODE_SIGNATURE: buka semua bagian kecuali Peta 90 Hari. Simpan paket "signature" ke localStorage beserta tanggal kode dimasukkan.
+   - Tidak cocok: tampilkan "Kode belum cocok. Cek pesan setelah pembayaran atau hubungi kami di WhatsApp."
+   Kalau paket sudah tersimpan di localStorage, langsung tampilkan laporan sesuai paket saat halaman hasil dibuka lagi.
 9. Tombol sekunder "Kirim hasilku ke WhatsApp" yang membuka wa.me ke CONFIG.NOMOR_WA dengan pesan berisi archetype dan skor.
 
 === 8. LAPORAN BERARTI SIGNATURE (setelah kode benar) ===
@@ -175,15 +191,20 @@ Disusun dari archetype dan dimensi terendah. Tulis isinya sendiri mengikuti atur
 2. Titik Buta: 3 kalimat per archetype, jujur tapi tidak menghakimi.
 3. Cara Pikir yang Perlu Digeser: 3 pasangan "Dari: ... Ke: ..." per archetype.
 4. Sumber Pede yang Belum Kamu Pakai: berdasarkan dimensi terendah kedua, 2 kalimat.
-5. Peta 90 Hari (Arah90): berdasarkan dimensi terendah, 3 fase (Hari 1 sampai 30, 31 sampai 60, 61 sampai 90), tiap fase 1 fokus dan 2 aksi mingguan yang konkret dan bisa diukur.
+5. Peta 90 Hari (Arah90), hanya untuk paket "arah90": berdasarkan dimensi terendah, 3 fase (Hari 1 sampai 30, 31 sampai 60, 61 sampai 90), tiap fase 1 fokus dan 2 aksi mingguan yang konkret dan bisa diukur.
 6. Langkah 7 Hari Pertama: checklist 7 hari yang bisa dicentang (status disimpan ke localStorage).
 Aturan isi: tidak menjanjikan hasil pasti, tidak memakai dalil agama sebagai dasar klaim, refleksi iman hanya sebagai pilihan ("kalau kamu nyaman..."), bahasa sederhana, kalimat pendek.
+Untuk paket "signature", bagian Peta 90 Hari tetap tampil buram dengan gembok dan kartu upgrade:
+   Judul: TINGGAL SATU LANGKAH LAGI
+   Teks: Laporanmu sudah terbuka. Tambah Rp50.000 untuk mengubahnya jadi Peta 90 Hari.
+   Tombol: "Upgrade ke Arah90 Rp50rb" (buka CONFIG.LINK_UPGRADE). Tampilkan sisa hari dari batas 7 hari sejak kode Signature dimasukkan. Setelah 7 hari, ganti tombolnya jadi "Ambil Arah90" yang membuka CONFIG.LINK_ARAH90. Kode dari upgrade dimasukkan di kolom kode akses yang sama dan cocok dengan CONFIG.KODE_ARAH90.
 Tambahkan tombol "Cetak atau simpan PDF" (window.print dengan gaya cetak yang rapi).
 
 === 9. LARANGAN ===
 - Jangan membuat testimoni, jumlah pengguna, rating, logo media, atau klaim ilmiah yang tidak ada.
 - Jangan menulis "tes psikologi". Tulis "tes refleksi diri".
-- Jangan menampilkan mentoring, komunitas, atau harga lain selain Rp99.000.
+- Jangan menampilkan mentoring, komunitas, atau harga lain selain Rp49.000, Rp99.000, dan upgrade Rp50.000.
+- Jangan menulis "Paling dipilih", "Terlaris", atau angka pembeli. Label yang boleh hanya "Rekomendasi".
 - Jangan memakai library chart eksternal; radar chart buat dengan SVG.
 ```
 
@@ -193,10 +214,14 @@ Tambahkan tombol "Cetak atau simpan PDF" (window.print dengan gaya cetak yang ra
 
 | Isian | Dari mana |
 | --- | --- |
-| `{{LINK_PEMBAYARAN_SIGNATURE}}` | Payment link Rp99.000 dari platform pembayaranmu. Atur pesan terima kasih otomatis berisi kode akses dan link Peta 90 Hari versi workbook |
+| `{{LINK_PEMBAYARAN_SIGNATURE_49}}` | Payment link Rp49.000. Pesan terima kasih otomatis berisi kode Signature dan info upgrade Rp50.000 dalam 7 hari |
+| `{{LINK_PEMBAYARAN_SIGNATURE_ARAH90_99}}` | Payment link Rp99.000. Pesan terima kasih otomatis berisi kode Arah90 dan link workbook Peta 90 Hari |
+| `{{LINK_PEMBAYARAN_UPGRADE_50}}` | Payment link Rp50.000 khusus upgrade. Pesan terima kasih berisi kode Arah90 dan link workbook |
 | `{{URL_GOOGLE_APPS_SCRIPT}}` | Web app Apps Script yang menyimpan data ke Google Sheets dan mengirim email hasil. Saya bisa tuliskan kodenya terpisah |
-| `{{KODE_AKSES_1}}` | Kode yang kamu tentukan sendiri, misalnya diganti tiap bulan |
+| `{{KODE_SIGNATURE_1}}` dan `{{KODE_ARAH90_1}}` | Dua kode berbeda yang kamu tentukan sendiri, misalnya diganti tiap bulan |
 | `{{NOMOR_WA_FORMAT_62}}` | Nomor WhatsApp BERARTI |
 | `{{NOMOR_LAYANAN_DARURAT}}` | Nomor layanan krisis yang berlaku di Indonesia, cek sendiri sebelum tayang |
+
+Catatan soal upgrade: batas 7 hari dihitung di perangkat pembeli, jadi hanya pengingat, bukan kunci. Kalau ada yang minta upgrade setelah 7 hari, kamu yang memutuskan.
 
 Catatan jujur soal kode akses: kode yang dicek di dalam halaman bisa ditemukan oleh orang yang paham teknis. Untuk volume sekarang risikonya kecil. Kalau penjualan sudah puluhan per hari, pindahkan pengecekan kode ke Apps Script.
