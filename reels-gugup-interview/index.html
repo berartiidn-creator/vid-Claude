@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1080, height=1920" />
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.15.0/dist/gsap.min.js"></script>
+    <style>
+      :root {
+        --ground: #ffc93c;
+        --ink: #141414;
+        --accent: #c62a12;
+        --paper: #fffdf7;
+        --font-display: "Archivo Black", sans-serif;
+        --font-body: "Inter", sans-serif;
+      }
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      html,
+      body {
+        margin: 0;
+        width: 1080px;
+        height: 1920px;
+        overflow: hidden;
+        background: var(--ground);
+      }
+      #root {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        background: var(--ground);
+        font-family: var(--font-body);
+      }
+      #paper-grain {
+        position: absolute;
+        inset: 0;
+        z-index: 50;
+        pointer-events: none;
+        opacity: 0.06;
+        mix-blend-mode: multiply;
+        background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='400' height='400'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' seed='7'/><feColorMatrix values='0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 1 0'/></filter><rect width='400' height='400' filter='url(%23n)'/></svg>");
+        background-size: 400px 400px;
+      }
+    </style>
+  </head>
+  <body>
+    <div
+      id="root"
+      data-composition-id="main"
+      data-start="0"
+      data-duration="28.4"
+      data-width="1080"
+      data-height="1920"
+    >
+      <div id="s1" data-composition-id="s1" data-composition-src="compositions/s1-hook.html"
+        data-start="0" data-duration="2.9" data-track-index="1" data-track-kind="graphics"
+        data-width="1080" data-height="1920" style="z-index: 1"></div>
+      <div id="s2" data-composition-id="s2" data-composition-src="compositions/s2-meja.html"
+        data-start="2.9" data-duration="5.6" data-track-index="1" data-track-kind="graphics"
+        data-width="1080" data-height="1920" style="z-index: 1"></div>
+      <div id="s3" data-composition-id="s3" data-composition-src="compositions/s3-twist.html"
+        data-start="8.5" data-duration="5.4" data-track-index="1" data-track-kind="graphics"
+        data-width="1080" data-height="1920" style="z-index: 1"></div>
+      <div id="s4" data-composition-id="s4" data-composition-src="compositions/s4-napas.html"
+        data-start="13.9" data-duration="2.5" data-track-index="1" data-track-kind="graphics"
+        data-width="1080" data-height="1920" style="z-index: 1"></div>
+      <div id="s5" data-composition-id="s5" data-composition-src="compositions/s5-semangat.html"
+        data-start="16.4" data-duration="2.6" data-track-index="1" data-track-kind="graphics"
+        data-width="1080" data-height="1920" style="z-index: 1"></div>
+      <div id="s6" data-composition-id="s6" data-composition-src="compositions/s6-nama.html"
+        data-start="19" data-duration="2.8" data-track-index="1" data-track-kind="graphics"
+        data-width="1080" data-height="1920" data-variable-values='{"nama":"Firas"}' style="z-index: 1"></div>
+      <div id="s7" data-composition-id="s7" data-composition-src="compositions/s7-cta.html"
+        data-start="21.8" data-duration="3.7" data-track-index="1" data-track-kind="graphics"
+        data-width="1080" data-height="1920" style="z-index: 1"></div>
+      <div id="s8" data-composition-id="s8" data-composition-src="compositions/s8-loop.html"
+        data-start="25.5" data-duration="2.9" data-track-index="1" data-track-kind="graphics"
+        data-width="1080" data-height="1920" style="z-index: 1"></div>
+
+      <div id="captions" data-composition-id="captions" data-composition-src="compositions/captions.html"
+        data-start="0" data-duration="28.4" data-track-index="2" data-track-kind="captions"
+        data-width="1080" data-height="1920" style="z-index: 20"></div>
+
+      <div id="paper-grain" data-layout-ignore></div>
+
+      <audio id="vo" class="clip" src="assets/audio/vo.mp3" data-start="0" data-duration="28.19"
+        data-track-index="10" data-volume="1"></audio>
+      <audio id="bgm" class="clip" src="assets/audio/bgm-lofi-95.mp3" data-start="0" data-duration="28.4"
+        data-track-index="11" data-volume="0.12" data-fade-in="0.3" data-fade-out="0.8"></audio>
+
+      <audio id="sfx-tick" class="clip" src="assets/audio/key-press.mp3" data-start="2.93" data-duration="0.4"
+        data-track-index="12" data-volume="0.35"></audio>
+      <audio id="sfx-flood1" class="clip" src="assets/audio/whoosh-short.mp3" data-start="8.1" data-duration="0.57"
+        data-track-index="12" data-volume="0.4"></audio>
+      <audio id="sfx-stamp" class="clip" src="assets/audio/pop.mp3" data-start="12.6" data-duration="0.6"
+        data-track-index="12" data-volume="0.45"></audio>
+      <audio id="sfx-flood2" class="clip" src="assets/audio/whoosh.mp3" data-start="13.5" data-duration="0.57"
+        data-track-index="12" data-volume="0.35"></audio>
+      <audio id="sfx-card" class="clip" src="assets/audio/pop.mp3" data-start="17.16" data-duration="0.6"
+        data-track-index="12" data-volume="0.4"></audio>
+      <audio id="sfx-follow" class="clip" src="assets/audio/pop.mp3" data-start="21.9" data-duration="0.6"
+        data-track-index="12" data-volume="0.45"></audio>
+      <audio id="sfx-flood3" class="clip" src="assets/audio/whoosh-short.mp3" data-start="25.22" data-duration="0.57"
+        data-track-index="12" data-volume="0.4"></audio>
+    </div>
+    <script>
+      window.__timelines = window.__timelines || {};
+      const tl = gsap.timeline({ paused: true });
+      window.__timelines["main"] = tl;
+    </script>
+  </body>
+</html>

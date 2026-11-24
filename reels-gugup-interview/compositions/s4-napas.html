@@ -1,0 +1,47 @@
+<template>
+  <style>
+    #root { position: absolute; inset: 0; overflow: hidden; background: #ffc93c; }
+    #s4-stage { position: absolute; inset: 0; }
+    #s4-h { position: absolute; left: 120px; top: 300px; width: 720px; }
+    #s4-h .ln { display: block; font-family: "Archivo Black", sans-serif; font-size: 96px; line-height: 1; color: #141414; }
+    #s4-h #s4-n { color: #c62a12; }
+    #s4-circle { position: absolute; left: 330px; top: 680px; width: 240px; height: 240px; border-radius: 50%;
+      background: #fffdf7; border: 6px solid #141414; box-shadow: 12px 12px 0 #141414; }
+    #s4-in, #s4-out { position: absolute; left: 280px; top: 760px; width: 340px; text-align: center;
+      font-family: "Archivo Black", sans-serif; font-size: 58px; line-height: 80px; color: #141414; }
+    #s4-sub { position: absolute; left: 120px; top: 1050px; font-family: "Inter", sans-serif; font-weight: 900;
+      font-size: 44px; color: #141414; }
+  </style>
+  <div id="root" data-composition-id="s4" data-width="1080" data-height="1920">
+    <div id="s4-stage">
+      <div id="s4-h">
+        <span class="ln" id="s4-n">1.</span>
+        <span class="ln" id="s4-t">Napas pelan</span>
+      </div>
+      <div id="s4-circle"></div>
+      <div id="s4-in">masuk</div>
+      <div id="s4-out">keluar</div>
+      <div id="s4-sub">5 detik masuk, 5 keluar</div>
+    </div>
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    const blurIn = (sel, at) =>
+      tl.fromTo(sel, { opacity: 0, filter: "blur(6px)" },
+        { opacity: 1, filter: "blur(0px)", duration: 0.13, ease: "power4.out" }, at);
+    const blurOut = (sel, at) =>
+      tl.to(sel, { opacity: 0, filter: "blur(8px)", duration: 0.15, ease: "power2.in" }, at);
+
+    tl.set("#s4-n", { opacity: 1 }, 0);
+    blurIn("#s4-t", 0.3);
+    tl.fromTo("#s4-circle", { opacity: 0, scale: 0.6 }, { opacity: 1, scale: 1, duration: 0.4, ease: "expo.out" }, 0.3);
+    tl.to("#s4-circle", { scale: 1.8, duration: 0.8, ease: "sine.inOut" }, 0.86);
+    tl.to("#s4-circle", { scale: 1, duration: 0.72, ease: "sine.inOut" }, 1.68);
+    blurIn("#s4-in", 0.88);
+    blurOut("#s4-in", 1.56);
+    blurIn("#s4-out", 1.72);
+    blurIn("#s4-sub", 0.55);
+    blurOut("#s4-stage", 2.34);
+    window.__timelines["s4"] = tl;
+  </script>
+</template>

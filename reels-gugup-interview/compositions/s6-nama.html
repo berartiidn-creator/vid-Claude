@@ -1,0 +1,64 @@
+<template>
+  <style>
+    #root { position: absolute; inset: 0; overflow: hidden; background: #ffc93c; }
+    #s6-stage { position: absolute; inset: 0; }
+    #s6-h { position: absolute; left: 120px; top: 300px; width: 720px; }
+    #s6-h .ln { display: block; font-family: "Archivo Black", sans-serif; font-size: 92px; line-height: 1; color: #141414; }
+    #s6-h .n { color: #c62a12; }
+    #s6-mirror { position: absolute; left: 280px; top: 540px; width: 340px; height: 450px; }
+    #s6-glass { position: absolute; inset: 0; border-radius: 50%; background: #d9e2e8; border: 10px solid #141414;
+      box-shadow: 12px 12px 0 #141414; overflow: hidden; }
+    #s6-shine { position: absolute; left: -160px; top: 0; width: 120px; height: 100%; }
+    #s6-streak { position: absolute; left: 0; top: -120px; width: 70px; height: 700px; background: #ffffff;
+      opacity: 0.75; transform: rotate(28deg); }
+    #s6-edge { position: absolute; inset: 14px; border-radius: 50%; border: 4px solid #ffffff; opacity: 0.8; }
+    #s6-say { position: absolute; left: 0; top: 120px; width: 340px; text-align: center; }
+    #s6-say .ln { display: block; font-family: "Archivo Black", sans-serif; font-size: 62px; line-height: 1.05; color: #141414; }
+    #s6-leg { position: absolute; left: 438px; top: 990px; width: 24px; height: 34px; background: #141414; }
+    #s6-base { position: absolute; left: 360px; top: 1020px; width: 180px; height: 24px; background: #141414; border-radius: 8px; }
+    #s6-flood { position: absolute; inset: 0; background: #141414; }
+  </style>
+  <div id="root" data-composition-id="s6" data-width="1080" data-height="1920"
+    data-composition-variables='[{"id":"nama","type":"string","label":"Nama di cermin","default":"Firas"}]'>
+    <div id="s6-stage">
+      <div id="s6-h">
+        <span class="ln"><span class="n">3.</span> <span id="s6-h1">Ngomong</span></span>
+        <span class="ln" id="s6-h2">pakai nama</span>
+      </div>
+      <div id="s6-leg"></div>
+      <div id="s6-base"></div>
+      <div id="s6-mirror">
+        <div id="s6-glass">
+          <div id="s6-shine" data-layout-ignore><div id="s6-streak"></div></div>
+          <div id="s6-edge"></div>
+        </div>
+        <div id="s6-say" data-layout-allow-overlap>
+          <span class="ln" id="s6-l1">Oke</span>
+          <span class="ln" id="s6-l2"><span data-var-text="nama">Firas</span>,</span>
+          <span class="ln" id="s6-l3">siap.</span>
+        </div>
+      </div>
+    </div>
+    <div id="s6-flood"></div>
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    const blurIn = (sel, at) =>
+      tl.fromTo(sel, { opacity: 0, filter: "blur(6px)" },
+        { opacity: 1, filter: "blur(0px)", duration: 0.13, ease: "power4.out" }, at);
+
+    tl.fromTo("#s6-stage", { y: 90, filter: "blur(10px)" }, { y: 0, filter: "blur(0px)", duration: 0.35, ease: "expo.out" }, 0);
+    tl.set("#s6-h1, #s6-h2", { opacity: 0 }, 0);
+    blurIn("#s6-h1", 0.66);
+    blurIn("#s6-h2", 1.34);
+    tl.fromTo("#s6-mirror, #s6-leg, #s6-base", { opacity: 0, y: 60 }, { opacity: 1, y: 0, duration: 0.5, ease: "expo.out" }, 0.45);
+    tl.fromTo("#s6-shine", { x: 0 }, { x: 560, duration: 0.55, ease: "power2.inOut" }, 1.8);
+    tl.set("#s6-l1, #s6-l2, #s6-l3", { opacity: 0 }, 0);
+    blurIn("#s6-l1", 1.84);
+    blurIn("#s6-l2", 2.1);
+    blurIn("#s6-l3", 2.37);
+    tl.fromTo("#s6-flood", { clipPath: "circle(0% at 450px 765px)" },
+      { clipPath: "circle(150% at 450px 765px)", duration: 0.18, ease: "power2.in" }, 2.62);
+    window.__timelines["s6"] = tl;
+  </script>
+</template>

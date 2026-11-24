@@ -1,0 +1,49 @@
+<template>
+  <style>
+    #root { position: absolute; inset: 0; overflow: hidden; background: #ffc93c; }
+    #s5-stage { position: absolute; inset: 0; }
+    #s5-h { position: absolute; left: 120px; top: 300px; font-family: "Archivo Black", sans-serif;
+      font-size: 96px; line-height: 1; color: #141414; }
+    #s5-h .n { color: #c62a12; }
+    #s5-card { position: absolute; left: 120px; top: 470px; width: 640px; padding: 34px 40px 40px;
+      background: #fffdf7; border: 5px solid #141414; border-radius: 18px; box-shadow: 12px 12px 0 #141414; }
+    #s5-card .ln { display: block; font-family: "Archivo Black", sans-serif; font-size: 104px; line-height: 1;
+      color: #c62a12; }
+    #s5-not { position: absolute; left: 120px; top: 810px; font-family: "Inter", sans-serif; font-weight: 900;
+      font-size: 44px; color: #141414; }
+    #s5-calm { position: absolute; left: 120px; top: 874px; }
+    #s5-calm-t { font-family: "Archivo Black", sans-serif; font-size: 58px; line-height: 1; color: #141414; }
+    #s5-strike { position: absolute; left: -8px; right: -8px; top: 24px; height: 12px; background: #c62a12;
+      border-radius: 6px; }
+  </style>
+  <div id="root" data-composition-id="s5" data-width="1080" data-height="1920">
+    <div id="s5-stage">
+      <div id="s5-h"><span class="n">2.</span> <span id="s5-hb">Bilang:</span></div>
+      <div id="s5-card">
+        <span class="ln">aku</span>
+        <span class="ln">semangat</span>
+      </div>
+      <div id="s5-not">bukan:</div>
+      <div id="s5-calm" data-layout-allow-overlap>
+        <span id="s5-calm-t">aku harus tenang</span>
+        <div id="s5-strike"></div>
+      </div>
+    </div>
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    const blurIn = (sel, at) =>
+      tl.fromTo(sel, { opacity: 0, filter: "blur(6px)" },
+        { opacity: 1, filter: "blur(0px)", duration: 0.13, ease: "power4.out" }, at);
+
+    tl.fromTo("#s5-stage", { filter: "blur(8px)" }, { filter: "blur(0px)", duration: 0.13, ease: "power2.out" }, 0);
+    blurIn("#s5-hb", 0.46);
+    tl.fromTo("#s5-card", { opacity: 0, y: 70, rotation: 2 },
+      { opacity: 1, y: 0, rotation: 0, duration: 0.4, ease: "back.out(1.6)" }, 0.72);
+    blurIn("#s5-not", 1.32);
+    blurIn("#s5-calm-t", 1.36);
+    tl.fromTo("#s5-strike", { scaleX: 0, transformOrigin: "0% 50%" }, { scaleX: 1, duration: 0.22, ease: "expo.out" }, 2.2);
+    tl.to("#s5-stage", { y: -80, opacity: 0, filter: "blur(10px)", duration: 0.12, ease: "power3.in" }, 2.47);
+    window.__timelines["s5"] = tl;
+  </script>
+</template>

@@ -1,0 +1,43 @@
+<template>
+  <style>
+    #root { position: absolute; inset: 0; overflow: hidden; background: #141414; }
+    #s7-btn { position: absolute; left: 120px; top: 300px; width: 420px; height: 124px; background: #fffdf7;
+      border: 5px solid #fffdf7; border-radius: 18px; display: flex; align-items: center; justify-content: center;
+      font-family: "Archivo Black", sans-serif; font-size: 66px; color: #141414; }
+    #s7-big { position: absolute; left: 120px; top: 490px; font-family: "Archivo Black", sans-serif;
+      font-size: 132px; line-height: 1; color: #ffc93c; }
+    #s7-lines { position: absolute; left: 120px; top: 660px; width: 660px; }
+    #s7-lines .ln { display: block; font-family: "Archivo Black", sans-serif; font-size: 84px; line-height: 1.04; color: #fffdf7; }
+    #s7-lines .acc { color: #c62a12; }
+    #s7-flood { position: absolute; inset: 0; background: #ffc93c; }
+  </style>
+  <div id="root" data-composition-id="s7" data-width="1080" data-height="1920">
+    <div id="s7-btn">Follow</div>
+    <div id="s7-big"><span id="s7-b1">Bagian</span> <span id="s7-b2">2</span></div>
+    <div id="s7-lines">
+      <span class="ln" id="s7-l1">cara jawab</span>
+      <span class="ln acc" id="s7-l2">"gaji yang</span>
+      <span class="ln acc" id="s7-l3">diharapkan"</span>
+    </div>
+    <div id="s7-flood"></div>
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    const blurIn = (sel, at) =>
+      tl.fromTo(sel, { opacity: 0, filter: "blur(6px)" },
+        { opacity: 1, filter: "blur(0px)", duration: 0.13, ease: "power4.out" }, at);
+
+    tl.fromTo("#s7-btn", { opacity: 0, scale: 0.7, boxShadow: "12px 12px 0 #ffc93c" },
+      { opacity: 1, scale: 1, boxShadow: "12px 12px 0 #ffc93c", duration: 0.32, ease: "back.out(1.8)" }, 0.04);
+    tl.to("#s7-btn", { x: 8, y: 8, boxShadow: "4px 4px 0 #ffc93c", duration: 0.08, ease: "power2.in" }, 0.42);
+    tl.to("#s7-btn", { x: 0, y: 0, boxShadow: "12px 12px 0 #ffc93c", duration: 0.22, ease: "expo.out" }, 0.52);
+    blurIn("#s7-b1", 0.64);
+    blurIn("#s7-b2", 1.02);
+    blurIn("#s7-l1", 1.54);
+    blurIn("#s7-l2", 2.38);
+    blurIn("#s7-l3", 2.84);
+    tl.fromTo("#s7-flood", { clipPath: "inset(0% 0% 100% 0%)" },
+      { clipPath: "inset(0% 0% 0% 0%)", duration: 0.24, ease: "power2.in" }, 3.44);
+    window.__timelines["s7"] = tl;
+  </script>
+</template>

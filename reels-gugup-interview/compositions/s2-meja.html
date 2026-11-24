@@ -1,0 +1,122 @@
+<template>
+  <style>
+    #root { position: absolute; inset: 0; overflow: hidden; background: #ffc93c; }
+    .s2-paper { background: #fffdf7; border: 5px solid #141414; border-radius: 18px; box-shadow: 12px 12px 0 #141414; }
+    #s2-stage { position: absolute; inset: 0; }
+    #s2-bubble { position: absolute; left: 120px; top: 300px; width: 660px; padding: 30px 36px 34px; }
+    #s2-bubble .w { font-family: "Archivo Black", sans-serif; font-size: 66px; line-height: 1.05; color: #141414; }
+    #s2-tail { position: absolute; right: 150px; bottom: -30px; width: 52px; height: 52px; background: #fffdf7;
+      border-right: 5px solid #141414; border-bottom: 5px solid #141414; transform: rotate(45deg); }
+    #s2-hrd { position: absolute; left: 470px; top: 560px; width: 300px; height: 380px; }
+    #s2-headc { position: absolute; left: 70px; top: 0; width: 160px; height: 160px; border-radius: 50%; }
+    .s2-eye { position: absolute; top: 66px; width: 18px; height: 18px; border-radius: 50%; background: #141414; }
+    #s2-eye-l { left: 46px; } #s2-eye-r { left: 92px; }
+    #s2-body { position: absolute; left: 0; top: 150px; width: 300px; height: 240px; border-radius: 90px 90px 18px 18px; }
+    #s2-desk { position: absolute; left: 120px; top: 860px; width: 660px; height: 120px; }
+    #s2-plate { position: absolute; left: 530px; top: 792px; width: 190px; height: 70px; background: #141414;
+      border-radius: 12px; color: #ffc93c; font-family: "Archivo Black", sans-serif; font-size: 40px;
+      display: flex; align-items: center; justify-content: center; }
+    #s2-thermo { position: absolute; left: 160px; top: 640px; width: 84px; height: 226px; }
+    #s2-tube { position: absolute; left: 17px; top: 0; width: 50px; height: 170px; border-radius: 28px; overflow: hidden; }
+    #s2-merc { position: absolute; left: 10px; bottom: 0; width: 20px; height: 160px; background: #c62a12; border-radius: 10px; }
+    #s2-bulb { position: absolute; left: 0; top: 146px; width: 84px; height: 84px; border-radius: 50%; background: #c62a12;
+      border: 5px solid #141414; }
+    #s2-cold { position: absolute; left: 268px; top: 690px; width: 190px; font-family: "Inter", sans-serif;
+      font-weight: 900; font-size: 46px; line-height: 1.05; color: #141414; }
+    #s2-wave { position: absolute; left: 120px; top: 620px; width: 320px; height: 230px; padding: 26px 24px; }
+    #s2-bars { display: flex; align-items: center; gap: 9px; height: 110px; }
+    .s2-bar { width: 12px; height: 100px; background: #141414; border-radius: 6px; }
+    #s2-wlabel { margin-top: 18px; font-family: "Inter", sans-serif; font-weight: 900; font-size: 34px; color: #141414; }
+    #s2-q { position: absolute; left: 120px; top: 300px; width: 700px; }
+    #s2-q .ln { display: block; font-family: "Archivo Black", sans-serif; font-size: 90px; line-height: 1; color: #141414; }
+    #s2-q #s2-q2 { color: #c62a12; }
+    #s2-flood { position: absolute; inset: 0; background: #c62a12; }
+  </style>
+  <div id="root" data-composition-id="s2" data-width="1080" data-height="1920">
+    <div id="s2-stage">
+      <div id="s2-hrd">
+        <div id="s2-body" class="s2-paper"></div>
+        <div id="s2-headc" class="s2-paper">
+          <div class="s2-eye" id="s2-eye-l"></div>
+          <div class="s2-eye" id="s2-eye-r"></div>
+        </div>
+      </div>
+      <div id="s2-desk" class="s2-paper"></div>
+      <div id="s2-plate">HRD</div>
+
+      <div id="s2-bubble" class="s2-paper">
+        <div id="s2-tail"></div>
+        <span class="w" id="s2-b1">Silakan</span> <span class="w" id="s2-b2">perkenalkan</span> <span class="w" id="s2-b3">diri.</span>
+      </div>
+
+      <div id="s2-thermo">
+        <div id="s2-tube" class="s2-paper"><div id="s2-merc"></div></div>
+        <div id="s2-bulb"></div>
+      </div>
+      <div id="s2-cold">tangan dingin</div>
+
+      <div id="s2-wave" class="s2-paper">
+        <div id="s2-bars">
+          <div class="s2-bar" id="s2-bar0"></div><div class="s2-bar" id="s2-bar1"></div>
+          <div class="s2-bar" id="s2-bar2"></div><div class="s2-bar" id="s2-bar3"></div>
+          <div class="s2-bar" id="s2-bar4"></div><div class="s2-bar" id="s2-bar5"></div>
+          <div class="s2-bar" id="s2-bar6"></div><div class="s2-bar" id="s2-bar7"></div>
+          <div class="s2-bar" id="s2-bar8"></div><div class="s2-bar" id="s2-bar9"></div>
+          <div class="s2-bar" id="s2-bar10"></div><div class="s2-bar" id="s2-bar11"></div>
+        </div>
+        <div id="s2-wlabel">suara goyang</div>
+      </div>
+
+      <div id="s2-q">
+        <span class="ln" id="s2-q1">Mereka lihat</span>
+        <span class="ln" id="s2-q2">semuanya?</span>
+      </div>
+    </div>
+    <div id="s2-flood"></div>
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    const blurIn = (sel, at) =>
+      tl.fromTo(sel, { opacity: 0, filter: "blur(6px)" },
+        { opacity: 1, filter: "blur(0px)", duration: 0.13, ease: "power4.out" }, at);
+    const blurOut = (sel, at) =>
+      tl.to(sel, { opacity: 0, filter: "blur(8px)", duration: 0.15, ease: "power2.in" }, at);
+
+    // stage arrives from the hook's upward whip
+    tl.fromTo("#s2-stage", { y: 90, filter: "blur(10px)" }, { y: 0, filter: "blur(0px)", duration: 0.35, ease: "expo.out" }, 0);
+    tl.fromTo("#s2-bubble", { opacity: 0, scale: 0.86, transformOrigin: "80% 100%" },
+      { opacity: 1, scale: 1, duration: 0.35, ease: "back.out(1.6)" }, 0.0);
+    tl.set("#s2-b1, #s2-b2, #s2-b3", { opacity: 0 }, 0);
+    blurIn("#s2-b1", 0.03);
+    blurIn("#s2-b2", 0.33);
+    blurIn("#s2-b3", 0.83);
+
+    // cold hands: thermometer drops
+    tl.fromTo("#s2-thermo", { opacity: 0, y: 40 }, { opacity: 1, y: 0, duration: 0.35, ease: "expo.out" }, 1.15);
+    tl.fromTo("#s2-merc", { scaleY: 0.85, transformOrigin: "50% 100%" },
+      { scaleY: 0.12, duration: 0.8, ease: "power2.inOut" }, 1.4);
+    blurIn("#s2-cold", 1.85);
+
+    // shaky voice
+    blurOut("#s2-thermo, #s2-cold", 2.37);
+    tl.fromTo("#s2-wave", { opacity: 0, y: 40 }, { opacity: 1, y: 0, duration: 0.35, ease: "expo.out" }, 2.5);
+    const lows = [0.35, 0.55, 0.25, 0.7, 0.4, 0.3, 0.6, 0.45, 0.2, 0.65, 0.35, 0.5];
+    for (let i = 0; i < 12; i++) {
+      const d = 0.11 + (i % 4) * 0.02;
+      tl.fromTo("#s2-bar" + i, { scaleY: lows[i], transformOrigin: "50% 50%" },
+        { scaleY: 1, duration: d, ease: "sine.inOut", yoyo: true, repeat: Math.floor(2.5 / d) | 1 }, 2.55 + i * 0.015);
+    }
+
+    // they see everything?
+    blurOut("#s2-bubble", 4.0);
+    tl.fromTo(".s2-eye", { scale: 1 }, { scale: 2.3, duration: 0.3, ease: "back.out(2)" }, 4.15);
+    tl.set("#s2-q1, #s2-q2", { opacity: 0 }, 0);
+    blurIn("#s2-q1", 4.17);
+    blurIn("#s2-q2", 4.73);
+
+    // flood to tomato from the HRD's eyes
+    tl.fromTo("#s2-flood", { clipPath: "circle(0% at 620px 630px)" },
+      { clipPath: "circle(150% at 620px 630px)", duration: 0.38, ease: "power2.in" }, 5.21);
+    window.__timelines["s2"] = tl;
+  </script>
+</template>

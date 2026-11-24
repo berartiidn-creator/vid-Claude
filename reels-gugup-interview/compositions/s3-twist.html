@@ -1,0 +1,77 @@
+<template>
+  <style>
+    #root { position: absolute; inset: 0; overflow: hidden; background: #c62a12; }
+    .s3-paper { background: #fffdf7; border: 5px solid #141414; border-radius: 18px; box-shadow: 12px 12px 0 #141414; }
+    #s3-h { position: absolute; left: 120px; top: 300px; font-family: "Archivo Black", sans-serif;
+      font-size: 82px; line-height: 1; color: #fffdf7; }
+    .s3-label { position: absolute; left: 120px; font-family: "Inter", sans-serif; font-weight: 900;
+      font-size: 44px; color: #141414; }
+    #s3-lab1 { top: 440px; } #s3-lab2 { top: 640px; }
+    .s3-bar { position: absolute; left: 120px; width: 640px; height: 84px; overflow: hidden; }
+    #s3-bar1 { top: 505px; } #s3-bar2 { top: 705px; }
+    .s3-fill { position: absolute; left: 0; top: 0; height: 100%; background: #141414; }
+    #s3-fill1 { width: 100%; } #s3-fill2 { width: 30%; }
+    #s3-l2 { position: absolute; left: 120px; top: 880px; width: 660px; }
+    #s3-l2 .ln { display: block; font-family: "Archivo Black", sans-serif; font-size: 92px; line-height: 1; color: #fffdf7; }
+    #s3-l2 #s3-l2b { color: #ffc93c; }
+    #s3-h2 { position: absolute; left: 120px; top: 300px; width: 720px; }
+    #s3-h2 #s3-x1 { margin-right: 0.28em; }
+    #s3-h2 .w { font-family: "Archivo Black", sans-serif; font-size: 74px; line-height: 1.04; color: #fffdf7; }
+    #s3-stamp { position: absolute; left: 130px; top: 560px; width: 620px; padding: 36px 40px 40px; }
+    #s3-stamp .ln { display: block; font-family: "Archivo Black", sans-serif; font-size: 96px; line-height: 1; color: #141414; }
+    #s3-stamp #s3-st2 { color: #c62a12; }
+    #s3-flood { position: absolute; inset: 0; background: #ffc93c; }
+  </style>
+  <div id="root" data-composition-id="s3" data-width="1080" data-height="1920">
+    <div id="s3-h">Kenyataannya:</div>
+    <div class="s3-label" id="s3-lab1">yang kamu rasa</div>
+    <div class="s3-bar s3-paper" id="s3-bar1"><div class="s3-fill" id="s3-fill1"></div></div>
+    <div class="s3-label" id="s3-lab2">yang mereka lihat</div>
+    <div class="s3-bar s3-paper" id="s3-bar2"><div class="s3-fill" id="s3-fill2"></div></div>
+    <div id="s3-l2">
+      <span class="ln" id="s3-l2a">jauh lebih</span>
+      <span class="ln" id="s3-l2b">sedikit.</span>
+    </div>
+
+    <div id="s3-h2">
+      <span class="w" id="s3-x1">Yang tahu</span> <span class="w" id="s3-x2">fakta ini,</span>
+    </div>
+    <div id="s3-stamp" class="s3-paper">
+      <span class="ln" id="s3-st1">tampil</span>
+      <span class="ln" id="s3-st2">lebih bagus.</span>
+    </div>
+    <div id="s3-flood"></div>
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    const blurIn = (sel, at) =>
+      tl.fromTo(sel, { opacity: 0, filter: "blur(6px)" },
+        { opacity: 1, filter: "blur(0px)", duration: 0.13, ease: "power4.out" }, at);
+    const blurOut = (sel, at) =>
+      tl.to(sel, { opacity: 0, filter: "blur(8px)", duration: 0.15, ease: "power2.in" }, at);
+
+    blurIn("#s3-h", 0.1);
+    blurIn("#s3-lab1", 0.5);
+    tl.fromTo("#s3-bar1", { opacity: 0 }, { opacity: 1, duration: 0.12 }, 0.55);
+    tl.fromTo("#s3-fill1", { scaleX: 0, transformOrigin: "0% 50%" }, { scaleX: 1, duration: 0.6, ease: "expo.out" }, 0.65);
+    blurIn("#s3-lab2", 1.48);
+    tl.fromTo("#s3-bar2", { opacity: 0 }, { opacity: 1, duration: 0.12 }, 1.52);
+    tl.fromTo("#s3-fill2", { scaleX: 0, transformOrigin: "0% 50%" }, { scaleX: 1, duration: 0.6, ease: "expo.out" }, 1.78);
+    blurIn("#s3-l2a", 2.1);
+    blurIn("#s3-l2b", 2.57);
+
+    blurOut("#s3-h, #s3-lab1, #s3-bar1, #s3-lab2, #s3-bar2, #s3-l2", 2.9);
+    tl.set("#s3-x1, #s3-x2", { opacity: 0 }, 0);
+    blurIn("#s3-x1", 3.14);
+    blurIn("#s3-x2", 3.72);
+    tl.fromTo("#s3-stamp", { opacity: 0, scale: 1.3, rotation: -12 },
+      { opacity: 1, scale: 1, rotation: -4, duration: 0.26, ease: "back.out(1.7)" }, 4.08);
+    tl.set("#s3-st1, #s3-st2", { opacity: 0 }, 0);
+    blurIn("#s3-st1", 4.36);
+    blurIn("#s3-st2", 4.8);
+
+    tl.fromTo("#s3-flood", { clipPath: "circle(0% at 440px 720px)" },
+      { clipPath: "circle(150% at 440px 720px)", duration: 0.36, ease: "power2.in" }, 5.02);
+    window.__timelines["s3"] = tl;
+  </script>
+</template>
