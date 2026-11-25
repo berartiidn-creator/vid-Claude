@@ -1,6 +1,6 @@
 ---
 name: "instagram-agent-id"
-description: "Kelola akun Instagram @firasbyzi untuk BERARTI (arah hidup dan karier, funnel ke BERARTI Index gratis dan Arah90 Rp99 ribu): audit profil skor 100, naskah Reels dari 26 rumus hook yang dinilai, jadwal mingguan, cek caption, riset Reels yang meledak, funnel TOFU MOFU BOFU, dan humanizer."
+description: "Kelola akun Instagram @firasbyzi untuk BERARTI (arah hidup dan karier, 3 pilar Communication, Confidence, Grow, funnel ke BERARTI Index gratis, Signature Rp49 ribu, dan Signature + Arah90 Rp99 ribu): audit profil skor 100, bank 30 naskah viral, naskah Reels dari 26 rumus hook yang dinilai, jadwal mingguan, cek caption, riset Reels yang meledak, funnel TOFU MOFU BOFU, dan humanizer."
 ---
 
 # instagram-agent-id
@@ -79,17 +79,17 @@ Sebelum menunjukkan draf: hapus karakter tak terlihat (zero-width, soft hyphen, 
 ## Konteks BERARTI (wajib dibaca sebelum mode apa pun)
 
 Baca dulu file ini, jangan menebak brand:
-- `berarti-ig/context/brand-berarti.md`: positioning, 7 pilar BERARTI, 11 archetype, produk, North Star.
+- `berarti-ig/context/brand-berarti.md`: positioning, 7 pilar BERARTI, produk, North Star. Bagian produk di file itu yang berlaku kalau ada yang bertentangan dengan skill ini.
 - `berarti-ig/context/voice.md`: gaya bicara Firas. Masih sementara. Jika pengguna sudah mengirim 3 caption atau transkrip asli, perbarui file ini dulu.
 - `berarti-ig/01` sampai `08`: audit profil, funnel, benchmark, jadwal, naskah, DM dan story yang sudah disetujui atau sedang direview.
+- `berarti-ig/14-benchmark-viral-3-pilar.md` dan `berarti-ig/15-naskah-30-konten-3-pilar.md`: riset viral dan bank 30 naskah untuk 3 pilar konten. Wajib dibaca sebelum mode Reels, jadwal, atau riset.
 
 ### Aturan sinkron funnel
 - Satu link bio: halaman tes BERARTI Index. Arah90 ditawarkan lewat halaman hasil tes dan DM kata kunci, bukan link tree.
 - Kata kunci MOFU: **ARAH** (kirim link BERARTI Index). Kata kunci BOFU: **MULAI** (kirim link Arah90). Jangan menambah kata kunci baru tanpa alasan.
 - Rasio: TOFU sekitar 50%, MOFU 30 sampai 35%, BOFU 15 sampai 20%. TOFU ditutup ajakan follow. MOFU ditutup komen ARAH. BOFU ditutup komen MULAI.
 - Setiap ide harus lolos 3 pertanyaan North Star: membantu kenal diri, menyaring arah, mengambil langkah nyata. Kalau tidak, buang.
-- Produk yang boleh disebut: BERARTI Index (gratis, 60 soal, 6 dimensi, skor 0 sampai 100, 11 archetype) dan BERARTI Arah90 (Rp99.000, 12 minggu, aplikasi 7 modul: Baca, Gali, Saring, Kanvas, Peta 90, Bio, Cek-in). Arah90 belum jadi: konten BOFU hanya tayang setelah aplikasi dan pembayaran aktif. Premium belum punya harga, jangan dijual. Nama Berartify sudah tidak dipakai.
-- Skor 68 dan archetype The Explorer di file Starter Kit lama adalah data contoh. Kalau dipakai di video, tulis CONTOH.
+- Produk yang boleh disebut (keputusan 24 November 2026, semua di situs `berarti-app/`): BERARTI Index (gratis, 36 pertanyaan, 6 dimensi, 6 archetype "... Berarti"), BERARTI Signature (Rp49.000, laporan pribadi), BERARTI Signature + Arah90 (Rp99.000, aplikasi 12 minggu: Gali, Kanvas, Peta 90 Hari, Cek-in). Upgrade Signature ke Arah90 Rp50.000 dalam 7 hari. Jangan menjanjikan Saring, Bio, atau ebook. Situs belum rilis: konten BOFU hanya tayang setelah situs dan pembayaran Lynk.id aktif. Premium belum punya harga, jangan dijual. Nama Berartify sudah tidak dipakai. 11 archetype lama dan "60 soal" sudah tidak berlaku.
 - DM kata kunci MULAI berisi link halaman pembayaran, bukan link aplikasi Arah90. Link aplikasi dan kode akses hanya dikirim otomatis setelah lunas. Jangan pernah menulis link `/edit` file Starter Kit lama di konten, DM, atau repo.
 - Landing page (sumber: `berarti_landing_page.tsx`) memakai nama "BERARTI™ Index" (sudah benar) dan "Life Direction Starter Kit" (harus diganti BERARTI Arah90). Di konten pakai BERARTI Index dan BERARTI Arah90, dan cek `berarti-ig/07-audit-landing-dan-starter-kit.md` sebelum menulis naskah BOFU.
 - Jangan pernah mengarang testimoni, jumlah pengguna, atau angka penjualan. Konten tipe Bukti baru dibuat setelah ada testimoni asli.
@@ -97,9 +97,24 @@ Baca dulu file ini, jangan menebak brand:
 - Dua pilar berhuruf R: di audio selalu sebut nama lengkap (Readiness to Act, Relevance and Meaning).
 - Pintu masuk konten: **percaya diri**. Hook TOFU sebaiknya menyentuh rasa pede, minder, grogi, atau ragu, lalu diarahkan ke kenal diri dan arah. Territory tetap arah hidup.
 - Positioning **faith-friendly**: inklusif, nilai dan iman sebagai pilihan, tanpa dalil sebagai dasar klaim psikologis dan tanpa menghakimi ibadah orang. Konten dakwah boleh muncul kalau ada jembatan ke percaya diri atau arah hidup. Data November 2026: Reels konser 102 ribu reach tapi hanya +16 followers karena tidak ada jembatan.
-- Tool gratis yang aktif: Pede60. Jangan mempromosikan tool lain sebelum dibangun.
+- Tool gratis Pede60 belum dibangun. Jangan mempromosikan tool apa pun sebelum ada.
 
 ### Data akun
 - Konektor: Windsor.ai connector `instagram`, akun `firasbyzi` (trial 30 hari). Panggil get_fields sebelum get_data, satu breakdown (kota atau umur) per request.
 - Audiens terbesar: 25 sampai 34, lalu 35 sampai 44. Kota WIB (Jakarta, Bekasi, Bandung, Cirebon, Yogyakarta). Jam awal: 19.00 WIB hari kerja, 10.00 WIB Minggu.
-- Instagram tidak bisa dibuka dari container cloud. Untuk riset Reels kreator lain, minta pengguna mengisi `berarti-ig/benchmark-template.tsv` lalu jalankan `swipe.py`.
+- Instagram tidak bisa dibuka dari container cloud. Untuk riset Reels kreator lain, minta pengguna mengisi `berarti-ig/benchmark-template.tsv` lalu jalankan `swipe.py`, atau pakai YouTube Shorts sebagai korpus kedua (lihat bagian riset di bawah).
+
+## Tiga pilar konten (keputusan 24 November 2026)
+
+Setiap konten masuk salah satu: **Communication** (bicara, presentasi, interview, ngobrol), **Confidence** (pede, minder, malu, overthinking, harga diri), **Grow** (umur 20-an, quarter life crisis, menunda, kebiasaan, passion). Bank naskah: `berarti-ig/15-naskah-30-konten-3-pilar.md` (C1 sampai C10, P1 sampai P10, G1 sampai G10). Naskah C8, P9, G3, G5, G6 butuh cerita atau angka asli Firas sebelum direkam.
+
+### Temuan riset viral November 2026 (79 Shorts, 23 akun, keyakinan sedang, Confidence rendah)
+- Menang: hook yang membuka dengan situasi spesifik (N3 "Cara {situasi}"), daftar bernomor berisi kesalahan atau kebiasaan (#11), cerita dengan tahun dan tempat (#21, #25), cara pribadi (#6).
+- Kalah: kutipan motivasi umum, pembuka "kalau kamu X, tonton ini" (#10), topik abstrak tanpa situasi. Jangan dipakai.
+- Netral: #22 Contrarian Flip. Menang kalau membalik perasaan, kalah kalau membalik slogan.
+- Rumus baru di luar 26: N1 Gak Cuma Kamu ("Mungkin bukan cuma kamu yang..."), N2 Cermin Kontradiksi ("Kamu bilang X, tapi Y"), N3 Cara {situasi spesifik}.
+- Skor `hookscore.py` tidak membedakan video atas dan bawah (median 42,2 di keduanya). Pakai sebagai cek kebersihan, jangan menukar hook dengan situasi kuat demi skor.
+- Confidence: janji pede instan kalah. Jual pede lewat situasi dan kenal diri.
+- Akhiri dengan punchline, lalu satu ajakan pendek. Target 30 sampai 50 detik.
+- Data mentah dengan link sumber: `berarti-ig/work/benchmark-viral-2026-11.tsv`. Swipe file: `berarti-ig/work/swipe.md`; salin ke `~/.claude/instagram/swipe.md` di sesi baru supaya terbaca `/ig-reel` dan `/ig-plan`.
+- Cara ulang riset lewat YouTube Shorts: `python3 -m yt_dlp --flat-playlist --playlist-end 40 -J "<channel_url>/shorts"` untuk median, caption otomatis `--write-auto-subs --sub-langs "id.*" --sub-format json3` untuk hook di bawah detik 3,0. Berhenti kalau YouTube meminta verifikasi bot. Ulangi tiap bulan, dan utamakan Saved collection Instagram milik pengguna.

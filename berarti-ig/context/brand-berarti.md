@@ -17,6 +17,9 @@ Ringkasan dari "BERARTI Brand Strategy Blueprint Final" (16 Agustus 2026) dan "B
 - **7 pilar BERARTI:** Being Aware, Envisioning Direction, Readiness to Act, Alignment of Values, Relevance and Meaning, Transcendence and Impact, Intentional Growth. Dua pilar berhuruf R: di video selalu sebut nama lengkapnya.
 - **Visual:** near-black atau navy, aksen biru, font Inter, kartu rounded, chart, matriks, canvas. Terasa "clarity system", bukan poster motivasi.
 
+## Tiga pilar konten (keputusan 24 November 2026)
+Communication, Confidence, Grow. Riset: `berarti-ig/14-benchmark-viral-3-pilar.md`. Bank naskah: `berarti-ig/15-naskah-30-konten-3-pilar.md`.
+
 ## Produk dan funnel
 Semua produk ada di satu situs web, kode di `berarti-app/` (keputusan 24 November 2026). Situs dirilis setelah semua bagian siap.
 1. **BERARTI Index (gratis):** 36 pertanyaan, 6 dimensi, radar, 6 archetype "... Berarti" (Penentu Arah, Penggerak, Penjaga Nilai, Pencari Makna, Pemberi Dampak, Penjelajah). Hasil gratis dibuka setelah isi nama dan email. Kata kunci DM: ARAH.
@@ -24,11 +27,11 @@ Semua produk ada di satu situs web, kode di `berarti-app/` (keputusan 24 Novembe
 3. **BERARTI Signature + Arah90 (Rp99.000):** semua isi Signature plus aplikasi web Arah90 selama 12 minggu: Gali (refleksi dengan pertanyaan lanjutan AI), Kanvas (Life Design Canvas), Peta 90 Hari, Cek-in mingguan. Pembeli Signature bisa upgrade Rp50.000 dalam 7 hari. Kata kunci DM: MULAI.
    - Jangan menjanjikan fitur yang belum ada (Saring, Bio, ebook) di konten, DM, atau halaman jual.
    - Workbook spreadsheet tidak dijual lagi; disimpan sebagai cadangan internal saja.
-4. **Tool gratis (TOFU):** Pede60 (siapkan omongan 60 detik). Satu tool dulu, yang lain menyusul setelah ada data. Ditutup ajakan tes BERARTI Index.
+4. **Tool gratis (TOFU):** Pede60 (siapkan omongan 60 detik) masih rencana, belum dibangun. Jangan dipromosikan sebelum ada.
 5. **Premium:** komunitas, workshop, mentoring 1-on-1. Harga belum final, jangan dijual dulu di konten.
 
-## 11 archetype
-The Future Leader, The Aligned Builder, The Contributor, The Emerging Builder, The Meaning Seeker, The Drifting Achiever, The People Pleaser, The Overthinker, The Explorer, The Lost Wanderer, The Transitioner.
+## 11 archetype (LAMA, tidak dipakai lagi)
+Diganti 6 archetype "... Berarti" di BERARTI Index 36 pertanyaan. Daftar ini disimpan sebagai arsip saja: The Future Leader, The Aligned Builder, The Contributor, The Emerging Builder, The Meaning Seeker, The Drifting Achiever, The People Pleaser, The Overthinker, The Explorer, The Lost Wanderer, The Transitioner.
 
 ## North Star (setiap konten harus lolos)
 1. Membantu orang lebih mengenal dirinya?
