@@ -1,0 +1,688 @@
+{
+ "method": "ctc-forced-alignment",
+ "duration": 35.442,
+ "words": [
+  {
+   "word": "Berhenti",
+   "start": 0.06,
+   "end": 0.54,
+   "conf": 0.991,
+   "i": 0
+  },
+  {
+   "word": "buka",
+   "start": 0.62,
+   "end": 0.8,
+   "conf": 0.997,
+   "i": 1
+  },
+  {
+   "word": "presentasi",
+   "start": 0.88,
+   "end": 1.42,
+   "conf": 0.996,
+   "i": 2
+  },
+  {
+   "word": "pakai,",
+   "start": 1.52,
+   "end": 1.94,
+   "conf": 0.996,
+   "i": 3
+  },
+  {
+   "word": "\"perkenalkan,",
+   "start": 2.52,
+   "end": 3.1,
+   "conf": 0.997,
+   "i": 4
+  },
+  {
+   "word": "nama",
+   "start": 3.44,
+   "end": 3.6,
+   "conf": 0.998,
+   "i": 5
+  },
+  {
+   "word": "saya.\"",
+   "start": 3.68,
+   "end": 3.94,
+   "conf": 0.997,
+   "i": 6
+  },
+  {
+   "word": "Ganti",
+   "start": 4.68,
+   "end": 4.98,
+   "conf": 0.999,
+   "i": 7
+  },
+  {
+   "word": "satu",
+   "start": 5.08,
+   "end": 5.24,
+   "conf": 0.997,
+   "i": 8
+  },
+  {
+   "word": "kalimat",
+   "start": 5.28,
+   "end": 5.56,
+   "conf": 0.963,
+   "i": 9
+  },
+  {
+   "word": "ini.",
+   "start": 5.62,
+   "end": 5.76,
+   "conf": 0.997,
+   "i": 10
+  },
+  {
+   "word": "Di",
+   "start": 6.28,
+   "end": 6.34,
+   "conf": 0.998,
+   "i": 11
+  },
+  {
+   "word": "detik-detik",
+   "start": 6.38,
+   "end": 6.8,
+   "conf": 0.969,
+   "i": 12
+  },
+  {
+   "word": "pertama,",
+   "start": 6.84,
+   "end": 7.26,
+   "conf": 0.978,
+   "i": 13
+  },
+  {
+   "word": "audiens",
+   "start": 7.64,
+   "end": 8.06,
+   "conf": 0.919,
+   "i": 14
+  },
+  {
+   "word": "lagi",
+   "start": 8.14,
+   "end": 8.26,
+   "conf": 0.91,
+   "i": 15
+  },
+  {
+   "word": "mutusin",
+   "start": 8.32,
+   "end": 8.66,
+   "conf": 0.996,
+   "i": 16
+  },
+  {
+   "word": "kamu",
+   "start": 8.74,
+   "end": 8.92,
+   "conf": 0.998,
+   "i": 17
+  },
+  {
+   "word": "layak",
+   "start": 9.02,
+   "end": 9.28,
+   "conf": 0.999,
+   "i": 18
+  },
+  {
+   "word": "didengerin,",
+   "start": 9.34,
+   "end": 9.86,
+   "conf": 0.956,
+   "i": 19
+  },
+  {
+   "word": "atau",
+   "start": 10.26,
+   "end": 10.44,
+   "conf": 0.925,
+   "i": 20
+  },
+  {
+   "word": "nggak.",
+   "start": 10.54,
+   "end": 10.8,
+   "conf": 0.622,
+   "i": 21
+  },
+  {
+   "word": "Dan",
+   "start": 11.2,
+   "end": 11.3,
+   "conf": 0.998,
+   "i": 22
+  },
+  {
+   "word": "nama",
+   "start": 11.34,
+   "end": 11.52,
+   "conf": 0.974,
+   "i": 23
+  },
+  {
+   "word": "kamu",
+   "start": 11.62,
+   "end": 11.88,
+   "conf": 0.999,
+   "i": 24
+  },
+  {
+   "word": "belum",
+   "start": 12.14,
+   "end": 12.48,
+   "conf": 0.998,
+   "i": 25
+  },
+  {
+   "word": "jadi",
+   "start": 12.56,
+   "end": 12.72,
+   "conf": 0.997,
+   "i": 26
+  },
+  {
+   "word": "alasan.",
+   "start": 12.8,
+   "end": 13.16,
+   "conf": 0.998,
+   "i": 27
+  },
+  {
+   "word": "Ganti",
+   "start": 13.513,
+   "end": 13.786,
+   "conf": 0.999,
+   "i": 28
+  },
+  {
+   "word": "dengan",
+   "start": 13.877,
+   "end": 14.041,
+   "conf": 0.997,
+   "i": 29
+  },
+  {
+   "word": "satu",
+   "start": 14.168,
+   "end": 14.405,
+   "conf": 0.997,
+   "i": 30
+  },
+  {
+   "word": "kalimat",
+   "start": 14.459,
+   "end": 14.732,
+   "conf": 0.998,
+   "i": 31
+  },
+  {
+   "word": "masalah",
+   "start": 14.787,
+   "end": 15.114,
+   "conf": 0.964,
+   "i": 32
+  },
+  {
+   "word": "yang",
+   "start": 15.187,
+   "end": 15.296,
+   "conf": 0.971,
+   "i": 33
+  },
+  {
+   "word": "mereka",
+   "start": 15.35,
+   "end": 15.623,
+   "conf": 0.998,
+   "i": 34
+  },
+  {
+   "word": "rasain.",
+   "start": 15.696,
+   "end": 16.042,
+   "conf": 0.997,
+   "i": 35
+  },
+  {
+   "word": "Misalnya",
+   "start": 16.184,
+   "end": 16.566,
+   "conf": 0.997,
+   "i": 36
+  },
+  {
+   "word": "presentasi",
+   "start": 16.711,
+   "end": 17.129,
+   "conf": 0.999,
+   "i": 37
+  },
+  {
+   "word": "soal",
+   "start": 17.184,
+   "end": 17.348,
+   "conf": 0.907,
+   "i": 38
+  },
+  {
+   "word": "keuangan.",
+   "start": 17.42,
+   "end": 17.839,
+   "conf": 0.992,
+   "i": 39
+  },
+  {
+   "word": "\"Siapa",
+   "start": 18.026,
+   "end": 18.299,
+   "conf": 0.999,
+   "i": 40
+  },
+  {
+   "word": "yang",
+   "start": 18.354,
+   "end": 18.445,
+   "conf": 0.961,
+   "i": 41
+  },
+  {
+   "word": "gajian",
+   "start": 18.499,
+   "end": 18.772,
+   "conf": 0.955,
+   "i": 42
+  },
+  {
+   "word": "tanggal",
+   "start": 18.827,
+   "end": 18.99,
+   "conf": 0.997,
+   "i": 43
+  },
+  {
+   "word": "dua",
+   "start": 19.063,
+   "end": 19.154,
+   "conf": 0.971,
+   "i": 44
+  },
+  {
+   "word": "puluh",
+   "start": 19.209,
+   "end": 19.39,
+   "conf": 0.941,
+   "i": 45
+  },
+  {
+   "word": "lima,",
+   "start": 19.427,
+   "end": 19.663,
+   "conf": 0.987,
+   "i": 46
+  },
+  {
+   "word": "tapi",
+   "start": 19.972,
+   "end": 20.118,
+   "conf": 0.997,
+   "i": 47
+  },
+  {
+   "word": "tanggal",
+   "start": 20.173,
+   "end": 20.373,
+   "conf": 0.985,
+   "i": 48
+  },
+  {
+   "word": "sepuluh...",
+   "start": 20.445,
+   "end": 20.846,
+   "conf": 0.905,
+   "i": 49
+  },
+  {
+   "word": "udah",
+   "start": 21.246,
+   "end": 21.373,
+   "conf": 0.995,
+   "i": 50
+  },
+  {
+   "word": "bingung?\"",
+   "start": 21.446,
+   "end": 21.737,
+   "conf": 0.975,
+   "i": 51
+  },
+  {
+   "word": "Kasih",
+   "start": 22.05,
+   "end": 22.35,
+   "conf": 0.999,
+   "i": 52
+  },
+  {
+   "word": "jeda",
+   "start": 22.43,
+   "end": 22.59,
+   "conf": 0.994,
+   "i": 53
+  },
+  {
+   "word": "dua",
+   "start": 22.67,
+   "end": 22.77,
+   "conf": 0.994,
+   "i": 54
+  },
+  {
+   "word": "detik.",
+   "start": 22.81,
+   "end": 23.05,
+   "conf": 0.998,
+   "i": 55
+  },
+  {
+   "word": "Biarin",
+   "start": 23.43,
+   "end": 23.75,
+   "conf": 0.998,
+   "i": 56
+  },
+  {
+   "word": "mereka",
+   "start": 23.79,
+   "end": 23.99,
+   "conf": 0.998,
+   "i": 57
+  },
+  {
+   "word": "mikir.",
+   "start": 24.07,
+   "end": 24.35,
+   "conf": 0.999,
+   "i": 58
+  },
+  {
+   "word": "Baru",
+   "start": 24.77,
+   "end": 25.01,
+   "conf": 0.999,
+   "i": 59
+  },
+  {
+   "word": "setelah",
+   "start": 25.07,
+   "end": 25.33,
+   "conf": 0.995,
+   "i": 60
+  },
+  {
+   "word": "itu,",
+   "start": 25.41,
+   "end": 25.57,
+   "conf": 0.998,
+   "i": 61
+  },
+  {
+   "word": "\"Saya",
+   "start": 26.07,
+   "end": 26.27,
+   "conf": 0.999,
+   "i": 62
+  },
+  {
+   "word": "Firas,",
+   "start": 26.33,
+   "end": 26.65,
+   "conf": 0.915,
+   "i": 63
+  },
+  {
+   "word": "dan",
+   "start": 26.93,
+   "end": 27.03,
+   "conf": 0.999,
+   "i": 64
+  },
+  {
+   "word": "hari",
+   "start": 27.13,
+   "end": 27.33,
+   "conf": 0.999,
+   "i": 65
+  },
+  {
+   "word": "ini",
+   "start": 27.43,
+   "end": 27.57,
+   "conf": 0.997,
+   "i": 66
+  },
+  {
+   "word": "kita",
+   "start": 27.79,
+   "end": 28.01,
+   "conf": 0.999,
+   "i": 67
+  },
+  {
+   "word": "beresin",
+   "start": 28.11,
+   "end": 28.43,
+   "conf": 0.951,
+   "i": 68
+  },
+  {
+   "word": "itu.\"",
+   "start": 28.49,
+   "end": 28.61,
+   "conf": 0.996,
+   "i": 69
+  },
+  {
+   "word": "Namamu",
+   "start": 29.03,
+   "end": 29.43,
+   "conf": 0.998,
+   "i": 70
+  },
+  {
+   "word": "tetap",
+   "start": 29.53,
+   "end": 29.77,
+   "conf": 0.999,
+   "i": 71
+  },
+  {
+   "word": "disebut.",
+   "start": 29.87,
+   "end": 30.21,
+   "conf": 0.999,
+   "i": 72
+  },
+  {
+   "word": "Cuma",
+   "start": 30.51,
+   "end": 30.67,
+   "conf": 0.976,
+   "i": 73
+  },
+  {
+   "word": "sekarang,",
+   "start": 30.75,
+   "end": 31.17,
+   "conf": 0.966,
+   "i": 74
+  },
+  {
+   "word": "orang",
+   "start": 31.53,
+   "end": 31.73,
+   "conf": 0.969,
+   "i": 75
+  },
+  {
+   "word": "punya",
+   "start": 31.77,
+   "end": 31.95,
+   "conf": 0.991,
+   "i": 76
+  },
+  {
+   "word": "alasan",
+   "start": 32.03,
+   "end": 32.41,
+   "conf": 0.997,
+   "i": 77
+  },
+  {
+   "word": "buat",
+   "start": 32.49,
+   "end": 32.63,
+   "conf": 0.997,
+   "i": 78
+  },
+  {
+   "word": "inget.",
+   "start": 32.69,
+   "end": 32.91,
+   "conf": 0.962,
+   "i": 79
+  },
+  {
+   "word": "Simpan",
+   "start": 33.25,
+   "end": 33.55,
+   "conf": 0.983,
+   "i": 80
+  },
+  {
+   "word": "ini",
+   "start": 33.61,
+   "end": 33.73,
+   "conf": 0.996,
+   "i": 81
+  },
+  {
+   "word": "buat",
+   "start": 33.87,
+   "end": 34.01,
+   "conf": 0.998,
+   "i": 82
+  },
+  {
+   "word": "presentasi",
+   "start": 34.07,
+   "end": 34.47,
+   "conf": 0.998,
+   "i": 83
+  },
+  {
+   "word": "kamu",
+   "start": 34.55,
+   "end": 34.73,
+   "conf": 0.998,
+   "i": 84
+  },
+  {
+   "word": "berikutnya.",
+   "start": 34.81,
+   "end": 35.23,
+   "conf": 0.999,
+   "i": 85
+  }
+ ],
+ "sentences": [
+  {
+   "start": 0.06,
+   "end": 5.76,
+   "text": "Berhenti buka presentasi pakai, \"perkenalkan, nama saya.\" Ganti satu kalimat ini.",
+   "w0": 0,
+   "w1": 10
+  },
+  {
+   "start": 6.28,
+   "end": 10.8,
+   "text": "Di detik-detik pertama, audiens lagi mutusin kamu layak didengerin, atau nggak.",
+   "w0": 11,
+   "w1": 21
+  },
+  {
+   "start": 11.2,
+   "end": 13.16,
+   "text": "Dan nama kamu belum jadi alasan.",
+   "w0": 22,
+   "w1": 27
+  },
+  {
+   "start": 13.513,
+   "end": 16.042,
+   "text": "Ganti dengan satu kalimat masalah yang mereka rasain.",
+   "w0": 28,
+   "w1": 35
+  },
+  {
+   "start": 16.184,
+   "end": 17.839,
+   "text": "Misalnya presentasi soal keuangan.",
+   "w0": 36,
+   "w1": 39
+  },
+  {
+   "start": 18.026,
+   "end": 20.846,
+   "text": "\"Siapa yang gajian tanggal dua puluh lima, tapi tanggal sepuluh...",
+   "w0": 40,
+   "w1": 49
+  },
+  {
+   "start": 21.246,
+   "end": 23.05,
+   "text": "udah bingung?\" Kasih jeda dua detik.",
+   "w0": 50,
+   "w1": 55
+  },
+  {
+   "start": 23.43,
+   "end": 24.35,
+   "text": "Biarin mereka mikir.",
+   "w0": 56,
+   "w1": 58
+  },
+  {
+   "start": 24.77,
+   "end": 30.21,
+   "text": "Baru setelah itu, \"Saya Firas, dan hari ini kita beresin itu.\" Namamu tetap disebut.",
+   "w0": 59,
+   "w1": 72
+  },
+  {
+   "start": 30.51,
+   "end": 32.91,
+   "text": "Cuma sekarang, orang punya alasan buat inget.",
+   "w0": 73,
+   "w1": 79
+  },
+  {
+   "start": 33.25,
+   "end": 35.23,
+   "text": "Simpan ini buat presentasi kamu berikutnya.",
+   "w0": 80,
+   "w1": 85
+  }
+ ],
+ "low_confidence": []
+}
