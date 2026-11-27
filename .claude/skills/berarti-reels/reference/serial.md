@@ -1,0 +1,99 @@
+# Mode serial: "Konten NN"
+
+**Serial ini adalah corong ke BERARTI Speaking Index.** **Struktur resmi serial adalah listicle** (lihat di bawah). Peta 30 episode listicle dari silabus ada di `berarti-ig/18-peta-serial-speaking-index.md`. Daftar asli dan CTA master ada di `berarti-ig/17-serial-komunikasi.md`. Setiap episode memecah satu pokok bahasan Kurikulum Public Speaking BERARTI Academy dan terhubung ke satu pilar BERARTI (B, R-Makna, E, A, R-Aksi, T, I) serta satu pertemuan kelas (MP-1 sampai MP-4).
+
+**Aturan kulit (wajib):**
+- Setiap item listicle menampilkan masalah, contoh, dan akibat. SOLUSI boleh menyebut rumus dan poin dari silabus (PREP, Vokal 4P, kartu 3K, enam qaulan, jika-maka), tapi tanpa pendalaman.
+- Kalimat CTA berbeda di setiap episode: pertanyaan yang memancing penasaran sesuai tema, lalu "Komen KOMUNIKASI" dan tes gratis lewat DM. Hanya janjikan yang ada di hasil tes (skor, level, tipe pembicara, peta 7 pilar, 3 latihan, soal kuis). Draf hook, skenario, solusi, dan CTA tiap episode ada di `berarti-ig/18-peta-serial-speaking-index.md`.
+- DM hanya memberi satu tambahan kecil dan link tes `?src=ig-epNN`.
+- Teknik lengkap, drill, checklist, dan rubrik milik tes dan kelas.
+- Kelas tidak disebut di konten maupun DM, karena kelas baru muncul di akhir hasil tes.
+- Klaim riset hanya yang berstatus "Terverifikasi" di bagian H kurikulum.
+
+**Sumber episode adalah `berarti-ig/18-peta-serial-speaking-index.md`** (peta resmi): "Konten NN" berarti EP NN di file itu. CTA master ada di `berarti-ig/17-serial-komunikasi.md`. Daftar 30 hook asli di file 17 hanya bank ide dan tidak dipakai untuk nomor episode. Jangan render sebelum ada VO dan persetujuan.
+
+## Perintah
+
+| Perintah | Yang dilakukan |
+|---|---|
+| **"Konten NN"** (01 sampai 30) | Buat paket produksi EP NN dari file 18, simpan di `berarti-ig/serial-komunikasi/sNN-<slug>.md`, set status `naskah`, lalu tunggu VO |
+| **"Konten berikutnya"** atau **"lanjut serial"** | Ambil EP dengan nomor terkecil di tabel Status produksi file 18 yang statusnya `belum` dan PIC-nya kosong. Sebutkan EP yang dipilih, lalu kerjakan seperti "Konten NN" |
+| **"Status serial"** | Tampilkan ringkasan tabel Status produksi: jumlah per status, episode yang sedang dikerjakan dan PIC-nya, serta EP berikutnya |
+| **"Video Konten NN"** | Setelah VO disetujui: buat video preview EP NN dengan alur skill ini, set status `preview` |
+| **"Render final"** | Render final episode yang sedang dikerjakan, set status `final` |
+| **"Konten NN tayang [tanggal]"** | Set status `tayang` dan tulis tanggalnya di kolom File |
+
+Kalau user tidak menyebut nama untuk PIC, tanyakan sekali, lalu pakai nama itu di semua episode dalam sesi yang sama.
+
+## Status produksi (wajib dijaga)
+
+- Tabel "Status produksi" di file 18 adalah satu-satunya catatan progres tim. Perbarui di setiap tahap: `belum`, `naskah`, `vo`, `preview`, `final`, `tayang`.
+- Isi kolom PIC saat mulai mengerjakan sebuah EP. Jangan mengambil EP yang PIC-nya sudah terisi orang lain, kecuali user memintanya.
+- Isi kolom File dengan path paket episode.
+- Commit perubahan tabel bersama file episodenya, dengan pesan commit yang menyebut EP-nya. Setelah status berubah, ingatkan user bahwa perubahan perlu masuk ke `main` (lewat PR) supaya anggota tim lain melihatnya.
+- Kalau peta berubah (hook, item, atau status), tawarkan untuk membangun ulang halaman peta: `python3 berarti-ig/tools/peta-serial/build.py`, lalu publish `berarti-ig/tools/peta-serial/index.html` sebagai Artifact.
+
+## Isi paket "Konten NN"
+
+1. **Naskah listicle dengan target waktu:** HOOK (angka, topik, open loop pada satu nomor), lalu setiap ITEM: "Yang pertama, [masalah]", contoh singkat, akibat satu kalimat, "Solusinya, [rumus silabus]". Item open loop ditambah satu kalimat penegas. Lalu CTA. Sekitar 120 kata untuk 4 item (50 detik), 145 kata untuk 5 item (60 detik).
+   - Hook dan daftar item diambil dari `18-peta-serial-speaking-index.md`.
+   - Open loop tidak boleh berupa klaim data ("paling sering terjadi"). Pakai "paling sering dianggap sepele", "sering dikira...", "paling jarang dipakai".
+   - Setiap item punya akibat, termasuk item terakhir.
+   - Cek dengan viral-hooks (hook), dumbify (bahasa sehari-hari), dan anti-ai-writing versi lisan.
+2. **Contoh per item:** satu baris dialog Firas atau Dina, atau satu kartu mockup. Tulis siapa mengucapkan apa.
+3. **VO ElevenLabs:**
+   - Narasi dan baris Firas memakai suara kloning user.
+   - Baris karakter B memakai suara stok ElevenLabs. **Jangan pernah memakai kloning suara orang lain.**
+   - Pakai tag emosi v3 dan tulis angka sebagai kata.
+   - Beri dua blok terpisah (VO utama dan baris B) plus urutan penggabungannya, atau satu skrip mode dialog ElevenLabs.
+4. **Storyboard per item** (gaya C2, tanpa label merah atau hijau):
+   - penghitung besar "N/total" dengan titik progres di atas kartu
+   - contoh yang salah tampil di kartu, lalu dicoret saat VO bilang "Solusinya,". Kartu solusi masuk dengan `Check`
+   - pose Firas: tanda_x atau serius di bagian masalah, tawarkan atau ceria di bagian solusi. SFX thump di masalah, ding di solusi
+   - hook menampilkan deretan nomor, dan nomor open loop berdenyut. Item open loop mendapat flood oranye dan kata raksasa
+   - Semuanya dipetakan ke komponen kit:
+   - dialog memakai `SpeechBubble`, dengan side 'left' untuk karakter B dan 'right' untuk Firas
+   - mockup UI memakai `Card`, `Chip`, dan `Row`
+   - audiens memakai `Person`
+   - checklist memakai `Check`
+5. **SFX** mengikuti pola gaya. CTA sudah punya SFX sendiri di `CtaDM`.
+6. **CTA master:** kalimat VO memakai pola referensi, isinya disesuaikan tema: "Mau tahu [sesuai tema]? Komen KOMUNIKASI sekarang, nanti aku kirim tes gratisnya lewat DM!" Isi spesifikasinya: `dmTitle` "Ilmu Komunikasi · EP NN" dan `dmLine` "Tes gratis · cek skor speaking-mu".
+7. **Teks DM otomatis** (yang dikirim ke komentator), siap ditempel ke ManyChat. Pakai template DM di `17-serial-komunikasi.md`:
+   - satu tambahan kecil (bukan teknik lengkap)
+   - ajakan cek BERARTI Speaking Index dengan link `?src=ig-epNN`
+   - pilar BERARTI episode itu
+   - Tanpa angka yang tidak bisa dipertanggungjawabkan, dan tanpa menyebut kelas.
+8. **Caption:**
+   - Baris pertama memakai hook.
+   - Isinya 3 baris inti.
+   - Ajakannya sama dengan CTA master (komen KOMUNIKASI).
+   - Maksimal 3 hashtag.
+   - Bebas em dash dan "&".
+9. **Teks cover** (rule of thirds):
+   - judul 3 baris dari hook
+   - balon berisi kalimat atau kebiasaan yang salah, dicoret
+   - pill berisi solusi singkat
+   - pilar COMMUNICATION dan label episode "EP NN"
+
+## Di `reel.tsx` (saat video dibuat)
+
+- **Dialog:**
+  - Setiap baris karakter B ditulis sebagai `SpeechBubble side="left"` pada waktu kata pertamanya.
+  - Rentang waktu baris B dimasukkan ke `mute` di spec, supaya mulut Firas diam saat B bicara.
+  - Saat B bicara, Firas memakai pose mendengar (tulus, ekspresi ramah).
+- **CTA:**
+  - Tulis adegan terakhir sebagai `<CtaDM c={CTA} />`.
+  - Set waktunya: `start` di kata "Komen", `type` di kata keyword, `tap` sekitar 0,4 detik setelah keyword, `dm` di kata "DM", dan `close` sekitar 0,3 detik setelah kalimat CTA selesai.
+  - Set spec: `closeAt: CTA.close`, `g: CTA.start`, dan `l` sekitar 1,6 detik setelah `close`.
+  - Tambahkan jendela flood `[CTA.close - 0.1, L]`.
+  - Kalimat CTA tetap jadi blok judul narasi, dengan keyword masuk `KW`.
+- **Durasi:** `end` mengikuti waktu `close` ditambah sekitar 2,4 detik, karena kalimat VO bisa selesai sebelum penutup visual. Set `project.json` ke nilai yang sama.
+- **Demo CTA:** render komposisi `CtaDemo` untuk melihat CTA master sendirian.
+
+## Keyword per pilar
+Pola CTA (komen keyword, DM, lalu "Ilmunya lewat DM!") dipakai di semua pilar. Keywordnya: COMMUNICATION memakai **KOMUNIKASI**, CONFIDENCE memakai **PEDE**, dan GROW belum ditentukan (tanya user sebelum episode Grow pertama). Chip pilar di cover mengikuti pilarnya.
+
+## Konsistensi serial
+- Keyword, jalur DM, tulisan "Ilmunya lewat DM!", layout kartu komentar dan DM, tombol Kirim, animasi, dan SFX CTA tidak boleh diubah per episode.
+- Yang berubah per episode hanya tema, dialog, isi kartu adegan, konteks di kalimat ajakan, dan `dmTitle` atau `dmLine`.
+- Progres episode dicatat di tabel Status produksi `18-peta-serial-speaking-index.md`, bukan di file 17.

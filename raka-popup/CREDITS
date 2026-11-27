@@ -1,0 +1,11 @@
+The Courage to Speak, Episode 01 (Paper Pop-up Book)
+
+Voice-over: Firas (own recording)
+Story, characters and all paper art: drawn in code for this film
+
+Third-party material
+- Desk room HDRI "Lythwood Lounge", walnut veneer texture, "Desk Lamp Arm 01" and "Tea Set 01" models: Poly Haven, CC0 1.0 (https://polyhaven.com)
+- Samples (CC0 1.0): VS Chamber Orchestra: Community Edition (Versilian Studios); Versilian Community Sample Library (Versilian Studios)
+- Music box: physical-modelling synthesis (no samples)
+- Fonts (SIL Open Font License 1.1): Fredoka, Lilita One, IM Fell English
+- Engine: three.js r170 (MIT); pop-up book engine adapted from the Lemo-Opuscar paper-popup style (MIT code)

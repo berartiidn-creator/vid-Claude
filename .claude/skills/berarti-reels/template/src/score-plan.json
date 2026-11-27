@@ -1,0 +1,9 @@
+{"durationSeconds": 37.6, "seed": 2511,
+ "sections": [
+  {"start": 0, "end": 6.28, "mood": "playful", "energy": 0.42},
+  {"start": 6.28, "end": 13.64, "mood": "playful", "energy": 0.36},
+  {"start": 13.64, "end": 23.52, "mood": "playful", "energy": 0.48},
+  {"start": 23.52, "end": 26.24, "mood": "playful", "energy": 0.18},
+  {"start": 26.24, "end": 34.72, "mood": "playful", "energy": 0.5},
+  {"start": 34.72, "end": 37.6, "mood": "playful", "energy": 0.42}
+ ]}

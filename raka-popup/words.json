@@ -1,0 +1,900 @@
+{
+ "method": "ctc-forced-alignment",
+ "duration": 51.487,
+ "words": [
+  {
+   "word": "Raka",
+   "start": 0.14,
+   "end": 0.38,
+   "conf": 0.973,
+   "i": 0
+  },
+  {
+   "word": "diam",
+   "start": 0.52,
+   "end": 0.82,
+   "conf": 0.975,
+   "i": 1
+  },
+  {
+   "word": "10",
+   "start": 0.9,
+   "end": 1.16,
+   "conf": 0.865,
+   "i": 2
+  },
+  {
+   "word": "menit",
+   "start": 1.2,
+   "end": 1.4,
+   "conf": 0.958,
+   "i": 3
+  },
+  {
+   "word": "di",
+   "start": 1.42,
+   "end": 1.48,
+   "conf": 0.497,
+   "i": 4
+  },
+  {
+   "word": "rapat.",
+   "start": 1.54,
+   "end": 1.84,
+   "conf": 0.897,
+   "i": 5
+  },
+  {
+   "word": "Idenya",
+   "start": 2.34,
+   "end": 2.6,
+   "conf": 0.822,
+   "i": 6
+  },
+  {
+   "word": "dipakai,",
+   "start": 2.66,
+   "end": 3.08,
+   "conf": 0.998,
+   "i": 7
+  },
+  {
+   "word": "tapi",
+   "start": 3.6,
+   "end": 3.76,
+   "conf": 0.998,
+   "i": 8
+  },
+  {
+   "word": "bukan",
+   "start": 3.84,
+   "end": 4.04,
+   "conf": 0.999,
+   "i": 9
+  },
+  {
+   "word": "dia",
+   "start": 4.12,
+   "end": 4.32,
+   "conf": 0.998,
+   "i": 10
+  },
+  {
+   "word": "yang",
+   "start": 4.4,
+   "end": 4.48,
+   "conf": 0.995,
+   "i": 11
+  },
+  {
+   "word": "ngomong.",
+   "start": 4.58,
+   "end": 5.1,
+   "conf": 0.427,
+   "i": 12
+  },
+  {
+   "word": "Padahal",
+   "start": 5.64,
+   "end": 6.14,
+   "conf": 0.985,
+   "i": 13
+  },
+  {
+   "word": "dari",
+   "start": 6.6,
+   "end": 6.76,
+   "conf": 0.25,
+   "i": 14
+  },
+  {
+   "word": "jam",
+   "start": 6.76,
+   "end": 6.88,
+   "conf": 0.987,
+   "i": 15
+  },
+  {
+   "word": "9",
+   "start": 6.94,
+   "end": 7.22,
+   "conf": 0.844,
+   "i": 16
+  },
+  {
+   "word": "pagi,",
+   "start": 7.3,
+   "end": 7.62,
+   "conf": 0.998,
+   "i": 17
+  },
+  {
+   "word": "ide",
+   "start": 7.98,
+   "end": 8.12,
+   "conf": 0.676,
+   "i": 18
+  },
+  {
+   "word": "itu",
+   "start": 8.22,
+   "end": 8.34,
+   "conf": 0.996,
+   "i": 19
+  },
+  {
+   "word": "udah",
+   "start": 8.46,
+   "end": 8.64,
+   "conf": 0.998,
+   "i": 20
+  },
+  {
+   "word": "ada",
+   "start": 8.8,
+   "end": 8.98,
+   "conf": 0.998,
+   "i": 21
+  },
+  {
+   "word": "di",
+   "start": 9.04,
+   "end": 9.1,
+   "conf": 0.997,
+   "i": 22
+  },
+  {
+   "word": "kepalanya.",
+   "start": 9.14,
+   "end": 9.58,
+   "conf": 0.978,
+   "i": 23
+  },
+  {
+   "word": "Tapi",
+   "start": 10.06,
+   "end": 10.22,
+   "conf": 0.998,
+   "i": 24
+  },
+  {
+   "word": "satu",
+   "start": 10.46,
+   "end": 10.6,
+   "conf": 0.983,
+   "i": 25
+  },
+  {
+   "word": "pikiran",
+   "start": 10.68,
+   "end": 11.12,
+   "conf": 0.979,
+   "i": 26
+  },
+  {
+   "word": "bikin",
+   "start": 11.32,
+   "end": 11.52,
+   "conf": 0.998,
+   "i": 27
+  },
+  {
+   "word": "dia",
+   "start": 11.6,
+   "end": 11.74,
+   "conf": 0.998,
+   "i": 28
+  },
+  {
+   "word": "nahan",
+   "start": 11.9,
+   "end": 12.1,
+   "conf": 0.997,
+   "i": 29
+  },
+  {
+   "word": "diri.",
+   "start": 12.16,
+   "end": 12.4,
+   "conf": 0.998,
+   "i": 30
+  },
+  {
+   "word": "Nanti",
+   "start": 13.04,
+   "end": 13.28,
+   "conf": 0.995,
+   "i": 31
+  },
+  {
+   "word": "dibilang",
+   "start": 13.36,
+   "end": 13.64,
+   "conf": 0.964,
+   "i": 32
+  },
+  {
+   "word": "sok",
+   "start": 13.68,
+   "end": 13.8,
+   "conf": 0.928,
+   "i": 33
+  },
+  {
+   "word": "tahu.",
+   "start": 13.86,
+   "end": 14.18,
+   "conf": 0.974,
+   "i": 34
+  },
+  {
+   "word": "Jadi",
+   "start": 14.8,
+   "end": 15.06,
+   "conf": 0.499,
+   "i": 35
+  },
+  {
+   "word": "dia",
+   "start": 15.74,
+   "end": 15.86,
+   "conf": 0.998,
+   "i": 36
+  },
+  {
+   "word": "diam.",
+   "start": 16.3,
+   "end": 16.56,
+   "conf": 0.998,
+   "i": 37
+  },
+  {
+   "word": "Sampai",
+   "start": 17.02,
+   "end": 17.34,
+   "conf": 0.998,
+   "i": 38
+  },
+  {
+   "word": "temannya",
+   "start": 17.42,
+   "end": 17.7,
+   "conf": 0.974,
+   "i": 39
+  },
+  {
+   "word": "ngomong",
+   "start": 17.82,
+   "end": 18.24,
+   "conf": 0.427,
+   "i": 40
+  },
+  {
+   "word": "ide",
+   "start": 18.32,
+   "end": 18.48,
+   "conf": 0.719,
+   "i": 41
+  },
+  {
+   "word": "yang",
+   "start": 18.54,
+   "end": 18.64,
+   "conf": 0.99,
+   "i": 42
+  },
+  {
+   "word": "mirip,",
+   "start": 18.88,
+   "end": 19.38,
+   "conf": 0.599,
+   "i": 43
+  },
+  {
+   "word": "dan",
+   "start": 19.78,
+   "end": 19.88,
+   "conf": 0.998,
+   "i": 44
+  },
+  {
+   "word": "semua",
+   "start": 19.98,
+   "end": 20.2,
+   "conf": 0.995,
+   "i": 45
+  },
+  {
+   "word": "orang",
+   "start": 20.32,
+   "end": 20.5,
+   "conf": 0.975,
+   "i": 46
+  },
+  {
+   "word": "mengangguk.",
+   "start": 21.0,
+   "end": 21.38,
+   "conf": 0.979,
+   "i": 47
+  },
+  {
+   "word": "Malamnya",
+   "start": 21.82,
+   "end": 22.24,
+   "conf": 0.996,
+   "i": 48
+  },
+  {
+   "word": "Raka",
+   "start": 22.72,
+   "end": 22.9,
+   "conf": 0.996,
+   "i": 49
+  },
+  {
+   "word": "nanya",
+   "start": 23.14,
+   "end": 23.36,
+   "conf": 0.798,
+   "i": 50
+  },
+  {
+   "word": "ke",
+   "start": 23.46,
+   "end": 23.5,
+   "conf": 0.0,
+   "i": 51
+  },
+  {
+   "word": "dirinya",
+   "start": 23.66,
+   "end": 23.9,
+   "conf": 0.995,
+   "i": 52
+  },
+  {
+   "word": "sendiri.",
+   "start": 23.98,
+   "end": 24.28,
+   "conf": 0.997,
+   "i": 53
+  },
+  {
+   "word": "Aku",
+   "start": 24.86,
+   "end": 25.0,
+   "conf": 0.997,
+   "i": 54
+  },
+  {
+   "word": "ini",
+   "start": 25.1,
+   "end": 25.2,
+   "conf": 0.993,
+   "i": 55
+  },
+  {
+   "word": "rendah",
+   "start": 25.28,
+   "end": 25.52,
+   "conf": 0.86,
+   "i": 56
+  },
+  {
+   "word": "hati,",
+   "start": 25.56,
+   "end": 25.92,
+   "conf": 0.991,
+   "i": 57
+  },
+  {
+   "word": "atau",
+   "start": 26.42,
+   "end": 26.58,
+   "conf": 0.99,
+   "i": 58
+  },
+  {
+   "word": "cuma",
+   "start": 27.08,
+   "end": 27.24,
+   "conf": 0.994,
+   "i": 59
+  },
+  {
+   "word": "takut?",
+   "start": 27.32,
+   "end": 27.72,
+   "conf": 0.994,
+   "i": 60
+  },
+  {
+   "word": "Pelan-pelan",
+   "start": 28.12,
+   "end": 28.58,
+   "conf": 0.766,
+   "i": 61
+  },
+  {
+   "word": "dia",
+   "start": 28.64,
+   "end": 28.76,
+   "conf": 0.975,
+   "i": 62
+  },
+  {
+   "word": "paham.",
+   "start": 28.82,
+   "end": 29.16,
+   "conf": 0.992,
+   "i": 63
+  },
+  {
+   "word": "Rendah",
+   "start": 29.6,
+   "end": 29.82,
+   "conf": 0.828,
+   "i": 64
+  },
+  {
+   "word": "hati",
+   "start": 29.86,
+   "end": 30.04,
+   "conf": 0.995,
+   "i": 65
+  },
+  {
+   "word": "itu",
+   "start": 30.14,
+   "end": 30.34,
+   "conf": 0.994,
+   "i": 66
+  },
+  {
+   "word": "soal",
+   "start": 30.48,
+   "end": 30.68,
+   "conf": 0.997,
+   "i": 67
+  },
+  {
+   "word": "cara",
+   "start": 30.74,
+   "end": 30.9,
+   "conf": 0.499,
+   "i": 68
+  },
+  {
+   "word": "kita",
+   "start": 31.3,
+   "end": 31.54,
+   "conf": 0.997,
+   "i": 69
+  },
+  {
+   "word": "memandang",
+   "start": 31.62,
+   "end": 31.96,
+   "conf": 0.967,
+   "i": 70
+  },
+  {
+   "word": "orang,",
+   "start": 32.02,
+   "end": 32.16,
+   "conf": 0.972,
+   "i": 71
+  },
+  {
+   "word": "sedangkan",
+   "start": 32.84,
+   "end": 33.18,
+   "conf": 0.976,
+   "i": 72
+  },
+  {
+   "word": "pede",
+   "start": 33.24,
+   "end": 33.7,
+   "conf": 0.749,
+   "i": 73
+  },
+  {
+   "word": "soal",
+   "start": 33.78,
+   "end": 34.36,
+   "conf": 0.498,
+   "i": 74
+  },
+  {
+   "word": "berani",
+   "start": 34.56,
+   "end": 34.88,
+   "conf": 0.998,
+   "i": 75
+  },
+  {
+   "word": "menawarkan",
+   "start": 35.3,
+   "end": 35.76,
+   "conf": 0.995,
+   "i": 76
+  },
+  {
+   "word": "yang",
+   "start": 36.22,
+   "end": 36.32,
+   "conf": 0.978,
+   "i": 77
+  },
+  {
+   "word": "kita",
+   "start": 36.34,
+   "end": 36.5,
+   "conf": 0.997,
+   "i": 78
+  },
+  {
+   "word": "punya.",
+   "start": 36.58,
+   "end": 36.82,
+   "conf": 0.959,
+   "i": 79
+  },
+  {
+   "word": "Dua-duanya",
+   "start": 37.16,
+   "end": 38.7,
+   "conf": 0.979,
+   "i": 80
+  },
+  {
+   "word": "bisa",
+   "start": 38.82,
+   "end": 39.1,
+   "conf": 0.992,
+   "i": 81
+  },
+  {
+   "word": "jalan",
+   "start": 39.3,
+   "end": 39.5,
+   "conf": 0.994,
+   "i": 82
+  },
+  {
+   "word": "bareng.",
+   "start": 39.54,
+   "end": 40.28,
+   "conf": 0.331,
+   "i": 83
+  },
+  {
+   "word": "Rapat",
+   "start": 40.38,
+   "end": 40.58,
+   "conf": 0.994,
+   "i": 84
+  },
+  {
+   "word": "berikutnya,",
+   "start": 40.64,
+   "end": 41.06,
+   "conf": 0.996,
+   "i": 85
+  },
+  {
+   "word": "Raka",
+   "start": 41.4,
+   "end": 41.62,
+   "conf": 0.995,
+   "i": 86
+  },
+  {
+   "word": "cuma",
+   "start": 41.68,
+   "end": 41.84,
+   "conf": 0.972,
+   "i": 87
+  },
+  {
+   "word": "butuh",
+   "start": 41.9,
+   "end": 42.12,
+   "conf": 0.99,
+   "i": 88
+  },
+  {
+   "word": "satu",
+   "start": 42.26,
+   "end": 42.48,
+   "conf": 0.981,
+   "i": 89
+  },
+  {
+   "word": "kalimat.",
+   "start": 42.56,
+   "end": 42.88,
+   "conf": 0.994,
+   "i": 90
+  },
+  {
+   "word": "Aku",
+   "start": 43.26,
+   "end": 43.44,
+   "conf": 0.997,
+   "i": 91
+  },
+  {
+   "word": "punya",
+   "start": 43.52,
+   "end": 43.74,
+   "conf": 0.996,
+   "i": 92
+  },
+  {
+   "word": "satu",
+   "start": 43.86,
+   "end": 44.08,
+   "conf": 0.987,
+   "i": 93
+  },
+  {
+   "word": "usulan.",
+   "start": 44.16,
+   "end": 44.52,
+   "conf": 0.994,
+   "i": 94
+  },
+  {
+   "word": "Kalau",
+   "start": 44.9,
+   "end": 45.1,
+   "conf": 0.996,
+   "i": 95
+  },
+  {
+   "word": "kamu",
+   "start": 45.22,
+   "end": 45.42,
+   "conf": 0.998,
+   "i": 96
+  },
+  {
+   "word": "pernah",
+   "start": 45.5,
+   "end": 45.7,
+   "conf": 0.963,
+   "i": 97
+  },
+  {
+   "word": "jadi",
+   "start": 45.74,
+   "end": 45.9,
+   "conf": 0.996,
+   "i": 98
+  },
+  {
+   "word": "Raka,",
+   "start": 45.96,
+   "end": 46.22,
+   "conf": 0.997,
+   "i": 99
+  },
+  {
+   "word": "kamu",
+   "start": 46.58,
+   "end": 46.78,
+   "conf": 0.998,
+   "i": 100
+  },
+  {
+   "word": "gak",
+   "start": 46.84,
+   "end": 46.96,
+   "conf": 0.8,
+   "i": 101
+  },
+  {
+   "word": "sendirian.",
+   "start": 47.02,
+   "end": 47.5,
+   "conf": 0.999,
+   "i": 102
+  },
+  {
+   "word": "Follow,",
+   "start": 47.88,
+   "end": 48.08,
+   "conf": 0.929,
+   "i": 103
+  },
+  {
+   "word": "biar",
+   "start": 48.18,
+   "end": 49.3,
+   "conf": 0.998,
+   "i": 104
+  },
+  {
+   "word": "di",
+   "start": 49.36,
+   "end": 49.42,
+   "conf": 0.998,
+   "i": 105
+  },
+  {
+   "word": "rapat",
+   "start": 49.48,
+   "end": 49.72,
+   "conf": 0.997,
+   "i": 106
+  },
+  {
+   "word": "berikutnya,",
+   "start": 49.76,
+   "end": 50.2,
+   "conf": 0.995,
+   "i": 107
+  },
+  {
+   "word": "kamu",
+   "start": 50.52,
+   "end": 50.74,
+   "conf": 0.999,
+   "i": 108
+  },
+  {
+   "word": "yang",
+   "start": 50.84,
+   "end": 50.92,
+   "conf": 0.983,
+   "i": 109
+  },
+  {
+   "word": "ngomong.",
+   "start": 50.96,
+   "end": 51.26,
+   "conf": 0.98,
+   "i": 110
+  }
+ ],
+ "sentences": [
+  {
+   "start": 0.14,
+   "end": 1.84,
+   "text": "Raka diam 10 menit di rapat.",
+   "w0": 0,
+   "w1": 5
+  },
+  {
+   "start": 2.34,
+   "end": 5.1,
+   "text": "Idenya dipakai, tapi bukan dia yang ngomong.",
+   "w0": 6,
+   "w1": 12
+  },
+  {
+   "start": 5.64,
+   "end": 9.58,
+   "text": "Padahal dari jam 9 pagi, ide itu udah ada di kepalanya.",
+   "w0": 13,
+   "w1": 23
+  },
+  {
+   "start": 10.06,
+   "end": 12.4,
+   "text": "Tapi satu pikiran bikin dia nahan diri.",
+   "w0": 24,
+   "w1": 30
+  },
+  {
+   "start": 13.04,
+   "end": 14.18,
+   "text": "Nanti dibilang sok tahu.",
+   "w0": 31,
+   "w1": 34
+  },
+  {
+   "start": 14.8,
+   "end": 16.56,
+   "text": "Jadi dia diam.",
+   "w0": 35,
+   "w1": 37
+  },
+  {
+   "start": 17.02,
+   "end": 21.38,
+   "text": "Sampai temannya ngomong ide yang mirip, dan semua orang mengangguk.",
+   "w0": 38,
+   "w1": 47
+  },
+  {
+   "start": 21.82,
+   "end": 24.28,
+   "text": "Malamnya Raka nanya ke dirinya sendiri.",
+   "w0": 48,
+   "w1": 53
+  },
+  {
+   "start": 24.86,
+   "end": 27.72,
+   "text": "Aku ini rendah hati, atau cuma takut?",
+   "w0": 54,
+   "w1": 60
+  },
+  {
+   "start": 28.12,
+   "end": 29.16,
+   "text": "Pelan-pelan dia paham.",
+   "w0": 61,
+   "w1": 63
+  },
+  {
+   "start": 29.6,
+   "end": 36.82,
+   "text": "Rendah hati itu soal cara kita memandang orang, sedangkan pede soal berani menawarkan yang kita punya.",
+   "w0": 64,
+   "w1": 79
+  },
+  {
+   "start": 37.16,
+   "end": 40.28,
+   "text": "Dua-duanya bisa jalan bareng.",
+   "w0": 80,
+   "w1": 83
+  },
+  {
+   "start": 40.38,
+   "end": 42.88,
+   "text": "Rapat berikutnya, Raka cuma butuh satu kalimat.",
+   "w0": 84,
+   "w1": 90
+  },
+  {
+   "start": 43.26,
+   "end": 44.52,
+   "text": "Aku punya satu usulan.",
+   "w0": 91,
+   "w1": 94
+  },
+  {
+   "start": 44.9,
+   "end": 47.5,
+   "text": "Kalau kamu pernah jadi Raka, kamu gak sendirian.",
+   "w0": 95,
+   "w1": 102
+  },
+  {
+   "start": 47.88,
+   "end": 51.26,
+   "text": "Follow, biar di rapat berikutnya, kamu yang ngomong.",
+   "w0": 103,
+   "w1": 110
+  }
+ ],
+ "low_confidence": [
+  51
+ ]
+}

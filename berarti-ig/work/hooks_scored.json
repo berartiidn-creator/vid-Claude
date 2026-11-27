@@ -1,0 +1,872 @@
+[
+  {
+    "hook": "Kamu bukan malas. Kamu belum punya arah.",
+    "checks": {
+      "LENGTH": {
+        "score": 100.0,
+        "detail": "7 words, 40 chars, ~2.5s spoken (want 5-12 words)"
+      },
+      "SPECIFICITY": {
+        "score": 15.0,
+        "detail": "0 concrete marker(s) - no number, no name, nothing checkable"
+      },
+      "STAKES": {
+        "score": 100.0,
+        "detail": "2 tension marker(s): belum, bukan"
+      },
+      "FRONTLOAD": {
+        "score": 100.0,
+        "detail": "payload at word 2"
+      },
+      "ADDRESS": {
+        "score": 100.0,
+        "detail": "speaks to the viewer"
+      }
+    },
+    "weakest": "SPECIFICITY",
+    "flags": [],
+    "score": 55.8,
+    "verdict": "OK"
+  },
+  {
+    "hook": "3 tanda kamu bukan malas, tapi belum punya arah.",
+    "checks": {
+      "LENGTH": {
+        "score": 100.0,
+        "detail": "9 words, 48 chars, ~3.3s spoken (want 5-12 words)"
+      },
+      "SPECIFICITY": {
+        "score": 75,
+        "detail": "1 concrete marker(s): 3"
+      },
+      "STAKES": {
+        "score": 100.0,
+        "detail": "3 tension marker(s): belum, bukan, tapi"
+      },
+      "FRONTLOAD": {
+        "score": 100.0,
+        "detail": "payload at word 1"
+      },
+      "ADDRESS": {
+        "score": 100.0,
+        "detail": "speaks to the viewer"
+      }
+    },
+    "weakest": "SPECIFICITY",
+    "flags": [],
+    "score": 87.0,
+    "verdict": "STRONG"
+  },
+  {
+    "hook": "Umur 25 dan masih bingung? Kamu bukan malas.",
+    "checks": {
+      "LENGTH": {
+        "score": 100.0,
+        "detail": "8 words, 44 chars, ~2.9s spoken (want 5-12 words)"
+      },
+      "SPECIFICITY": {
+        "score": 75,
+        "detail": "1 concrete marker(s): 25"
+      },
+      "STAKES": {
+        "score": 100.0,
+        "detail": "3 tension marker(s): bingung, bukan, masih"
+      },
+      "FRONTLOAD": {
+        "score": 70.0,
+        "detail": "payload at word 2; weak opener \"um\""
+      },
+      "ADDRESS": {
+        "score": 100.0,
+        "detail": "speaks to the viewer"
+      }
+    },
+    "weakest": "FRONTLOAD",
+    "flags": [],
+    "score": 81.4,
+    "verdict": "STRONG"
+  },
+  {
+    "hook": "Berhenti cari passion. Kenali 3 pola dirimu dulu.",
+    "checks": {
+      "LENGTH": {
+        "score": 100.0,
+        "detail": "8 words, 49 chars, ~2.9s spoken (want 5-12 words)"
+      },
+      "SPECIFICITY": {
+        "score": 75,
+        "detail": "1 concrete marker(s): 3"
+      },
+      "STAKES": {
+        "score": 70.0,
+        "detail": "1 tension marker(s): berhenti"
+      },
+      "FRONTLOAD": {
+        "score": 100.0,
+        "detail": "payload at word 1"
+      },
+      "ADDRESS": {
+        "score": 100.0,
+        "detail": "speaks to the viewer"
+      }
+    },
+    "weakest": "STAKES",
+    "flags": [],
+    "score": 81.4,
+    "verdict": "STRONG"
+  },
+  {
+    "hook": "Kamu gak butuh passion buat nemu arah.",
+    "checks": {
+      "LENGTH": {
+        "score": 100.0,
+        "detail": "7 words, 38 chars, ~2.5s spoken (want 5-12 words)"
+      },
+      "SPECIFICITY": {
+        "score": 15.0,
+        "detail": "0 concrete marker(s) - no number, no name, nothing checkable"
+      },
+      "STAKES": {
+        "score": 70.0,
+        "detail": "1 tension marker(s): gak"
+      },
+      "FRONTLOAD": {
+        "score": 100.0,
+        "detail": "payload at word 2"
+      },
+      "ADDRESS": {
+        "score": 100.0,
+        "detail": "speaks to the viewer"
+      }
+    },
+    "weakest": "SPECIFICITY",
+    "flags": [],
+    "score": 52.2,
+    "verdict": "OK"
+  },
+  {
+    "hook": "Gak ada yang bilang passion itu datang belakangan.",
+    "checks": {
+      "LENGTH": {
+        "score": 100.0,
+        "detail": "8 words, 50 chars, ~2.9s spoken (want 5-12 words)"
+      },
+      "SPECIFICITY": {
+        "score": 15.0,
+        "detail": "0 concrete marker(s) - no number, no name, nothing checkable"
+      },
+      "STAKES": {
+        "score": 70.0,
+        "detail": "1 tension marker(s): gak"
+      },
+      "FRONTLOAD": {
+        "score": 100.0,
+        "detail": "payload at word 1"
+      },
+      "ADDRESS": {
+        "score": 35.0,
+        "detail": "third person, nobody in the room"
+      }
+    },
+    "weakest": "SPECIFICITY",
+    "flags": [],
+    "score": 44.4,
+    "verdict": "WEAK"
+  },
+  {
+    "hook": "Kamu bukan kehilangan arah. Kamu kebanyakan pilihan.",
+    "checks": {
+      "LENGTH": {
+        "score": 100.0,
+        "detail": "7 words, 52 chars, ~2.5s spoken (want 5-12 words)"
+      },
+      "SPECIFICITY": {
+        "score": 15.0,
+        "detail": "0 concrete marker(s) - no number, no name, nothing checkable"
+      },
+      "STAKES": {
+        "score": 100.0,
+        "detail": "2 tension marker(s): bukan, kehilangan"
+      },
+      "FRONTLOAD": {
+        "score": 100.0,
+        "detail": "payload at word 2"
+      },
+      "ADDRESS": {
+        "score": 100.0,
+        "detail": "speaks to the viewer"
+      }
+    },
+    "weakest": "SPECIFICITY",
+    "flags": [],
+    "score": 55.8,
+    "verdict": "OK"
+  },
+  {
+    "hook": "Kalau semua pilihan kelihatan menarik, pakai 3 filter ini.",
+    "checks": {
+      "LENGTH": {
+        "score": 100.0,
+        "detail": "9 words, 58 chars, ~3.3s spoken (want 5-12 words)"
+      },
+      "SPECIFICITY": {
+        "score": 75,
+        "detail": "1 concrete marker(s): 3"
+      },
+      "STAKES": {
+        "score": 20.0,
+        "detail": "0 tension marker(s) - nothing is at stake in this line"
+      },
+      "FRONTLOAD": {
+        "score": 70.0,
+        "detail": "payload at word 7, could move forward"
+      },
+      "ADDRESS": {
+        "score": 35.0,
+        "detail": "third person, nobody in the room"
+      }
+    },
+    "weakest": "STAKES",
+    "flags": [],
+    "score": 44.0,
+    "verdict": "WEAK"
+  },
+  {
+    "hook": "Cara paling cepat milih arah: coret 2 dari 3 opsi.",
+    "checks": {
+      "LENGTH": {
+        "score": 100.0,
+        "detail": "10 words, 50 chars, ~3.6s spoken (want 5-12 words)"
+      },
+      "SPECIFICITY": {
+        "score": 100.0,
+        "detail": "2 concrete marker(s): 2, 3"
+      },
+      "STAKES": {
+        "score": 70.0,
+        "detail": "1 tension marker(s): paling"
+      },
+      "FRONTLOAD": {
+        "score": 100.0,
+        "detail": "payload at word 2"
+      },
+      "ADDRESS": {
+        "score": 35.0,
+        "detail": "third person, nobody in the room"
+      }
+    },
+    "weakest": "ADDRESS",
+    "flags": [],
+    "score": 62.6,
+    "verdict": "OK"
+  },
+  {
+    "hook": "Kamu yang umur 25 dan merasa tertinggal, dengar ini.",
+    "checks": {
+      "LENGTH": {
+        "score": 100.0,
+        "detail": "9 words, 52 chars, ~3.3s spoken (want 5-12 words)"
+      },
+      "SPECIFICITY": {
+        "score": 75,
+        "detail": "1 concrete marker(s): 25"
+      },
+      "STAKES": {
+        "score": 70.0,
+        "detail": "1 tension marker(s): tertinggal"
+      },
+      "FRONTLOAD": {
+        "score": 100.0,
+        "detail": "payload at word 4"
+      },
+      "ADDRESS": {
+        "score": 100.0,
+        "detail": "speaks to the viewer"
+      }
+    },
+    "weakest": "STAKES",
+    "flags": [],
+    "score": 81.4,
+    "verdict": "STRONG"
+  },
+  {
+    "hook": "Gak ada yang bilang temanmu yang sukses juga bingung.",
+    "checks": {
+      "LENGTH": {
+        "score": 100.0,
+        "detail": "9 words, 53 chars, ~3.3s spoken (want 5-12 words)"
+      },
+      "SPECIFICITY": {
+        "score": 15.0,
+        "detail": "0 concrete marker(s) - no number, no name, nothing checkable"
+      },
+      "STAKES": {
+        "score": 100.0,
+        "detail": "2 tension marker(s): bingung, gak"
+      },
+      "FRONTLOAD": {
+        "score": 100.0,
+        "detail": "payload at word 1"
+      },
+      "ADDRESS": {
+        "score": 35.0,
+        "detail": "third person, nobody in the room"
+      }
+    },
+    "weakest": "SPECIFICITY",
+    "flags": [],
+    "score": 48.0,
+    "verdict": "WEAK"
+  },
+  {
+    "hook": "Kamu gak telat. Kamu cuma pakai jam orang lain.",
+    "checks": {
+      "LENGTH": {
+        "score": 100.0,
+        "detail": "9 words, 47 chars, ~3.3s spoken (want 5-12 words)"
+      },
+      "SPECIFICITY": {
+        "score": 15.0,
+        "detail": "0 concrete marker(s) - no number, no name, nothing checkable"
+      },
+      "STAKES": {
+        "score": 100.0,
+        "detail": "3 tension marker(s): cuma, gak, telat"
+      },
+      "FRONTLOAD": {
+        "score": 100.0,
+        "detail": "payload at word 2"
+      },
+      "ADDRESS": {
+        "score": 100.0,
+        "detail": "speaks to the viewer"
+      }
+    },
+    "weakest": "SPECIFICITY",
+    "flags": [],
+    "score": 55.8,
+    "verdict": "OK"
+  },
+  {
+    "hook": "Gak ada yang bilang karier lancar bisa terasa kosong.",
+    "checks": {
+      "LENGTH": {
+        "score": 100.0,
+        "detail": "9 words, 53 chars, ~3.3s spoken (want 5-12 words)"
+      },
+      "SPECIFICITY": {
+        "score": 15.0,
+        "detail": "0 concrete marker(s) - no number, no name, nothing checkable"
+      },
+      "STAKES": {
+        "score": 70.0,
+        "detail": "1 tension marker(s): gak"
+      },
+      "FRONTLOAD": {
+        "score": 100.0,
+        "detail": "payload at word 1"
+      },
+      "ADDRESS": {
+        "score": 35.0,
+        "detail": "third person, nobody in the room"
+      }
+    },
+    "weakest": "SPECIFICITY",
+    "flags": [],
+    "score": 44.4,
+    "verdict": "WEAK"
+  },
+  {
+    "hook": "Kerja 3 tahun tapi rasanya autopilot? Ini buat kamu.",
+    "checks": {
+      "LENGTH": {
+        "score": 100.0,
+        "detail": "9 words, 52 chars, ~3.3s spoken (want 5-12 words)"
+      },
+      "SPECIFICITY": {
+        "score": 75,
+        "detail": "1 concrete marker(s): 3 tahun"
+      },
+      "STAKES": {
+        "score": 70.0,
+        "detail": "1 tension marker(s): tapi"
+      },
+      "FRONTLOAD": {
+        "score": 100.0,
+        "detail": "payload at word 2"
+      },
+      "ADDRESS": {
+        "score": 100.0,
+        "detail": "speaks to the viewer"
+      }
+    },
+    "weakest": "STAKES",
+    "flags": [],
+    "score": 81.4,
+    "verdict": "STRONG"
+  },
+  {
+    "hook": "Kamu cari makna kerja dengan cara salah, dan itu bukan salahmu.",
+    "checks": {
+      "LENGTH": {
+        "score": 88.0,
+        "detail": "11 words, 63 chars, ~4.0s spoken (want 5-12 words)"
+      },
+      "SPECIFICITY": {
+        "score": 15.0,
+        "detail": "0 concrete marker(s) - no number, no name, nothing checkable"
+      },
+      "STAKES": {
+        "score": 100.0,
+        "detail": "2 tension marker(s): bukan, salah"
+      },
+      "FRONTLOAD": {
+        "score": 70.0,
+        "detail": "payload at word 7, could move forward"
+      },
+      "ADDRESS": {
+        "score": 100.0,
+        "detail": "speaks to the viewer"
+      }
+    },
+    "weakest": "SPECIFICITY",
+    "flags": [],
+    "score": 50.8,
+    "verdict": "OK"
+  },
+  {
+    "hook": "11 tipe orang bingung arah. Kamu yang mana?",
+    "checks": {
+      "LENGTH": {
+        "score": 100.0,
+        "detail": "8 words, 43 chars, ~2.9s spoken (want 5-12 words)"
+      },
+      "SPECIFICITY": {
+        "score": 75,
+        "detail": "1 concrete marker(s): 11"
+      },
+      "STAKES": {
+        "score": 70.0,
+        "detail": "1 tension marker(s): bingung"
+      },
+      "FRONTLOAD": {
+        "score": 100.0,
+        "detail": "payload at word 1"
+      },
+      "ADDRESS": {
+        "score": 100.0,
+        "detail": "speaks to the viewer"
+      }
+    },
+    "weakest": "STAKES",
+    "flags": [],
+    "score": 81.4,
+    "verdict": "STRONG"
+  },
+  {
+    "hook": "\"Aku cocoknya ke mana?\" Jawab 60 pertanyaan ini dulu.",
+    "checks": {
+      "LENGTH": {
+        "score": 100.0,
+        "detail": "9 words, 53 chars, ~3.3s spoken (want 5-12 words)"
+      },
+      "SPECIFICITY": {
+        "score": 100.0,
+        "detail": "2 concrete marker(s): 60, Jawab"
+      },
+      "STAKES": {
+        "score": 20.0,
+        "detail": "0 tension marker(s) - nothing is at stake in this line"
+      },
+      "FRONTLOAD": {
+        "score": 70.0,
+        "detail": "payload at word 6, could move forward"
+      },
+      "ADDRESS": {
+        "score": 70.0,
+        "detail": "first person, no viewer named"
+      }
+    },
+    "weakest": "STAKES",
+    "flags": [],
+    "score": 51.2,
+    "verdict": "OK"
+  },
+  {
+    "hook": "Ini 11 archetype arah hidup. Kamu nomor berapa?",
+    "checks": {
+      "LENGTH": {
+        "score": 100.0,
+        "detail": "8 words, 47 chars, ~2.9s spoken (want 5-12 words)"
+      },
+      "SPECIFICITY": {
+        "score": 75,
+        "detail": "1 concrete marker(s): 11"
+      },
+      "STAKES": {
+        "score": 20.0,
+        "detail": "0 tension marker(s) - nothing is at stake in this line"
+      },
+      "FRONTLOAD": {
+        "score": 100.0,
+        "detail": "payload at word 2"
+      },
+      "ADDRESS": {
+        "score": 100.0,
+        "detail": "speaks to the viewer"
+      }
+    },
+    "weakest": "STAKES",
+    "flags": [],
+    "score": 55.4,
+    "verdict": "OK"
+  },
+  {
+    "hook": "3 kali aku ganti arah. Ini yang akhirnya berubah.",
+    "checks": {
+      "LENGTH": {
+        "score": 100.0,
+        "detail": "9 words, 49 chars, ~3.3s spoken (want 5-12 words)"
+      },
+      "SPECIFICITY": {
+        "score": 75,
+        "detail": "1 concrete marker(s): 3"
+      },
+      "STAKES": {
+        "score": 20.0,
+        "detail": "0 tension marker(s) - nothing is at stake in this line"
+      },
+      "FRONTLOAD": {
+        "score": 100.0,
+        "detail": "payload at word 1"
+      },
+      "ADDRESS": {
+        "score": 70.0,
+        "detail": "first person, no viewer named"
+      }
+    },
+    "weakest": "STAKES",
+    "flags": [],
+    "score": 51.8,
+    "verdict": "OK"
+  },
+  {
+    "hook": "...dan saat itu aku sadar, aku cuma ikut ekspektasi orang.",
+    "checks": {
+      "LENGTH": {
+        "score": 100.0,
+        "detail": "10 words, 58 chars, ~3.6s spoken (want 5-12 words)"
+      },
+      "SPECIFICITY": {
+        "score": 15.0,
+        "detail": "0 concrete marker(s) - no number, no name, nothing checkable"
+      },
+      "STAKES": {
+        "score": 70.0,
+        "detail": "1 tension marker(s): cuma"
+      },
+      "FRONTLOAD": {
+        "score": 70.0,
+        "detail": "payload at word 7, could move forward"
+      },
+      "ADDRESS": {
+        "score": 70.0,
+        "detail": "first person, no viewer named"
+      }
+    },
+    "weakest": "SPECIFICITY",
+    "flags": [],
+    "score": 45.0,
+    "verdict": "WEAK"
+  },
+  {
+    "hook": "Gak ada yang tahu aku dulu juga gak punya arah.",
+    "checks": {
+      "LENGTH": {
+        "score": 100.0,
+        "detail": "10 words, 47 chars, ~3.6s spoken (want 5-12 words)"
+      },
+      "SPECIFICITY": {
+        "score": 15.0,
+        "detail": "0 concrete marker(s) - no number, no name, nothing checkable"
+      },
+      "STAKES": {
+        "score": 70.0,
+        "detail": "1 tension marker(s): gak"
+      },
+      "FRONTLOAD": {
+        "score": 100.0,
+        "detail": "payload at word 1"
+      },
+      "ADDRESS": {
+        "score": 70.0,
+        "detail": "first person, no viewer named"
+      }
+    },
+    "weakest": "SPECIFICITY",
+    "flags": [],
+    "score": 48.6,
+    "verdict": "WEAK"
+  },
+  {
+    "hook": "Mau resign tapi ragu? Jawab 3 pertanyaan ini dulu.",
+    "checks": {
+      "LENGTH": {
+        "score": 100.0,
+        "detail": "9 words, 50 chars, ~3.3s spoken (want 5-12 words)"
+      },
+      "SPECIFICITY": {
+        "score": 75,
+        "detail": "1 concrete marker(s): 3"
+      },
+      "STAKES": {
+        "score": 70.0,
+        "detail": "1 tension marker(s): tapi"
+      },
+      "FRONTLOAD": {
+        "score": 100.0,
+        "detail": "payload at word 3"
+      },
+      "ADDRESS": {
+        "score": 35.0,
+        "detail": "third person, nobody in the room"
+      }
+    },
+    "weakest": "ADDRESS",
+    "flags": [],
+    "score": 59.6,
+    "verdict": "OK"
+  },
+  {
+    "hook": "Curi 3 pertanyaan ini sebelum kamu ambil keputusan besar.",
+    "checks": {
+      "LENGTH": {
+        "score": 100.0,
+        "detail": "9 words, 57 chars, ~3.3s spoken (want 5-12 words)"
+      },
+      "SPECIFICITY": {
+        "score": 75,
+        "detail": "1 concrete marker(s): 3"
+      },
+      "STAKES": {
+        "score": 20.0,
+        "detail": "0 tension marker(s) - nothing is at stake in this line"
+      },
+      "FRONTLOAD": {
+        "score": 100.0,
+        "detail": "payload at word 2"
+      },
+      "ADDRESS": {
+        "score": 100.0,
+        "detail": "speaks to the viewer"
+      }
+    },
+    "weakest": "STAKES",
+    "flags": [],
+    "score": 55.4,
+    "verdict": "OK"
+  },
+  {
+    "hook": "Jangan resign dulu. Jawab 3 pertanyaan ini malam ini.",
+    "checks": {
+      "LENGTH": {
+        "score": 100.0,
+        "detail": "9 words, 53 chars, ~3.3s spoken (want 5-12 words)"
+      },
+      "SPECIFICITY": {
+        "score": 75,
+        "detail": "1 concrete marker(s): 3"
+      },
+      "STAKES": {
+        "score": 70.0,
+        "detail": "1 tension marker(s): jangan"
+      },
+      "FRONTLOAD": {
+        "score": 100.0,
+        "detail": "payload at word 1"
+      },
+      "ADDRESS": {
+        "score": 90.0,
+        "detail": "imperative opener (\"jangan\")"
+      }
+    },
+    "weakest": "STAKES",
+    "flags": [],
+    "score": 80.2,
+    "verdict": "STRONG"
+  },
+  {
+    "hook": "Gak ada yang bilang hasil tes cuma awal, bukan jawaban.",
+    "checks": {
+      "LENGTH": {
+        "score": 100.0,
+        "detail": "10 words, 55 chars, ~3.6s spoken (want 5-12 words)"
+      },
+      "SPECIFICITY": {
+        "score": 15.0,
+        "detail": "0 concrete marker(s) - no number, no name, nothing checkable"
+      },
+      "STAKES": {
+        "score": 100.0,
+        "detail": "3 tension marker(s): bukan, cuma, gak"
+      },
+      "FRONTLOAD": {
+        "score": 100.0,
+        "detail": "payload at word 1"
+      },
+      "ADDRESS": {
+        "score": 35.0,
+        "detail": "third person, nobody in the room"
+      }
+    },
+    "weakest": "SPECIFICITY",
+    "flags": [],
+    "score": 48.0,
+    "verdict": "WEAK"
+  },
+  {
+    "hook": "Skor 68, tipe Explorer. Terus kamu mau ngapain?",
+    "checks": {
+      "LENGTH": {
+        "score": 100.0,
+        "detail": "8 words, 47 chars, ~2.9s spoken (want 5-12 words)"
+      },
+      "SPECIFICITY": {
+        "score": 100.0,
+        "detail": "2 concrete marker(s): 68,, Explorer"
+      },
+      "STAKES": {
+        "score": 20.0,
+        "detail": "0 tension marker(s) - nothing is at stake in this line"
+      },
+      "FRONTLOAD": {
+        "score": 100.0,
+        "detail": "payload at word 2"
+      },
+      "ADDRESS": {
+        "score": 100.0,
+        "detail": "speaks to the viewer"
+      }
+    },
+    "weakest": "STAKES",
+    "flags": [],
+    "score": 58.4,
+    "verdict": "OK"
+  },
+  {
+    "hook": "Hasil tes kepribadianmu gak akan mengubah apa pun. Kecuali ini.",
+    "checks": {
+      "LENGTH": {
+        "score": 88.0,
+        "detail": "10 words, 63 chars, ~3.6s spoken (want 5-12 words)"
+      },
+      "SPECIFICITY": {
+        "score": 15.0,
+        "detail": "0 concrete marker(s) - no number, no name, nothing checkable"
+      },
+      "STAKES": {
+        "score": 70.0,
+        "detail": "1 tension marker(s): gak"
+      },
+      "FRONTLOAD": {
+        "score": 100.0,
+        "detail": "payload at word 4"
+      },
+      "ADDRESS": {
+        "score": 35.0,
+        "detail": "third person, nobody in the room"
+      }
+    },
+    "weakest": "SPECIFICITY",
+    "flags": [],
+    "score": 43.0,
+    "verdict": "WEAK"
+  },
+  {
+    "hook": "\"Aku bisa tanya ChatGPT sendiri.\" Oke. Ini masalahnya.",
+    "checks": {
+      "LENGTH": {
+        "score": 100.0,
+        "detail": "8 words, 54 chars, ~2.9s spoken (want 5-12 words)"
+      },
+      "SPECIFICITY": {
+        "score": 15.0,
+        "detail": "0 concrete marker(s) - no number, no name, nothing checkable"
+      },
+      "STAKES": {
+        "score": 20.0,
+        "detail": "0 tension marker(s) - nothing is at stake in this line"
+      },
+      "FRONTLOAD": {
+        "score": 30.0,
+        "detail": "no payload word anywhere in the line"
+      },
+      "ADDRESS": {
+        "score": 70.0,
+        "detail": "first person, no viewer named"
+      }
+    },
+    "weakest": "SPECIFICITY",
+    "flags": [],
+    "score": 34.2,
+    "verdict": "WEAK"
+  },
+  {
+    "hook": "Kamu gak butuh coach mahal buat mulai nyusun arah.",
+    "checks": {
+      "LENGTH": {
+        "score": 100.0,
+        "detail": "9 words, 50 chars, ~3.3s spoken (want 5-12 words)"
+      },
+      "SPECIFICITY": {
+        "score": 15.0,
+        "detail": "0 concrete marker(s) - no number, no name, nothing checkable"
+      },
+      "STAKES": {
+        "score": 70.0,
+        "detail": "1 tension marker(s): gak"
+      },
+      "FRONTLOAD": {
+        "score": 100.0,
+        "detail": "payload at word 2"
+      },
+      "ADDRESS": {
+        "score": 100.0,
+        "detail": "speaks to the viewer"
+      }
+    },
+    "weakest": "SPECIFICITY",
+    "flags": [],
+    "score": 52.2,
+    "verdict": "OK"
+  },
+  {
+    "hook": "Rp99 ribu, 90 hari, satu arah yang jelas buat kamu.",
+    "checks": {
+      "LENGTH": {
+        "score": 100.0,
+        "detail": "10 words, 51 chars, ~3.6s spoken (want 5-12 words)"
+      },
+      "SPECIFICITY": {
+        "score": 100.0,
+        "detail": "3 concrete marker(s): Rp99, 90 hari, ribu"
+      },
+      "STAKES": {
+        "score": 20.0,
+        "detail": "0 tension marker(s) - nothing is at stake in this line"
+      },
+      "FRONTLOAD": {
+        "score": 100.0,
+        "detail": "payload at word 1"
+      },
+      "ADDRESS": {
+        "score": 100.0,
+        "detail": "speaks to the viewer"
+      }
+    },
+    "weakest": "STAKES",
+    "flags": [],
+    "score": 58.4,
+    "verdict": "OK"
+  }
+]
