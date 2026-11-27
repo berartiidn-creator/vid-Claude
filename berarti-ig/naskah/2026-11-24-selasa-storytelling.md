@@ -79,3 +79,45 @@ Follow aku buat cerita dan latihan percaya diri berikutnya, seri pengembangan di
 ```
 
 Cek: caption lint READY, humanizer caption 79,5 PASS, naskah 61,6 REVIEW (wajar untuk naskah lisan, baca keras-keras sekali sebelum rekam). Nol em dash, nol ampersand.
+
+## Versi video gaya C2 (27 November 2026)
+
+Diproduksi ulang dengan skill `berarti-reels` dari VO ElevenLabs tanggal 23 November (VO tidak berubah, kalimat penutupnya tetap "Follow berarti academy"). Cover: chip "PERNAH NGALAMIN INI?", judul RAKA DIAM / 10 MENIT / DI RAPAT, balon "Nanti dibilang sok tahu..." dicoret, pill "Gantinya → 1 kalimat", pilar CONFIDENCE, pose Firas jari di pelipis dengan mata terbelalak. Bagian penjelasan (detik 28 sampai 40) dipadatkan 1,45 detik.
+
+Karena VO hanya mengajak follow, ajakan ke tes gratis dipindah ke caption dan komentar pin dengan keyword **PEDE** (pilar Confidence).
+
+### Caption
+
+```text
+Raka diam 10 menit di rapat. Idenya dipakai, tapi bukan dia yang ngomong. Pernah ngalamin ini?
+
+Idenya udah ada sejak jam 9 pagi. Yang bikin dia diam cuma satu pikiran: nanti dibilang sok tahu.
+
+Rendah hati itu soal cara kita memandang orang lain. Percaya diri itu soal berani menawarkan apa yang kita punya. Dua-duanya bisa jalan bareng.
+
+Di rapat berikutnya, cukup satu kalimat: "Aku punya satu usulan."
+
+Mau tahu seberapa pede kamu waktu bicara di depan orang? Komen PEDE, nanti aku kirim tes gratisnya lewat DM.
+
+#percayadiri #publicspeaking #komunikasi
+```
+
+### Komentar pin
+
+```text
+Komen PEDE di bawah ini, nanti link tes gratisnya aku kirim lewat DM. Hasilnya langsung keluar: skor speaking dan tipe pembicaramu.
+```
+
+### Teks DM otomatis (pemicu PEDE)
+
+```text
+Hai! Ini lanjutan video Raka yang diam 10 menit di rapat.
+
+Satu latihan kecil sebelum rapat berikutnya: tulis satu kalimat pembukamu, misalnya "Aku punya satu usulan: ...". Kalimat yang sudah disiapkan jauh lebih gampang diucapkan.
+
+Penasaran seberapa pede kamu saat bicara? Cek di BERARTI Speaking Index: 35 pertanyaan, 7 menit, gratis.
+Hasilnya langsung keluar: skor speaking, tipe pembicaramu, peta 7 pilar, dan 3 latihan sesuai titik lemahmu.
+[link BERARTI Speaking Index]?src=ig-raka
+```
+
+Cek: satu ajakan utama (komen PEDE), tiga hashtag, tanpa em dash dan tanpa ampersand. Janji di caption dan DM hanya yang memang ada di hasil tes. Kelas tidak disebut.
