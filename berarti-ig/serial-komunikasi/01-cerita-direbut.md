@@ -1,6 +1,6 @@
 # Konten 01: Cerita yang direbut
 
-Serial Edukasi Komunikasi · EP 01 · Pilar COMMUNICATION · Target sekitar 50 detik (120 kata) · Keyword CTA: KOMUNIKASI
+Serial Edukasi Komunikasi · EP 01 · Pilar COMMUNICATION · Target 45 sampai 50 detik (108 kata) · Keyword CTA: KOMUNIKASI
 
 Tema: tanpa sadar kita "merebut" cerita lawan bicara dengan membalas pakai cerita sendiri (shift response). Gantinya: support response, yaitu tanya dulu dan biarkan ceritanya selesai.
 
@@ -18,7 +18,7 @@ Tema: tanpa sadar kita "merebut" cerita lawan bicara dengan membalas pakai cerit
 | PENUTUP | 40 sampai 44 | Narasi | Kadang cara paling cepat bikin orang nyaman, ya nggak cerita apa-apa dulu. |
 | CTA | 44 sampai 52 | Narasi | Komen KOMUNIKASI untuk contoh kalimat support response, nanti aku kirim lewat DM. |
 
-Total 120 kata. Penutup sengaja menyambung ke hook saat video mengulang: "...nggak cerita apa-apa dulu." lalu "Kamu ngerasa ngobrolnya lancar."
+Total 108 kata (sekitar 45 detik bicara, ditambah jeda dialog). Penutup sengaja menyambung ke hook saat video mengulang: "...nggak cerita apa-apa dulu." lalu "Kamu ngerasa ngobrolnya lancar."
 
 ### Cek penulisan
 - **viral-hooks:** hook lolos semua cek. Topik langsung jelas, kalimatnya mudah, ditujukan ke "kamu", dan ada kontras antara "lancar" dan "pengen cepet pergi".
