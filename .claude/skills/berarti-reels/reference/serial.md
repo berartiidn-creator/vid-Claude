@@ -52,6 +52,9 @@ Daftar episode, hook final, dan CTA master ada di `berarti-ig/17-serial-komunika
 - **Durasi:** `end` mengikuti waktu `close` ditambah sekitar 2,4 detik, karena kalimat VO bisa selesai sebelum penutup visual. Set `project.json` ke nilai yang sama.
 - **Demo CTA:** render komposisi `CtaDemo` untuk melihat CTA master sendirian.
 
+## Keyword per pilar
+Pola CTA (komen keyword, DM, lalu "Ilmunya lewat DM!") dipakai di semua pilar. Keywordnya: COMMUNICATION memakai **KOMUNIKASI**, CONFIDENCE memakai **PEDE**, dan GROW belum ditentukan (tanya user sebelum episode Grow pertama). Chip pilar di cover mengikuti pilarnya.
+
 ## Konsistensi serial
 - Keyword, jalur DM, tulisan "Ilmunya lewat DM!", layout kartu komentar dan DM, tombol Kirim, animasi, dan SFX CTA tidak boleh diubah per episode.
 - Yang berubah per episode hanya tema, dialog, isi kartu adegan, konteks di kalimat ajakan, dan `dmTitle` atau `dmLine`.

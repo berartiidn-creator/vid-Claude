@@ -5,6 +5,15 @@ Produksi video memakai skill `berarti-reels` (gaya Kinetic Cream C2) dalam mode 
 
 ## CTA master (jangan diubah)
 
+Keyword per pilar (pola CTA sama untuk semua pilar):
+
+| Pilar | Keyword | Contoh dmTitle |
+|---|---|---|
+| COMMUNICATION | KOMUNIKASI | Ilmu Komunikasi · EP 01 |
+| CONFIDENCE | PEDE | Ilmu Pede · Rasa malu muter lagi |
+| GROW | belum ditentukan | |
+
+
 | Bagian | Isi tetap |
 |---|---|
 | Keyword | **KOMUNIKASI** (semua episode serial ini) |

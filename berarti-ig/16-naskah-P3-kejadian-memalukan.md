@@ -1,90 +1,122 @@
-# P3. Kejadian memalukan (pilar CONFIDENCE)
+# P3. Kejadian memalukan (pilar CONFIDENCE) · versi 2
 
-Rumus #3 Nobody Tells You · Funnel TOFU · Target sekitar 40 detik (98 kata) · Format video: skill berarti-reels (gaya C2)
+Format serial edukasi (template HOOK, SKENARIO, AKIBAT, REFRAME, SOLUSI, PENUTUP, CTA) · Funnel TOFU · 110 kata, sekitar 46 detik · Keyword CTA: **PEDE** · Video: skill berarti-reels (gaya C2)
 
-## Audit hook (viral-hooks)
+## Kenapa versi 2
 
-Hook bank: "Kejadian memalukan tiga tahun lalu? Gak ada yang inget, selain kamu."
+Hasil analisis struktur versi 1, dan perbaikannya:
+1. Hook "gak ada yang inget" mutlak, sedangkan riset hanya bilang yang memperhatikan "jauh lebih sedikit". Hook dilunakkan jadi "yang masih muter ulang, cuma kamu".
+2. Ada lompatan logika dari "diperhatikan saat kejadian" ke "diingat tiga tahun kemudian". Ditambah jembatan: "Apalagi tiga tahun kemudian."
+3. Penjelasan eksperimen dipadatkan dari 25 jadi 15 kata.
+4. Solusi "ambil pelajarannya" terlalu kabur. Diganti satu pertanyaan konkret.
+5. CTA mengikuti pola serial: komen keyword, ilmunya dikirim lewat DM.
 
-| Pembunuh hook | Hasil |
-|---|---|
-| Delay | lolos, topik muncul di kata pertama |
-| Confusion | lolos, satu kali baca langsung paham |
-| Irrelevance | lolos, "kamu" dan rasa malu yang semua orang punya |
-| Disinterest | lolos, kontras tersirat: kamu yakin semua inget, nyatanya cuma kamu |
+Skenario sekarang **membuktikan** spotlight effect: Dina masih malu tiga tahun, sementara temannya bahkan tidak ingat kejadiannya.
 
-Hook ini dipakai apa adanya. Alternatif kalau mau dites:
-- B (adegan): "Salah sebut nama dosen di depan kelas. Tiga tahun kemudian, kamu masih malu."
-- C (cermin): "Kamu masih malu soal kejadian itu. Mereka bahkan udah lupa."
+## 1. Naskah per beat
 
-## Naskah (versi baca)
+| Beat | Waktu | Siapa | Teks |
+|---|---|---|---|
+| HOOK | 0 sampai 4 | Narasi | Kejadian memalukan tiga tahun lalu? Yang masih muter ulang, cuma kamu. |
+| SKENARIO | 4 sampai 11 | Dina | Eh, kamu inget nggak, waktu aku salah sebut nama dosen di depan kelas? |
+| | | Firas | Hah? Kapan? Nggak inget sama sekali. |
+| AKIBAT | 11 sampai 18 | Narasi | Tiga tahun Dina malu sendiri. Tiap mau tidur, adegannya muter lagi. Padahal temannya bahkan nggak inget. |
+| REFRAME | 18 sampai 27 | Narasi | Ini namanya spotlight effect. Di eksperimen, mahasiswa yang pakai kaos memalukan yakin banyak yang notice. Nyatanya, jauh lebih sedikit. Apalagi tiga tahun kemudian. |
+| SOLUSI | 27 sampai 35 | Narasi | Jadi kalau adegannya muter lagi, tanya satu hal: "Kalau terulang, aku mau ngapain beda?" Jawab. Terus tutup filenya. |
+| PENUTUP | 35 sampai 39 | Narasi | Kamu satu-satunya penonton yang masih muter ulang adegan itu. |
+| CTA | 39 sampai 46 | Narasi | Komen PEDE untuk latihan pas rasa malunya muncul lagi, nanti aku kirim lewat DM. |
 
-**[HOOK]**
-Kejadian memalukan tiga tahun lalu? Gak ada yang inget, selain kamu.
+Penutup menyambung ke hook saat video mengulang: "...muter ulang adegan itu." lalu "Kejadian memalukan tiga tahun lalu?"
 
-**[NYERI]**
-Salah sebut nama dosen. Chat salah kirim ke grup kantor.
-Tiap mau tidur, adegannya muter lagi.
+### Cek penulisan
+- **viral-hooks:** topik di kata pertama, sekali baca paham, ditujukan ke "kamu", dan ada kontras antara "kamu kira semua inget" dan "cuma kamu yang muter ulang". Klaimnya sesuai bukti.
+- **storytelling:** Dina bertanya, **tapi** temannya lupa, **padahal** Dina tiga tahun malu, **jadi** ada satu pertanyaan sebagai tindakan.
+- **dumbify:** istilah spotlight effect langsung dijelaskan lewat eksperimen. Solusinya satu kalimat tanya yang bisa langsung dipakai.
+- **anti-ai-writing:** "Padahal temannya bahkan nggak inget" adalah kontras yang dibayar dengan adegan nyata di skenario, bukan pola kosong.
 
-**[BALIK]**
-Tapi ada eksperimen soal ini.
-Mahasiswa disuruh pakai kaos yang malu-maluin, terus masuk ke ruangan penuh orang.
-Mereka yakin banyak yang notice. Nyatanya, jauh lebih sedikit.
+## 2. Karakter
+- **A: Firas,** memerankan teman yang lupa, sekaligus narator.
+- **B: Dina,** sama dengan EP 01 Serial Komunikasi. Ia jadi karakter tetap supaya penonton mengenalinya. Tampil sebagai balon chat dengan avatar.
 
-**[NAMA]**
-Namanya spotlight effect. Kita ngerasa disorot, padahal orang lain sibuk mikirin dirinya sendiri.
+## 3. VO ElevenLabs (mode dialog, v3)
 
-**[GERAK]**
-Jadi kalau adegan itu muter lagi, bilang: "Itu cuma aku yang nonton ulang."
-Ambil pelajarannya. Lepasin sisanya.
-
-**[PENUTUP]**
-Kamu satu-satunya penonton yang masih muter ulang adegan itu.
-
-**[CTA]**
-Kirim ke teman yang masih kepikiran kejadian memalukannya.
-
-Catatan alur (storytelling): konteks (adegan memalukan) lalu **tapi** (eksperimen) lalu **nyatanya** (balik) lalu **jadi** (tindakan). Kalimat penutup sengaja menyambung ke hook saat video mengulang ("...adegan itu." lalu "Kejadian memalukan tiga tahun lalu?").
-
-## Naskah VO ElevenLabs (tag emosi v3, angka ditulis kata)
+Speaker 1 adalah suara kloningmu. Speaker 2 adalah suara stok perempuan ElevenLabs yang sama dengan EP 01, supaya Dina konsisten. Jangan pakai kloning suara orang lain.
 
 ```
-[serious, direct] Kejadian memalukan tiga tahun lalu? [beat] Gak ada yang inget... selain kamu.
-
-[softly, empathetic] Salah sebut nama dosen. Chat salah kirim ke grup kantor. [sighs] Tiap mau tidur, adegannya muter lagi.
-
-[curious] Tapi ada eksperimen soal ini. Mahasiswa disuruh pakai kaos yang malu-maluin, terus masuk ke ruangan penuh orang. [building] Mereka yakin banyak yang notice. [beat] Nyatanya? Jauh lebih sedikit.
-
-[warm, explaining] Namanya spotlight effect. Kita ngerasa disorot... padahal orang lain sibuk mikirin dirinya sendiri.
-
-[calm, firm] Jadi kalau adegan itu muter lagi, bilang: [softly] "Itu cuma aku yang nonton ulang." [firm] Ambil pelajarannya. Lepasin sisanya.
-
-[slow, gentle] Kamu satu-satunya penonton... yang masih muter ulang adegan itu.
-
-[friendly] Kirim ke teman yang masih kepikiran kejadian memalukannya.
+Speaker 1: [gentle, knowing] Kejadian memalukan tiga tahun lalu? [beat] Yang masih muter ulang... cuma kamu.
+Speaker 2: [embarrassed, half laughing] Eh, kamu inget nggak, waktu aku salah sebut nama dosen di depan kelas?
+Speaker 1: [genuinely confused] Hah? Kapan? [chuckles] Nggak inget sama sekali.
+Speaker 1: [softer, empathetic] Tiga tahun Dina malu sendiri. [sighs] Tiap mau tidur, adegannya muter lagi. [beat] Padahal temannya bahkan nggak inget.
+Speaker 1: [curious, explaining] Ini namanya spotlight effect. Di eksperimen, mahasiswa yang pakai kaos memalukan yakin banyak yang notice. [beat] Nyatanya? Jauh lebih sedikit. [knowing] Apalagi tiga tahun kemudian.
+Speaker 1: [calm, practical] Jadi kalau adegannya muter lagi, tanya satu hal: [softly] "Kalau terulang, aku mau ngapain beda?" [firm] Jawab. Terus tutup filenya.
+Speaker 1: [slow, warm] Kamu satu-satunya penonton... yang masih muter ulang adegan itu.
+Speaker 1: [friendly, upbeat] Komen PEDE untuk latihan pas rasa malunya muncul lagi, nanti aku kirim lewat DM.
 ```
 
-## Cover (rule of thirds, berarti-reels)
+Kalau mode dialog tidak tersedia: buat baris Speaker 1 dengan suaramu dan baris Speaker 2 terpisah, lalu kirim semuanya beserta urutannya.
 
-- Judul (3 baris, sama dengan kalimat hook): **KEJADIAN / MEMALUKAN / 3 TAHUN LALU?** dengan Marker di "3 TAHUN LALU?"
-- Balon dicoret merah: "Semua orang pasti masih inget..."
-- Pill solusi: "Cuma kamu yang inget"
-- Pilar: CONFIDENCE
+## 4. Storyboard per adegan
+
+| Adegan | Kartu tengah | Firas (pose, ekspresi) | Judul narasi | SFX |
+|---|---|---|---|---|
+| HOOK (cover) | cover (lihat bagian 8) | tunjuk_kamu, serius | dari cover | pop_hi pembuka |
+| SKENARIO | `SpeechBubble` kiri "DINA": "Eh, kamu inget nggak, waktu aku salah sebut nama dosen di depan kelas?" Lalu balon kanan oranye milik Firas: "Hah? Kapan? Nggak inget sama sekali." | tulus, ramah saat Dina bicara (mulut diam lewat `mute`). Lalu bertanya, terkejut, head tilt saat menjawab | balon dialog menggantikan judul narasi | pop tiap balon |
+| AKIBAT | Kartu kalender tiga tahun dengan halaman yang membalik cepat. Lalu ikon putar ulang di layar HP malam hari. Lalu chip "temannya nggak inget" | tanda_x, serius | "inget." jadi **kata raksasa** dengan **flood oranye** | whoosh_short tiap halaman, thump di flood |
+| REFRAME | Ruangan berisi `Person`, satu memakai kaos mencolok dan disorot lampu. Dua bar tanpa angka: "Yang mereka kira notice" panjang, "Yang beneran notice" pendek | bertanya, ramah, nod | kata kunci: spotlight effect, sedikit. "kemudian." jadi **kata raksasa** | pop per bar, click_lo |
+| SOLUSI | Kartu pertanyaan "Kalau terulang, aku mau ngapain beda?" dengan kursor mengetik. Lalu ikon folder tertutup dan `Check` | tawarkan, ramah, lalu hitung_tiga di "Jawab" | kata kunci: beda | click mengetik, ding di centang |
+| PENUTUP | Bioskop kosong, satu kursi terisi, layar memutar ulang | tulus, ramah | kata kunci: penonton | pop lembut |
+| CTA | `CtaDM` master: keyword **PEDE**, Kirim, DM "Ilmu Pede · Rasa malu muter lagi", lalu "Ilmunya lewat DM!" | membesar, tunjuk_kamu, ramah, lalu wink | CTA master | SFX bawaan CtaDM |
+
+Pop close-up: cu_tertawa (Dina canggung) di SKENARIO, cu_merenung di AKIBAT.
+
+Transisi mozaik di awal AKIBAT, REFRAME, SOLUSI, dan CTA.
+
+## 5. Spesifikasi CTA
+- VO: "Komen PEDE untuk latihan pas rasa malunya muncul lagi, nanti aku kirim lewat DM."
+- `keyword`: PEDE
+- `dmTitle`: Ilmu Pede · Rasa malu muter lagi
+- `dmLine`: latihan 3 langkah, 2 menit
+- Penutup visual: "Ilmunya lewat DM!" (master)
+
+## 6. Teks DM otomatis (pemicu PEDE)
+
+```
+Hai! Ini latihan buat kamu yang masih kepikiran kejadian memalukan.
+
+Pas adegannya muter lagi, lakukan 3 langkah ini (2 menit):
+
+1. Kasih nama: "Ini spotlight effect. Aku ngerasa disorot, padahal orang lain sibuk sama dirinya sendiri."
+2. Tanya satu hal: "Kalau terulang, aku mau ngapain beda?" Tulis jawabannya di notes HP, satu kalimat aja.
+3. Tutup filenya: begitu jawabannya ketulis, pindah ke satu hal kecil yang bisa kamu kerjain sekarang. Beresin meja, minum air, atau balas satu chat.
+
+Kalau adegannya muncul lagi besok, ulangi. Biasanya makin lama makin jarang.
+
+Kalau rasa malunya bikin kamu susah tidur atau ganggu aktivitas tiap hari dalam waktu lama, ngobrol sama psikolog itu langkah yang kuat, bukan lemah.
+
+Mau tahu dari mana sumber pede kamu? Coba BERARTI Index gratis: [link BERARTI Index]
+```
+
+## 7. Caption
+
+```
+Kejadian memalukan tiga tahun lalu? Yang masih muter ulang, cuma kamu.
+
+Dina tiga tahun malu karena salah sebut nama dosen. Pas ditanya, temannya bahkan nggak inget.
+Namanya spotlight effect: kita ngerasa disorot, padahal orang lain sibuk mikirin dirinya sendiri.
+
+Kalau adegannya muter lagi, tanya: "Kalau terulang, aku mau ngapain beda?" Jawab, terus tutup filenya.
+
+Komen PEDE, nanti aku kirim latihan 2 menitnya lewat DM.
+
+#percayadiri #pengembangandiri #kesehatanmental
+```
+
+## 8. Cover (rule of thirds)
+- Judul 3 baris, sama dengan kalimat hook: **KEJADIAN / MEMALUKAN / 3 TAHUN LALU?**, dengan Marker di "3 TAHUN LALU?"
+- Balon yang dicoret merah: "Semua orang pasti masih inget..."
+- Pill solusi: "Yang muter ulang cuma kamu"
+- Chip pilar: CONFIDENCE
 - Pose cover: tunjuk_kamu, serius
 
-## Rencana visual per adegan (kartu di tengah)
-
-| Adegan | Kartu | Kata raksasa / flood |
-|---|---|---|
-| Nyeri | Dua kartu cepat: slide kuliah dengan nama yang dicoret, lalu chat grup kantor "pesan ini telah dihapus". Lalu ikon putar ulang berputar di layar HP malam hari | |
-| Balik | Ruangan berisi `Person`, satu memakai kaos mencolok. Dua bar tanpa angka: "Yang mereka kira notice" panjang, "Yang beneran inget" pendek | "sedikit." raksasa |
-| Nama | Lingkaran sorot lampu di atas satu orang, orang lain menunduk ke HP masing-masing. Chip "spotlight effect" | |
-| Gerak | Kartu kutipan "Itu cuma aku yang nonton ulang." lalu checklist: ✓ Ambil pelajarannya, ✕ Putar ulang | "sisanya." raksasa |
-| Penutup | Kursi bioskop kosong, hanya satu yang terisi | flood oranye dari "itu." sampai akhir |
-| CTA | Kartu kirim ke teman (ikon panah kirim, chip "Terkirim") | |
-
-Pop close-up: cu_tertawa canggung di Nyeri, cu_merenung di Gerak.
-
 ## Sumber klaim
-
-Gilovich, Medvec, Savitsky (2000), "The spotlight effect in social judgment", Journal of Personality and Social Psychology 78(2), 211 sampai 222. Naskah sengaja tanpa persentase: sumber sekunder yang dicek tidak konsisten soal angka "yang beneran notice". Kalau mau pakai angka, cek paper aslinya dulu.
+Gilovich, Medvec, Savitsky (2000), "The spotlight effect in social judgment", Journal of Personality and Social Psychology 78(2), 211 sampai 222. Naskah sengaja tanpa persentase, karena sumber sekunder yang dicek tidak konsisten soal angka "yang beneran notice". Kalimat "Apalagi tiga tahun kemudian" adalah kesimpulan logis dari temuan itu, bukan angka penelitian.
