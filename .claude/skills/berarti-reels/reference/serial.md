@@ -10,7 +10,28 @@
 - Kelas tidak disebut di konten maupun DM, karena kelas baru muncul di akhir hasil tes.
 - Klaim riset hanya yang berstatus "Terverifikasi" di bagian H kurikulum.
 
-Daftar episode, hook final, dan CTA master ada di `berarti-ig/17-serial-komunikasi.md`. Saat user mengetik **"Konten NN"** (01 sampai 30), buat satu paket produksi lengkap, simpan di `berarti-ig/serial-komunikasi/NN-<slug>.md`, lalu tunggu VO. Jangan render sebelum ada VO dan persetujuan.
+**Sumber episode adalah `berarti-ig/18-peta-serial-speaking-index.md`** (peta resmi): "Konten NN" berarti EP NN di file itu. CTA master ada di `berarti-ig/17-serial-komunikasi.md`. Daftar 30 hook asli di file 17 hanya bank ide dan tidak dipakai untuk nomor episode. Jangan render sebelum ada VO dan persetujuan.
+
+## Perintah
+
+| Perintah | Yang dilakukan |
+|---|---|
+| **"Konten NN"** (01 sampai 30) | Buat paket produksi EP NN dari file 18, simpan di `berarti-ig/serial-komunikasi/sNN-<slug>.md`, set status `naskah`, lalu tunggu VO |
+| **"Konten berikutnya"** atau **"lanjut serial"** | Ambil EP dengan nomor terkecil di tabel Status produksi file 18 yang statusnya `belum` dan PIC-nya kosong. Sebutkan EP yang dipilih, lalu kerjakan seperti "Konten NN" |
+| **"Status serial"** | Tampilkan ringkasan tabel Status produksi: jumlah per status, episode yang sedang dikerjakan dan PIC-nya, serta EP berikutnya |
+| **"Video Konten NN"** | Setelah VO disetujui: buat video preview EP NN dengan alur skill ini, set status `preview` |
+| **"Render final"** | Render final episode yang sedang dikerjakan, set status `final` |
+| **"Konten NN tayang [tanggal]"** | Set status `tayang` dan tulis tanggalnya di kolom File |
+
+Kalau user tidak menyebut nama untuk PIC, tanyakan sekali, lalu pakai nama itu di semua episode dalam sesi yang sama.
+
+## Status produksi (wajib dijaga)
+
+- Tabel "Status produksi" di file 18 adalah satu-satunya catatan progres tim. Perbarui di setiap tahap: `belum`, `naskah`, `vo`, `preview`, `final`, `tayang`.
+- Isi kolom PIC saat mulai mengerjakan sebuah EP. Jangan mengambil EP yang PIC-nya sudah terisi orang lain, kecuali user memintanya.
+- Isi kolom File dengan path paket episode.
+- Commit perubahan tabel bersama file episodenya, dengan pesan commit yang menyebut EP-nya. Setelah status berubah, ingatkan user bahwa perubahan perlu masuk ke `main` (lewat PR) supaya anggota tim lain melihatnya.
+- Kalau peta berubah (hook, item, atau status), tawarkan untuk membangun ulang halaman peta: `python3 berarti-ig/tools/peta-serial/build.py`, lalu publish `berarti-ig/tools/peta-serial/index.html` sebagai Artifact.
 
 ## Isi paket "Konten NN"
 
@@ -75,4 +96,4 @@ Pola CTA (komen keyword, DM, lalu "Ilmunya lewat DM!") dipakai di semua pilar. K
 ## Konsistensi serial
 - Keyword, jalur DM, tulisan "Ilmunya lewat DM!", layout kartu komentar dan DM, tombol Kirim, animasi, dan SFX CTA tidak boleh diubah per episode.
 - Yang berubah per episode hanya tema, dialog, isi kartu adegan, konteks di kalimat ajakan, dan `dmTitle` atau `dmLine`.
-- Setelah episode tayang, perbarui tabel status di `17-serial-komunikasi.md`.
+- Progres episode dicatat di tabel Status produksi `18-peta-serial-speaking-index.md`, bukan di file 17.

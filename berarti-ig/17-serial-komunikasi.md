@@ -1,7 +1,7 @@
 # Serial Edukasi Komunikasi (berarti.academy)
 
 Format resmi: **listicle** (angka, open loop pada satu nomor, 3 sampai 5 item masalah lalu solusi) · 1 tema per video · 4 item sekitar 50 detik, 5 item sekitar 60 detik · CTA keyword KOMUNIKASI ke DM.
-Produksi video memakai skill `berarti-reels` (gaya Kinetic Cream C2) dalam mode serial. Ketik **"Konten 01"** sampai **"Konten 30"** untuk paket produksi lengkap.
+Produksi video memakai skill `berarti-reels` (gaya Kinetic Cream C2) dalam mode serial. Ketik **"Konten 01"** sampai **"Konten 30"** atau **"Konten berikutnya"** untuk paket produksi lengkap. Nomor episode mengikuti peta resmi di `18-peta-serial-speaking-index.md`. Daftar 30 hook di bawah adalah bank ide asli.
 
 ## CTA master (jangan diubah)
 
@@ -50,7 +50,7 @@ Visual gaya C2 (tanpa label merah atau hijau):
 - Hook menampilkan deretan nomor, dan nomor open loop berdenyut. Item open loop mendapat latar oranye penuh dan kata raksasa.
 - CTA memakai komponen CtaDM master.
 
-Peta 30 episode listicle dari silabus public speaking (usulan, corong ke BERARTI Speaking Index) ada di `18-peta-serial-speaking-index.md`.
+Peta resmi 30 episode listicle dari silabus public speaking (corong ke BERARTI Speaking Index), beserta tabel Status produksi tim, ada di `18-peta-serial-speaking-index.md`.
 
 ## 30 episode (hook sudah diaudit dengan viral-hooks)
 
@@ -107,8 +107,4 @@ Catatan tumpang tindih: 04, 05, dan 14 sama-sama soal memotong pembicaraan, jadi
 
 ## Status produksi
 
-| No | Status |
-|---|---|
-| 01 | naskah siap (`serial-komunikasi/01-cerita-direbut.md`), menunggu VO |
-| 25 | naskah siap (`serial-komunikasi/25-presentasi-membosankan.md`), menunggu VO |
-| lainnya | belum |
+Progres episode dicatat di tabel Status produksi `18-peta-serial-speaking-index.md`. Naskah lama dari daftar ini (`serial-komunikasi/01-cerita-direbut.md` dan `serial-komunikasi/14-presentasi-membosankan.md`) tercatat di bagian "Konten lama dan posisinya di peta" di file 18.

@@ -1,0 +1,211 @@
+<title>Peta Serial Speaking</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Montserrat:wght@500;600;700;800&display=swap" rel="stylesheet">
+<style>
+/* VOICE work: a production plan the team scans and comes back to
+   IDEA the class syllabus walked as a route: 30 stops grouped by meeting, each stop one Reel
+   PICTURE the 30-episode route band coloured by meeting, above the 4-layer funnel
+   COLOUR white ground, BERARTI orange leading, BERARTI green supporting, ink, gold for MP-4
+   TYPE Archivo Black display + Montserrat text (the brand's own video lettering)
+   LAYOUT title and finding across the top, route band full width, funnel stations in a row; phone stacks */
+:root{color-scheme:light dark;--bg:light-dark(#ffffff,#101211);--ink:light-dark(#16191a,#eeeae4);--mute:light-dark(#5e625d,#a7a39c);--line:light-dark(#e6e1da,#2a2d2b);--soft:light-dark(#fbf6ef,#191c1a);--or:#ff6a00;--or2:light-dark(#d95500,#ff8a3d);--gr:light-dark(#0f5b46,#2bb58a);--mp1:#ff6a00;--mp2:light-dark(#0f5b46,#1f8f6d);--mp3:light-dark(#16191a,#5d6560);--mp4:#d9a21b;--warn:light-dark(#fff1e6,#2a1a0e)}
+:root[data-theme=light]{color-scheme:light}:root[data-theme=dark]{color-scheme:dark}
+*{box-sizing:border-box;min-width:0}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.55 Montserrat,system-ui,sans-serif;overflow-x:clip}
+.band{padding-block:clamp(24px,3.4vw,52px);padding-left:max(5vw,16px,env(safe-area-inset-left,0px));padding-right:max(5vw,16px,env(safe-area-inset-right,0px))}
+.in{max-width:1240px;margin:0 auto}
+h1,h2{font-family:"Archivo Black",Montserrat,sans-serif;font-weight:400;letter-spacing:-.02em;line-height:1.05;margin:0}
+h1{font-size:clamp(32px,4.6vw,50px);max-width:20ch}
+h2{font-size:clamp(22px,2.6vw,30px);margin-bottom:14px}
+h3{font-size:17px;margin:0 0 6px}
+p{margin:0 0 10px}.mute{color:var(--mute)}.small{font-size:14px}
+.top{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,1fr);gap:28px;align-items:end}
+.lede{font-size:17px;max-width:60ch;margin-top:14px}
+.alert{background:var(--warn);border-left:4px solid var(--or);border-radius:12px;padding:14px 16px}
+.alert b{color:var(--or2)}
+.alert a{color:var(--or2);font-weight:700}
+.route{margin-top:26px}
+.route .lab{display:grid;grid-template-columns:8fr 9fr 7fr 6fr;gap:6px;margin-bottom:6px;font-size:13px;font-weight:700}
+.route .lab span{border-top:4px solid;padding-top:6px}
+.cells{display:grid;grid-template-columns:repeat(30,minmax(0,1fr));gap:6px}
+.cell{display:flex;flex-direction:column;justify-content:space-between;aspect-ratio:3/4.6;border-radius:8px;padding:6px 4px;color:#fff;text-decoration:none;text-align:center;font-weight:800;font-size:12px;position:relative;transition:transform .15s}
+.cell:hover,.cell:focus-visible{transform:translateY(-3px)}
+.cell .n{font-family:"Archivo Black",sans-serif;font-size:15px}
+.cell .p{font-size:11px;opacity:.9;white-space:nowrap}
+.cell.done::after{content:"✓";position:absolute;top:-8px;right:-6px;width:20px;height:20px;border-radius:99px;background:var(--bg);color:var(--gr);border:2px solid var(--gr);font-size:11px;display:flex;align-items:center;justify-content:center}
+.cell.ready::after{content:"";position:absolute;top:-5px;right:-4px;width:12px;height:12px;border-radius:99px;background:var(--or);border:2px solid var(--bg)}
+.key{display:flex;flex-wrap:wrap;gap:16px;margin-top:12px;font-size:13px;color:var(--mute)}
+.key i{display:inline-block;width:12px;height:12px;border-radius:99px;margin-right:6px;vertical-align:-1px}
+.funnel{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:0;margin-top:8px}
+.st{position:relative;padding:18px 26px 18px 18px;background:var(--soft);border:1px solid var(--line);border-right:0}
+.st:first-child{border-radius:16px 0 0 16px}.st:last-child{border-radius:0 16px 16px 0;border-right:1px solid var(--line)}
+.st:not(:last-child)::after{content:"";position:absolute;right:-13px;top:50%;width:24px;height:24px;background:var(--soft);border-top:1px solid var(--line);border-right:1px solid var(--line);transform:translateY(-50%) rotate(45deg);z-index:1}
+.st .no{font-family:"Archivo Black",sans-serif;font-size:30px;color:var(--or)}
+.st .gv{font-size:14px;margin:6px 0 8px}
+.st .hd{font-size:13px;color:var(--mute);border-top:1px dashed var(--line);padding-top:8px}
+.st .hd b{color:var(--ink)}
+.cols{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:28px}
+ul.rules{margin:0;padding-left:20px}ul.rules li{margin-bottom:8px}
+pre{background:var(--soft);border:1px solid var(--line);border-radius:12px;padding:14px 16px;font:13.5px/1.55 ui-monospace,Menlo,monospace;overflow-x:auto;white-space:pre-wrap;overflow-wrap:anywhere;margin:0}
+.kv{display:grid;grid-template-columns:max-content minmax(0,1fr);gap:8px 16px;font-size:15px;margin-bottom:14px}
+.kv dt{font-weight:800}.kv dd{margin:0}
+.filters{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 16px}
+.filters button{font:700 14px Montserrat,sans-serif;min-height:40px;padding:0 14px;border-radius:99px;border:1px solid var(--line);background:var(--bg);color:var(--ink);cursor:pointer}
+.filters button[aria-pressed=true]{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.mp{margin-top:26px}
+.mph{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap;margin-bottom:10px}
+.mph .tag{color:#fff;font-weight:800;font-size:13px;border-radius:8px;padding:3px 9px}
+.scroll{overflow-x:auto}
+table{width:100%;border-collapse:collapse;font-size:14.5px}
+th{text-align:left;font-size:13px;color:var(--mute);font-weight:700;border-bottom:2px solid var(--ink);padding:8px 10px;vertical-align:bottom}
+td{border-bottom:1px solid var(--line);padding:10px;vertical-align:top}
+td.ep{font-family:"Archivo Black",sans-serif;font-size:18px;white-space:nowrap}
+td.hook{font-weight:700}
+.pil{display:inline-block;font-weight:800;font-size:12px;border-radius:6px;padding:2px 7px;background:var(--soft);border:1px solid var(--line);white-space:nowrap}
+.badge{display:inline-block;font-size:11.5px;font-weight:800;border-radius:6px;padding:2px 6px;margin-top:4px;color:#fff;background:var(--gr)}
+.badge.r{background:var(--or)}
+tr:target td{background:var(--warn)}
+.foot{border-top:1px solid var(--line)}
+.eps{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,380px),1fr));gap:14px}
+.epc{border:1px solid var(--line);border-radius:16px;padding:16px 18px;background:var(--bg)}
+.epc header{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-bottom:8px}
+.epn{font-family:"Archivo Black",sans-serif;font-size:18px}
+.epc .badge{margin-top:0}
+.hk{font-weight:800;font-size:17px;line-height:1.35;margin:0 0 12px}
+.beats{display:grid;grid-template-columns:5.6em minmax(0,1fr);gap:6px 12px;margin:0;font-size:14.5px}
+.beats dt{font-weight:800;color:var(--mute);font-size:13px;padding-top:2px}
+.beats dd{margin:0}
+.its{list-style:none;margin:0;padding:0;display:grid;gap:8px}
+.its li{display:grid;grid-template-columns:30px minmax(0,1fr);gap:10px;align-items:start;font-size:14.5px;line-height:1.4}
+.its .nm{width:28px;height:28px;border-radius:99px;background:var(--soft);border:1px solid var(--line);display:flex;align-items:center;justify-content:center;font-family:"Archivo Black",sans-serif;font-size:13px}
+.its li.lp .nm{background:var(--or);border-color:var(--or);color:#fff}
+.its .so{color:var(--mute)}
+.ct{font-size:14px;margin:12px 0 0;padding:10px 12px;border-radius:10px;background:var(--soft)}
+.ct b{color:var(--or2);margin-right:4px}
+.kulit{display:inline-block;font-size:11px;font-weight:800;color:var(--or2);border:1px solid var(--or2);border-radius:6px;padding:0 5px;margin-left:4px}
+.epc .q{font-size:13px;color:var(--mute);margin:10px 0 0;border-top:1px dashed var(--line);padding-top:8px}
+@media(max-width:900px){.top,.cols{grid-template-columns:minmax(0,1fr)}.cells{grid-template-columns:repeat(15,minmax(0,1fr))}.route .lab{display:none}.funnel{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}.st,.st:first-child,.st:last-child{border-radius:14px;border:1px solid var(--line);margin:0 0 10px}.st::after{display:none}.funnel{gap:10px}}
+@media(max-width:600px){.cells{grid-template-columns:repeat(10,minmax(0,1fr))}.funnel{grid-template-columns:minmax(0,1fr)}table{font-size:13.5px}.stack thead{display:none}.stack tr{display:grid;padding-block:10px;border-bottom:1px solid var(--line)}.stack td{display:grid;grid-template-columns:7.5em minmax(0,1fr);gap:10px;border:0;padding:4px 0}.stack td::before{content:attr(data-l);font-size:12.5px;font-weight:700;color:var(--mute)}td.ep{font-size:16px}}
+@media(prefers-reduced-motion:reduce){.cell{transition:none}}
+</style>
+
+<header class="band">
+  <div class="in top">
+    <div>
+      <div class="small mute" style="font-weight:700;margin-bottom:10px">berarti.academy · Serial Edukasi Komunikasi</div>
+      <h1>30 Reels dari silabus, satu jalan ke Speaking Index</h1>
+      <p class="lede">Setiap episode memecah satu pokok bahasan Kurikulum Public Speaking, tapi hanya kulitnya. Penonton komen KOMUNIKASI, dapat link tes gratis lewat DM, melihat skor speaking-nya, dan kelas baru muncul di akhir hasil tes.</p>
+    </div>
+    <div class="alert"><b>Funnel belum hidup.</b> Halaman tes belum menyimpan data peserta, nomor WhatsApp masih contoh, dan link masih privat. <a href="#wajib">Lihat 4 hal yang wajib dibereskan</a></div>
+  </div>
+  <div class="in route" aria-label="Rute 30 episode per pertemuan kelas">
+    <div class="lab"><span style="border-color:var(--mp1)">MP-1 Sadar Diri dan Niat · EP 01 sampai 08</span><span style="border-color:var(--mp2)">MP-2 Pesan Terarah dan Jujur · EP 09 sampai 17</span><span style="border-color:var(--mp3)">MP-3 Berani Tampil · EP 18 sampai 24</span><span style="border-color:var(--mp4)">MP-4 Berdampak dan Tumbuh · EP 25 sampai 30</span></div>
+    <div class="cells" id="cells"></div>
+    <div class="key"><span><i style="background:var(--mp1)"></i>MP-1</span><span><i style="background:var(--mp2)"></i>MP-2</span><span><i style="background:var(--mp3)"></i>MP-3</span><span><i style="background:var(--mp4)"></i>MP-4</span><span>✓ sudah diproduksi</span><span><i style="background:var(--or)"></i>naskah siap</span><span>RM = R-Makna, RA = R-Aksi</span><span>Ketuk satu episode untuk melihat rinciannya</span></div>
+  </div>
+</header>
+
+<section class="band" style="padding-top:0">
+  <div class="in">
+    <h2>Empat lapis funnel</h2>
+    <div class="funnel" id="funnel"></div>
+  </div>
+</section>
+
+<section class="band" style="background:var(--soft)">
+  <div class="in cols">
+    <div>
+      <h2>Aturan kulit</h2>
+      <ul class="rules">
+        <li><b>Boleh di konten:</b> masalah, akibat, nama konsep dan risetnya, serta rumus atau poin dari silabus (PREP, Vokal 4P, kartu 3K, enam qaulan, jika-maka).</li>
+        <li><b>Tidak boleh:</b> pendalaman rumusnya: latihan bertahap, drill, checklist lengkap, rubrik, dan umpan balik. Semua itu milik tes dan kelas.</li>
+        <li><b>Penutup</b> membuka rasa penasaran soal skor ("kamu ada di level mana?"), tidak menjanjikan isi kelas.</li>
+        <li><b>Klaim riset</b> hanya yang berstatus Terverifikasi di bagian H kurikulum. Klaim yang sudah dihapus (90% hilang sepekan, cerita 22 kali, oksitosin) tidak dipakai.</li>
+        <li><b>Kelas tidak disebut</b> di konten maupun DM. Kelas muncul di akhir hasil tes.</li>
+      </ul>
+    </div>
+    <div>
+      <h2>CTA master</h2>
+      <dl class="kv">
+        <dt>Keyword</dt><dd>KOMUNIKASI (semua episode). Konten pilar Confidence memakai PEDE, Grow belum ditentukan.</dd>
+        <dt>VO</dt><dd>Berbeda tiap episode: pertanyaan yang memancing penasaran sesuai tema, lalu "Komen KOMUNIKASI" dan link tes gratis lewat DM. Hanya menjanjikan yang ada di hasil tes.</dd>
+        <dt>Visual</dt><dd>Keyword diketik, Kirim, kartu DM masuk, lalu "Ilmunya lewat DM!". Tidak berubah antar episode.</dd>
+      </dl>
+      <pre>Hai! Ini lanjutan EP [NN]: [judul episode].
+
+[Satu tambahan kecil, 1 sampai 2 kalimat.]
+
+Penasaran seberapa bagus speaking-mu sekarang? Cek di BERARTI Speaking Index: 35 pertanyaan, 7 menit, gratis.
+Hasilnya langsung keluar: skor speaking, tipe pembicaramu, peta 7 pilar, dan 3 latihan sesuai titik lemahmu.
+Lihat skor pilar [huruf] kamu di sana: [link tes]?src=ig-ep[NN]</pre>
+    </div>
+  </div>
+</section>
+
+<section class="band">
+  <div class="in">
+    <h2>Peta 30 episode</h2>
+    <p class="mute" style="max-width:72ch">Format resmi: listicle. Hook memakai angka dan open loop pada satu nomor (lingkaran oranye), setiap item berisi masalah lalu solusi kulit dari silabus, dan CTA berbeda di tiap episode. Contoh, akibat, dan dialog ditulis saat produksi "Konten NN".</p>
+    <p class="small mute" id="stat" style="margin:0 0 10px"></p>
+    <div class="filters" id="filters" role="group" aria-label="Saring menurut pilar"></div>
+    <div id="maps"></div>
+  </div>
+</section>
+
+<section class="band" style="background:var(--soft)">
+  <div class="in cols">
+    <div>
+      <h2>Konten yang sudah ada</h2>
+      <div class="scroll"><table class="stack"><thead><tr><th>Konten</th><th>Posisi</th><th>Catatan</th></tr></thead><tbody id="old"></tbody></table></div>
+    </div>
+    <div id="wajib">
+      <h2>Wajib sebelum serial tayang</h2>
+      <ol class="rules" style="padding-left:20px;margin:0">
+        <li><b>SHEET_ENDPOINT masih kosong.</b> Nama, WhatsApp, dan skor peserta tidak tersimpan ke mana pun. Pasang URL Web App Google Apps Script.</li>
+        <li><b>WA_NUMBER masih nomor contoh</b> (6281234567890). Tombol "Tanya jadwal kelas" belum mengarah ke admin.</li>
+        <li><b>Halaman tes masih privat.</b> Buka link publik dari menu Share, atau pindahkan ke domain sendiri.</li>
+        <li><b>Balasan DM otomatis</b> untuk KOMUNIKASI dan PEDE, dengan link tes ber-<code>?src=ig-epNN</code>.</li>
+      </ol>
+      <p class="small mute" style="margin-top:12px">Urutan tayang: serial, lalu konten pilar Confidence atau Grow, lalu serial lagi, supaya grid seimbang.</p>
+    </div>
+  </div>
+</section>
+
+<footer class="band foot"><div class="in small mute">Sumber: Kurikulum Public Speaking BERARTI Academy v2.0, halaman BERARTI Speaking Index (tes gratis), dan peta resmi <code>berarti-ig/18-peta-serial-speaking-index.md</code>. Halaman ini dibangun dari file itu dengan <code>berarti-ig/tools/peta-serial/build.py</code>. Produksi: skill berarti-reels, perintah "Konten NN" atau "Konten berikutnya".</div></footer>
+
+<script>
+{
+const MP={1:{n:"MP-1 Sadar Diri dan Niat Bicara",c:"var(--mp1)"},2:{n:"MP-2 Pesan yang Terarah dan Jujur",c:"var(--mp2)"},3:{n:"MP-3 Berani Tampil",c:"var(--mp3)"},4:{n:"MP-4 Bicara Berdampak dan Rencana Tumbuh",c:"var(--mp4)"}};
+const E=[{"ep": 1, "mp": 1, "p": "B", "s": "naskah", "pic": "", "hook": "5 tanda grogimu muncul sebelum kamu sadar. Nomor 3 sering disangka kamu nggak siap.", "loop": 3, "it": [["Tangan dingin menjelang maju", "Napas 4-6: tarik 4 hitungan, buang 6"], ["Suara bergetar di kalimat pertama", "Latih kalimat pertamamu sampai lancar"], ["Ngomong makin lama makin cepat", "Jeda satu detik di setiap titik"], ["Blank di tengah jalan", "Pegang satu pesan inti, bukan naskah"], ["Pengen cepat-cepat selesai", "Ganti pertanyaannya: mereka paham nggak?"]], "cta": "Mau tahu grogimu ada di level mana? Komen KOMUNIKASI sekarang, nanti aku kirim tes gratisnya lewat DM!", "q": "Kuis \"lima menit sebelum maju\"", "note": ""}, {"ep": 2, "mp": 1, "p": "B", "s": "belum", "pic": "", "hook": "4 kalimat yang malah bikin kamu makin grogi. Nomor 2 sering dikira penyemangat.", "loop": 2, "it": [["\"Aku harus tenang\"", "Ganti jadi \"aku semangat, aku siap\""], ["\"Aku pembicara terhebat\"", "Pakai kalimat yang bisa kamu percaya"], ["\"Jangan sampai salah\"", "\"Aku cukup menyampaikan satu hal dengan jelas\""], ["\"Semua orang ngeliatin aku\"", "\"Mereka paham nggak?\""]], "cta": "Kalimat penyemangatmu bantu atau malah nyabotase? Komen KOMUNIKASI sekarang, aku kirim tes gratisnya lewat DM!", "q": "Kuis \"lima menit sebelum maju\"", "note": ""}, {"ep": 3, "mp": 1, "p": "B", "s": "belum", "pic": "", "hook": "4 salah kaprah soal grogi. Nomor 4 bikin banyak orang batal maju.", "loop": 4, "it": [["Grogi artinya kamu nggak siap", "Grogi itu wajar dan punya pola"], ["Grogi harus hilang dulu baru boleh maju", "Grogi dikelola, bukan ditunggu hilang"], ["Latihan bikin grogi hilang total", "Latihan menurunkan grogi, nggak menghapusnya"], ["Grogi paling parah saat kamu bicara", "Puncaknya justru sebelum bicara, lalu turun (kurva V)"]], "cta": "Kamu sudah ngelola grogi dengan benar atau belum? Komen KOMUNIKASI sekarang, aku kirim tes gratisnya lewat DM!", "q": "\"Saat gugup, aku mengenali tanda-tandanya\"", "note": ""}, {"ep": 4, "mp": 1, "p": "B", "s": "belum", "pic": "", "hook": "5 hal tentang audiens yang sering lupa kamu cek. Nomor 1 justru yang paling dasar.", "loop": 1, "it": [["Siapa mereka sebenarnya", "Tulis profil audiens dalam satu kalimat"], ["Apa yang mereka butuhkan", "Mulai dari masalah mereka, bukan materimu"], ["Istilah apa yang mereka pahami", "Pilih kata yang mereka pakai sehari-hari"], ["Berapa lama mereka bisa fokus", "Sesuaikan durasi, bukan isi semua slide"], ["Apa yang sudah mereka tahu", "Lewati yang sudah mereka tahu"]], "cta": "Kamu jago baca audiens atau sering salah sasaran? Komen KOMUNIKASI sekarang, aku kirim tes gratisnya lewat DM!", "q": "Kuis \"rapat direksi dan warga RW\"", "note": ""}, {"ep": 5, "mp": 1, "p": "R-Makna", "s": "belum", "pic": "", "hook": "4 alasan presentasimu terasa kayak disuruh. Nomor 3 kelihatan dari kalimat pertama.", "loop": 3, "it": [["Kamu nggak tahu presentasi ini buat apa", "Rumus niat: \"Aku bicara agar [siapa] bisa [apa]\""], ["Fokusmu ke slide, bukan ke orang", "Tentukan satu hal yang mereka bawa pulang"], ["Kamu buka dengan minta maaf", "Buka dengan temuan atau masalah"], ["Kamu tutup tanpa harapan apa pun", "Tutup dengan satu perubahan yang kamu harapkan"]], "cta": "Niat bicaramu udah jelas, atau masih disuruh? Komen KOMUNIKASI sekarang, aku kirim tes gratisnya lewat DM!", "q": "\"Aku bisa menyebut tujuan bicaraku dalam satu kalimat\"", "note": ""}, {"ep": 6, "mp": 1, "p": "R-Makna", "s": "belum", "pic": "", "hook": "4 pertanyaan sebelum kamu bicara di depan orang. Nomor 4 yang paling bikin tenang.", "loop": 4, "it": [["Aku bicara agar siapa bisa apa?", "Satu kalimat niat"], ["Siapa audiensku?", "Kenali audiens dari kartu 3K"], ["Satu hal apa yang harus mereka ingat?", "Tulis pesan inti sebelum slide"], ["Sudahkah aku latihan dan berdoa?", "Latihan dulu, lalu tutup dengan doa Nabi Musa (Thaha 25 sampai 28)"]], "cta": "Persiapan bicaramu udah lengkap belum? Komen KOMUNIKASI sekarang, aku kirim tes gratisnya lewat DM!", "q": "Kuis \"langkah pertama sebelum slide\"", "note": ""}, {"ep": 7, "mp": 2, "p": "E", "s": "belum", "pic": "", "hook": "4 pembuka yang bikin audiens ragu sama kamu. Nomor 1 sering dikira sopan.", "loop": 1, "it": [["\"Mohon maaf kalau persiapan kami kurang\"", "Langsung ke satu temuan penting"], ["Membacakan agenda", "Sebut pesan inti dalam satu kalimat"], ["Perkenalan panjang soal diri sendiri", "Kalimat masalah dulu, nama belakangan"], ["Lelucon yang nggak nyambung", "Pakai pemantik yang relevan dengan topik"]], "cta": "Pembuka presentasimu dapat skor berapa? Komen KOMUNIKASI sekarang, aku kirim tes gratisnya lewat DM!", "q": "Kuis \"pembuka 3 menit\"", "note": ""}, {"ep": 8, "mp": 2, "p": "E", "s": "belum", "pic": "", "hook": "5 tanda presentasimu nggak punya pesan inti. Nomor 4 kerasa banget pas tanya jawab.", "loop": 4, "it": [["Kamu sendiri susah merangkumnya", "Rumus: \"Kalau audiens hanya ingat satu hal...\""], ["Satu slide berisi banyak ide", "Satu slide, satu ide"], ["Audiens nanya \"jadi intinya apa?\"", "Ulang pesan inti di awal dan akhir"], ["Jawaban tanya jawabmu melebar ke mana-mana", "Kembalikan setiap jawaban ke pesan inti"], ["Penutupnya \"mungkin itu saja\"", "Tutup dengan pesan inti"]], "cta": "Bisa nggak kamu rangkum presentasimu dalam satu kalimat? Komen KOMUNIKASI sekarang, aku kirim tes gratisnya lewat DM!", "q": "\"Bicaraku punya pembuka, isi, dan penutup yang jelas\"", "note": ""}, {"ep": 9, "mp": 2, "p": "E", "s": "belum", "pic": "", "hook": "4 kesalahan saat ditanya dadakan. Nomor 2 bikin kamu kelihatan nggak yakin.", "loop": 2, "it": [["Langsung ngomong tanpa sikap yang jelas", "P pertama: sebut jawabanmu dulu"], ["Muter-muter \"jadi gini, sebenarnya\"", "R: satu alasan saja"], ["Nggak ada contoh", "E: satu contoh nyata"], ["Nggak ditutup", "P terakhir: ulang jawabanmu. Ini PREP"]], "cta": "Jawaban dadakanmu runtut atau muter-muter? Komen KOMUNIKASI sekarang, aku kirim tes gratisnya lewat DM!", "q": "\"Saat diminta bicara mendadak, jawabanku tetap runtut\"", "note": ""}, {"ep": 10, "mp": 2, "p": "E", "s": "belum", "pic": "", "hook": "Kebanyakan poin bikin presentasimu dilupakan. Ini 3 cara memangkasnya, dan nomor 3 paling jarang dipakai.", "loop": 3, "it": [["Tujuh poin sekaligus", "Pilih maksimal tiga"], ["Poin muncul tanpa aba-aba", "Umumkan: \"Ada tiga hal\""], ["Audiens nggak tahu sudah sampai mana", "Signposting: \"Pertama... kedua... terakhir\""]], "cta": "Ada soal soal tujuh kelebihan pas interview di tes gratis. Kamu bakal jawab apa? Komen KOMUNIKASI sekarang, aku kirim lewat DM!", "q": "Kuis \"tujuh kelebihan\"", "note": ""}, {"ep": 11, "mp": 2, "p": "E", "s": "belum", "pic": "", "hook": "4 penutup presentasi yang bikin audiens lupa. Nomor 3 kedengarannya sopan, padahal bikin pesanmu hilang.", "loop": 3, "it": [["\"Ada pertanyaan?\" sebagai kalimat terakhir", "Tanya jawab dulu, baru penutup"], ["Merangkum semua slide", "Ulang satu pesan inti saja"], ["\"Ya, mungkin itu saja\"", "\"Kalau hanya satu yang kalian ingat, ingat ini...\""], ["Terima kasih tanpa ajakan", "Satu ajakan yang jelas"]], "cta": "Pembuka, isi, atau penutup: mana yang paling lemah di presentasimu? Komen KOMUNIKASI sekarang, aku kirim tes gratisnya lewat DM!", "q": "\"Bicaraku punya pembuka, isi, dan penutup yang jelas\"", "note": ""}, {"ep": 12, "mp": 2, "p": "E", "s": "belum", "pic": "", "hook": "Audiens mulai buka HP di menit ketiga? Ini 3 penyebabnya, dan nomor 1 sering dianggap normal.", "loop": 1, "it": [["Slide dibacain", "Satu kalimat per slide, sisanya kamu yang cerita"], ["Audiens cuma jadi penonton", "Lempar satu pertanyaan: \"Siapa yang pernah ngalamin ini?\""], ["Angka tanpa contoh", "\"Pulang satu jam lebih cepat\" lebih kena dari \"efisiensi meningkat\""]], "cta": "Presentasimu bikin audiens nyimak atau buka HP? Komen KOMUNIKASI sekarang, aku kirim tes gratisnya lewat DM!", "q": "\"Aku menjaga kontak mata, tidak hanya melihat slide\"", "note": "ada naskah lama serial-komunikasi/14-presentasi-membosankan.md (format cerita mikro). Pakai sebagai bahan, tulis ulang ke format listicle."}, {"ep": 13, "mp": 2, "p": "A", "s": "belum", "pic": "", "hook": "4 hal di slidemu yang bikin kamu nggak dipercaya. Nomor 2 sering datang dari grup WhatsApp.", "loop": 2, "it": [["Angka tanpa sumber", "Cari sumber aslinya atau jangan dipakai"], ["Statistik viral yang belum dicek", "Qaulan sadida: hanya yang bisa dipertanggungjawabkan"], ["Data lama yang dipakai lagi", "Cek tahun datanya"], ["Kata \"semua orang\" dan \"selalu\"", "Pakai kata yang sesuai faktanya"]], "cta": "Statistik viral itu bakal kamu pakai atau nggak? Ada soalnya di tes gratis. Komen KOMUNIKASI sekarang, aku kirim lewat DM!", "q": "Kuis \"statistik viral\"", "note": ""}, {"ep": 14, "mp": 2, "p": "A", "s": "belum", "pic": "", "hook": "Al-Qur'an menyebut 6 cara bicara. Nomor 4 paling susah dipraktikkan pas lagi emosi.", "loop": 4, "it": [["Qaulan sadida", "Benar dan jujur"], ["Qaulan baligha", "Tepat sasaran"], ["Qaulan maysura", "Mudah dipahami"], ["Qaulan layyina", "Lembut, walau isinya tegas"], ["Qaulan karima", "Mulia dan menghormati"], ["Qaulan ma'rufa", "Pantas dan baik"]], "cta": "Dari enam cara bicara itu, kamu paling kuat di mana? Komen KOMUNIKASI sekarang, aku kirim tes gratisnya lewat DM!", "q": "\"Kata yang mudah dipahami dan santun\"", "note": ""}, {"ep": 15, "mp": 2, "p": "A", "s": "belum", "pic": "", "hook": "4 kebiasaan yang bikin penjelasanmu susah dipahami. Nomor 3 sering dikira biar kelihatan pintar.", "loop": 3, "it": [["Istilah teknis tanpa contoh", "Satu istilah, satu contoh sehari-hari"], ["Kalimat panjang bertingkat", "Satu kalimat, satu ide"], ["Kebanyakan bahasa Inggris", "Pakai bahasa audiensmu"], ["Teori tanpa contoh", "Tunjukkan contohnya dulu"]], "cta": "Bahasamu gampang dipahami atau bikin orang bengong? Komen KOMUNIKASI sekarang, aku kirim tes gratisnya lewat DM!", "q": "Kuis \"audiens awam, topik teknis\"", "note": ""}, {"ep": 16, "mp": 3, "p": "R-Aksi", "s": "belum", "pic": "", "hook": "4 kebiasaan suara yang bikin audiens ngantuk. Nomor 4 paling nggak disadari.", "loop": 4, "it": [["Nada datar dari awal sampai akhir", "Pitch: naik turunkan nada"], ["Ngomong terlalu cepat", "Pace: atur kecepatan"], ["Nggak ada jeda", "Pause: diam sebelum kata kunci"], ["Suara mengecil di akhir kalimat", "Power: jaga volume sampai kata terakhir. Ini Vokal 4P"]], "cta": "Suaramu termasuk yang hidup atau yang datar? Komen KOMUNIKASI sekarang, aku kirim tes gratisnya lewat DM!", "q": "\"Aku memakai jeda dan variasi suara\"", "note": ""}, {"ep": 17, "mp": 3, "p": "R-Aksi", "s": "belum", "pic": "", "hook": "4 cara pakai jeda biar omonganmu didengar. Nomor 2 bikin angka pentingmu nempel.", "loop": 2, "it": [["Jeda sebelum kata kunci", "Satu sampai dua detik"], ["Jeda sebelum angka penting", "Lalu ucapkan lebih pelan"], ["Jeda setelah bertanya ke audiens", "Beri mereka waktu berpikir"], ["Jeda sebagai pengganti \"eee\"", "Diam lebih meyakinkan daripada \"eee\""]], "cta": "Gimana caramu nekenin angka penting? Ada soalnya di tes gratis. Komen KOMUNIKASI sekarang, aku kirim lewat DM!", "q": "Kuis \"menekankan satu angka\"", "note": ""}, {"ep": 18, "mp": 3, "p": "R-Aksi", "s": "belum", "pic": "", "hook": "4 mitos public speaking yang masih sering dikutip. Nomor 1 bahkan dipakai trainer.", "loop": 1, "it": [["\"55% komunikasi itu bahasa tubuh\"", "Studi Mehrabian cuma soal pesan perasaan yang bertentangan. Pelajarannya: keselarasan"], ["Harus hafal naskah kata per kata", "Hafalkan strukturnya, bukan kalimatnya"], ["Pembicara hebat itu bakat", "Kemampuan bicara bisa dilatih"], ["Harus selalu lucu", "Relevan lebih penting daripada lucu"]], "cta": "Kamu percaya mitos nomor 1 itu? Ada soalnya di tes gratis, cek jawabanmu. Komen KOMUNIKASI sekarang, aku kirim lewat DM!", "q": "Kuis \"7-38-55\"", "note": ""}, {"ep": 19, "mp": 3, "p": "R-Aksi", "s": "belum", "pic": "", "hook": "4 kebiasaan bahasa tubuh yang ngelawan omonganmu. Nomor 2 kelihatan sampai belakang ruangan.", "loop": 2, "it": [["Matamu ke slide terus", "Satu kalimat, satu pasang mata"], ["Tangan dilipat atau di saku", "Gestur terbuka yang mengikuti isi"], ["Wajah datar saat cerita seru", "Ekspresi ikut isi kalimat"], ["Badan goyang ke kanan kiri", "Berdiri tegak, pindah tempat saat ganti poin"]], "cta": "Bahasa tubuhmu bantu atau ngelawan omonganmu? Komen KOMUNIKASI sekarang, aku kirim tes gratisnya lewat DM!", "q": "\"Aku menjaga kontak mata dengan audiens\"", "note": ""}, {"ep": 20, "mp": 3, "p": "R-Aksi", "s": "belum", "pic": "", "hook": "5 cara bikin audiens nyimak dari menit pertama. Nomor 5 paling jarang dipakai.", "loop": 5, "it": [["Data yang mengejutkan", "Satu angka yang bikin mereka berhenti"], ["Pertanyaan", "\"Siapa yang pernah...?\""], ["Metafora", "Bandingkan dengan hal sehari-hari"], ["Cerita yang relate", "Cukup 20 detik"], ["Permainan bermakna", "Libatkan audiens satu menit"]], "cta": "Caramu membuka bikin orang nyimak nggak? Komen KOMUNIKASI sekarang, aku kirim tes gratisnya lewat DM!", "q": "Bagian kebiasaan", "note": ""}, {"ep": 21, "mp": 3, "p": "R-Aksi", "s": "belum", "pic": "", "hook": "4 kesalahan saat sesi tanya jawab. Nomor 1 bikin kamu kelihatan defensif.", "loop": 1, "it": [["Langsung jawab tanpa jeda", "Frasa jembatan: ulangi pertanyaannya dulu"], ["Ngarang kalau nggak tahu", "\"Saya belum tahu. Saya cek dan kabari hari ini\""], ["Jawaban melebar", "Jawab pakai PREP"], ["Menyerang balik penanya", "Qaulan layyina: tegas tapi lembut"]], "cta": "Kalau ditanya dadakan di depan banyak orang, kamu tipe pembicara yang mana? Komen KOMUNIKASI sekarang, aku kirim tes gratisnya lewat DM!", "q": "\"Saat diminta bicara mendadak, jawabanku tetap runtut\"", "note": ""}, {"ep": 22, "mp": 3, "p": "R-Aksi", "s": "belum", "pic": "", "hook": "4 hal yang bikin cerita di presentasimu garing. Nomor 3 nggak kerasa saat kamu sendiri yang cerita.", "loop": 3, "it": [["Ceritanya kepanjangan", "Maksimal 20 detik"], ["Nggak nyambung ke pesan inti", "Akhiri cerita dengan pesan intimu"], ["Kebanyakan detail", "Satu tokoh, satu momen"], ["Nggak ada masalahnya", "Cerita butuh satu masalah"]], "cta": "Caramu bercerita bikin orang nyimak nggak? Komen KOMUNIKASI sekarang, aku kirim tes gratisnya lewat DM!", "q": "Bagian kebiasaan", "note": ""}, {"ep": 23, "mp": 3, "p": "R-Aksi", "s": "belum", "pic": "", "hook": "Suara gemetar pas presentasi? 4 hal yang bisa kamu lakukan detik itu juga. Nomor 4 justru yang paling bikin tenang.", "loop": 4, "it": [["Napas pendek dan cepat", "Jeda, lalu napas 4-6"], ["Ngomong makin cepat", "Perlambat tempo"], ["Kalimat panjang yang bikin kehabisan napas", "Pecah jadi kalimat pendek"], ["Minta maaf karena gugup", "Lanjut saja, audiens jarang menyadarinya"]], "cta": "Seberapa siap kamu ngadepin grogi di depan orang? Komen KOMUNIKASI sekarang, aku kirim tes gratisnya lewat DM!", "q": "Kuis \"lima menit sebelum maju\"", "note": ""}, {"ep": 24, "mp": 3, "p": "R-Aksi", "s": "belum", "pic": "", "hook": "4 hal yang bikin kamu kelihatan nggak yakin, padahal paham materi. Nomor 1 cuma satu kata.", "loop": 1, "it": [["\"Eee\" di setiap jeda", "Ganti dengan diam sebentar"], ["Nada naik di akhir kalimat", "Turunkan nada di akhir pernyataan"], ["\"Mungkin\" dan \"kayaknya\" berlebihan", "Pakai hanya kalau memang belum pasti"], ["Bicara sambil menatap lantai", "Tatap satu orang setiap kalimat"]], "cta": "Kamu kedengeran yakin atau ragu? Cek skornya di tes gratis. Komen KOMUNIKASI sekarang, aku kirim lewat DM!", "q": "\"Aku memakai jeda dan variasi suara\"", "note": ""}, {"ep": 25, "mp": 4, "p": "T", "s": "belum", "pic": "", "hook": "4 ajakan penutup yang nggak bakal dijalankan audiens. Nomor 2 kedengarannya manis, tapi nggak menggerakkan siapa pun.", "loop": 2, "it": [["\"Mari kita lebih peduli\"", "Sebut tindakan yang spesifik"], ["\"Semoga bermanfaat\"", "Sebut kapan mereka mulai"], ["\"Silakan dipikirkan\"", "Kasih langkah pertama yang mudah"], ["Lima ajakan sekaligus", "Satu ajakan. Rumusnya: siapa, melakukan apa, kapan, langkah pertama"]], "cta": "Ajakan mana yang paling mungkin dijalankan audiens? Coba tebak di tes gratis. Komen KOMUNIKASI sekarang, aku kirim lewat DM!", "q": "Kuis \"ajakan penutup\"", "note": ""}, {"ep": 26, "mp": 4, "p": "T", "s": "belum", "pic": "", "hook": "4 cara cek apakah presentasimu benar-benar sampai. Nomor 1 cuma butuh tiga teman.", "loop": 1, "it": [["Tanya tiga orang \"tadi intinya apa?\"", "Kalau dua dari tiga bisa menjawab, pesanmu sampai"], ["Tanya satu hal yang mereka ingat", "Bandingkan dengan pesan intimu"], ["Lihat siapa yang menjalankan ajakanmu", "Itu ukuran dampak yang paling jujur"], ["Bandingkan videomu sebelum dan sesudah", "Rekam setiap kali tampil"]], "cta": "Pesanmu benar-benar sampai, atau cuma lancar? Komen KOMUNIKASI sekarang, aku kirim tes gratisnya lewat DM!", "q": "\"Aku memeriksa apakah audiens menangkap pesanku\"", "note": ""}, {"ep": 27, "mp": 4, "p": "T", "s": "belum", "pic": "", "hook": "4 cara meyakinkan audiens yang kritis. Nomor 4 yang bikin mereka berhenti membantah.", "loop": 4, "it": [["Logos", "Argumen dengan bukti yang jelas"], ["Ethos", "Sebut sumber dan pengalamanmu"], ["Pathos", "Sentuh hal yang mereka pedulikan"], ["Keberatan yang belum dijawab", "Jawab sebelum mereka bertanya"]], "cta": "Kamu bisa ngeyakinin audiens yang kritis? Ada soalnya di tes gratis. Komen KOMUNIKASI sekarang, aku kirim lewat DM!", "q": "Kuis \"audiens kritis\"", "note": ""}, {"ep": 28, "mp": 4, "p": "I", "s": "belum", "pic": "", "hook": "4 cara latihan presentasi yang sia-sia. Nomor 2 kelihatannya rajin, padahal paling bikin kaku.", "loop": 2, "it": [["Baca ulang slide dalam hati", "Latihan dengan suara keras"], ["Menghafal kata per kata", "Hafalkan strukturnya"], ["Latihan sekali, malam sebelumnya", "Latihan berjarak, beberapa hari"], ["Nggak pernah merekam diri", "Rekam satu menit, tonton ulang"]], "cta": "Cara latihanmu udah efektif belum? Komen KOMUNIKASI sekarang, aku kirim tes gratisnya lewat DM!", "q": "\"Aku berlatih bicara sebelum tampil\"", "note": ""}, {"ep": 29, "mp": 4, "p": "I", "s": "belum", "pic": "", "hook": "4 resolusi public speaking yang hampir pasti gagal. Nomor 1 kedengerannya paling semangat.", "loop": 1, "it": [["\"Tahun depan aku mau lebih pede\"", "Rumus jika-maka: \"Jika [situasi], maka aku [tindakan]\""], ["\"Aku latihan kalau sempat\"", "Tentukan hari dan jamnya"], ["\"Aku tunggu sampai siap\"", "Mulai dari kesempatan kecil, satu pendapat di rapat"], ["Langsung menargetkan panggung besar", "Naik bertahap"]], "cta": "Rencana latihanmu udah jelas, atau masih nanti? Komen KOMUNIKASI sekarang, aku kirim tes gratisnya lewat DM!", "q": "Kuis \"rencana latihan\"", "note": ""}, {"ep": 30, "mp": 4, "p": "I", "s": "belum", "pic": "", "hook": "4 umpan balik yang nggak bikin kamu berkembang. Nomor 1 paling enak didengar.", "loop": 1, "it": [["\"Keren banget!\"", "Tanya bagian mana yang keren"], ["\"Kurang pede\"", "Minta contoh momennya"], ["Nilai angka tanpa catatan", "Minta satu catatan perbaikan"], ["Kritik semuanya sekaligus", "Rumus: satu yang sudah benar, satu langkah perbaikan"]], "cta": "Umpan balik mana yang paling bikin kamu berkembang? Coba soalnya di tes gratis. Komen KOMUNIKASI sekarang, aku kirim lewat DM!", "q": "Kuis \"umpan balik setelah presentasi\"", "note": ""}];
+const FUN=[["Konten","Reels serial","Masalah, akibat, nama konsep, satu langkah kecil","Latihan lengkap, drill, checklist"],["DM","Komen KOMUNIKASI","Satu tambahan kecil dan link tes ber-src","Teknik lengkap"],["Tes","BERARTI Speaking Index","Skor, level, tipe pembicara, peta 7 pilar, 3 latihan, pembahasan kuis","Praktik dengan umpan balik"],["Kelas","Muncul di akhir hasil tes","Teknik lengkap, praktik 81%, rubrik 7 pilar, pendampingan 30 hari","Tidak ada, ini lapis terakhir"]];
+const OLD=[["C2 \"Jangan buka presentasi pakai perkenalan\"", "dekat EP 07 (pembuka)", "Sudah tayang. Saat membuat EP 07, jangan ulang contoh C2"], ["\"3 hal yang bikin presentasi membosankan\" (serial-komunikasi/14-presentasi-membosankan.md)", "EP 12", "Naskah format lama, tulis ulang ke listicle"], ["\"Cerita yang direbut\" (serial-komunikasi/01-cerita-direbut.md)", "di luar peta", "Topik mendengarkan dalam obrolan. Belum ada slotnya di silabus"], ["P3 \"Salah ngomong pas meeting\" (16-naskah-P3-kejadian-memalukan.md)", "pilar Confidence, dekat B", "Keyword PEDE, DM ke Speaking Index"]];
+const PIL=["Semua","B","R-Makna","E","A","R-Aksi","T","I"];
+const esc=s=>String(s).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+const pad=n=>String(n).padStart(2,"0");
+const SHORT={"R-Makna":"RM","R-Aksi":"RA"};
+document.getElementById("cells").innerHTML=E.map(e=>`<a class="cell ${e.s!=="belum"?"ready":""}" href="#ep-${pad(e.ep)}" style="background:${MP[e.mp].c}" title="EP ${pad(e.ep)}: ${esc(e.hook)}"><span class="n">${pad(e.ep)}</span><span class="p">${esc(SHORT[e.p]||e.p)}</span></a>`).join("");
+document.getElementById("funnel").innerHTML=FUN.map((f,i)=>`<div class="st"><div class="no">${i+1}</div><h3>${esc(f[0])} <span class="mute small" style="font-weight:600">· ${esc(f[1])}</span></h3><p class="gv">${esc(f[2])}</p><p class="hd"><b>Ditahan:</b> ${esc(f[3])}</p></div>`).join("");
+document.getElementById("old").innerHTML=OLD.map(o=>`<tr><td data-l="Konten">${esc(o[0])}</td><td data-l="Posisi"><b>${esc(o[1])}</b></td><td data-l="Catatan">${esc(o[2])}</td></tr>`).join("");
+const ORDER=["belum","naskah","vo","preview","final","tayang"];
+const cnt={};E.forEach(e=>cnt[e.s]=(cnt[e.s]||0)+1);
+const nx=E.find(e=>e.s==="belum"&&!e.pic);
+document.getElementById("stat").innerHTML="<b>Status:</b> "+ORDER.filter(k=>cnt[k]).map(k=>esc(k)+" "+cnt[k]).join(" · ")+(nx?` · <b>Berikutnya:</b> EP ${pad(nx.ep)}`:"");
+let cur="Semua";
+const draw=()=>{
+  document.getElementById("filters").innerHTML=PIL.map(p=>`<button type="button" data-p="${esc(p)}" aria-pressed="${p===cur}">${p==="Semua"?"Semua pilar":"Pilar "+esc(p)}</button>`).join("");
+  document.getElementById("maps").innerHTML=[1,2,3,4].map(m=>{
+    const rows=E.filter(e=>e.mp===m&&(cur==="Semua"||e.p===cur));
+    if(!rows.length)return "";
+    return `<div class="mp"><div class="mph"><span class="tag" style="background:${MP[m].c}">${MP[m].n.slice(0,4)}</span><h3 style="margin:0">${esc(MP[m].n.slice(5))}</h3><span class="mute small">${rows.length} episode</span></div>
+    <div class="eps">${rows.map(e=>`<article class="epc" id="ep-${pad(e.ep)}"><header><span class="epn">EP ${pad(e.ep)}</span><span class="pil">${esc(e.p)}</span><span class="mute small">${e.it.length} item</span>${e.s!=="belum"?`<span class="badge r">${esc(e.s)}</span>`:""}${e.pic?`<span class="mute small">PIC ${esc(e.pic)}</span>`:""}</header>
+      <p class="hk">${esc(e.hook)}</p>${e.note?`<p class="small mute" style="margin:0 0 8px">${esc(e.note)}</p>`:""}
+      <ol class="its">${e.it.map((t,i)=>`<li class="${i+1===e.loop?"lp":""}"><span class="nm">${i+1}</span><span><b>${esc(t[0])}</b><br><span class="so">Solusinya: ${esc(t[1])}</span></span></li>`).join("")}</ol>
+      <p class="ct"><b>CTA</b> ${esc(e.cta)}</p>
+      <p class="q">Soal tes terkait: ${esc(e.q)}</p></article>`).join("")}</div></div>`}).join("");
+};
+document.getElementById("filters").addEventListener("click",ev=>{const b=ev.target.closest("button");if(!b)return;cur=b.dataset.p;draw()});
+draw();
+document.getElementById("cells").addEventListener("click",ev=>{const a=ev.target.closest("a");if(a&&cur!=="Semua"){cur="Semua";draw();const t=document.querySelector(a.getAttribute("href"));if(t)t.scrollIntoView()}});
+}
+</script>

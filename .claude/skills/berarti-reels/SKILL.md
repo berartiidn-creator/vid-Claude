@@ -1,6 +1,6 @@
 ---
 name: berarti-reels
-description: "Bikin video Reels animasi BERARTI, termasuk serial edukasi Komunikasi (perintah 'Konten 01' sampai 'Konten 30'), dengan gaya Kinetic Cream yang dipakai di C2 'Jangan buka presentasi pakai perkenalan': kalimat VO tampil besar kata demi kata sebagai judul, satu kartu UI di tengah, karakter Firas lip-sync di bawah, latar cream premium dengan flood oranye di momen puncak, transisi mozaik piksel, cover rule of thirds yang jadi frame pertama, dan ending yang kembali ke cover supaya loop mulus. Pakai saat user minta video, Reels, atau animasi dari naskah dan VO untuk @berarti.academy, bilang 'pakai style C2', 'gaya editan kemarin', 'buat video kayak C2', atau minta revisi video dengan gaya ini."
+description: "Bikin video Reels animasi BERARTI, termasuk serial edukasi Komunikasi (perintah 'Konten 01' sampai 'Konten 30', 'Konten berikutnya', 'Status serial'), dengan gaya Kinetic Cream yang dipakai di C2 'Jangan buka presentasi pakai perkenalan': kalimat VO tampil besar kata demi kata sebagai judul, satu kartu UI di tengah, karakter Firas lip-sync di bawah, latar cream premium dengan flood oranye di momen puncak, transisi mozaik piksel, cover rule of thirds yang jadi frame pertama, dan ending yang kembali ke cover supaya loop mulus. Pakai saat user minta video, Reels, atau animasi dari naskah dan VO untuk @berarti.academy, bilang 'pakai style C2', 'gaya editan kemarin', 'buat video kayak C2', atau minta revisi video dengan gaya ini."
 ---
 
 # berarti-reels (gaya Kinetic Cream)
@@ -22,7 +22,7 @@ Isi folder:
 - Pakai bahasa Indonesia ke user.
 
 ## Mode serial (Konten NN)
-Kalau user mengetik "Konten 01" sampai "Konten 30", ikuti `reference/serial.md`. Daftar episode, hook final, dan CTA master ada di `berarti-ig/17-serial-komunikasi.md`. CTA serial memakai komponen `CtaDM` (keyword KOMUNIKASI, tombol Kirim, kartu DM, lalu "Ilmunya lewat DM!") dan tidak boleh diubah per episode. Dialog dua karakter memakai `SpeechBubble`, dengan spec `mute` supaya mulut Firas diam saat lawan bicara berbicara.
+Kalau user mengetik "Konten 01" sampai "Konten 30", "Konten berikutnya", "lanjut serial", atau "Status serial", ikuti `reference/serial.md`. Sumber episodenya adalah peta resmi `berarti-ig/18-peta-serial-speaking-index.md`, termasuk tabel Status produksi yang wajib diperbarui di setiap tahap. CTA master ada di `berarti-ig/17-serial-komunikasi.md`. CTA serial memakai komponen `CtaDM` (keyword KOMUNIKASI, tombol Kirim, kartu DM, lalu "Ilmunya lewat DM!") dan tidak boleh diubah per episode. Dialog dua karakter memakai `SpeechBubble`, dengan spec `mute` supaya mulut Firas diam saat lawan bicara berbicara.
 
 ## Alur kerja
 1. **Input.** Naskah final, VO mp3 (ElevenLabs suara user), pilar (COMMUNICATION, CONFIDENCE, atau GROW), dan teks cover. Teks cover terdiri dari judul 3 baris, kalimat "yang salah" untuk balon, dan pill solusi. Kalau belum ada, usulkan dari hook naskah.

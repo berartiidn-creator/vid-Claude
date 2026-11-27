@@ -1,5 +1,54 @@
 # Peta Serial Speaking: 30 episode listicle dari silabus
-Usulan peta episode untuk Serial Edukasi Komunikasi sebagai corong ke BERARTI Speaking Index. Daftar asli dan CTA master tetap di `17-serial-komunikasi.md`.
+
+**Ini peta resmi Serial Edukasi Komunikasi.** Perintah **"Konten NN"** membuat paket untuk EP NN di file ini. Perintah **"Konten berikutnya"** mengambil episode pertama yang statusnya `belum` dan kolom PIC-nya kosong. Semua episode adalah corong ke BERARTI Speaking Index. CTA master dan daftar hook asli (sekarang jadi bank ide) ada di `17-serial-komunikasi.md`. Protokol produksinya ada di skill `berarti-reels` (`.claude/skills/berarti-reels/reference/serial.md`).
+
+## Status produksi
+
+Perbarui tabel ini di setiap tahap, dalam commit atau PR yang sama dengan file episodenya. Isi PIC dengan nama sebelum mulai mengerjakan, supaya dua orang tidak membuat episode yang sama.
+
+Status: `belum` · `naskah` (paket siap, menunggu VO) · `vo` (VO disetujui) · `preview` (video preview siap) · `final` (render final disetujui) · `tayang` (sudah diposting, isi tanggal di kolom File).
+
+| EP | Pilar | MP | Topik | Status | File | PIC |
+|---|---|---|---|---|---|---|
+| 01 | B | MP-1 | 5 tanda grogimu muncul sebelum kamu sadar | naskah | `serial-komunikasi/s01-tanda-grogi.md` | |
+| 02 | B | MP-1 | 4 kalimat yang malah bikin kamu makin grogi | belum |  | |
+| 03 | B | MP-1 | 4 salah kaprah soal grogi | belum |  | |
+| 04 | B | MP-1 | 5 hal tentang audiens yang sering lupa kamu cek | belum |  | |
+| 05 | R-Makna | MP-1 | 4 alasan presentasimu terasa kayak disuruh | belum |  | |
+| 06 | R-Makna | MP-1 | 4 pertanyaan sebelum kamu bicara di depan orang | belum |  | |
+| 07 | E | MP-2 | 4 pembuka yang bikin audiens ragu sama kamu | belum |  | |
+| 08 | E | MP-2 | 5 tanda presentasimu nggak punya pesan inti | belum |  | |
+| 09 | E | MP-2 | 4 kesalahan saat ditanya dadakan | belum |  | |
+| 10 | E | MP-2 | Kebanyakan poin bikin presentasimu dilupakan | belum |  | |
+| 11 | E | MP-2 | 4 penutup presentasi yang bikin audiens lupa | belum |  | |
+| 12 | E | MP-2 | 3 penyebab audiens buka HP di menit ketiga | belum |  | |
+| 13 | A | MP-2 | 4 hal di slidemu yang bikin kamu nggak dipercaya | belum |  | |
+| 14 | A | MP-2 | Al-Qur'an menyebut 6 cara bicara | belum |  | |
+| 15 | A | MP-2 | 4 kebiasaan yang bikin penjelasanmu susah dipahami | belum |  | |
+| 16 | R-Aksi | MP-3 | 4 kebiasaan suara yang bikin audiens ngantuk | belum |  | |
+| 17 | R-Aksi | MP-3 | 4 cara pakai jeda biar omonganmu didengar | belum |  | |
+| 18 | R-Aksi | MP-3 | 4 mitos public speaking yang masih sering dikutip | belum |  | |
+| 19 | R-Aksi | MP-3 | 4 kebiasaan bahasa tubuh yang ngelawan omonganmu | belum |  | |
+| 20 | R-Aksi | MP-3 | 5 cara bikin audiens nyimak dari menit pertama | belum |  | |
+| 21 | R-Aksi | MP-3 | 4 kesalahan saat sesi tanya jawab | belum |  | |
+| 22 | R-Aksi | MP-3 | 4 hal yang bikin cerita di presentasimu garing | belum |  | |
+| 23 | R-Aksi | MP-3 | Suara gemetar pas presentasi? 4 hal yang bisa kamu lakukan detik itu juga | belum |  | |
+| 24 | R-Aksi | MP-3 | 4 hal yang bikin kamu kelihatan nggak yakin, padahal paham materi | belum |  | |
+| 25 | T | MP-4 | 4 ajakan penutup yang nggak bakal dijalankan audiens | belum |  | |
+| 26 | T | MP-4 | 4 cara cek apakah presentasimu benar-benar sampai | belum |  | |
+| 27 | T | MP-4 | 4 cara meyakinkan audiens yang kritis | belum |  | |
+| 28 | I | MP-4 | 4 cara latihan presentasi yang sia-sia | belum |  | |
+| 29 | I | MP-4 | 4 resolusi public speaking yang hampir pasti gagal | belum |  | |
+| 30 | I | MP-4 | 4 umpan balik yang nggak bikin kamu berkembang | belum |  | |
+
+## Konten lama dan posisinya di peta
+
+| Konten | Posisi | Catatan |
+|---|---|---|
+| C2 "Jangan buka presentasi pakai perkenalan" | dekat EP 07 (pembuka) | Sudah tayang. Saat membuat EP 07, jangan ulang contoh C2 |
+| "3 hal yang bikin presentasi membosankan" (`serial-komunikasi/14-presentasi-membosankan.md`) | EP 12 | Naskah format lama, tulis ulang ke listicle |
+| "Cerita yang direbut" (`serial-komunikasi/01-cerita-direbut.md`) | di luar peta | Topik mendengarkan dalam obrolan. Belum ada slotnya di silabus |
+| P3 "Salah ngomong pas meeting" (`16-naskah-P3-kejadian-memalukan.md`) | pilar Confidence, dekat B | Keyword PEDE, DM ke Speaking Index |
 
 ## Struktur resmi: listicle
 
@@ -30,7 +79,7 @@ Sebaran: B 4, R-Makna 2, E 6, A 3, R-Aksi 9, T 3, I 3. Kebanyakan 4 item.
 
 ## MP-1 Sadar Diri dan Niat Bicara
 
-### EP 01 · Pilar B · naskah siap (`serial-komunikasi/s01-tanda-grogi.md`)
+### EP 01 · Pilar B
 
 **Hook:** 5 tanda grogimu muncul sebelum kamu sadar. Nomor 3 sering disangka kamu nggak siap.
 
@@ -199,7 +248,9 @@ Soal tes terkait: Kuis "tujuh kelebihan"
 
 Soal tes terkait: "Bicaraku punya pembuka, isi, dan penutup yang jelas"
 
-### EP 12 · Pilar E · ada naskah lama (`14-presentasi-membosankan.md`), perlu diubah ke format listicle
+### EP 12 · Pilar E
+
+Catatan: ada naskah lama `serial-komunikasi/14-presentasi-membosankan.md` (format cerita mikro). Pakai sebagai bahan, tulis ulang ke format listicle.
 
 **Hook:** Audiens mulai buka HP di menit ketiga? Ini 3 penyebabnya, dan nomor 1 sering dianggap normal.
 
