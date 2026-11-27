@@ -30,7 +30,7 @@ Sebaran: B 4, R-Makna 2, E 6, A 3, R-Aksi 9, T 3, I 3. Kebanyakan 4 item.
 
 ## MP-1 Sadar Diri dan Niat Bicara
 
-### EP 01 · Pilar B
+### EP 01 · Pilar B · naskah siap (`serial-komunikasi/s01-tanda-grogi.md`)
 
 **Hook:** 5 tanda grogimu muncul sebelum kamu sadar. Nomor 3 sering disangka kamu nggak siap.
 
@@ -199,7 +199,7 @@ Soal tes terkait: Kuis "tujuh kelebihan"
 
 Soal tes terkait: "Bicaraku punya pembuka, isi, dan penutup yang jelas"
 
-### EP 12 · Pilar E · naskah siap (perlu diubah ke format listicle)
+### EP 12 · Pilar E · ada naskah lama (`14-presentasi-membosankan.md`), perlu diubah ke format listicle
 
 **Hook:** Audiens mulai buka HP di menit ketiga? Ini 3 penyebabnya, dan nomor 1 sering dianggap normal.
 
