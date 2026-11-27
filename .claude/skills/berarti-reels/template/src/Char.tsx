@@ -63,7 +63,7 @@ const visemeAt = (t: number): Vis => { let v: Vis = 'rest'; for (const k of VIS_
 const BLINKS = [2.0, 5.6, 9.1, 12.9, 16.3, 20.6, 24.7, 29.3, 33.0];
 const SWAP = 0.07;   // seconds of smear after a pose cut
 
-export const Character: React.FC<{keys: Pose[]; x: number; y: number; scale: number; forceVis?: string; still?: boolean}> = ({keys, x, y, scale, forceVis, still}) => {
+export const Character: React.FC<{keys: Pose[]; x: number; y: number; scale: number; forceVis?: string; still?: boolean; mute?: [number, number][]}> = ({keys, x, y, scale, forceVis, still, mute}) => {
   const frame = useCurrentFrame();
   const {fps} = useVideoConfig();
   const t = frame / fps;
@@ -97,7 +97,8 @@ export const Character: React.FC<{keys: Pose[]; x: number; y: number; scale: num
   const wp = accent(keys, t, 'wink', 0.42); const wink = wp < 0 ? 0 : Math.sin(Math.PI * wp);
 
   const v = (env as any).open[Math.min((env as any).open.length - 1, frame)] ?? 0;
-  const speaking = words.some((w) => t >= w.start - 0.04 && t <= w.end + 0.06);
+  // mute: spans where another character speaks (dialog scenes), so Firas's mouth stays closed
+  const speaking = words.some((w) => t >= w.start - 0.04 && t <= w.end + 0.06) && !(mute ?? []).some(([a, b]) => t >= a && t <= b);
   const open = speaking ? Math.max(0, Math.min(1, (v - 0.1) / 0.7)) : 0;
   const talkBob = speaking ? Math.sin(t * 7.1) * 0.5 + Math.sin(t * 3.3) * 0.8 : 0;
   // soft blink: ease shut in 0.09 s, hold 0.04 s, ease open in 0.13 s

@@ -1,6 +1,6 @@
 ---
 name: berarti-reels
-description: "Bikin video Reels animasi BERARTI dengan gaya Kinetic Cream yang dipakai di C2 'Jangan buka presentasi pakai perkenalan': kalimat VO tampil besar kata demi kata sebagai judul, satu kartu UI di tengah, karakter Firas lip-sync di bawah, latar cream premium dengan flood oranye di momen puncak, transisi mozaik piksel, cover rule of thirds yang jadi frame pertama, dan ending yang kembali ke cover supaya loop mulus. Pakai saat user minta video, Reels, atau animasi dari naskah dan VO untuk @berarti.academy, bilang 'pakai style C2', 'gaya editan kemarin', 'buat video kayak C2', atau minta revisi video dengan gaya ini."
+description: "Bikin video Reels animasi BERARTI, termasuk serial edukasi Komunikasi (perintah 'Konten 01' sampai 'Konten 30'), dengan gaya Kinetic Cream yang dipakai di C2 'Jangan buka presentasi pakai perkenalan': kalimat VO tampil besar kata demi kata sebagai judul, satu kartu UI di tengah, karakter Firas lip-sync di bawah, latar cream premium dengan flood oranye di momen puncak, transisi mozaik piksel, cover rule of thirds yang jadi frame pertama, dan ending yang kembali ke cover supaya loop mulus. Pakai saat user minta video, Reels, atau animasi dari naskah dan VO untuk @berarti.academy, bilang 'pakai style C2', 'gaya editan kemarin', 'buat video kayak C2', atau minta revisi video dengan gaya ini."
 ---
 
 # berarti-reels (gaya Kinetic Cream)
@@ -9,6 +9,7 @@ Gaya ini dikunci dari video final C2 yang sudah disetujui user. Jangan mengganti
 
 Isi folder:
 - `template/` proyek Remotion 4 siap pakai. `src/kit.tsx` dan `src/cover.tsx` adalah **mesin gaya** (jangan diubah per video). `src/reel.tsx` adalah **konten** C2, dipakai sebagai contoh lengkap untuk ditiru. `src/Char.tsx` plus `public/rig3/` adalah rig karakter Firas (12 pose, viseme, ekspresi, kedip, close-up). Font, SFX (`public/audio/lemo`), dan musik orisinal (`public/audio/music/bed.mp3`) sudah termasuk.
+- `reference/serial.md` protokol paket produksi "Konten NN" untuk serial edukasi.
 - `tools/sync.py` membuat `env.json` (lip-sync dan ducking) dan durasi dari VO. `tools/tighten_vo.py` memadatkan bagian VO yang lambat.
 - `reference/gaya.md` spesifikasi gaya. `reference/konten-baru.md` cara menulis `reel.tsx` untuk video baru. `reference/qc.md` checklist QC dan pelajaran dari C2.
 
@@ -19,6 +20,9 @@ Isi folder:
 - Jangan mengarang angka atau klaim yang tidak ada di naskah. Visual tidak boleh menyiratkan angka yang tidak diucapkan (pelajaran C2: timer "00:07" diganti stopwatch tanpa angka).
 - Preview dulu, tanya user, baru render final. Final hanya setelah user bilang "render final".
 - Pakai bahasa Indonesia ke user.
+
+## Mode serial (Konten NN)
+Kalau user mengetik "Konten 01" sampai "Konten 30", ikuti `reference/serial.md`. Daftar episode, hook final, dan CTA master ada di `berarti-ig/17-serial-komunikasi.md`. CTA serial memakai komponen `CtaDM` (keyword KOMUNIKASI, tombol Kirim, kartu DM, lalu "Ilmunya lewat DM!") dan tidak boleh diubah per episode. Dialog dua karakter memakai `SpeechBubble`, dengan spec `mute` supaya mulut Firas diam saat lawan bicara berbicara.
 
 ## Alur kerja
 1. **Input.** Naskah final, VO mp3 (ElevenLabs suara user), pilar (COMMUNICATION, CONFIDENCE, atau GROW), dan teks cover. Teks cover terdiri dari judul 3 baris, kalimat "yang salah" untuk balon, dan pill solusi. Kalau belum ada, usulkan dari hook naskah.

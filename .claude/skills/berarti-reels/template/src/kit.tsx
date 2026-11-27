@@ -35,6 +35,8 @@ export type ReelSpec = {
   blocks: Blk[]; kw: Set<number>; ul: Set<number>; floods: [number, number][]; trans: number[];
   cover: CoverContent;
   small?: Place; endPlace?: Place;
+  closeAt?: number;          // serial CTA: narration headline gives way to the closing message
+  mute?: [number, number][]; // dialog: spans spoken by the other character
 };
 const SpecCtx = React.createContext<ReelSpec>(null as unknown as ReelSpec);
 export const useSpec = () => React.useContext(SpecCtx);
@@ -267,7 +269,7 @@ const Headline2: React.FC = () => {
   const sp = useSpec();
   let k = -1; sp.blocks.forEach((_, i) => { if (t >= blkStart(sp, i)) k = i; });
   if (k < 0) return null;
-  const endFade = prog(t, sp.l - 0.05, 0.25);
+  const endFade = prog(t, Math.min(sp.l, sp.closeAt ?? sp.l) - 0.05, 0.25);
   const prevFade = prog(t, blkStart(sp, k), 0.14);
   return <>
     {k > 0 && prevFade < 1 && <Block k={k - 1} t={t} fade={prevFade} />}
@@ -325,7 +327,7 @@ const ReelInner: React.FC<{children: React.ReactNode}> = ({children}) => {
         <Mosaic />
         <Headline2 />
         <div style={{position: 'absolute', inset: 0, filter: 'drop-shadow(0 26px 34px rgba(60,35,10,0.20))'}}>
-          <Character keys={sp.poses} x={ch.x} y={ch.y} scale={ch.scale} still />
+          <Character keys={sp.poses} x={ch.x} y={ch.y} scale={ch.scale} still mute={sp.mute} />
         </div>
         {showCover && <CoverFront o={coverO} t={t} content={sp.cover} />}
         <ReactionPops />
@@ -351,3 +353,121 @@ export const CoverStill: React.FC<{spec: ReelSpec; guides?: boolean}> = ({spec, 
     {guides && <ThirdsGuides />}
   </AbsoluteFill>
 );
+
+// ============================================================ SERIAL: dialog bubble (scenario scenes with two characters)
+/** Speech bubble for the scenario dialog. side 'left' = the other person (avatar + name), 'right' = Firas. Positions are pre-DY. */
+export const SpeechBubble: React.FC<{at: number; side: 'left' | 'right'; name?: string; color?: string; top: number; children: React.ReactNode}> = ({at, side, name, color = AUD[1], top, children}) => {
+  const {f, fps} = useT();
+  const p = springAt(f, fps, at, {damping: 13, stiffness: 190, mass: 0.7});
+  const left = side === 'left';
+  return (
+    <div style={{position: 'absolute', top, left: left ? M : undefined, right: left ? undefined : M, maxWidth: 760, display: 'flex', alignItems: 'flex-end', gap: 16,
+      flexDirection: left ? 'row' : 'row-reverse', opacity: Math.min(1, p * 1.6), transform: `translateY(${(1 - p) * 40}px) scale(${0.9 + 0.1 * p})`, transformOrigin: left ? '0% 100%' : '100% 100%'}}>
+      {left && <div style={{width: 84, height: 84, borderRadius: 99, background: '#fff', boxShadow: SH, overflow: 'hidden', flexShrink: 0, position: 'relative'}}>
+        <div style={{position: 'absolute', left: 4, top: 6}}><Person c={color} size={76} /></div></div>}
+      <div style={{background: left ? '#fff' : C.orange, color: left ? C.ink : '#fff', borderRadius: left ? '34px 34px 34px 8px' : '34px 34px 8px 34px', padding: '22px 30px', boxShadow: SH,
+        fontFamily: FONT, fontWeight: 700, fontSize: 40, lineHeight: 1.2, letterSpacing: -0.5}}>
+        {name && <div style={{fontFamily: FONT, fontWeight: 800, fontSize: 20, letterSpacing: 3, color: left ? C.soft : 'rgba(255,255,255,0.8)', marginBottom: 6}}>{name}</div>}
+        {children}
+      </div>
+    </div>
+  );
+};
+
+// ============================================================ SERIAL: CTA master (do not restyle per episode)
+// Comment the keyword -> tap Kirim -> DM arrives -> "Ilmunya lewat DM!" on the orange flood. Same layout, motion and SFX every episode.
+export type CtaSpec = {
+  keyword: string;   // KOMUNIKASI for the Communication series
+  start: number;     // CTA line starts (comment card enters)
+  type: number;      // keyword typed (when the VO says the keyword)
+  tap: number;       // Kirim pressed
+  dm: number;        // DM card arrives (when the VO says "DM")
+  close: number;     // closing message "Ilmunya lewat DM!" (put a flood window from close to l)
+  dmTitle: string;   // e.g. "Ilmu Komunikasi · EP 01"
+  dmLine?: string;   // small line under the pill, e.g. "3 kalimat pembuka + contoh"
+};
+const Sfx: React.FC<{at: number; name: string; g: number}> = ({at, name, g}) => {
+  const {fps} = useVideoConfig();
+  return <Sequence from={Math.max(0, Math.round(at * fps))} durationInFrames={Math.round(2 * fps)}><Audio src={staticFile(`audio/lemo/${name}.wav`)} volume={g} /></Sequence>;
+};
+export const CtaDM: React.FC<{c: CtaSpec}> = ({c}) => {
+  const {t, f, fps} = useT();
+  const inP = springAt(f, fps, c.start, {damping: 14, stiffness: 150, mass: 0.9});
+  const n = Math.floor(interpolate(t, [c.type, c.type + 0.5], [0, c.keyword.length], clamp));
+  const press = interpolate(t, [c.tap - 0.06, c.tap, c.tap + 0.16], [1, 0.82, 1], clamp);
+  const sent = prog(t, c.tap + 0.08, 0.3);
+  const dmP = springAt(f, fps, c.dm, {damping: 12, stiffness: 170, mass: 0.8});
+  const cl = prog(t, c.close, 0.5);
+  const dmBig = springAt(f, fps, c.close + 0.12, {damping: 10, stiffness: 140, mass: 0.9});
+  const mv = prog(t, c.start + 0.3, Math.max(0.2, c.tap - c.start - 0.35), Easing.bezier(0.65, 0, 0.35, 1));
+  const kx = 72 + 936 - 150, ky = 660 + 52;
+  const sfx: [number, string, number][] = [[c.start, 'whoosh_short', 0.12]];
+  for (let i = 0; i < c.keyword.length; i++) sfx.push([c.type + (i * 0.5) / c.keyword.length, 'click', 0.05]);
+  sfx.push([c.tap, 'click', 0.2], [c.tap + 0.05, 'pop', 0.08], [c.dm, 'ding', 0.16], [c.close - 0.05, 'whoosh', 0.15], [c.close + 0.12, 'thump', 0.14]);
+  return (
+    <>
+      {t >= c.start - 0.05 && <AbsoluteFill>
+        {/* comment box with the keyword and the Kirim button */}
+        <div style={{position: 'absolute', left: 72, top: 660, width: 936, opacity: Math.min(1, inP * 1.5), transform: `translateY(${(1 - inP) * 80}px)`}}>
+          <div style={{background: '#fff', borderRadius: 34, padding: '0 34px', height: 124, display: 'flex', alignItems: 'center', gap: 24, boxShadow: SH,
+            outline: `3px solid ${n > 0 ? C.orange : 'rgba(22,25,26,0.08)'}`, outlineOffset: -3}}>
+            <div style={{width: 60, height: 60, borderRadius: 99, background: 'radial-gradient(circle at 35% 30%, #FFB37A, #FF6A00 60%, #D95500)'}} />
+            <div style={{flex: 1, fontFamily: FONT, fontWeight: n > 0 ? 800 : 600, fontSize: n > 0 ? 50 : 38, letterSpacing: n > 0 ? 1 : 0, whiteSpace: 'nowrap', color: n > 0 ? C.ink : C.faint}}>
+              {n > 0 ? c.keyword.slice(0, n) : 'Tambahkan komentar...'}
+              {n > 0 && n < c.keyword.length && <span style={{display: 'inline-block', width: 4, height: 46, background: C.orange, marginLeft: 4, verticalAlign: -6}} />}
+            </div>
+            <div style={{fontFamily: FONT, fontWeight: 800, fontSize: 40, color: C.orange, transform: `scale(${press})`}}>Kirim</div>
+          </div>
+          <div style={{marginTop: 14, textAlign: 'right', fontFamily: FONT, fontWeight: 800, fontSize: 24, letterSpacing: 3, color: C.green, opacity: sent, transform: `translateY(${(1 - sent) * 10}px)`}}>
+            ✓ KOMENTAR TERKIRIM</div>
+        </div>
+        {/* tap cursor */}
+        {t < c.tap + 0.6 && <div style={{position: 'absolute', left: interpolate(mv, [0, 1], [860, kx + 40]), top: interpolate(mv, [0, 1], [1010, ky + 10]), transform: `scale(${press})`,
+          opacity: prog(t, c.start + 0.2, 0.2) * (1 - prog(t, c.tap + 0.35, 0.25))}}>
+          <svg width={72} height={72} viewBox="0 0 24 24"><path d="M9 11V4.5a1.5 1.5 0 0 1 3 0V10l5 1.2c.9.2 1.5 1.1 1.3 2l-1 5.3a2 2 0 0 1-2 1.5H11a2 2 0 0 1-1.6-.8L6 15c-.6-.8 0-2 1-2 .4 0 .8.2 1 .5L9 15z" fill="#fff" stroke={C.ink} strokeWidth={1.3} strokeLinejoin="round" /></svg>
+        </div>}
+        {/* DM arrives */}
+        {t >= c.dm - 0.05 && <div style={{position: 'absolute', left: 72, top: 862, width: 936, opacity: Math.min(1, dmP * 1.6), transform: `translateY(${(1 - dmP) * -40}px) scale(${0.94 + 0.06 * dmP})`}}>
+          <div style={{background: '#fff', borderRadius: 34, padding: '28px 34px', boxShadow: SH}}>
+            <div style={{display: 'flex', alignItems: 'center', gap: 16}}>
+              <Img src={staticFile('logo_academy.png')} style={{width: 56, height: 56, borderRadius: 99}} />
+              <span style={{fontFamily: FONT, fontWeight: 800, fontSize: 32, color: C.ink}}>berarti.academy</span>
+              <span style={{fontFamily: FONT, fontWeight: 600, fontSize: 26, color: C.soft}}>mengirim pesan</span>
+              <span style={{marginLeft: 'auto', width: 16, height: 16, borderRadius: 99, background: C.red}} />
+            </div>
+            <div style={{display: 'inline-block', marginTop: 20, background: C.orange, color: '#fff', borderRadius: 18, padding: '16px 26px', fontFamily: FONT, fontWeight: 800, fontSize: 36}}>{c.dmTitle}</div>
+            {c.dmLine && <div style={{marginTop: 14, fontFamily: MONO, fontSize: 24, color: C.soft}}>{c.dmLine}</div>}
+          </div>
+        </div>}
+        {/* closing message in the headline zone */}
+        {t >= c.close - 0.05 && <div style={{position: 'absolute', left: 50, right: 50, top: 236, textAlign: 'center', opacity: cl, transform: `translateY(${(1 - cl) * 30}px)`}}>
+          <div style={{fontFamily: FONT, fontWeight: 800, fontSize: 100, lineHeight: 1.05, letterSpacing: -1.5, color: '#fff'}}>Ilmunya lewat</div>
+          <div style={{fontFamily: DISPLAY, fontSize: 220, lineHeight: 1.0, letterSpacing: -4, transform: `scale(${1.25 - 0.25 * dmBig})`, opacity: Math.min(1, dmBig * 1.5),
+            backgroundImage: 'linear-gradient(180deg, #FFFFFF 0%, #FFE7D4 100%)', WebkitBackgroundClip: 'text', backgroundClip: 'text', color: 'transparent',
+            filter: 'drop-shadow(0 10px 22px rgba(120,40,0,0.25))'}}>DM!</div>
+        </div>}
+      </AbsoluteFill>}
+      {sfx.map(([at, name, g], i) => <Sfx key={i} at={at} name={name} g={g} />)}
+    </>
+  );
+};
+/** Preview of the CTA master on its own (composition "CtaDemo", 6.5 s). */
+export const CtaDemo: React.FC<{keyword?: string; dmTitle?: string; dmLine?: string}> = ({keyword = 'KOMUNIKASI', dmTitle = 'Ilmu Komunikasi · EP 01', dmLine = '3 langkah + contoh kalimat'}) => {
+  const {t} = useT();
+  const c: CtaSpec = {keyword, start: 0.3, type: 1.0, tap: 1.75, dm: 2.4, close: 3.7, dmTitle, dmLine};
+  const end = charAt(720, 1450, 0.95);
+  const flood = prog(t, c.close - 0.1, 0.22);
+  return (
+    <AbsoluteFill style={{background: C.bg, overflow: 'hidden'}}>
+      <FontFaces />
+      <CreamBG flood={flood} />
+      <Spot p={end} />
+      <div style={{position: 'absolute', left: 50, right: 50, top: 236, textAlign: 'center', fontFamily: FONT, fontWeight: 800, fontSize: 88, lineHeight: 1.08, color: C.ink,
+        opacity: 1 - prog(t, c.close - 0.1, 0.2)}}>Komen <span style={{color: C.orange}}>KOMUNIKASI</span>, nanti aku kirim lewat DM.</div>
+      <CtaDM c={c} />
+      <div style={{position: 'absolute', inset: 0, filter: 'drop-shadow(0 26px 34px rgba(60,35,10,0.20))'}}>
+        <Character keys={[{t: 0, pose: 'tunjuk_kamu', expr: 'ramah', mouth: 'smile'}, {t: 4.6, wink: true, head: 2}]} x={end.x} y={end.y} scale={end.scale} forceVis="G" still />
+      </div>
+    </AbsoluteFill>
+  );
+};
