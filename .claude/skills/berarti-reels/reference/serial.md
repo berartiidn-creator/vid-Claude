@@ -3,7 +3,8 @@
 **Serial ini adalah corong ke BERARTI Speaking Index.** Peta 30 episode ada di `berarti-ig/17-serial-komunikasi.md`. Setiap episode memecah satu pokok bahasan Kurikulum Public Speaking BERARTI Academy dan terhubung ke satu pilar BERARTI (B, R-Makna, E, A, R-Aksi, T, I) serta satu pertemuan kelas (MP-1 sampai MP-4).
 
 **Aturan kulit (wajib):**
-- Konten hanya menampilkan masalah, akibat, nama konsep, dan **satu** langkah kecil.
+- Konten menampilkan masalah, akibat, dan konsep atau riset di REFRAME. SOLUSI boleh menyebut rumus dan poin dari silabus (PREP, Vokal 4P, kartu 3K, enam qaulan, jika-maka), tapi tanpa pendalaman.
+- Kalimat CTA berbeda di setiap episode: pertanyaan yang memancing penasaran sesuai tema, lalu "Komen KOMUNIKASI" dan tes gratis lewat DM. Hanya janjikan yang ada di hasil tes (skor, level, tipe pembicara, peta 7 pilar, 3 latihan, soal kuis). Draf hook, skenario, solusi, dan CTA tiap episode ada di `berarti-ig/18-peta-serial-speaking-index.md`.
 - DM hanya memberi satu tambahan kecil dan link tes `?src=ig-epNN`.
 - Teknik lengkap, drill, checklist, dan rubrik milik tes dan kelas.
 - Kelas tidak disebut di konten maupun DM, karena kelas baru muncul di akhir hasil tes.
