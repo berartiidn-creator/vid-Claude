@@ -1,8 +1,10 @@
-# Konten 25: 3 hal yang bikin presentasi membosankan
+# Konten 14: 3 hal yang bikin presentasi membosankan
 
-Serial Edukasi Komunikasi · EP 25 · Pilar COMMUNICATION · 107 kata, sekitar 47 detik dengan jeda · Keyword CTA: KOMUNIKASI
+Serial Edukasi Komunikasi · EP 14 · Pilar konten COMMUNICATION · Pilar BERARTI E dan R-Aksi (MP-2 dan MP-3) · 107 kata, sekitar 47 detik dengan jeda · Keyword CTA: KOMUNIKASI
 
 Tema: presentasi jarang membosankan karena topiknya. Biasanya karena tiga hal: slide yang dibacakan, audiens yang cuma jadi penonton, dan angka tanpa contoh.
+
+Sesuai aturan kulit (`17-serial-komunikasi.md`): konten menyebut tiga penyebab dan satu perbaikan masing-masing. Checklist lengkap tidak dibagikan di DM, karena itu milik tes dan kelas.
 
 Dijaga supaya tidak mengulang konten lain: pembuka dan jeda dua detik sudah dibahas di C2, hafalan ada di nomor 22, dan pesan yang mudah diingat ada di nomor 28.
 
@@ -17,7 +19,7 @@ Dijaga supaya tidak mengulang konten lain: pembuka dan jeda dua detik sudah diba
 | REFRAME | 17 sampai 21 | Narasi | Presentasi jarang bosan karena topiknya. Biasanya karena tiga hal ini. |
 | SOLUSI | 21 sampai 40 | Narasi | Satu, slide dibacain. Cukup satu kalimat per slide, sisanya kamu yang cerita. Dua, audiens cuma jadi penonton. Lempar satu pertanyaan: "Siapa yang pernah ngalamin ini?" Tiga, angka tanpa contoh. Ganti "efisiensi meningkat" jadi "pulang satu jam lebih cepat". |
 | PENUTUP | 40 sampai 43 | Narasi | Kasih audiens alasan buat ngangkat kepala dari HP. |
-| CTA | 43 sampai 50 | Narasi | Komen KOMUNIKASI untuk checklist presentasi anti bosan, nanti aku kirim lewat DM. |
+| CTA | 43 sampai 50 | Narasi | Komen KOMUNIKASI, nanti aku kirim tes gratis buat cek skor presentasimu lewat DM. |
 
 Penutup menyambung ke hook saat video mengulang: "...ngangkat kepala dari HP." lalu "Audiens mulai buka HP di menit ketiga?"
 
@@ -29,11 +31,11 @@ Penutup menyambung ke hook saat video mengulang: "...ngangkat kepala dari HP." l
 
 ## 2. Karakter
 - **A: Firas,** jadi salah satu audiens yang berbisik ke kamera, sekaligus narator.
-- **B: Dina,** sedang presentasi (karakter tetap, sama dengan EP 01). Tampil sebagai balon chat dengan avatar.
+- **B: Dina,** sedang presentasi (karakter tetap, sama dengan episode bonus "Cerita yang direbut"). Tampil sebagai balon chat dengan avatar.
 
 ## 3. VO ElevenLabs (mode dialog, v3)
 
-Speaker 1 adalah suara kloningmu. Speaker 2 adalah suara stok perempuan yang sama dengan EP 01. Jangan pakai kloning suara orang lain.
+Speaker 1 adalah suara kloningmu. Speaker 2 adalah suara stok perempuan yang sama di semua episode. Jangan pakai kloning suara orang lain.
 
 ```
 Speaker 1: [knowing, slightly teasing] Audiens mulai buka HP di menit ketiga? [beat] Ini tiga penyebabnya.
@@ -43,7 +45,7 @@ Speaker 1: [explaining, warm] Materinya bagus. Tapi audiens udah baca slidenya d
 Speaker 1: [confident] Presentasi jarang bosan karena topiknya. Biasanya karena tiga hal ini.
 Speaker 1: [clear, energetic] Satu, slide dibacain. Cukup satu kalimat per slide, sisanya kamu yang cerita. [beat] Dua, audiens cuma jadi penonton. Lempar satu pertanyaan: [inviting] "Siapa yang pernah ngalamin ini?" [beat] Tiga, angka tanpa contoh. Ganti "efisiensi meningkat" jadi [warm] "pulang satu jam lebih cepat".
 Speaker 1: [slow, warm] Kasih audiens alasan buat ngangkat kepala dari HP.
-Speaker 1: [friendly, upbeat] Komen KOMUNIKASI untuk checklist presentasi anti bosan, nanti aku kirim lewat DM.
+Speaker 1: [friendly, upbeat] Komen KOMUNIKASI, nanti aku kirim tes gratis buat cek skor presentasimu lewat DM.
 ```
 
 ## 4. Storyboard per adegan
@@ -56,7 +58,7 @@ Speaker 1: [friendly, upbeat] Komen KOMUNIKASI untuk checklist presentasi anti b
 | REFRAME | Kartu bersih berisi tiga slot bernomor 1, 2, 3 yang masih kosong | hitung_tiga, ramah | kata kunci: topiknya, tiga hal | whoosh_short |
 | SOLUSI | Slot terisi satu per satu, tiap slot berisi sebelum (abu, dicoret) dan sesudah (oranye). (1) slide dinding teks jadi slide satu kalimat. (2) audiens diam jadi tangan terangkat, dengan chip "Siapa yang pernah ngalamin ini?". (3) chip "efisiensi meningkat" dicoret, lalu chip "pulang 1 jam lebih cepat" dengan `Check` | tawarkan, ramah, lalu semangat, ceria di nomor 3 | kata kunci: slide, penonton, contoh | pop tiap slot, ding di centang terakhir |
 | PENUTUP | Barisan audiens mengangkat kepala, dan HP-nya padam satu per satu | tulus, ramah, nod | kata kunci: alasan | pop lembut berurutan |
-| CTA | `CtaDM` master: KOMUNIKASI, Kirim, DM "Ilmu Komunikasi · EP 25", lalu "Ilmunya lewat DM!" | membesar, tunjuk_kamu, ramah, lalu wink | CTA master | SFX bawaan CtaDM |
+| CTA | `CtaDM` master: KOMUNIKASI, Kirim, DM "Ilmu Komunikasi · EP 14", lalu "Ilmunya lewat DM!" | membesar, tunjuk_kamu, ramah, lalu wink | CTA master | SFX bawaan CtaDM |
 
 Pop close-up: cu_tertawa di SKENARIO (bisikan Firas), cu_menekankan di SOLUSI nomor 3.
 
@@ -65,33 +67,22 @@ Transisi mozaik di awal AKIBAT, REFRAME, SOLUSI, dan CTA.
 Visual "pulang 1 jam lebih cepat" boleh memakai angka karena angka itu diucapkan di VO sebagai contoh kalimat, bukan klaim data.
 
 ## 5. Spesifikasi CTA
-- VO: "Komen KOMUNIKASI untuk checklist presentasi anti bosan, nanti aku kirim lewat DM."
+- VO: "Komen KOMUNIKASI, nanti aku kirim tes gratis buat cek skor presentasimu lewat DM."
 - `keyword`: KOMUNIKASI
-- `dmTitle`: Ilmu Komunikasi · EP 25
-- `dmLine`: checklist presentasi anti bosan
+- `dmTitle`: Ilmu Komunikasi · EP 14
+- `dmLine`: Tes gratis · cek skor speaking-mu
 - Penutup visual: "Ilmunya lewat DM!" (master)
 
-## 6. Teks DM otomatis (pemicu KOMUNIKASI, EP 25)
+## 6. Teks DM otomatis (pemicu KOMUNIKASI, EP 14, aturan kulit)
 
 ```
-Hai! Ini checklist presentasi anti bosan. Cek sebelum kamu maju:
+Hai! Ini lanjutan EP 14: 3 hal yang bikin presentasi membosankan.
 
-SLIDE
-[ ] Satu slide, satu kalimat utama
-[ ] Nggak ada paragraf yang kamu bacain
-[ ] Detail ada di mulutmu, bukan di slide
+Satu tes kecil sebelum kamu maju: tutup slidemu, lalu coba jelasin isinya dalam 1 menit. Kalau bisa, slide-mu cukup jadi pendukung, bukan naskah.
 
-AUDIENS
-[ ] Ada 1 pertanyaan buat audiens di 3 menit pertama ("Siapa yang pernah...?")
-[ ] Ada momen mereka ngangkat tangan, jawab, atau mikir sebentar
-
-ANGKA
-[ ] Tiap angka punya satu contoh nyata ("hemat 2 jam" lebih kena dari "efisiensi meningkat")
-[ ] Maksimal 3 angka penting di seluruh presentasi
-
-Tes terakhir: tutup slidenya, coba jelasin isinya dalam 1 menit. Kalau bisa, kamu siap.
-
-Mau tahu gaya komunikasimu sendiri? Coba BERARTI Index gratis: [link BERARTI Index]
+Penasaran seberapa bagus speaking-mu sekarang? Cek di BERARTI Speaking Index: 35 pertanyaan, 7 menit, gratis.
+Hasilnya langsung keluar: skor speaking, tipe pembicaramu, peta 7 pilar, dan 3 latihan sesuai titik lemahmu.
+Lihat skor pilar E (struktur pesan) dan R-Aksi (suara dan bahasa tubuh) kamu di sana: [link BERARTI Speaking Index]?src=ig-ep14
 ```
 
 ## 7. Caption
@@ -103,7 +94,7 @@ Audiens mulai buka HP di menit ketiga? Ini tiga penyebabnya.
 2. Audiens cuma jadi penonton. Lempar satu pertanyaan: "Siapa yang pernah ngalamin ini?"
 3. Angka tanpa contoh. "Efisiensi meningkat" kalah sama "pulang satu jam lebih cepat".
 
-Komen KOMUNIKASI, nanti aku kirim checklist presentasi anti bosan lewat DM.
+Komen KOMUNIKASI, nanti aku kirim tes gratis buat cek skor presentasimu lewat DM.
 
 #presentasi #publicspeaking #komunikasi
 ```
@@ -112,5 +103,5 @@ Komen KOMUNIKASI, nanti aku kirim checklist presentasi anti bosan lewat DM.
 - Judul 3 baris, sama dengan awal hook: **AUDIENS / BUKA HP DI / MENIT KETIGA?**, dengan Marker di "MENIT KETIGA?"
 - Balon yang dicoret merah: "Seperti yang tertulis di slide..."
 - Pill solusi: "3 penyebab, 3 perbaikan"
-- Chip pilar: COMMUNICATION · EP 25
+- Chip pilar: COMMUNICATION · EP 14
 - Pose cover: tunjuk_kamu, serius

@@ -1,5 +1,14 @@
 # Mode serial: "Konten NN"
 
+**Serial ini adalah corong ke BERARTI Speaking Index.** Peta 30 episode ada di `berarti-ig/17-serial-komunikasi.md`. Setiap episode memecah satu pokok bahasan Kurikulum Public Speaking BERARTI Academy dan terhubung ke satu pilar BERARTI (B, R-Makna, E, A, R-Aksi, T, I) serta satu pertemuan kelas (MP-1 sampai MP-4).
+
+**Aturan kulit (wajib):**
+- Konten hanya menampilkan masalah, akibat, nama konsep, dan **satu** langkah kecil.
+- DM hanya memberi satu tambahan kecil dan link tes `?src=ig-epNN`.
+- Teknik lengkap, drill, checklist, dan rubrik milik tes dan kelas.
+- Kelas tidak disebut di konten maupun DM, karena kelas baru muncul di akhir hasil tes.
+- Klaim riset hanya yang berstatus "Terverifikasi" di bagian H kurikulum.
+
 Daftar episode, hook final, dan CTA master ada di `berarti-ig/17-serial-komunikasi.md`. Saat user mengetik **"Konten NN"** (01 sampai 30), buat satu paket produksi lengkap, simpan di `berarti-ig/serial-komunikasi/NN-<slug>.md`, lalu tunggu VO. Jangan render sebelum ada VO dan persetujuan.
 
 ## Isi paket "Konten NN"
@@ -20,11 +29,12 @@ Daftar episode, hook final, dan CTA master ada di `berarti-ig/17-serial-komunika
    - audiens memakai `Person`
    - checklist memakai `Check`
 5. **SFX** mengikuti pola gaya. CTA sudah punya SFX sendiri di `CtaDM`.
-6. **CTA master:** kalimat VO "Komen KOMUNIKASI untuk [konteks], nanti aku kirim lewat DM." Isi spesifikasinya: `dmTitle` "Ilmu Komunikasi · EP NN" dan `dmLine` berisi ringkasan isi DM.
-7. **Teks DM otomatis** (yang dikirim ke komentator), siap ditempel ke ManyChat. Isinya:
-   - langkah dan contoh kalimat episode itu
-   - satu tautan ke BERARTI Index di akhir
-   - Tanpa angka yang tidak bisa dipertanggungjawabkan.
+6. **CTA master:** kalimat VO "Komen KOMUNIKASI, nanti aku kirim tes gratis buat cek [aspek episode]-mu lewat DM." Isi spesifikasinya: `dmTitle` "Ilmu Komunikasi · EP NN" dan `dmLine` "Tes gratis · cek skor speaking-mu".
+7. **Teks DM otomatis** (yang dikirim ke komentator), siap ditempel ke ManyChat. Pakai template DM di `17-serial-komunikasi.md`:
+   - satu tambahan kecil (bukan teknik lengkap)
+   - ajakan cek BERARTI Speaking Index dengan link `?src=ig-epNN`
+   - pilar BERARTI episode itu
+   - Tanpa angka yang tidak bisa dipertanggungjawabkan, dan tanpa menyebut kelas.
 8. **Caption:**
    - Baris pertama memakai hook.
    - Isinya 3 baris inti.

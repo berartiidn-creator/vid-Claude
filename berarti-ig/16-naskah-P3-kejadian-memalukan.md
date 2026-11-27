@@ -33,11 +33,11 @@ Penutup menyambung ke hook saat video mengulang: "...biasanya cuma kamu." lalu "
 
 ## 2. Karakter
 - **A: Firas,** rekan kerja yang duduk di sebelah Dina, sekaligus narator.
-- **B: Dina,** sama dengan EP 01 Serial Komunikasi (karakter tetap). Tampil sebagai balon chat dengan avatar.
+- **B: Dina,** karakter tetap yang sama di serial (karakter tetap). Tampil sebagai balon chat dengan avatar.
 
 ## 3. VO ElevenLabs (mode dialog, v3)
 
-Speaker 1 adalah suara kloningmu. Speaker 2 adalah suara stok perempuan yang sama dengan EP 01. Jangan pakai kloning suara orang lain.
+Speaker 1 adalah suara kloningmu. Speaker 2 adalah suara stok perempuan yang sama di semua episode. Jangan pakai kloning suara orang lain.
 
 ```
 Speaker 1: [knowing, gentle] Salah ngomong pas meeting, kamu kepikiran semalaman. [beat] Yang lain? Sibuk sama dirinya sendiri.
@@ -90,7 +90,7 @@ Kalau kesalahannya berdampak ke orang lain (misalnya salah info ke klien), cukup
 
 Kalau rasa malu sering bikin kamu susah tidur atau ganggu kerja dalam waktu lama, ngobrol sama psikolog itu langkah yang kuat, bukan lemah.
 
-Mau tahu dari mana sumber pede kamu? Coba BERARTI Index gratis: [link BERARTI Index]
+Penasaran seberapa bagus speaking-mu sekarang? Cek di BERARTI Speaking Index: 35 pertanyaan, 7 menit, gratis. Lihat skor pilar B (sadar diri) kamu di sana: [link BERARTI Speaking Index]?src=ig-p3
 ```
 
 ## 7. Caption
