@@ -13,6 +13,7 @@ Isi folder:
 - `reference/gaya.md` spesifikasi gaya. `reference/konten-baru.md` cara menulis `reel.tsx` untuk video baru. `reference/qc.md` checklist QC dan pelajaran dari C2.
 
 ## Aturan tetap
+- **Skill ini menang untuk semua video BERARTI.** Di repo ini juga terpasang Hyperframes, ffmpeg-skill, voynann, lemo-opuscar, dan skill Remotion. Untuk Reels animasi @berarti.academy selalu pakai template Remotion di skill ini. Hyperframes dan yang lain hanya dipakai kalau user secara eksplisit meminta framework itu. ffmpeg-skill boleh dipakai untuk mengolah rekaman atau file audio dan video mentah.
 - File VO adalah kloning suara user. Jangan pernah commit atau push file audio VO. Simpan hanya di proyek kerja di scratchpad.
 - Tanpa em dash dan tanpa simbol "&" di semua teks yang terlihat (judul, kartu, caption).
 - Jangan mengarang angka atau klaim yang tidak ada di naskah. Visual tidak boleh menyiratkan angka yang tidak diucapkan (pelajaran C2: timer "00:07" diganti stopwatch tanpa angka).
