@@ -1,9 +1,9 @@
 # Mode serial: "Konten NN"
 
-**Serial ini adalah corong ke BERARTI Speaking Index.** Peta 30 episode ada di `berarti-ig/17-serial-komunikasi.md`. Setiap episode memecah satu pokok bahasan Kurikulum Public Speaking BERARTI Academy dan terhubung ke satu pilar BERARTI (B, R-Makna, E, A, R-Aksi, T, I) serta satu pertemuan kelas (MP-1 sampai MP-4).
+**Serial ini adalah corong ke BERARTI Speaking Index.** **Struktur resmi serial adalah listicle** (lihat di bawah). Peta 30 episode listicle dari silabus ada di `berarti-ig/18-peta-serial-speaking-index.md`. Daftar asli dan CTA master ada di `berarti-ig/17-serial-komunikasi.md`. Setiap episode memecah satu pokok bahasan Kurikulum Public Speaking BERARTI Academy dan terhubung ke satu pilar BERARTI (B, R-Makna, E, A, R-Aksi, T, I) serta satu pertemuan kelas (MP-1 sampai MP-4).
 
 **Aturan kulit (wajib):**
-- Konten menampilkan masalah, akibat, dan konsep atau riset di REFRAME. SOLUSI boleh menyebut rumus dan poin dari silabus (PREP, Vokal 4P, kartu 3K, enam qaulan, jika-maka), tapi tanpa pendalaman.
+- Setiap item listicle menampilkan masalah, contoh, dan akibat. SOLUSI boleh menyebut rumus dan poin dari silabus (PREP, Vokal 4P, kartu 3K, enam qaulan, jika-maka), tapi tanpa pendalaman.
 - Kalimat CTA berbeda di setiap episode: pertanyaan yang memancing penasaran sesuai tema, lalu "Komen KOMUNIKASI" dan tes gratis lewat DM. Hanya janjikan yang ada di hasil tes (skor, level, tipe pembicara, peta 7 pilar, 3 latihan, soal kuis). Draf hook, skenario, solusi, dan CTA tiap episode ada di `berarti-ig/18-peta-serial-speaking-index.md`.
 - DM hanya memberi satu tambahan kecil dan link tes `?src=ig-epNN`.
 - Teknik lengkap, drill, checklist, dan rubrik milik tes dan kelas.
@@ -14,23 +14,29 @@ Daftar episode, hook final, dan CTA master ada di `berarti-ig/17-serial-komunika
 
 ## Isi paket "Konten NN"
 
-1. **Naskah per beat dengan target waktu:** HOOK, SKENARIO (dialog), AKIBAT, REFRAME, SOLUSI, PENUTUP, CTA. Totalnya 110 sampai 130 kata (45 sampai 55 detik).
-   - Hook diambil dari kolom "Hook dipakai".
-   - Penutup adalah satu kalimat yang menyambung ke hook saat video mengulang.
-   - Cek dengan viral-hooks (hook), storytelling (pakai "tapi" atau "jadi", bukan "lalu"), dumbify (bahasa sehari-hari), dan anti-ai-writing versi lisan.
-2. **Dialog skenario:** 2 sampai 4 baris. Karakter A adalah Firas, karakter B adalah lawan bicara dengan nama dan peran, misalnya "Dina, teman kantor". Tulis siapa mengucapkan apa.
+1. **Naskah listicle dengan target waktu:** HOOK (angka, topik, open loop pada satu nomor), lalu setiap ITEM: "Yang pertama, [masalah]", contoh singkat, akibat satu kalimat, "Solusinya, [rumus silabus]". Item open loop ditambah satu kalimat penegas. Lalu CTA. Sekitar 120 kata untuk 4 item (50 detik), 145 kata untuk 5 item (60 detik).
+   - Hook dan daftar item diambil dari `18-peta-serial-speaking-index.md`.
+   - Open loop tidak boleh berupa klaim data ("paling sering terjadi"). Pakai "paling sering dianggap sepele", "sering dikira...", "paling jarang dipakai".
+   - Setiap item punya akibat, termasuk item terakhir.
+   - Cek dengan viral-hooks (hook), dumbify (bahasa sehari-hari), dan anti-ai-writing versi lisan.
+2. **Contoh per item:** satu baris dialog Firas atau Dina, atau satu kartu mockup. Tulis siapa mengucapkan apa.
 3. **VO ElevenLabs:**
    - Narasi dan baris Firas memakai suara kloning user.
    - Baris karakter B memakai suara stok ElevenLabs. **Jangan pernah memakai kloning suara orang lain.**
    - Pakai tag emosi v3 dan tulis angka sebagai kata.
    - Beri dua blok terpisah (VO utama dan baris B) plus urutan penggabungannya, atau satu skrip mode dialog ElevenLabs.
-4. **Storyboard per adegan:** visual kartu di tengah, pose dan ekspresi Firas, kata raksasa, flood, dan pop close-up. Semuanya dipetakan ke komponen kit:
+4. **Storyboard per item** (gaya C2, tanpa label merah atau hijau):
+   - penghitung besar "N/total" dengan titik progres di atas kartu
+   - contoh yang salah tampil di kartu, lalu dicoret saat VO bilang "Solusinya,". Kartu solusi masuk dengan `Check`
+   - pose Firas: tanda_x atau serius di bagian masalah, tawarkan atau ceria di bagian solusi. SFX thump di masalah, ding di solusi
+   - hook menampilkan deretan nomor, dan nomor open loop berdenyut. Item open loop mendapat flood oranye dan kata raksasa
+   - Semuanya dipetakan ke komponen kit:
    - dialog memakai `SpeechBubble`, dengan side 'left' untuk karakter B dan 'right' untuk Firas
    - mockup UI memakai `Card`, `Chip`, dan `Row`
    - audiens memakai `Person`
    - checklist memakai `Check`
 5. **SFX** mengikuti pola gaya. CTA sudah punya SFX sendiri di `CtaDM`.
-6. **CTA master:** kalimat VO "Komen KOMUNIKASI, nanti aku kirim tes gratis buat cek [aspek episode]-mu lewat DM." Isi spesifikasinya: `dmTitle` "Ilmu Komunikasi · EP NN" dan `dmLine` "Tes gratis · cek skor speaking-mu".
+6. **CTA master:** kalimat VO memakai pola referensi, isinya disesuaikan tema: "Mau tahu [sesuai tema]? Komen KOMUNIKASI sekarang, nanti aku kirim tes gratisnya lewat DM!" Isi spesifikasinya: `dmTitle` "Ilmu Komunikasi · EP NN" dan `dmLine` "Tes gratis · cek skor speaking-mu".
 7. **Teks DM otomatis** (yang dikirim ke komentator), siap ditempel ke ManyChat. Pakai template DM di `17-serial-komunikasi.md`:
    - satu tambahan kecil (bukan teknik lengkap)
    - ajakan cek BERARTI Speaking Index dengan link `?src=ig-epNN`

@@ -1,6 +1,6 @@
 # Serial Edukasi Komunikasi (berarti.academy)
 
-Format: micro-storytelling dengan dialog 2 karakter · 1 tema per video · target 45 sampai 55 detik (maksimal 65) · 1 CTA yang sama di setiap episode.
+Format resmi: **listicle** (angka, open loop pada satu nomor, 3 sampai 5 item masalah lalu solusi) · 1 tema per video · 4 item sekitar 50 detik, 5 item sekitar 60 detik · CTA keyword KOMUNIKASI ke DM.
 Produksi video memakai skill `berarti-reels` (gaya Kinetic Cream C2) dalam mode serial. Ketik **"Konten 01"** sampai **"Konten 30"** untuk paket produksi lengkap.
 
 ## CTA master (jangan diubah)
@@ -25,19 +25,32 @@ Layout, animasi, SFX, dan posisi CTA dikunci di komponen `CtaDM` (skill berarti-
 
 Supaya CTA ini jalan: pasang balasan otomatis komentar ke DM (misalnya ManyChat untuk Instagram) dengan pemicu kata KOMUNIKASI. Setiap paket "Konten NN" menyertakan teks DM berisi materi episodenya.
 
-## Struktur naskah per episode
+## Struktur naskah per episode (listicle, resmi)
 
-| Beat | Waktu | Isi |
+Diambil dari video referensi "5 red flag komunikasi yang sering nggak disadari".
+
+| Bagian | Waktu | Isi |
 |---|---|---|
-| HOOK | 0 sampai 4 dtk | situasi yang langsung terbayang, bukan topik. Jadi judul cover |
-| SKENARIO | 4 sampai 16 dtk | dialog 2 karakter (2 sampai 4 baris), situasi sehari-hari |
-| AKIBAT | 16 sampai 24 dtk | dampak perilaku itu ke hubungan atau hasil |
-| REFRAME | 24 sampai 32 dtk | sudut pandang baru, tanpa menghakimi |
-| SOLUSI | 32 sampai 44 dtk | 1 sampai 3 langkah praktis dengan contoh kalimat |
-| PENUTUP | 44 sampai 47 dtk | satu kalimat yang kena dan menyambung ke hook saat video mengulang |
-| CTA | 47 sampai 55 dtk | CTA master |
+| HOOK | 0 sampai 5 dtk | Angka, topik, dan **open loop** pada satu nomor: "4 kalimat yang malah bikin kamu makin grogi. Nomor 2 sering dikira penyemangat." |
+| ITEM (diulang 3 sampai 5 kali) | sekitar 10 dtk per item | "Yang pertama, [masalah]." Lalu contoh singkat (satu baris dialog Firas atau Dina, atau kartu). Lalu akibat dalam satu kalimat. Lalu "Solusinya, [rumus atau poin silabus]." |
+| ITEM OPEN LOOP | sekitar 12 dtk | Sama seperti item lain, ditambah satu kalimat penegas, misalnya "Ini yang paling sering dianggap sepele." Ini membayar janji di hook |
+| CTA | 6 sampai 8 dtk | "Mau tahu [sesuai tema]? Komen KOMUNIKASI sekarang, nanti aku kirim [tes gratisnya] lewat DM!" Visual penutup: "Ilmunya lewat DM!" |
 
-Penyesuaian dari draf awal (berdasarkan data benchmark kita): total dipangkas ke sekitar 55 detik karena video yang menang di sampel bermedian 58 detik, sedangkan yang kalah 68 detik. CTA dibatasi sekitar 8 detik. Ditambah satu kalimat penutup sebelum CTA, karena video atas selalu ditutup kalimat yang kena, baru ajakan.
+Total: 4 item sekitar 50 detik, 5 item sekitar 60 detik.
+
+Aturan isi:
+- Open loop tidak boleh berupa klaim data yang tidak ada ("paling sering terjadi"). Pakai sudut pandang yang bisa dipertanggungjawabkan: "paling sering dianggap sepele", "sering dikira penyemangat", "paling jarang dipakai".
+- Setiap item punya akibat, termasuk item terakhir.
+- Solusi menyebut rumus atau poin dari silabus (kulit). Latihan mendalam ada di tes dan kelas.
+
+Visual gaya C2 (tanpa label merah atau hijau):
+- Penghitung besar "2/4" dengan titik progres di atas kartu.
+- Contoh yang salah tampil di kartu, lalu dicoret saat VO bilang "Solusinya,". Kartu solusi masuk dengan tanda centang.
+- Pose Firas: larangan dan serius di bagian masalah, menawarkan dan ceria di bagian solusi. SFX thump saat masalah muncul, ding saat solusi muncul.
+- Hook menampilkan deretan nomor, dan nomor open loop berdenyut. Item open loop mendapat latar oranye penuh dan kata raksasa.
+- CTA memakai komponen CtaDM master.
+
+Peta 30 episode listicle dari silabus public speaking (usulan, corong ke BERARTI Speaking Index) ada di `18-peta-serial-speaking-index.md`.
 
 ## 30 episode (hook sudah diaudit dengan viral-hooks)
 

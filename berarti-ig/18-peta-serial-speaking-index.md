@@ -1,436 +1,491 @@
-# Peta Serial Speaking: 30 episode dalam struktur naskah
-Usulan pengganti peta episode di `17-serial-komunikasi.md`. File 17 sengaja tidak diubah sampai versi ini disetujui.
-Setiap episode memecah satu pokok bahasan Kurikulum Public Speaking BERARTI Academy dan mengikuti struktur naskah skill berarti-reels: HOOK, SKENARIO (dialog Firas dan Dina), AKIBAT, REFRAME, SOLUSI, PENUTUP, CTA.
-**Aturan kulit:**
-- REFRAME memuat konsep atau riset dari silabus.
-- SOLUSI boleh menyebut rumus dan poin dari silabus (PREP, Vokal 4P, kartu 3K, enam qaulan, jika-maka, dan lainnya), tapi hanya poinnya. Latihan mendalam, drill, dan umpan balik ada di tes dan kelas.
-**CTA:** kalimatnya berbeda di setiap episode, menyesuaikan tema dan memancing penasaran, tapi selalu memuat "Komen KOMUNIKASI" dan mengarah ke tes gratis BERARTI Speaking Index. CTA hanya menjanjikan yang memang ada di hasil tes: skor, level, tipe pembicara, peta 7 pilar, 3 latihan, dan soal kuis. Visual penutup tetap "Ilmunya lewat DM!".
-Sebaran pilar: B 5, R-Makna 3, E 6, A 3, R-Aksi 7, T 3, I 3.
+# Peta Serial Speaking: 30 episode listicle dari silabus
+Usulan peta episode untuk Serial Edukasi Komunikasi sebagai corong ke BERARTI Speaking Index. Daftar asli dan CTA master tetap di `17-serial-komunikasi.md`.
+
+## Struktur resmi: listicle
+
+Diambil dari video referensi "5 red flag komunikasi yang sering nggak disadari".
+
+| Bagian | Waktu | Isi |
+|---|---|---|
+| HOOK | 0 sampai 5 dtk | Angka, topik, dan **open loop** pada satu nomor: "4 kalimat yang malah bikin kamu makin grogi. Nomor 2 sering dikira penyemangat." |
+| ITEM (diulang 3 sampai 5 kali) | sekitar 10 dtk per item | "Yang pertama, [masalah]." Lalu contoh singkat (satu baris dialog Firas atau Dina, atau kartu). Lalu akibat dalam satu kalimat. Lalu "Solusinya, [rumus atau poin silabus]." |
+| ITEM OPEN LOOP | sekitar 12 dtk | Sama seperti item lain, ditambah satu kalimat penegas, misalnya "Ini yang paling sering dianggap sepele." Ini membayar janji di hook |
+| CTA | 6 sampai 8 dtk | "Mau tahu [sesuai tema]? Komen KOMUNIKASI sekarang, nanti aku kirim [tes gratisnya] lewat DM!" Visual penutup: "Ilmunya lewat DM!" |
+
+Total: 4 item sekitar 50 detik, 5 item sekitar 60 detik.
+
+Aturan isi:
+- Open loop tidak boleh berupa klaim data yang tidak ada ("paling sering terjadi"). Pakai sudut pandang yang bisa dipertanggungjawabkan: "paling sering dianggap sepele", "sering dikira penyemangat", "paling jarang dipakai".
+- Setiap item punya akibat, termasuk item terakhir.
+- Solusi menyebut rumus atau poin dari silabus (kulit). Latihan mendalam ada di tes dan kelas.
+
+Visual gaya C2 (tanpa label merah atau hijau):
+- Penghitung besar "2/4" dengan titik progres di atas kartu.
+- Contoh yang salah tampil di kartu, lalu dicoret saat VO bilang "Solusinya,". Kartu solusi masuk dengan tanda centang.
+- Pose Firas: larangan dan serius di bagian masalah, menawarkan dan ceria di bagian solusi. SFX thump saat masalah muncul, ding saat solusi muncul.
+- Hook menampilkan deretan nomor, dan nomor open loop berdenyut. Item open loop mendapat latar oranye penuh dan kata raksasa.
+- CTA memakai komponen CtaDM master.
+
+Sebaran: B 4, R-Makna 2, E 6, A 3, R-Aksi 9, T 3, I 3. Kebanyakan 4 item.
 
 ## MP-1 Sadar Diri dan Niat Bicara
 
 ### EP 01 · Pilar B
 
-| Beat | Isi |
-|---|---|
-| HOOK | Tangan dingin lima menit sebelum maju? Itu memang puncaknya. |
-| SKENARIO | Dina (di balik panggung): "Aku mundur aja deh, deg-degannya nggak karuan." Firas: "Tahan dua menit lagi. Nanti turun sendiri." |
-| AKIBAT | Banyak orang batal maju atau minta diundur tepat di menit yang paling berat. |
-| REFRAME | Grogi berpola V: naik menjelang tampil, paling tinggi tepat sebelum bicara, lalu turun setelah mulai (Behnke dan Sawyer). |
-| SOLUSI (kulit) | Pakai napas 4-6 tepat di menit puncak: tarik napas 4 hitungan, buang 6 hitungan, lalu mulai bicara. |
-| PENUTUP | Grogi paling parah datang sebelum kamu ngomong, bukan saat kamu ngomong. |
-| CTA | Seberapa siap kamu ngadepin grogi? Ada soalnya di tes gratis ini. Komen KOMUNIKASI, link-nya aku kirim lewat DM. |
+**Hook:** 5 tanda grogimu muncul sebelum kamu sadar. Nomor 3 sering disangka kamu nggak siap.
+
+| No | Masalah | Solusi (kulit) |
+|---|---|---|
+| 1 | Tangan dingin menjelang maju | Napas 4-6: tarik 4 hitungan, buang 6 |
+| 2 | Suara bergetar di kalimat pertama | Latih kalimat pertamamu sampai lancar |
+| 3 (open loop) | Ngomong makin lama makin cepat | Jeda satu detik di setiap titik |
+| 4 | Blank di tengah jalan | Pegang satu pesan inti, bukan naskah |
+| 5 | Pengen cepat-cepat selesai | Ganti pertanyaannya: mereka paham nggak? |
+
+**CTA:** Mau tahu grogimu ada di level mana? Komen KOMUNIKASI sekarang, nanti aku kirim tes gratisnya lewat DM!
 
 Soal tes terkait: Kuis "lima menit sebelum maju"
 
 ### EP 02 · Pilar B
 
-| Beat | Isi |
-|---|---|
-| HOOK | Jangan bilang "aku harus tenang". Coba kalimat ini. |
-| SKENARIO | Dina (komat-kamit): "Tenang, tenang, tenang..." makin panik. Firas: "Coba ganti: aku semangat." |
-| AKIBAT | Memaksa tenang saat jantung berdebar terasa mustahil, jadi paniknya malah naik. |
-| REFRAME | Debar grogi dan debar semangat mirip di badan. Menamainya semangat lebih mudah daripada memaksa tenang (Brooks). Jujur: ini mengubah rasa, bukan jaminan tampil sempurna. |
-| SOLUSI (kulit) | Pelabelan ulang: bilang "aku semangat, aku siap", lalu napas pelan sebelum maju. |
-| PENUTUP | Debarnya sama. Namanya yang kamu ganti. |
-| CTA | Lima menit sebelum maju, kamu bakal ngapain? Coba jawab di tes gratis. Komen KOMUNIKASI, aku kirim lewat DM. |
+**Hook:** 4 kalimat yang malah bikin kamu makin grogi. Nomor 2 sering dikira penyemangat.
+
+| No | Masalah | Solusi (kulit) |
+|---|---|---|
+| 1 | "Aku harus tenang" | Ganti jadi "aku semangat, aku siap" |
+| 2 (open loop) | "Aku pembicara terhebat" | Pakai kalimat yang bisa kamu percaya |
+| 3 | "Jangan sampai salah" | "Aku cukup menyampaikan satu hal dengan jelas" |
+| 4 | "Semua orang ngeliatin aku" | "Mereka paham nggak?" |
+
+**CTA:** Kalimat penyemangatmu bantu atau malah nyabotase? Komen KOMUNIKASI sekarang, aku kirim tes gratisnya lewat DM!
 
 Soal tes terkait: Kuis "lima menit sebelum maju"
 
 ### EP 03 · Pilar B
 
-| Beat | Isi |
-|---|---|
-| HOOK | "Aku pembicara terhebat!" Buat sebagian orang, kalimat ini malah bikin makin ciut. |
-| SKENARIO | Dina (ngaca): "Aku hebat, aku hebat." Firas: "Kok mukamu makin pucat?" Dina: "Soalnya aku nggak percaya." |
-| AKIBAT | Kalimat yang terlalu jauh dari keyakinanmu dibantah sendiri oleh pikiranmu, dan ragunya makin keras. |
-| REFRAME | Afirmasi positif bisa memperburuk perasaan orang yang sedang kurang percaya diri (Wood dkk.). |
-| SOLUSI (kulit) | Ganti afirmasi dengan kalimat niat: "Aku bicara agar mereka bisa..." Lebih mudah dipercaya, lebih menenangkan. |
-| PENUTUP | Kalimat penyemangat harus bisa kamu percaya dulu. |
-| CTA | Kalimat penyemangatmu bantu atau malah bikin ciut? Cek skor speaking-mu di tes gratis. Komen KOMUNIKASI, aku kirim lewat DM. |
+**Hook:** 4 salah kaprah soal grogi. Nomor 4 bikin banyak orang batal maju.
 
-Soal tes terkait: Pilihan jawaban kuis grogi
+| No | Masalah | Solusi (kulit) |
+|---|---|---|
+| 1 | Grogi artinya kamu nggak siap | Grogi itu wajar dan punya pola |
+| 2 | Grogi harus hilang dulu baru boleh maju | Grogi dikelola, bukan ditunggu hilang |
+| 3 | Latihan bikin grogi hilang total | Latihan menurunkan grogi, nggak menghapusnya |
+| 4 (open loop) | Grogi paling parah saat kamu bicara | Puncaknya justru sebelum bicara, lalu turun (kurva V) |
 
-### EP 04 · Pilar B
-
-| Beat | Isi |
-|---|---|
-| HOOK | Grogimu yang mana: takut dinilai, blank, atau tangan gemetar? |
-| SKENARIO | Dina: "Aku grogi." Firas: "Grogi yang mana? Takut dinilai, takut blank, atau gemetar?" Dina: "Emang beda?" |
-| AKIBAT | Semua disebut grogi, jadi obatnya disamaratakan dan sering nggak kena. |
-| REFRAME | Grogi punya beberapa pola: takut dinilai, blank, gejala fisik, takut membosankan, dan takut dipermalukan. Tiap pola butuh cara yang beda. |
-| SOLUSI (kulit) | Petakan ke lima pola: takut dinilai, blank, gejala fisik, takut membosankan, takut dipermalukan. Pilih satu yang paling sering muncul. |
-| PENUTUP | Grogi yang punya nama lebih gampang diurus. |
-| CTA | Pilar mana yang paling lemah di speaking-mu? Tes gratis ini nunjukkin peta 7 pilarnya. Komen KOMUNIKASI, aku kirim lewat DM. |
+**CTA:** Kamu sudah ngelola grogi dengan benar atau belum? Komen KOMUNIKASI sekarang, aku kirim tes gratisnya lewat DM!
 
 Soal tes terkait: "Saat gugup, aku mengenali tanda-tandanya"
 
-### EP 05 · Pilar B
+### EP 04 · Pilar B
 
-| Beat | Isi |
-|---|---|
-| HOOK | Materinya sama, dibawain ke direksi dan ke warga. Kenapa yang satu gagal? |
-| SKENARIO | Dina (habis sosialisasi): "Slide-nya sama kayak di rapat direksi, kok warga bengong?" Firas: "Soalnya yang dengerin beda." |
-| AKIBAT | Istilah dan contoh yang cocok untuk direksi bikin warga kehilangan arah sejak menit pertama. |
-| REFRAME | Pesan inti boleh sama. Contoh, istilah, dan durasi harus ikut audiens. |
-| SOLUSI (kulit) | Kartu 3K: Kuasai materi, Kenali audiens, Kontrol vokal-visual. Mulai dari K kedua sebelum bikin slide. |
-| PENUTUP | Presentasi yang bagus dimulai dari siapa yang mendengar. |
-| CTA | Kamu jago baca audiens atau sering salah sasaran? Ada soal kayak gini di tes gratis. Komen KOMUNIKASI, aku kirim lewat DM. |
+**Hook:** 5 hal tentang audiens yang sering lupa kamu cek. Nomor 1 justru yang paling dasar.
+
+| No | Masalah | Solusi (kulit) |
+|---|---|---|
+| 1 (open loop) | Siapa mereka sebenarnya | Tulis profil audiens dalam satu kalimat |
+| 2 | Apa yang mereka butuhkan | Mulai dari masalah mereka, bukan materimu |
+| 3 | Istilah apa yang mereka pahami | Pilih kata yang mereka pakai sehari-hari |
+| 4 | Berapa lama mereka bisa fokus | Sesuaikan durasi, bukan isi semua slide |
+| 5 | Apa yang sudah mereka tahu | Lewati yang sudah mereka tahu |
+
+**CTA:** Kamu jago baca audiens atau sering salah sasaran? Komen KOMUNIKASI sekarang, aku kirim tes gratisnya lewat DM!
 
 Soal tes terkait: Kuis "rapat direksi dan warga RW"
 
-### EP 06 · Pilar R-Makna
+### EP 05 · Pilar R-Makna
 
-| Beat | Isi |
-|---|---|
-| HOOK | Kenapa kamu presentasi? Kalau jawabannya "disuruh atasan", audiens bisa ngerasa. |
-| SKENARIO | Firas: "Presentasi besok buat apa?" Dina: "Ya disuruh." Firas: "Terus audiensnya dapat apa?" Dina diam. |
-| AKIBAT | Tanpa alasan yang jelas, presentasi terdengar seperti menggugurkan kewajiban. |
-| REFRAME | Niat bicara menghubungkan isimu dengan orang yang mendengar. |
-| SOLUSI (kulit) | Rumus niat: "Aku bicara agar [siapa] bisa [apa]." Tulis sebelum menyiapkan apa pun. |
-| PENUTUP | Audiens bisa ngerasain apakah kamu bicara untuk mereka. |
-| CTA | Niat bicaramu udah jelas, atau masih "disuruh"? Skornya ada di tes gratis. Komen KOMUNIKASI, aku kirim lewat DM. |
+**Hook:** 4 alasan presentasimu terasa kayak disuruh. Nomor 3 kelihatan dari kalimat pertama.
+
+| No | Masalah | Solusi (kulit) |
+|---|---|---|
+| 1 | Kamu nggak tahu presentasi ini buat apa | Rumus niat: "Aku bicara agar [siapa] bisa [apa]" |
+| 2 | Fokusmu ke slide, bukan ke orang | Tentukan satu hal yang mereka bawa pulang |
+| 3 (open loop) | Kamu buka dengan minta maaf | Buka dengan temuan atau masalah |
+| 4 | Kamu tutup tanpa harapan apa pun | Tutup dengan satu perubahan yang kamu harapkan |
+
+**CTA:** Niat bicaramu udah jelas, atau masih disuruh? Komen KOMUNIKASI sekarang, aku kirim tes gratisnya lewat DM!
 
 Soal tes terkait: "Aku bisa menyebut tujuan bicaraku dalam satu kalimat"
 
-### EP 07 · Pilar R-Makna
+### EP 06 · Pilar R-Makna
 
-| Beat | Isi |
-|---|---|
-| HOOK | Ngerasa semua orang menilai penampilanmu? Pindahin fokusnya ke satu pertanyaan. |
-| SKENARIO | Dina (habis presentasi): "Tadi rambutku berantakan nggak?" Firas: "Tadi audiensnya paham nggak?" Dina: "Nggak tahu." |
-| AKIBAT | Pikiran sibuk menilai diri sendiri, jadi pesannya terlupakan. |
-| REFRAME | Penampilanmu cuma kendaraan. Yang ditunggu audiens adalah gagasanmu. |
-| SOLUSI (kulit) | Ganti pertanyaannya: dari "aku kelihatan gimana?" jadi "mereka paham nggak?" |
-| PENUTUP | Kamu nggak sedang dinilai. Kamu sedang menyampaikan sesuatu. |
-| CTA | Pas presentasi, fokusmu ke audiens atau ke dirimu sendiri? Cek di tes gratis 7 menit. Komen KOMUNIKASI, aku kirim lewat DM. |
+**Hook:** 4 pertanyaan sebelum kamu bicara di depan orang. Nomor 4 yang paling bikin tenang.
 
-Soal tes terkait: Kuis "merasa semua orang menilai"
+| No | Masalah | Solusi (kulit) |
+|---|---|---|
+| 1 | Aku bicara agar siapa bisa apa? | Satu kalimat niat |
+| 2 | Siapa audiensku? | Kenali audiens dari kartu 3K |
+| 3 | Satu hal apa yang harus mereka ingat? | Tulis pesan inti sebelum slide |
+| 4 (open loop) | Sudahkah aku latihan dan berdoa? | Latihan dulu, lalu tutup dengan doa Nabi Musa (Thaha 25 sampai 28) |
 
-### EP 08 · Pilar R-Makna
-
-| Beat | Isi |
-|---|---|
-| HOOK | Sebelum menghadap Firaun, Nabi Musa minta satu hal: lisannya dilancarkan. |
-| SKENARIO | Dina: "Aku udah berdoa, tapi belum latihan. Cukup kan?" Firas: "Nabi Musa berdoa, lalu tetap berangkat." |
-| AKIBAT | Doa tanpa persiapan, atau persiapan tanpa niat, sama-sama bikin goyah saat tampil. |
-| REFRAME | Doa Musa (Thaha 25 sampai 28) adalah doa sebelum tugas bicara yang berat: lapangkan dada, mudahkan urusan, lepaskan kekakuan lidah, supaya mereka paham perkataanku. |
-| SOLUSI (kulit) | Urutan persiapan: isi kartu 3K, latihan, lalu tutup dengan doa Musa. |
-| PENUTUP | Doa dan latihan berjalan bareng. |
-| CTA | Persiapan bicaramu udah lengkap belum? Cek skornya lewat tes gratis. Komen KOMUNIKASI, aku kirim lewat DM. |
-
-Soal tes terkait: Bagian sikap
-
-## MP-2 Pesan yang Terarah dan Jujur
-
-### EP 09 · Pilar E
-
-| Beat | Isi |
-|---|---|
-| HOOK | Kalau audiens cuma inget satu kalimat dari presentasimu, kalimat yang mana? |
-| SKENARIO | Firas (habis rapat): "Presentasimu tadi intinya apa?" Dina: "Ada lima hal sih..." Firas: "Satu aja." Dina bingung. |
-| AKIBAT | Kalau presenternya susah merangkum, audiens lebih susah lagi. |
-| REFRAME | Pesan inti adalah satu kalimat yang tetap tertinggal walau semua slide dilupakan. |
-| SOLUSI (kulit) | Rumus pesan inti: "Kalau audiens hanya ingat satu hal, aku ingin mereka ingat..." Tulis sebelum membuka slide. |
-| PENUTUP | Kalau kamu nggak bisa merangkumnya, audiens juga nggak bisa. |
-| CTA | Bisa nggak kamu rangkum presentasimu dalam satu kalimat? Tes gratis ini ngecek struktur pesanmu. Komen KOMUNIKASI, aku kirim lewat DM. |
+**CTA:** Persiapan bicaramu udah lengkap belum? Komen KOMUNIKASI sekarang, aku kirim tes gratisnya lewat DM!
 
 Soal tes terkait: Kuis "langkah pertama sebelum slide"
 
-### EP 10 · Pilar E
+## MP-2 Pesan yang Terarah dan Jujur
 
-| Beat | Isi |
-|---|---|
-| HOOK | Punya tujuh kelebihan pas interview? Sebut tiga aja. |
-| SKENARIO | Dina (HRD): "Kenapa kamu cocok?" Firas menyebut tujuh hal secepat kilat. Dina tersenyum sopan, mencatat satu kata. |
-| AKIBAT | Tujuh poin terdengar banyak, tapi yang diingat pewawancara hampir nggak ada. |
-| REFRAME | Ingatan kerja manusia menampung sekitar tiga sampai lima bongkah informasi (Cowan). |
-| SOLUSI (kulit) | Rumus tiga poin: pilih tiga, umumkan "Ada tiga alasan", lalu bahas satu per satu. |
-| PENUTUP | Lebih sedikit poin, lebih banyak yang diingat. |
-| CTA | Ada satu soal interview kayak gini di tes gratis. Kamu bakal jawab apa? Komen KOMUNIKASI, link-nya aku kirim lewat DM. |
+### EP 07 · Pilar E
 
-Soal tes terkait: Kuis "tujuh kelebihan"
+**Hook:** 4 pembuka yang bikin audiens ragu sama kamu. Nomor 1 sering dikira sopan.
 
-### EP 11 · Pilar E · sudah diproduksi (C2)
+| No | Masalah | Solusi (kulit) |
+|---|---|---|
+| 1 (open loop) | "Mohon maaf kalau persiapan kami kurang" | Langsung ke satu temuan penting |
+| 2 | Membacakan agenda | Sebut pesan inti dalam satu kalimat |
+| 3 | Perkenalan panjang soal diri sendiri | Kalimat masalah dulu, nama belakangan |
+| 4 | Lelucon yang nggak nyambung | Pakai pemantik yang relevan dengan topik |
 
-| Beat | Isi |
-|---|---|
-| HOOK | Berhenti buka presentasi pakai "perkenalkan, nama saya". Ganti satu kalimat ini. |
-| SKENARIO | Sudah diproduksi sebagai C2 (format tanpa dialog: slide "Perkenalkan, nama saya" diketik lalu dicap SKIP). |
-| AKIBAT | Detik-detik pertama dipakai untuk hal yang belum jadi alasan audiens mendengar. |
-| REFRAME | Pembuka adalah tempat menarik perhatian dan menyatakan masalah, bukan basa-basi. |
-| SOLUSI (kulit) | Buka dengan satu kalimat masalah, kasih jeda dua detik, baru sebut nama. |
-| PENUTUP | Namamu tetap disebut. Cuma sekarang orang punya alasan buat inget. |
-| CTA | Sudah diproduksi dengan CTA Simpan. Untuk caption: "Pembuka presentasimu dapat skor berapa? Komen KOMUNIKASI, aku kirim tes gratisnya lewat DM." |
+**CTA:** Pembuka presentasimu dapat skor berapa? Komen KOMUNIKASI sekarang, aku kirim tes gratisnya lewat DM!
 
 Soal tes terkait: Kuis "pembuka 3 menit"
 
-### EP 12 · Pilar E
+### EP 08 · Pilar E
 
-| Beat | Isi |
-|---|---|
-| HOOK | Ditanya dadakan sama atasan, jawabanmu muter-muter? Ada empat kotak. |
-| SKENARIO | Dina (atasan): "Menurutmu program ini lanjut nggak?" Firas: "Hmm, jadi gini, sebenarnya, kalau dilihat dari..." |
-| AKIBAT | Jawaban muter-muter terdengar nggak yakin, padahal isinya mungkin bagus. |
-| REFRAME | PREP: Point, Reason, Example, Point. Empat kotak yang bikin jawaban dadakan tetap runtut. |
-| SOLUSI (kulit) | PREP: Point, Reason, Example, Point. Contoh: "Lanjut. Karena biayanya turun. Contohnya bulan lalu hemat dua juta. Jadi, lanjut." |
-| PENUTUP | Jawaban runtut itu bisa dilatih, bukan bakat. |
-| CTA | Jawaban dadakanmu runtut atau muter-muter? Cek skornya di tes gratis. Komen KOMUNIKASI, aku kirim lewat DM. |
+**Hook:** 5 tanda presentasimu nggak punya pesan inti. Nomor 4 kerasa banget pas tanya jawab.
 
-Soal tes terkait: "Saat diminta bicara mendadak, jawabanku runtut"
+| No | Masalah | Solusi (kulit) |
+|---|---|---|
+| 1 | Kamu sendiri susah merangkumnya | Rumus: "Kalau audiens hanya ingat satu hal..." |
+| 2 | Satu slide berisi banyak ide | Satu slide, satu ide |
+| 3 | Audiens nanya "jadi intinya apa?" | Ulang pesan inti di awal dan akhir |
+| 4 (open loop) | Jawaban tanya jawabmu melebar ke mana-mana | Kembalikan setiap jawaban ke pesan inti |
+| 5 | Penutupnya "mungkin itu saja" | Tutup dengan pesan inti |
 
-### EP 13 · Pilar E
+**CTA:** Bisa nggak kamu rangkum presentasimu dalam satu kalimat? Komen KOMUNIKASI sekarang, aku kirim tes gratisnya lewat DM!
 
-| Beat | Isi |
-|---|---|
-| HOOK | Presentasimu bagus, tapi nggak ada yang inget. Masalahnya di 10 detik terakhir. |
-| SKENARIO | Dina (menutup): "Ya, mungkin itu saja. Terima kasih." Firas (ke kamera): "Barusan dia buang momen terpentingnya." |
-| AKIBAT | Penutup yang menggantung bikin audiens pulang tanpa pegangan. |
-| REFRAME | Penutup adalah tempat mengulang pesan inti, karena itu kalimat terakhir yang mereka dengar. |
-| SOLUSI (kulit) | Rumus penutup: ulang pesan inti dalam satu kalimat. "Kalau hanya satu yang kalian ingat, ingat ini..." |
-| PENUTUP | Akhiri dengan pesan, jangan dengan "mungkin itu saja". |
-| CTA | Pembuka, isi, atau penutup: mana yang paling lemah di presentasimu? Komen KOMUNIKASI, aku kirim tes gratisnya lewat DM. |
+Soal tes terkait: "Bicaraku punya pembuka, isi, dan penutup yang jelas"
 
-Soal tes terkait: "Bicaraku punya pembuka, isi, dan penutup"
+### EP 09 · Pilar E
 
-### EP 14 · Pilar E · naskah siap
+**Hook:** 4 kesalahan saat ditanya dadakan. Nomor 2 bikin kamu kelihatan nggak yakin.
 
-| Beat | Isi |
-|---|---|
-| HOOK | Audiens mulai buka HP di menit ketiga? Ini tiga penyebabnya. |
-| SKENARIO | Dina (datar): "Selanjutnya, seperti yang tertulis di slide, poin pertama adalah..." Firas (berbisik): "Menit ketiga. Aku udah buka HP." |
-| AKIBAT | Materinya bagus, tapi audiens udah baca slidenya duluan. Jadi nggak ada alasan buat dengerin. |
-| REFRAME | Presentasi jarang bosan karena topiknya. Biasanya karena slide dibacain, audiens cuma jadi penonton, dan angka tanpa contoh. |
-| SOLUSI (kulit) | Tiga perbaikan: satu kalimat per slide, satu pertanyaan ke audiens, satu contoh untuk tiap angka. |
-| PENUTUP | Kasih audiens alasan buat ngangkat kepala dari HP. |
-| CTA | Presentasimu bikin audiens nyimak atau buka HP? Cek skornya di tes gratis. Komen KOMUNIKASI, aku kirim lewat DM. |
+| No | Masalah | Solusi (kulit) |
+|---|---|---|
+| 1 | Langsung ngomong tanpa sikap yang jelas | P pertama: sebut jawabanmu dulu |
+| 2 (open loop) | Muter-muter "jadi gini, sebenarnya" | R: satu alasan saja |
+| 3 | Nggak ada contoh | E: satu contoh nyata |
+| 4 | Nggak ditutup | P terakhir: ulang jawabanmu. Ini PREP |
 
-Soal tes terkait: "Kontak mata, tidak hanya melihat slide"
+**CTA:** Jawaban dadakanmu runtut atau muter-muter? Komen KOMUNIKASI sekarang, aku kirim tes gratisnya lewat DM!
 
-### EP 15 · Pilar A
+Soal tes terkait: "Saat diminta bicara mendadak, jawabanku tetap runtut"
 
-| Beat | Isi |
-|---|---|
-| HOOK | Statistik viral di slidemu, sumbernya dari mana? |
-| SKENARIO | Firas: "Katanya, kebanyakan orang Indonesia..." Dina (audiens): "Sumbernya?" Firas: "Dari grup WhatsApp." |
-| AKIBAT | Satu angka yang ternyata salah bikin audiens meragukan semua yang kamu katakan. |
-| REFRAME | Qaulan sadida: perkataan yang benar dan bisa dipertanggungjawabkan. |
-| SOLUSI (kulit) | Cek qaulan sadida: bisakah kamu menyebut sumber aslinya? Kalau tidak, hapus angkanya. |
-| PENUTUP | Lebih baik tanpa angka daripada angka yang nggak bisa kamu pertanggungjawabkan. |
-| CTA | Statistik viral itu bakal kamu pakai atau nggak? Ada soalnya di tes gratis. Komen KOMUNIKASI, aku kirim lewat DM. |
+### EP 10 · Pilar E
+
+**Hook:** Kebanyakan poin bikin presentasimu dilupakan. Ini 3 cara memangkasnya, dan nomor 3 paling jarang dipakai.
+
+| No | Masalah | Solusi (kulit) |
+|---|---|---|
+| 1 | Tujuh poin sekaligus | Pilih maksimal tiga |
+| 2 | Poin muncul tanpa aba-aba | Umumkan: "Ada tiga hal" |
+| 3 (open loop) | Audiens nggak tahu sudah sampai mana | Signposting: "Pertama... kedua... terakhir" |
+
+**CTA:** Ada soal soal tujuh kelebihan pas interview di tes gratis. Kamu bakal jawab apa? Komen KOMUNIKASI sekarang, aku kirim lewat DM!
+
+Soal tes terkait: Kuis "tujuh kelebihan"
+
+### EP 11 · Pilar E
+
+**Hook:** 4 penutup presentasi yang bikin audiens lupa. Nomor 3 kedengarannya sopan, padahal bikin pesanmu hilang.
+
+| No | Masalah | Solusi (kulit) |
+|---|---|---|
+| 1 | "Ada pertanyaan?" sebagai kalimat terakhir | Tanya jawab dulu, baru penutup |
+| 2 | Merangkum semua slide | Ulang satu pesan inti saja |
+| 3 (open loop) | "Ya, mungkin itu saja" | "Kalau hanya satu yang kalian ingat, ingat ini..." |
+| 4 | Terima kasih tanpa ajakan | Satu ajakan yang jelas |
+
+**CTA:** Pembuka, isi, atau penutup: mana yang paling lemah di presentasimu? Komen KOMUNIKASI sekarang, aku kirim tes gratisnya lewat DM!
+
+Soal tes terkait: "Bicaraku punya pembuka, isi, dan penutup yang jelas"
+
+### EP 12 · Pilar E · naskah siap (perlu diubah ke format listicle)
+
+**Hook:** Audiens mulai buka HP di menit ketiga? Ini 3 penyebabnya, dan nomor 1 sering dianggap normal.
+
+| No | Masalah | Solusi (kulit) |
+|---|---|---|
+| 1 (open loop) | Slide dibacain | Satu kalimat per slide, sisanya kamu yang cerita |
+| 2 | Audiens cuma jadi penonton | Lempar satu pertanyaan: "Siapa yang pernah ngalamin ini?" |
+| 3 | Angka tanpa contoh | "Pulang satu jam lebih cepat" lebih kena dari "efisiensi meningkat" |
+
+**CTA:** Presentasimu bikin audiens nyimak atau buka HP? Komen KOMUNIKASI sekarang, aku kirim tes gratisnya lewat DM!
+
+Soal tes terkait: "Aku menjaga kontak mata, tidak hanya melihat slide"
+
+### EP 13 · Pilar A
+
+**Hook:** 4 hal di slidemu yang bikin kamu nggak dipercaya. Nomor 2 sering datang dari grup WhatsApp.
+
+| No | Masalah | Solusi (kulit) |
+|---|---|---|
+| 1 | Angka tanpa sumber | Cari sumber aslinya atau jangan dipakai |
+| 2 (open loop) | Statistik viral yang belum dicek | Qaulan sadida: hanya yang bisa dipertanggungjawabkan |
+| 3 | Data lama yang dipakai lagi | Cek tahun datanya |
+| 4 | Kata "semua orang" dan "selalu" | Pakai kata yang sesuai faktanya |
+
+**CTA:** Statistik viral itu bakal kamu pakai atau nggak? Ada soalnya di tes gratis. Komen KOMUNIKASI sekarang, aku kirim lewat DM!
 
 Soal tes terkait: Kuis "statistik viral"
 
-### EP 16 · Pilar A
+### EP 14 · Pilar A
 
-| Beat | Isi |
-|---|---|
-| HOOK | Al-Qur'an menyebut enam cara bicara. Kamu paling sering pakai yang mana? |
-| SKENARIO | Dina (rapat, nada tinggi): "Ini salah semua!" Firas (pelan): "Isinya benar, Din. Caranya yang bikin orang nutup telinga." |
-| AKIBAT | Isi yang benar bisa ditolak karena caranya menyakitkan. |
-| REFRAME | Enam qaulan: sadida (benar), baligha (tepat sasaran), maysura (mudah dipahami), layyina (lembut), karima (mulia), ma'rufa (pantas). |
-| SOLUSI (kulit) | Cek kalimatmu dengan enam qaulan: sadida, baligha, maysura, layyina, karima, ma'rufa. Mulai dari layyina, lembut. |
-| PENUTUP | Benar saja belum cukup. Harus sampai. |
-| CTA | Dari enam cara bicara itu, kamu paling kuat di mana? Cek pilar jujur dan santunmu di tes gratis. Komen KOMUNIKASI, aku kirim lewat DM. |
+**Hook:** Al-Qur'an menyebut 6 cara bicara. Nomor 4 paling susah dipraktikkan pas lagi emosi.
+
+| No | Masalah | Solusi (kulit) |
+|---|---|---|
+| 1 | Qaulan sadida | Benar dan jujur |
+| 2 | Qaulan baligha | Tepat sasaran |
+| 3 | Qaulan maysura | Mudah dipahami |
+| 4 (open loop) | Qaulan layyina | Lembut, walau isinya tegas |
+| 5 | Qaulan karima | Mulia dan menghormati |
+| 6 | Qaulan ma'rufa | Pantas dan baik |
+
+**CTA:** Dari enam cara bicara itu, kamu paling kuat di mana? Komen KOMUNIKASI sekarang, aku kirim tes gratisnya lewat DM!
 
 Soal tes terkait: "Kata yang mudah dipahami dan santun"
 
-### EP 17 · Pilar A
+### EP 15 · Pilar A
 
-| Beat | Isi |
-|---|---|
-| HOOK | Jelasin keuangan digital ke warga pakai istilah teknis? Mereka udah berhenti dengerin. |
-| SKENARIO | Firas: "Jadi sistem ini interoperabel dan terintegrasi dengan..." Dina (warga): "Pak, intinya bayar pakai HP, gitu?" |
-| AKIBAT | Istilah teknis bikin audiens awam merasa bodoh, lalu berhenti mencoba paham. |
-| REFRAME | Qaulan maysura: perkataan yang mudah dipahami pendengarnya. |
-| SOLUSI (kulit) | Qaulan maysura: satu istilah penting, satu contoh sehari-hari. |
-| PENUTUP | Kalau mereka nggak paham, cara jelasinnya yang perlu diubah. |
-| CTA | Bahasamu gampang dipahami atau bikin orang bengong? Cek lewat tes gratis. Komen KOMUNIKASI, aku kirim lewat DM. |
+**Hook:** 4 kebiasaan yang bikin penjelasanmu susah dipahami. Nomor 3 sering dikira biar kelihatan pintar.
+
+| No | Masalah | Solusi (kulit) |
+|---|---|---|
+| 1 | Istilah teknis tanpa contoh | Satu istilah, satu contoh sehari-hari |
+| 2 | Kalimat panjang bertingkat | Satu kalimat, satu ide |
+| 3 (open loop) | Kebanyakan bahasa Inggris | Pakai bahasa audiensmu |
+| 4 | Teori tanpa contoh | Tunjukkan contohnya dulu |
+
+**CTA:** Bahasamu gampang dipahami atau bikin orang bengong? Komen KOMUNIKASI sekarang, aku kirim tes gratisnya lewat DM!
 
 Soal tes terkait: Kuis "audiens awam, topik teknis"
 
 ## MP-3 Berani Tampil
 
-### EP 18 · Pilar R-Aksi
+### EP 16 · Pilar R-Aksi
 
-| Beat | Isi |
-|---|---|
-| HOOK | Suaramu datar dari awal sampai akhir? Ada empat tombol yang bisa kamu putar. |
-| SKENARIO | Dina presentasi dengan nada yang sama dari awal. Firas menguap: "Isinya bagus, suaranya kayak pengumuman stasiun." |
-| AKIBAT | Suara datar bikin semua poin terdengar sama penting, jadi nggak ada yang terasa penting. |
-| REFRAME | Vokal 4P: pitch (tinggi rendah), pace (cepat lambat), pause (jeda), power (keras lembut). |
-| SOLUSI (kulit) | Vokal 4P: pitch, pace, pause, power. Latihan pertamanya: satu kalimat, tiga gaya. |
-| PENUTUP | Suaramu punya empat tombol. Pakai. |
-| CTA | Suaramu termasuk yang hidup atau yang datar? Tes gratis ini ngecek kebiasaan vokalmu. Komen KOMUNIKASI, aku kirim lewat DM. |
+**Hook:** 4 kebiasaan suara yang bikin audiens ngantuk. Nomor 4 paling nggak disadari.
+
+| No | Masalah | Solusi (kulit) |
+|---|---|---|
+| 1 | Nada datar dari awal sampai akhir | Pitch: naik turunkan nada |
+| 2 | Ngomong terlalu cepat | Pace: atur kecepatan |
+| 3 | Nggak ada jeda | Pause: diam sebelum kata kunci |
+| 4 (open loop) | Suara mengecil di akhir kalimat | Power: jaga volume sampai kata terakhir. Ini Vokal 4P |
+
+**CTA:** Suaramu termasuk yang hidup atau yang datar? Komen KOMUNIKASI sekarang, aku kirim tes gratisnya lewat DM!
 
 Soal tes terkait: "Aku memakai jeda dan variasi suara"
 
-### EP 19 · Pilar R-Aksi
+### EP 17 · Pilar R-Aksi
 
-| Beat | Isi |
-|---|---|
-| HOOK | Mau angka pentingmu diingat? Diam dulu sebelum menyebutnya. |
-| SKENARIO | Firas (cepat): "Penjualan naik tiga puluh persen dan selanjutnya kita..." Dina: "Eh, tadi naik berapa?" |
-| AKIBAT | Angka penting lewat begitu saja kalau diucapkan secepat kalimat lain. |
-| REFRAME | Jeda adalah tanda baca untuk telinga. |
-| SOLUSI (kulit) | Jeda 1 sampai 2 detik sebelum kata kunci, lalu ucapkan lebih pelan dan jelas. |
-| PENUTUP | Diam sebentar, didengar lebih lama. |
-| CTA | Gimana caramu nekenin angka penting? Coba soalnya di tes gratis. Komen KOMUNIKASI, aku kirim lewat DM. |
+**Hook:** 4 cara pakai jeda biar omonganmu didengar. Nomor 2 bikin angka pentingmu nempel.
+
+| No | Masalah | Solusi (kulit) |
+|---|---|---|
+| 1 | Jeda sebelum kata kunci | Satu sampai dua detik |
+| 2 (open loop) | Jeda sebelum angka penting | Lalu ucapkan lebih pelan |
+| 3 | Jeda setelah bertanya ke audiens | Beri mereka waktu berpikir |
+| 4 | Jeda sebagai pengganti "eee" | Diam lebih meyakinkan daripada "eee" |
+
+**CTA:** Gimana caramu nekenin angka penting? Ada soalnya di tes gratis. Komen KOMUNIKASI sekarang, aku kirim lewat DM!
 
 Soal tes terkait: Kuis "menekankan satu angka"
 
-### EP 20 · Pilar R-Aksi
+### EP 18 · Pilar R-Aksi
 
-| Beat | Isi |
-|---|---|
-| HOOK | "55% komunikasi itu bahasa tubuh." Itu salah kutip. |
-| SKENARIO | Dina (menirukan trainer): "Kata-kata cuma tujuh persen!" Firas: "Terus aku presentasi pakai pantomim aja?" |
-| AKIBAT | Mitos ini bikin orang sibuk gaya dan lupa isi. |
-| REFRAME | Studi Mehrabian hanya soal pesan perasaan yang kata dan nadanya bertentangan. Pelajarannya: kata, suara, dan tubuh harus selaras. |
-| SOLUSI (kulit) | Cek kongruensi: apakah kata, nada, dan tubuhmu bilang hal yang sama? |
-| PENUTUP | Isi tetap penting. Yang perlu dicek adalah keselarasannya. |
-| CTA | Kamu percaya mitos 55% itu? Ada soalnya di tes gratis, cek jawabanmu benar atau nggak. Komen KOMUNIKASI, aku kirim lewat DM. |
+**Hook:** 4 mitos public speaking yang masih sering dikutip. Nomor 1 bahkan dipakai trainer.
+
+| No | Masalah | Solusi (kulit) |
+|---|---|---|
+| 1 (open loop) | "55% komunikasi itu bahasa tubuh" | Studi Mehrabian cuma soal pesan perasaan yang bertentangan. Pelajarannya: keselarasan |
+| 2 | Harus hafal naskah kata per kata | Hafalkan strukturnya, bukan kalimatnya |
+| 3 | Pembicara hebat itu bakat | Kemampuan bicara bisa dilatih |
+| 4 | Harus selalu lucu | Relevan lebih penting daripada lucu |
+
+**CTA:** Kamu percaya mitos nomor 1 itu? Ada soalnya di tes gratis, cek jawabanmu. Komen KOMUNIKASI sekarang, aku kirim lewat DM!
 
 Soal tes terkait: Kuis "7-38-55"
 
-### EP 21 · Pilar R-Aksi
+### EP 19 · Pilar R-Aksi
 
-| Beat | Isi |
-|---|---|
-| HOOK | Presentasi sambil lihatin slide terus? Coba aturan ini. |
-| SKENARIO | Dina presentasi menghadap layar. Firas (audiens, ke kamera): "Dari tadi aku cuma lihat punggungnya." |
-| AKIBAT | Audiens merasa diajak bicara oleh layar, bukan oleh orang. |
-| REFRAME | Kontak mata yang menyebar bikin setiap orang merasa diajak bicara. |
-| SOLUSI (kulit) | Satu kalimat, satu pasang mata. Lalu pindah ke orang lain. |
-| PENUTUP | Slide boleh di belakangmu. Audiensmu ada di depan. |
-| CTA | Kontak matamu ke audiens atau ke slide? Cek skornya di tes gratis. Komen KOMUNIKASI, aku kirim lewat DM. |
+**Hook:** 4 kebiasaan bahasa tubuh yang ngelawan omonganmu. Nomor 2 kelihatan sampai belakang ruangan.
+
+| No | Masalah | Solusi (kulit) |
+|---|---|---|
+| 1 | Matamu ke slide terus | Satu kalimat, satu pasang mata |
+| 2 (open loop) | Tangan dilipat atau di saku | Gestur terbuka yang mengikuti isi |
+| 3 | Wajah datar saat cerita seru | Ekspresi ikut isi kalimat |
+| 4 | Badan goyang ke kanan kiri | Berdiri tegak, pindah tempat saat ganti poin |
+
+**CTA:** Bahasa tubuhmu bantu atau ngelawan omonganmu? Komen KOMUNIKASI sekarang, aku kirim tes gratisnya lewat DM!
 
 Soal tes terkait: "Aku menjaga kontak mata dengan audiens"
 
+### EP 20 · Pilar R-Aksi
+
+**Hook:** 5 cara bikin audiens nyimak dari menit pertama. Nomor 5 paling jarang dipakai.
+
+| No | Masalah | Solusi (kulit) |
+|---|---|---|
+| 1 | Data yang mengejutkan | Satu angka yang bikin mereka berhenti |
+| 2 | Pertanyaan | "Siapa yang pernah...?" |
+| 3 | Metafora | Bandingkan dengan hal sehari-hari |
+| 4 | Cerita yang relate | Cukup 20 detik |
+| 5 (open loop) | Permainan bermakna | Libatkan audiens satu menit |
+
+**CTA:** Caramu membuka bikin orang nyimak nggak? Komen KOMUNIKASI sekarang, aku kirim tes gratisnya lewat DM!
+
+Soal tes terkait: Bagian kebiasaan
+
+### EP 21 · Pilar R-Aksi
+
+**Hook:** 4 kesalahan saat sesi tanya jawab. Nomor 1 bikin kamu kelihatan defensif.
+
+| No | Masalah | Solusi (kulit) |
+|---|---|---|
+| 1 (open loop) | Langsung jawab tanpa jeda | Frasa jembatan: ulangi pertanyaannya dulu |
+| 2 | Ngarang kalau nggak tahu | "Saya belum tahu. Saya cek dan kabari hari ini" |
+| 3 | Jawaban melebar | Jawab pakai PREP |
+| 4 | Menyerang balik penanya | Qaulan layyina: tegas tapi lembut |
+
+**CTA:** Kalau ditanya dadakan di depan banyak orang, kamu tipe pembicara yang mana? Komen KOMUNIKASI sekarang, aku kirim tes gratisnya lewat DM!
+
+Soal tes terkait: "Saat diminta bicara mendadak, jawabanku tetap runtut"
+
 ### EP 22 · Pilar R-Aksi
 
-| Beat | Isi |
-|---|---|
-| HOOK | Presentasimu penuh data, tapi audiens kosong? Selipin cerita 20 detik. |
-| SKENARIO | Firas (menunjuk grafik): "Tingkat keterlambatan pembayaran..." audiens diam. Lalu: "Bu Rina, pemilik warung, tiga kali ditagih..." audiens mendongak. |
-| AKIBAT | Data tanpa wajah sulit dirasakan. |
-| REFRAME | Pemantik membuka perhatian: cerita, pertanyaan, data yang mengejutkan, atau metafora. |
-| SOLUSI (kulit) | Lima pemantik: data, pertanyaan, metafora, cerita relate, permainan bermakna. Pilih satu untuk pembukamu. |
-| PENUTUP | Cerita kasih wajah buat datamu. |
-| CTA | Caramu menyampaikan bikin orang nyimak nggak? Cek tipe pembicaramu lewat tes gratis. Komen KOMUNIKASI, aku kirim lewat DM. |
+**Hook:** 4 hal yang bikin cerita di presentasimu garing. Nomor 3 nggak kerasa saat kamu sendiri yang cerita.
+
+| No | Masalah | Solusi (kulit) |
+|---|---|---|
+| 1 | Ceritanya kepanjangan | Maksimal 20 detik |
+| 2 | Nggak nyambung ke pesan inti | Akhiri cerita dengan pesan intimu |
+| 3 (open loop) | Kebanyakan detail | Satu tokoh, satu momen |
+| 4 | Nggak ada masalahnya | Cerita butuh satu masalah |
+
+**CTA:** Caramu bercerita bikin orang nyimak nggak? Komen KOMUNIKASI sekarang, aku kirim tes gratisnya lewat DM!
 
 Soal tes terkait: Bagian kebiasaan
 
 ### EP 23 · Pilar R-Aksi
 
-| Beat | Isi |
-|---|---|
-| HOOK | Ditanya hal sulit di depan banyak orang? Jangan langsung jawab. |
-| SKENARIO | Dina (audiens): "Kenapa targetnya nggak tercapai?" Firas langsung: "Ya karena... eh... timnya..." |
-| AKIBAT | Jawaban yang terburu-buru terdengar defensif. |
-| REFRAME | Frasa jembatan memberi waktu berpikir tanpa terlihat menghindar. |
-| SOLUSI (kulit) | Frasa jembatan dulu, lalu jawab pakai PREP. |
-| PENUTUP | Dua detik untuk mengulang pertanyaan bisa menyelamatkan jawabanmu. |
-| CTA | Ditanya dadakan di depan banyak orang, kamu masuk tipe pembicara yang mana? Komen KOMUNIKASI, aku kirim tes gratisnya lewat DM. |
+**Hook:** Suara gemetar pas presentasi? 4 hal yang bisa kamu lakukan detik itu juga. Nomor 4 justru yang paling bikin tenang.
 
-Soal tes terkait: "Saat diminta bicara mendadak, jawabanku runtut"
+| No | Masalah | Solusi (kulit) |
+|---|---|---|
+| 1 | Napas pendek dan cepat | Jeda, lalu napas 4-6 |
+| 2 | Ngomong makin cepat | Perlambat tempo |
+| 3 | Kalimat panjang yang bikin kehabisan napas | Pecah jadi kalimat pendek |
+| 4 (open loop) | Minta maaf karena gugup | Lanjut saja, audiens jarang menyadarinya |
+
+**CTA:** Seberapa siap kamu ngadepin grogi di depan orang? Komen KOMUNIKASI sekarang, aku kirim tes gratisnya lewat DM!
+
+Soal tes terkait: Kuis "lima menit sebelum maju"
 
 ### EP 24 · Pilar R-Aksi
 
-| Beat | Isi |
-|---|---|
-| HOOK | Ditanya dan kamu nggak tahu jawabannya? Jangan ngarang. |
-| SKENARIO | Dina: "Datanya per kuartal berapa?" Firas: "Sekitar... empat puluh, eh, lima puluh?" Dina mencatat sambil mengernyit. |
-| AKIBAT | Satu jawaban karangan bikin audiens meragukan jawabanmu yang lain. |
-| REFRAME | Qaulan sadida juga berarti berani bilang belum tahu. |
-| SOLUSI (kulit) | Rumus jujur: "Saya belum tahu" ditambah kapan kamu akan mengabari. |
-| PENUTUP | Jujur bilang belum tahu juga bikin kamu dipercaya. |
-| CTA | Seberapa jujur dan meyakinkan cara bicaramu? Skornya ada di tes gratis. Komen KOMUNIKASI, aku kirim lewat DM. |
+**Hook:** 4 hal yang bikin kamu kelihatan nggak yakin, padahal paham materi. Nomor 1 cuma satu kata.
 
-Soal tes terkait: "Klaim yang kusampaikan bisa kusebutkan sumbernya"
+| No | Masalah | Solusi (kulit) |
+|---|---|---|
+| 1 (open loop) | "Eee" di setiap jeda | Ganti dengan diam sebentar |
+| 2 | Nada naik di akhir kalimat | Turunkan nada di akhir pernyataan |
+| 3 | "Mungkin" dan "kayaknya" berlebihan | Pakai hanya kalau memang belum pasti |
+| 4 | Bicara sambil menatap lantai | Tatap satu orang setiap kalimat |
+
+**CTA:** Kamu kedengeran yakin atau ragu? Cek skornya di tes gratis. Komen KOMUNIKASI sekarang, aku kirim lewat DM!
+
+Soal tes terkait: "Aku memakai jeda dan variasi suara"
 
 ## MP-4 Bicara Berdampak dan Rencana Tumbuh
 
 ### EP 25 · Pilar T
 
-| Beat | Isi |
-|---|---|
-| HOOK | "Mari kita lebih peduli lingkungan." Audiens setuju, lalu nggak ngapa-ngapain. |
-| SKENARIO | Dina menutup: "Mari lebih peduli lingkungan." Tepuk tangan. Firas (ke kamera, sambil buang botol plastik): "Aku setuju kok." |
-| AKIBAT | Ajakan yang umum bikin semua orang setuju, tapi nggak ada yang berubah. |
-| REFRAME | Ajakan yang dijalankan menyebut siapa, melakukan apa, kapan, dan langkah pertama. |
-| SOLUSI (kulit) | Rumus ajakan: siapa, melakukan apa, kapan, dan langkah pertama yang mudah. |
-| PENUTUP | Ajakan yang jelas bikin orang tahu harus mulai dari mana. |
-| CTA | Ajakan mana yang paling mungkin dijalankan audiens? Coba tebak di tes gratis. Komen KOMUNIKASI, link-nya aku kirim lewat DM. |
+**Hook:** 4 ajakan penutup yang nggak bakal dijalankan audiens. Nomor 2 kedengarannya manis, tapi nggak menggerakkan siapa pun.
+
+| No | Masalah | Solusi (kulit) |
+|---|---|---|
+| 1 | "Mari kita lebih peduli" | Sebut tindakan yang spesifik |
+| 2 (open loop) | "Semoga bermanfaat" | Sebut kapan mereka mulai |
+| 3 | "Silakan dipikirkan" | Kasih langkah pertama yang mudah |
+| 4 | Lima ajakan sekaligus | Satu ajakan. Rumusnya: siapa, melakukan apa, kapan, langkah pertama |
+
+**CTA:** Ajakan mana yang paling mungkin dijalankan audiens? Coba tebak di tes gratis. Komen KOMUNIKASI sekarang, aku kirim lewat DM!
 
 Soal tes terkait: Kuis "ajakan penutup"
 
 ### EP 26 · Pilar T
 
-| Beat | Isi |
-|---|---|
-| HOOK | Habis presentasi, coba tanya tiga orang: "Tadi intinya apa?" |
-| SKENARIO | Firas bertanya ke tiga rekan. Jawabannya beda semua. Firas: "Lho, kok jadi tiga versi?" |
-| AKIBAT | Presentasi bisa terasa lancar, padahal pesannya nggak sampai. |
-| REFRAME | Dampak bicara diukur dari apa yang ditangkap audiens, bukan dari seberapa lancar kamu. |
-| SOLUSI (kulit) | Tes 2 dari 3: kalau dua dari tiga orang bisa menyebut pesan inti dan tindakan yang diminta, pesanmu sampai. |
-| PENUTUP | Lancar belum tentu sampai. |
-| CTA | Pesanmu benar-benar sampai, atau cuma lancar? Cek skor dampak bicaramu di tes gratis. Komen KOMUNIKASI, aku kirim lewat DM. |
+**Hook:** 4 cara cek apakah presentasimu benar-benar sampai. Nomor 1 cuma butuh tiga teman.
+
+| No | Masalah | Solusi (kulit) |
+|---|---|---|
+| 1 (open loop) | Tanya tiga orang "tadi intinya apa?" | Kalau dua dari tiga bisa menjawab, pesanmu sampai |
+| 2 | Tanya satu hal yang mereka ingat | Bandingkan dengan pesan intimu |
+| 3 | Lihat siapa yang menjalankan ajakanmu | Itu ukuran dampak yang paling jujur |
+| 4 | Bandingkan videomu sebelum dan sesudah | Rekam setiap kali tampil |
+
+**CTA:** Pesanmu benar-benar sampai, atau cuma lancar? Komen KOMUNIKASI sekarang, aku kirim tes gratisnya lewat DM!
 
 Soal tes terkait: "Aku memeriksa apakah audiens menangkap pesanku"
 
 ### EP 27 · Pilar T
 
-| Beat | Isi |
-|---|---|
-| HOOK | Audiensmu kritis? Gelar dan efek slide nggak akan nolong. |
-| SKENARIO | Firas presentasi penuh animasi slide. Dina (manajer): "Bagus. Tapi kalau biayanya naik, gimana?" Firas: "Eh..." |
-| AKIBAT | Audiens yang peduli justru mencari celah argumen, bukan efek. |
-| REFRAME | Ethos, Pathos, Logos: kredibilitas, perasaan, dan logika. Audiens kritis paling menuntut logika. |
-| SOLUSI (kulit) | Ethos, Pathos, Logos: cek mana yang kurang. Untuk audiens kritis, perkuat Logos dan jawab satu keberatan sebelum ditanya. |
-| PENUTUP | Audiens kritis bisa diyakinkan dengan argumen dan bukti yang jelas. |
-| CTA | Kamu bisa ngeyakinin audiens yang kritis? Ada soalnya di tes gratis. Komen KOMUNIKASI, aku kirim lewat DM. |
+**Hook:** 4 cara meyakinkan audiens yang kritis. Nomor 4 yang bikin mereka berhenti membantah.
+
+| No | Masalah | Solusi (kulit) |
+|---|---|---|
+| 1 | Logos | Argumen dengan bukti yang jelas |
+| 2 | Ethos | Sebut sumber dan pengalamanmu |
+| 3 | Pathos | Sentuh hal yang mereka pedulikan |
+| 4 (open loop) | Keberatan yang belum dijawab | Jawab sebelum mereka bertanya |
+
+**CTA:** Kamu bisa ngeyakinin audiens yang kritis? Ada soalnya di tes gratis. Komen KOMUNIKASI sekarang, aku kirim lewat DM!
 
 Soal tes terkait: Kuis "audiens kritis"
 
 ### EP 28 · Pilar I
 
-| Beat | Isi |
-|---|---|
-| HOOK | Habis ikut pelatihan, seminggu kemudian lupa semua? |
-| SKENARIO | Dina: "Minggu lalu aku ikut seminar public speaking. Isinya... apa ya?" Firas: "Kamu latihan lagi nggak?" Dina: "Belum." |
-| AKIBAT | Ilmu yang nggak diulang cepat hilang, dan waktunya ikut terbuang. |
-| REFRAME | Ingatan baru cepat memudar tanpa pengulangan (Murre dan Dros mereplikasi kurva lupa Ebbinghaus). |
-| SOLUSI (kulit) | Rekam dirimu bicara satu menit hari ini, lalu ulangi di hari ke-7, 14, dan 21. |
-| PENUTUP | Yang diulang, yang tinggal. |
-| CTA | Mau tahu skor speaking-mu hari ini, biar 30 hari lagi bisa dibandingin? Komen KOMUNIKASI, aku kirim tes gratisnya lewat DM. |
+**Hook:** 4 cara latihan presentasi yang sia-sia. Nomor 2 kelihatannya rajin, padahal paling bikin kaku.
 
-Soal tes terkait: "Aku berlatih sebelum tampil"
+| No | Masalah | Solusi (kulit) |
+|---|---|---|
+| 1 | Baca ulang slide dalam hati | Latihan dengan suara keras |
+| 2 (open loop) | Menghafal kata per kata | Hafalkan strukturnya |
+| 3 | Latihan sekali, malam sebelumnya | Latihan berjarak, beberapa hari |
+| 4 | Nggak pernah merekam diri | Rekam satu menit, tonton ulang |
+
+**CTA:** Cara latihanmu udah efektif belum? Komen KOMUNIKASI sekarang, aku kirim tes gratisnya lewat DM!
+
+Soal tes terkait: "Aku berlatih bicara sebelum tampil"
 
 ### EP 29 · Pilar I
 
-| Beat | Isi |
-|---|---|
-| HOOK | "Aku mau lebih pede ngomong." Itu belum rencana. |
-| SKENARIO | Firas: "Target tahun depan apa?" Dina: "Lebih berani ngomong di rapat." Firas: "Mulainya kapan?" Dina: "Nanti." |
-| AKIBAT | Niat tanpa situasi dan tindakan yang jelas gampang menguap. |
-| REFRAME | Rencana jika-maka menghubungkan situasi dengan tindakan (Gollwitzer dan Sheeran). |
-| SOLUSI (kulit) | Rumus jika-maka: "Jika [situasi], maka aku [tindakan]." Contoh: "Jika rapat Senin dibuka, maka aku menyampaikan satu pendapat." |
-| PENUTUP | Rencana yang jelas tahu kapan harus mulai. |
-| CTA | Rencana latihanmu udah jelas, atau masih "nanti"? Cek di tes gratis 7 menit. Komen KOMUNIKASI, aku kirim lewat DM. |
+**Hook:** 4 resolusi public speaking yang hampir pasti gagal. Nomor 1 kedengerannya paling semangat.
+
+| No | Masalah | Solusi (kulit) |
+|---|---|---|
+| 1 (open loop) | "Tahun depan aku mau lebih pede" | Rumus jika-maka: "Jika [situasi], maka aku [tindakan]" |
+| 2 | "Aku latihan kalau sempat" | Tentukan hari dan jamnya |
+| 3 | "Aku tunggu sampai siap" | Mulai dari kesempatan kecil, satu pendapat di rapat |
+| 4 | Langsung menargetkan panggung besar | Naik bertahap |
+
+**CTA:** Rencana latihanmu udah jelas, atau masih nanti? Komen KOMUNIKASI sekarang, aku kirim tes gratisnya lewat DM!
 
 Soal tes terkait: Kuis "rencana latihan"
 
 ### EP 30 · Pilar I
 
-| Beat | Isi |
-|---|---|
-| HOOK | "Bagus banget, keren!" Umpan balik ini nggak bikin kamu berkembang. |
-| SKENARIO | Dina (habis presentasi): "Gimana tadi?" Firas: "Keren!" Dina (ke kamera): "Terus aku harus memperbaiki apa?" |
-| AKIBAT | Pujian umum enak didengar, tapi nggak memberi arah perbaikan. |
-| REFRAME | Umpan balik yang paling membantu menyebut apa yang sudah benar dan langkah perbaikannya (Hattie dan Timperley). |
-| SOLUSI (kulit) | Rumus umpan balik: satu yang sudah benar, ditambah satu langkah perbaikan. |
-| PENUTUP | Minta umpan balik yang bisa kamu pakai. |
-| CTA | Umpan balik mana yang paling bikin kamu berkembang? Coba soalnya di tes gratis. Komen KOMUNIKASI, aku kirim lewat DM. |
+**Hook:** 4 umpan balik yang nggak bikin kamu berkembang. Nomor 1 paling enak didengar.
+
+| No | Masalah | Solusi (kulit) |
+|---|---|---|
+| 1 (open loop) | "Keren banget!" | Tanya bagian mana yang keren |
+| 2 | "Kurang pede" | Minta contoh momennya |
+| 3 | Nilai angka tanpa catatan | Minta satu catatan perbaikan |
+| 4 | Kritik semuanya sekaligus | Rumus: satu yang sudah benar, satu langkah perbaikan |
+
+**CTA:** Umpan balik mana yang paling bikin kamu berkembang? Coba soalnya di tes gratis. Komen KOMUNIKASI sekarang, aku kirim lewat DM!
 
 Soal tes terkait: Kuis "umpan balik setelah presentasi"
