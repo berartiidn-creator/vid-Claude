@@ -1,6 +1,6 @@
 # P3. Salah ngomong pas meeting (pilar CONFIDENCE) · versi 3
 
-Format serial edukasi (template HOOK, SKENARIO, AKIBAT, REFRAME, SOLUSI, PENUTUP, CTA) · Funnel TOFU · 108 kata, sekitar 46 detik · Keyword CTA: **PEDE** · Video: skill berarti-reels (gaya C2)
+Format serial edukasi (template HOOK, SKENARIO, AKIBAT, REFRAME, SOLUSI, PENUTUP, CTA) · Funnel TOFU · 113 kata, sekitar 47 detik · Keyword CTA: **PEDE** · Video: skill berarti-reels (gaya C2)
 
 ## Kenapa versi 3
 
