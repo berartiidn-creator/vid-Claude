@@ -97,4 +97,5 @@ Catatan tumpang tindih: 04, 05, dan 14 sama-sama soal memotong pembicaraan, jadi
 | No | Status |
 |---|---|
 | 01 | naskah siap (`serial-komunikasi/01-cerita-direbut.md`), menunggu VO |
-| 02 sampai 30 | belum |
+| 25 | naskah siap (`serial-komunikasi/25-presentasi-membosankan.md`), menunggu VO |
+| lainnya | belum |
